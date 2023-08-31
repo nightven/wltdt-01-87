@@ -1,4 +1,5 @@
 import * as fonds from './js/fonds/fonds';
+
 import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { addMarkupCategoryList } from './js/helpers/helpers';
 import { markupCategoryList } from './js/template/markup';

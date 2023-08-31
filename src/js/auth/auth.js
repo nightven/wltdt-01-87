@@ -1,37 +1,10 @@
-import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { auth } from './firebase';
+import refs from '../refs/refs';
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-  apiKey: 'AIzaSyBx8XcZ9v4GIKfGUANJ4MKJoQD7B4cDP-4',
-  authDomain: 'library-b40eb.firebaseapp.com',
-  projectId: 'library-b40eb',
-  storageBucket: 'library-b40eb.appspot.com',
-  messagingSenderId: '799722991022',
-  appId: '1:799722991022:web:75afe5d43e76e1bb3f6c3f',
-  measurementId: 'G-PRG7KMYKBB',
-};
+const { fromEl, btnSignIn } = refs;
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
-
-const btnEl = document.querySelector('.js-button');
-const modal = document.querySelector('.backdrop');
-const fromEl = document.querySelector('.js-form');
-btnEl.addEventListener('click', onclick);
 fromEl.addEventListener('submit', onSubmit);
-
-function onclick() {
-  modal.hidden = false;
-}
+btnSignIn.addEventListener('submit', onSetValueForm);
 
 function onSubmit(e) {
   e.preventDefault();
@@ -56,5 +29,23 @@ function signUp(email, password) {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+    });
+}
+
+function onSetValueForm(e) {
+  e.preventDefault();
+  const email = e.currentTarget.elements.email.value;
+  const password = e.currentTarget.elements.password.value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(userCredential => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      console.log(user);
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
 }
