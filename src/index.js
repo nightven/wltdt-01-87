@@ -1,0 +1,1 @@
+import * as fonds from './js/fonds/fonds'

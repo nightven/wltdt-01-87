@@ -1,26 +1,20 @@
 import { fonds } from '../api/api-fonds';
 
-// export function createMarkupFonds(fonds) {
-//     return fonds.map(({title, url, img})=>`<a href="${url}"
-//       ><li class="fonds__item">
-//         <span class="number__list">01</span>
-//         <img
-//           class="img__fonds"
-//           src="${img}"
-//           alt="${title}"
-//         /></li
-//     ></a>`).join('');
-// }
-const li = ({ title, url, img }) => {
-      return `<a href="${url}"
-      ><li class="fonds__item">
-        <span class="number__list">01</span>
-        <img
-          class="img__fonds"
-          src="${img}"
-          alt="${title}"
-        /></li
-    ></a>`
-}
-const liElements = fonds.map(li).join('');
-//  
+const liElements = fonds.map(({ title, url, img }, index) => {
+      return `<li class="fonds__item">
+      <a class="fonds__link" href="${url}" target="_blank">
+        <div class="item_link">
+          <span class="number__list">${(index+1).toString().padStart(2, '0')}</span>
+          <img
+            class="img__fonds"
+            src="${img}"
+            alt="${title}"
+          />
+        </div>
+      </a>
+    </li>`
+}).join('');
+const fondsList = document.querySelector('.fonds__list');
+
+
+fondsList.insertAdjacentHTML('beforeend', liElements)
