@@ -4,8 +4,8 @@ import axios from "axios";
 
 const URL_CATEGORY_LIST = "https://books-backend.p.goit.global/books/category-list";
 
-function fetchCategoryList() {
-    return axios.get(URL_CATEGORY_LIST);
+async function fetchCategoryList() {
+    return await axios.get(URL_CATEGORY_LIST);
 };
 
 
@@ -14,13 +14,13 @@ function fetchCategoryList() {
 
 const URL_ALL_BOOKS = "https://books-backend.p.goit.global/books/category";
 
-function fetchAllBooks(searchQuery){
+async function fetchAllBooks(searchQuery){
     const param = new URLSearchParams({        
         category : searchQuery,
         
     });
 
-    return  axios.get(`${URL_ALL_BOOKS}?${param}`);
+    return await axios.get(`${URL_ALL_BOOKS}?${param}`);
 };
 
 
