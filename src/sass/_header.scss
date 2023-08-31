@@ -1,0 +1,127 @@
+.container {
+  /* Mobile styles $ >*/
+  //   min-width: 320px;
+  //   max-width: 428px;
+
+//   padding: 18px 20px;
+  //   margin: 0 auto;
+}
+
+  /* Mobile styles $ >*/
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* Tablet styles $ >*/
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+/* Desctop styles 1440px $ >*/
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Mobile styles $ >*/
+.header-nav-list {
+    display: none;
+       /* display: flex;
+    
+    gap: 40px;    */
+  }
+
+  @media only screen and (min-width: 768px) {
+    .header-nav-list {
+     display: flex;
+     margin-right: auto;
+     align-items: center;
+     gap: 24px;    
+    }
+  } 
+/* Mobile styles $ >*/
+  .nav-list-item {
+    display: none;
+ 
+  }
+  @media only screen and (min-width: 768px) {
+    .nav-list-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;   
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--main-header-color);
+    padding: 24px 0;
+    /* padding-bottom: 16px;
+    padding-top: 16px; */
+   }
+  }
+
+
+/* styles for toggle container */
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+/* hide standart checkbox */
+.switch__input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 34px;
+  background: linear-gradient(rgb(79, 46, 232), rgb(220, 220, 220));
+  transition: 0.4s;
+}
+
+.switch__slider::before {
+  content: '';
+  position: absolute;
+  cursor: pointer;
+
+  left: 1px;
+  bottom: 1px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+
+  background-color: white;
+  transition: 0.4s;
+}
+
+/* styles for focus */
+.switch__input:focus + .switch__slider {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* styles for choice */
+.switch__input:checked + .switch__slider {
+  background: linear-gradient(rgba(79, 46, 232, 1), rgba(104, 104, 104, 1));
+}
+
+.switch__input:checked + .switch__slider::before {
+  transform: translateX(20px);
+}
