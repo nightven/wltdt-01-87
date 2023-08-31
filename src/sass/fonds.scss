@@ -1,4 +1,8 @@
 .fonds__common{
+    padding-top: 24px;
+    padding-right: 40px;
+    padding-bottom: 24px;
+    padding-left: 40px;
     width: 356px;
     height: 474px;
     border-radius: 16px;
@@ -7,7 +11,8 @@
     #4f2ee8 18.03%,
     #fff 100%
     );
-  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+
 }
 
 .support__Ukraine{
@@ -27,4 +32,26 @@
 
 .common__title{
     display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.fonds__item{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.number__list{
+
+    color: #FFF;
+        font-family: DM Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.28;
+        letter-spacing: -0.56px;
+}
+
+.img__fonds{
+    mix-blend-mode: luminosity;
+    filter: brightness(0) invert(1);
 }
