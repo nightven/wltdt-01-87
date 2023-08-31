@@ -1,4 +1,4 @@
-[
+export const fonds = [
     {
       title: 'Save the Children',
       url:
