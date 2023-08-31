@@ -4,30 +4,42 @@ import { markupCategoryList } from "./js/template/markup";
 import { refs } from "./js/refs/refs";
 
 //----------------------Category List-----------------------------------------
-fetchCategoryList().then((resp) => {
-    console.log(resp.data)
-    addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
-})
-//------------------------------------------------------------------------------
 
-//-------------------Get Name Of Category---------------------------------------
+window.addEventListener("load", onShowAllCategories);
+
+async function onShowAllCategories() {
+    try {
+        
+        const data = await fetchCategoryList();
+        
+        addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(data.data));
+    }
+    catch (err){
+        console.log(err.message);
+        }
+};
+    
+
+//-------------------All Books Each Of Category---------------------------------------
 refs.listCategoryEl.addEventListener("click", onShowAllBooks);
 let nameOfCategory = 0;
 
-function onShowAllBooks(event) {
+async function onShowAllBooks(event) {
 
     event.preventDefault();
 
     if (!event.target.classList.contains("item-category")) return;
 
-    nameOfCategory = event.target.textContent;     
-
-    fetchAllBooks(nameOfCategory).then((resp) => {
+    nameOfCategory = event.target.textContent;
+    try {
+        const data = await fetchAllBooks(nameOfCategory)
     
-        console.log(resp.data);
-        
-        //------------------Should be render of markup of All Books (Roman)------------------
-})
-}
+        console.log(data.data);
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+}   
+ 
 
 

@@ -5,7 +5,7 @@ import axios from "axios";
 const URL_CATEGORY_LIST = "https://books-backend.p.goit.global/books/category-list";
 
 function fetchCategoryList() {
-    return axios.get(URL_CATEGORY_LIST);
+    return  axios.get(URL_CATEGORY_LIST);
 };
 
 
