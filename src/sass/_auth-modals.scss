@@ -1,0 +1,61 @@
+.backdrop {
+  background: #4f2ee8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.backdrop-sign-in {
+  background: #111;
+}
+
+.modal {
+  margin: 127px auto;
+  padding: 80px 40px 40px;
+  width: 579px;
+  height: 516px;
+
+  border-radius: 18px;
+  border: 2px solid #111;
+  color: rgba(17, 17, 17, 0.5);
+  background: #f6f6f6;
+
+  @include font-auth;
+
+  .form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  input {
+    display: flex;
+    width: 499px;
+    padding: 20px 173px 20px 40px;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 40px;
+    border: 2px solid #111;
+
+    &:placeholder-shown {
+      @include font-auth;
+      color: #111;
+    }
+  }
+  .btn {
+    display: flex;
+    width: 499px;
+    padding: 20px 173px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #f3f3f3;
+    @include font-auth;
+
+    border-radius: 40px;
+    background: #111;
+  }
+}
