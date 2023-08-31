@@ -1,10 +1,28 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './reset.scss';
 
-
 // colors
-$color-black: rgba(17,17,17,1);
-$color-black-1: rgba(32,32,36,1);
-$color-violet: rgba(79,46,232,1);
-$color-yellow: rgba(234,198,69,1);
-$color-white: rgba(255,255,255,1);
+$color-black: rgba(17, 17, 17, 1);
+$color-black-1: rgba(32, 32, 36, 1);
+$color-violet: rgba(79, 46, 232, 1);
+$color-yellow: rgba(234, 198, 69, 1);
+$color-white: rgba(255, 255, 255, 1);
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
