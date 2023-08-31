@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Bookshelf</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
+
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <!-- <include src="./partials/example.html"></include> -->
+    <!-- <include src="partials/header.html" /> -->
+    <main>
+      <aside class="aside-wrapper">
+        <!-- <include src="partials/categories.html" /> -->
+        <!-- <include src="partials/support-ukraine.html" /> -->
+      </aside>
+      <section class="container-home-page">
+        <!-- <include src="partials/home-page.html" /> -->
+      </section>
+    </main>
+    <include src="partials/modal.html" />
+    <include src="partials/auth-modal.html" />
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
