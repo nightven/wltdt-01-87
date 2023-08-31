@@ -1,0 +1,50 @@
+<!-- модалка для регистрации пользователя -->
+<div class="backdrop is-hidden" data-sign-up>
+  <div class="modal">
+    <button data-sign-up-close>
+      <svg class="trident">
+        <use href="/src/images/icons.svg#icon-x-close"></use>
+      </svg>
+    </button>
+    <form class="js-form form-login">
+      <input type="text" placeholder="name" name="login" />
+      <input type="email" placeholder="email" name="email" />
+      <input type="password" placeholder="password" name="password" />
+      <button class="btn" type="submit">Sign up</button>
+    </form>
+    <div>
+      <button data-sign-up-open data-sign-in-close class="js-button">
+        sign up
+      </button>
+      <button data-sign-in-open data-sign-up-close class="js-button">
+        sign in
+      </button>
+    </div>
+  </div>
+</div>
+
+<button class="js-button" data-sign-up-open>Sign up</button>
+<button class="js-button" data-sign-in-open>Sign in</button>
+<!-- модалка для входа зарегестрированых пользователей -->
+<div class="backdrop backdrop-sign-in is-hidden" data-sign-in>
+  <div class="modal">
+    <button data-sign-in-close>
+      <svg class="trident">
+        <use href="/src/images/icons.svg#icon-x-close"></use>
+      </svg>
+    </button>
+    <form class="js-form form-login">
+      <input type="email" placeholder="email" name="email" />
+      <input type="password" placeholder="password" name="password" />
+      <button class="btn js-sign-in" type="submit">Sign in</button>
+    </form>
+    <div>
+      <button data-sign-up-open data-sign-in-close class="js-button">
+        sign up
+      </button>
+      <button data-sign-in-open data-sign-up-close class="js-button">
+        sign in
+      </button>
+    </div>
+  </div>
+</div>
