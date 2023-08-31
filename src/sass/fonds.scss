@@ -33,13 +33,10 @@
 .common__title{
     display: flex;
     gap: 12px;
+    margin-bottom: 42px;
     align-items: center;
 }
-.fonds__item{
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
+
 .number__list{
 
     color: #FFF;
@@ -54,4 +51,12 @@
 .img__fonds{
     mix-blend-mode: luminosity;
     filter: brightness(0) invert(1);
+}
+.fonds__link{
+    text-decoration: none;
+}
+.item_link{
+    display: flex;
+    gap: 16px;
+    align-items: center;
 }
