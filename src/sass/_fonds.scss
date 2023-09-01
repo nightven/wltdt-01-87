@@ -36,7 +36,7 @@
 .common__title{
     display: flex;
     gap: 12px;
-    // margin-bottom: 42px;
+    margin-bottom: 40px;
     align-items: center;
 }
 
@@ -52,6 +52,7 @@
 }
 
 .img__fonds{
+    max-height: 32px;
     mix-blend-mode: luminosity;
     filter: brightness(0) invert(1);
 }
@@ -69,34 +70,51 @@
 }
 
 .fonds__list{
-    padding: 30px 0px 30px 0px;
+    padding: 0px 0px 62px 0px;
 }
 
 // arrows
 .slick-arrow{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
+    
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     border: none;
-    background-color: none;
+    background-color: white;
+    
     padding: 0;
     cursor: pointer;
-    font-size: 20px;
-    &::before{
-        display: table;
-    }
+    font-size: 0px;
+    // &::before{
+    //     display: table;
+    //     font-size: 20px;
+    // }
 }
 
-// .slick-prev {
-//     top: 0;
-//     &::before{
-//         content: ">>>>>";
-//     }
-// }
-// .slick-next{
-//     bottom: 0;
-//     &::before {
-//             content: "<<<<<";
-//         }
-// }
+.slick-prev {
+    position: absolute;
+    display: none;
+  
+}
+
+.slick-next{
+    position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    width: 38px;
+    height: 38px;   
+    margin-top: 24px;
+    border-radius: 50%;
+    bottom: 0;
+    &::before {
+            content: url(/src/images/fonds/arrow_down.svg);
+                // width: 200px;
+                // height: 200px;
+            
+        }
+}
