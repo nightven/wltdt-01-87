@@ -47,5 +47,3 @@ async function onShowAllBooks(event) {
 
   }
 }
-
-doMarkup();
