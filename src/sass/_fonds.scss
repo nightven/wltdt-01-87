@@ -88,15 +88,15 @@
     }
 }
 
-.slick-prev {
-    top: 0;
-    &::before{
-        content: ">>>>>";
-    }
-}
-.slick-next{
-    bottom: 0;
-    &::before {
-            content: "<<<<<";
-        }
-}
+// .slick-prev {
+//     top: 0;
+//     &::before{
+//         content: ">>>>>";
+//     }
+// }
+// .slick-next{
+//     bottom: 0;
+//     &::before {
+//             content: "<<<<<";
+//         }
+// }
