@@ -1,20 +1,4 @@
 // Reset
-h1,
-h2,
-h3,
-h4,
-h6,
-p {
-    margin: 0;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-
-    list-style: none;
-}
-
 $cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 $grey-text-color: #B4AFAF;
 $letter-spacing: -0.04em;
@@ -194,3 +178,4 @@ $letter-spacing: -0.04em;
 .modal-congrats-text.is-hidden{
     display: none;
 }
+
