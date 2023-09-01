@@ -24,6 +24,9 @@ fondsList.insertAdjacentHTML('beforeend', liElements)
 
 $(".fonds__list").slick({
     slidesToShow: 6,
-    vertical:true
+    vertical: true,
+    swipeToSlide: true,
+  verticalSwiping: true,
+    slidesToScroll: 1,
 });
  
