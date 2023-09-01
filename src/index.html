@@ -11,6 +11,17 @@
 
   <body>
     <include src="./partials/header/header.html"></include>
+    <main>
+      <div class="container">
+        <aside class="aside-wrapper">
+          <include src="./partials/category/category-list.html"></include>
+          <include src="./partials/fonds/fonds.html"></include>
+        </aside>
+        <section class="container-home-page">
+          <include src="./partials/home-page/home-page.html"></include>
+        </section>
+      </div>
+    </main>
 
     <div id="app">
       <div id="authorized" style="display: none">
@@ -19,17 +30,6 @@
       </div>
       <div id="unauthorized">
         <!-- Вміст для неавторизованих користувачів -->
-        <main>
-          <div class="container">
-            <aside class="aside-wrapper">
-              <include src="./partials/category/category-list.html"></include>
-              <include src="./partials/fonds/fonds.html"></include>
-            </aside>
-            <section class="container-home-page">
-              <include src="./partials/home-page/home-page.html"></include>
-            </section>
-          </div>
-        </main>
         <!-- <button id="login">Увійти</button> -->
       </div>
     </div>
