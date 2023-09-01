@@ -27,3 +27,35 @@ $color-gray: rgba(180, 175, 175, 1);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+// Response 
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// Mobile
+@media screen and (min-width: 375px) {
+  .container {
+    min-width: 375px;
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) {
+  .container {
+    min-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+// PC
+@media screen and (min-width: 1440px) {
+  .container {
+    min-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
