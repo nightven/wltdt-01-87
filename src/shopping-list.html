@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <title>Shopping List</title>
 </head>
 <body>
-    
+    <include src="./partials/header/header.html"></include>
+    <main>
+        <aside class="aside-wrapper">
+            <include src="./partials/fonds/fonds.html"></include>
+          </aside>
+          <div class="ul-list"></div>
+    </main>
+    <script type="module" src="./js/template/shopping-list-markup.js"></script>
 </body>
 </html>
