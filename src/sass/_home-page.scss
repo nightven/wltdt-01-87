@@ -1,0 +1,38 @@
+.container-home-page {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.wrapper {
+  margin-bottom: 40px;
+}
+
+.container-books {
+  width: 335px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.js-list-books {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title-book {
+  width: 335px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.js-category-name {
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
