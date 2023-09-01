@@ -1,9 +1,13 @@
 import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
+import { onSubmit, signUp } from './js/auth/auth';
 import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { addMarkupCategoryList } from './js/helpers/helpers';
 import { markupCategoryList, markupAllBooks } from './js/template/markup';
 import refs from './js/refs/refs';
+
+//!submit form register
+refs.fromEl.addEventListener('submit', onSubmit);
 
 //----------------------Category List-----------------------------------------
 

@@ -5,23 +5,34 @@
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
+
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
 
   <body>
     <include src="./partials/header/header.html"></include>
 
-    <main>
-      <div class="container">
-        <aside class="aside-wrapper">
-          <include src="./partials/category/category-list.html"></include>
-          <include src="./partials/fonds/fonds.html"></include>
-        </aside>
-        <section class="container-home-page">
-          <include src="./partials/home-page/home-page.html"></include>
-        </section>
+    <div id="app">
+      <div id="authorized" style="display: none">
+        <!-- Вміст для авторизованих користувачів -->
+        <button id="logout">Вийти</button>
       </div>
-    </main>
+      <div id="unauthorized">
+        <!-- Вміст для неавторизованих користувачів -->
+        <main>
+          <div class="container">
+            <aside class="aside-wrapper">
+              <include src="./partials/category/category-list.html"></include>
+              <include src="./partials/fonds/fonds.html"></include>
+            </aside>
+            <section class="container-home-page">
+              <include src="./partials/home-page/home-page.html"></include>
+            </section>
+          </div>
+        </main>
+        <!-- <button id="login">Увійти</button> -->
+      </div>
+    </div>
 
     <!-- modal authorization -->
     <include src="./partials/modals/auth-modal.html"></include>

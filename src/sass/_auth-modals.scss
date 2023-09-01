@@ -11,9 +11,10 @@
 }
 
 .modal {
+  position: relative;
   margin: 127px auto;
   padding: 80px 40px 40px;
-  width: 579px;
+  max-width: 579px;
   height: 516px;
 
   border-radius: 18px;
@@ -22,11 +23,21 @@
   background: #f6f6f6;
 
   @include font-auth;
-
+  .close-modal-btn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    background-color: transparent;
+    border: none;
+  }
+  .close-modal-svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
   .form-login {
     display: flex;
     flex-direction: column;
-    gap: 28px;
   }
 
   input {
@@ -34,7 +45,6 @@
     width: 499px;
     padding: 20px 173px 20px 40px;
     align-items: center;
-    gap: 10px;
 
     border-radius: 40px;
     border: 2px solid #111;
@@ -44,18 +54,38 @@
       color: #111;
     }
   }
+  label + label {
+    position: relative;
+    margin-top: 28px;
+  }
+  .modal-svg {
+    position: absolute;
+    right: 18px;
+    top: -42px;
+  }
   .btn {
+    margin-top: 40px;
     display: flex;
     width: 499px;
     padding: 20px 173px;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
 
     color: #f3f3f3;
     @include font-auth;
 
     border-radius: 40px;
     background: #111;
+  }
+  .list-auth {
+    margin-top: 18px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-svg-login {
+    width: 50px;
+    height: 50px;
   }
 }
