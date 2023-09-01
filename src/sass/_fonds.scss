@@ -52,6 +52,7 @@
 }
 
 .img__fonds{
+    width: auto;
     max-height: 32px;
     mix-blend-mode: luminosity;
     filter: brightness(0) invert(1);
@@ -67,6 +68,8 @@
 
 .fonds__item{
     margin-bottom: 20px;
+    height: 32px;
+    
 }
 
 .fonds__list{
@@ -98,7 +101,7 @@
 
 .slick-prev {
     position: absolute;
-    display: none;
+    // display: none;
   
 }
 
