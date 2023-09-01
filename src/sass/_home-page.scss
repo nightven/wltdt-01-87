@@ -2,6 +2,8 @@
   max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wrapper {
@@ -27,6 +29,8 @@
   width: 335px;
   font-size: 32px;
   font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
   margin-bottom: 40px;
 }
 
@@ -34,5 +38,41 @@
   color: var(--color-gray);
   font-size: 14px;
   font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
   margin-bottom: 18px;
+}
+
+.js-named-book {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.js-author-book {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.48px;
+  margin-top: 4px;
+}
+
+.marker {
+  color: var(--color-violet);
+}
+
+.img-books {
+  width: 335px;
+  height: 485;
+  border-radius: 8px;
 }
