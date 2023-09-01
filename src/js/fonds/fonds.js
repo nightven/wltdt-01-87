@@ -1,3 +1,6 @@
+import $ from "jquery";
+import "slick-carousel";
+
 import { fonds } from '../api/api-fonds';
 
 const liElements = fonds.map(({ title, url, img }, index) => {
@@ -18,3 +21,9 @@ const fondsList = document.querySelector('.fonds__list');
 
 
 fondsList.insertAdjacentHTML('beforeend', liElements)
+
+$(".fonds__list").slick({
+    slidesToShow: 6,
+    vertical:true
+});
+ 

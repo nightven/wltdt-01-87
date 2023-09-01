@@ -3,4 +3,8 @@ function addMarkupCategoryList(element, markup) {
     element.innerHTML = markup;
 }
 
+
+
+
 export { addMarkupCategoryList }
+
