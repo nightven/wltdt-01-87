@@ -1,3 +1,103 @@
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;   
+    text-align: start;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+    
+        max-width: 768px;
+    }
+}
+@media screen and (min-width: 1440px) {
+        .container {
+           display: flex;
+           max-width: 1440px;
+           margin-left: 40px;
+        }
+    }
+.category{
+    margin-bottom: 40px;
+    margin-left: 40px;
+
+    color: #111;
+    font-family: DM Sans;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.08;    
+    letter-spacing: -1.92px;
+}
+.card-set {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center; 
+    margin-left: auto; 
+    margin-right: auto;
+    gap: 40px;  
+}
+.card-set-item{
+    width: 335px;
+    height: 485px;
+}
+@media screen and (min-width: 768px) {
+    .card-set-item{
+        width: 218px;
+        height: 316px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .card-set-item {
+        width: 180px;
+        height: 256px;
+    }
+}
+.book-img{
+    
+    margin-bottom: 14px;
+}
+@media screen and (min-width: 768px) {
+    .card-set {
+        row-gap: 40px;
+        column-gap: 25px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .card-set {
+        row-gap: 40px;
+        column-gap: 24px;
+    }
+}
+
+.book-title{
+    color: #111;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.13;
+    letter-spacing: -0.64px;
+    max-width: 180px;
+       
+}
+
+.book-author{
+    color: #B4AFAF;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.17;        
+    letter-spacing: -0.48px;
+}
+
+
+=======
 .container-home-page {
   max-width: 375px;
   padding-left: 20px;
@@ -131,3 +231,4 @@
     padding: 0;
   }
 }
+
