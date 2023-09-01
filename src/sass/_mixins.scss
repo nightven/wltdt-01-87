@@ -3,7 +3,58 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 133.333% */
+  // line-height: 24px; /* 133.333% */
   letter-spacing: -0.18px;
   text-transform: uppercase;
+}
+
+@mixin sign-up-btn{
+  margin-top: 40px;
+margin-left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    justify-content: space-between;
+    width: 184px;
+height: 48px;
+flex-shrink: 0;
+
+color: #FFF;
+font-family: DM Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 18px; /* 128.571% */
+letter-spacing: -0.56px;
+
+border-radius: 18px;
+border: 1.5px solid #111;
+background: #4F2EE8;
+}
+
+@mixin mobile-tablet{
+  @media only screen and (max-width: 767px) {
+    @content;    
+  }
+
+
+}
+
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) and (max-width: 1439px) {
+    @content;    
+  }
+}
+
+@mixin tablet-desctop {
+  @media only screen and (min-width: 768px) {
+    @content;    
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
 }
