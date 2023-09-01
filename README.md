@@ -6,3 +6,4 @@
 4. body-scroll-lock https://www.npmjs.com/package/body-scroll-lock
 5. firebaseui https://firebase.google.com/docs/auth/web/firebaseui?hl=ru
 6. slick https://www.npmjs.com/package/slick-slider
+7. jquery https://www.npmjs.com/package/jquery

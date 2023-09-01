@@ -1,5 +1,5 @@
 import * as fonds from './js/fonds/fonds';
-import * as fonds from './js/modals/modals';
+import * as modals from './js/modals/modals';
 import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { addMarkupCategoryList } from './js/helpers/helpers';
 import { markupCategoryList, markupAllBooks } from './js/template/markup';
