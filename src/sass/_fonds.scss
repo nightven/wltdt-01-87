@@ -73,7 +73,7 @@
 }
 
 .fonds__list{
-    padding: 0px 0px 62px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 // arrows
@@ -113,7 +113,7 @@
     height: 38px;   
     margin-top: 24px;
     border-radius: 50%;
-    bottom: 0;
+    bottom: -30px;
     &::before {
             content: url(/src/images/fonds/arrow_down.svg);
                 // width: 200px;
