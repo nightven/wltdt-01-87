@@ -2,8 +2,8 @@ document.addEventListener(
   'DOMContentLoaded',
   function () {
     // виберіть ваше меню тут
-    const modals = ['data-sign-up', 'data-sign-in'];
-
+    const modals = ['data-sign-up', 'data-sign-in', 'data-menu-burger'];
+    
     modals.forEach(element => {
       // дл відкриття модалки на кнопку  додаємо атрибут "your-data-modal"-open
       const openModalSelector = element + '-open';
@@ -15,6 +15,7 @@ document.addEventListener(
         `[${closeModalSelector}]`
       );
       const modal = document.querySelector(`[${element}]`);
+
 
       openModalBtns.forEach(openBtn =>
         openBtn.addEventListener('click', toggleModal)

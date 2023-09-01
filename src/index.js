@@ -1,6 +1,11 @@
 import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
+
+import * as burger from './js/modals/menu-burger';
+
+
 import { onSignIn, onSignUp } from './js/auth/auth';
+
 import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
 import { addMarkupCategoryList } from './js/helpers/helpers';
 import { markupCategoryList, markupAllBooks } from './js/template/markup';
@@ -45,3 +50,6 @@ async function onShowAllBooks(event) {
     console.log(error.message);
   }
 }
+
+
+
