@@ -1,0 +1,133 @@
+.container-home-page {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  margin-bottom: 40px;
+}
+
+.container-books {
+  width: 335px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.js-list-books {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title-book {
+  width: 335px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+  margin-bottom: 40px;
+}
+
+.js-category-name {
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.js-named-book {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.js-author-book {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.48px;
+  margin-top: 4px;
+}
+
+.marker {
+  color: var(--color-violet);
+}
+
+.img-books {
+  width: 335px;
+  height: 485;
+  border-radius: 8px;
+}
+
+.js-btn-books {
+  width: 124px;
+  height: 46px;
+  color: var(--color-black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  border: 2px solid var(--color-violet);
+  margin-left: auto;
+  margin-top: 8px;
+  padding: 14px 28px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.js-btn-books:hover,
+.js-btn-books:focus {
+  cursor: pointer;
+  background-color: var(--color-violet);
+  color: var(--color-white);
+}
+
+.js-item-book {
+  width: 335px;
+  list-style: none;
+  position: relative;
+}
+
+.js-item-book:last-child {
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .container-home-page {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container-home-page {
+    max-width: 1440px;
+    margin: 0;
+    padding: 0;
+  }
+}
