@@ -74,7 +74,7 @@ function emptyShopMarkup() {
 function shopMarkup(arr) {
     const markup = arr.map(({ list_name, book_image, author}) => {
         return `
-        <img src="${book_image}" alt="" width="300" />
+        <img class="shop-book-img" src="${book_image}" alt="" width="300" />
         <h2>${list_name}</h2>
         <p>${author}</p>`;
     }).join('')

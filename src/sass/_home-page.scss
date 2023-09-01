@@ -22,7 +22,7 @@
     margin-bottom: 40px;
     margin-left: 40px;
 
-    color: #111;
+    color: $color-black;
     font-family: DM Sans;
     font-size: 48px;
     font-style: normal;
@@ -75,7 +75,7 @@
 }
 
 .book-title{
-    color: #111;
+    color: $color-black;
     font-family: DM Sans;
     font-size: 16px;
     font-style: normal;
@@ -87,7 +87,7 @@
 }
 
 .book-author{
-    color: #B4AFAF;
+    color: $color-grey;
     font-family: DM Sans;
     font-size: 12px;
     font-style: italic;
@@ -135,7 +135,7 @@
 }
 
 .js-category-name {
-  color: var(--color-gray);
+  color: $color-grey;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
@@ -145,7 +145,7 @@
 }
 
 .js-named-book {
-  color: var(--color-black);
+  color: $color-black;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.13;
@@ -158,7 +158,7 @@
 }
 
 .js-author-book {
-  color: var(--color-gray);
+  color: $color-grey;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -168,7 +168,7 @@
 }
 
 .marker {
-  color: var(--color-violet);
+  color: $color-violet;
 }
 
 .img-books {
@@ -180,13 +180,13 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: var(--color-black);
+  color: $color-black;
 
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 40px;
-  border: 2px solid var(--color-violet);
+  border: 2px solid $color-violet;
   margin-left: auto;
   margin-top: 8px;
   padding: 14px 28px;
@@ -202,8 +202,8 @@
 .js-btn-books:hover,
 .js-btn-books:focus {
   cursor: pointer;
-  background-color: var(--color-violet);
-  color: var(--color-white);
+  background-color: $color-violet;
+  color: $color-white;
 }
 
 .js-item-book {
