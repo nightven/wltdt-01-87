@@ -1,0 +1,179 @@
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir=rtl] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.fonds__common {
+  padding-top: 24px;
+  padding-right: 40px;
+  padding-bottom: 24px;
+  padding-left: 40px;
+  width: 356px;
+  height: 474px;
+  border-radius: 16px;
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+}
+
+.support__Ukraine {
+  color: #FFF;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.96px;
+}
+
+.trident {
+  width: 20px;
+  height: 32px;
+}
+
+.common__title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.number__list {
+  color: #FFF;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+}
+
+.img__fonds {
+  mix-blend-mode: luminosity;
+  filter: brightness(0) invert(1);
+}
+
+.fonds__link {
+  text-decoration: none;
+}
+
+.item_link {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.fonds__item {
+  margin-bottom: 20px;
+}
+
+.fonds__list {
+  padding: 30px 0px 30px 0px;
+}
+
+.slick-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background-color: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.slick-arrow::before {
+  display: table;
+}
+
+.slick-prev {
+  top: 0;
+}
+.slick-prev::before {
+  content: ">>>>>";
+}
+
+.slick-next {
+  bottom: 0;
+}
+.slick-next::before {
+  content: "<<<<<";
+}/*# sourceMappingURL=fonds.css.map */
