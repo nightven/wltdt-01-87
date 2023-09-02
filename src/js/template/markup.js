@@ -32,6 +32,30 @@ function markupAllBooks(arr) {
     .join('');
 }
 
+//------------------ Create markup Top Books ---------------------------------------
+
+function markupList(books) {
+  return books
+    .map(({ book_image, title, author, _id }) => {
+      return `<li class="js-item-book card-set-item" data-id="${_id}">
+            <img src="${book_image}" alt="${title}" data-img-id="${_id}" loading="lazy" class="img-books"/>
+            <h3 class="js-named-book">${title}</h3>
+            <p class="js-author-book">${author}</p>
+        </li>`;
+    })
+    .join('');
+}
+
+function markupBlock(data) {
+  return data
+    .map(({ list_name, books }) => {
+      return `<div class="wrapper"><h2 class="js-category-name">${list_name}</h2>
+        <ul class="js-list-books">${markupList(books)}</ul>
+        <btn class="js-btn-books" data-js="${list_name}">See more</btn></div>`;
+    })
+    .join('');
+}
+
 // -------------------Create modal window---------------------------
 function markupBookModal(bookData) {
   const { book_image, author, description, list_name } = bookData;
@@ -94,4 +118,4 @@ function markupBookModal(bookData) {
   </div>`;
 }
 
-export { markupCategoryList, markupAllBooks, markupBookModal };
+export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal };

@@ -50,7 +50,6 @@ img {
 }
 
 .container {
-  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -67,7 +66,7 @@ img {
     padding-right: 32px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (min-width: 1440px) {
   .container {
     min-width: 1440px;
     padding-left: 24px;
@@ -121,21 +120,12 @@ img {
   left: 0;
   right: 0;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
   .header-container {
     padding: 14px 24px 13px 24px;
-  }
-}
-
-/* Tablet styles $ >*/
-@media only screen and (min-width: 768px) {
-  .header-container {
     min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
   }
 }
-/* Desctop styles 1440px $ >*/
 @media only screen and (min-width: 1440px) {
   .header-container {
     max-width: 1440px;
@@ -143,9 +133,13 @@ img {
     padding-right: 24px;
   }
 }
+
 .logo {
   display: flex;
+  align-items: center;
   gap: 8px;
+  height: 28px;
+  width: 109px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -161,7 +155,7 @@ img {
 .header-theme-authorization {
   display: flex;
   align-items: center;
-  gap: 14px;
+  height: 28px;
   margin-left: auto;
 }
 
@@ -172,17 +166,20 @@ img {
 /* Mobile styles $ >*/
 .header-nav-list {
   display: none;
-  /* display: flex;
-
-    gap: 40px;    */
 }
-
 @media only screen and (min-width: 768px) {
   .header-nav-list {
     display: flex;
     align-items: center;
     gap: 24px;
   }
+}
+
+.menu-toggle {
+  padding: 0;
+  height: 28px;
+  border: none;
+  background-color: transparent;
 }
 @media only screen and (min-width: 768px) {
   .menu-toggle {
@@ -244,6 +241,11 @@ img {
   padding: 8px 12px;
   border-radius: 36px;
 }
+@media only screen and (min-width: 375px) {
+  .button-user {
+    display: none;
+  }
+}
 
 .icon-wrapper {
   display: flex;
@@ -261,6 +263,7 @@ img {
   position: relative;
   width: 40px;
   height: 20px;
+  margin-right: 14px;
 }
 
 /* hide standart checkbox */
@@ -388,7 +391,6 @@ img {
 }
 
 .container {
-  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -405,7 +407,7 @@ img {
     padding-right: 32px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (min-width: 1440px) {
   .container {
     min-width: 1440px;
     padding-left: 24px;
@@ -555,6 +557,194 @@ img {
   color: rgb(79, 46, 232);
 }
 
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  width: 335px;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  border: solid 2px rgb(17, 17, 17);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) and (min-height: 495px) {
+  .modal-container {
+    overflow: hidden;
+  }
+}
+.close-modal-btn {
+  position: fixed;
+  top: 5;
+  right: 5;
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+}
+
+.close-modal-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.modal-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 14px;
+  padding-bottom: 17px;
+}
+
+.modal-book-cover {
+  width: 287px;
+  height: 408px;
+  border-radius: 10px;
+  border: solid 1px rgb(79, 46, 232);
+}
+
+.modal-book-name {
+  font-size: 16px;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.modal-book-author {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.16;
+  color: #B4AFAF;
+}
+
+.modal-book-descr {
+  font-size: 14px;
+  line-height: 1.28;
+  padding-bottom: 20px;
+}
+
+.modal-list-partners {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.modal-item-partners {
+  filter: grayscale(100%);
+}
+
+.modal-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modal-btn {
+  width: 289px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.28;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 50px;
+  border: solid 2px rgb(79, 46, 232);
+}
+
+.modal-congrats-text {
+  width: 238px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #B4AFAF;
+}
+
+.modal-congrats-text.is-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .modal-container {
+    width: 579px;
+    height: 465px;
+  }
+  .close-modal-btn {
+    width: 40px;
+    height: 40px;
+    transition: fill 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .close-modal-btn:hover,
+  .close-modal-btn:focus {
+    fill: rgb(79, 46, 232);
+  }
+  .modal-wrapper {
+    display: flex;
+    gap: 24px;
+    padding: 40px;
+  }
+  .modal-book-cover {
+    width: 192px;
+    height: 281px;
+  }
+  .modal-titles {
+    padding-top: 0;
+  }
+  .modal-book-name {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+  .modal-book-author {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+  .modal-list-partners {
+    transition: filter 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-list-partners:hover,
+  .modal-list-partners:focus {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  }
+  .modal-btn {
+    width: 449px;
+    height: 64px;
+    font-size: 18;
+    line-height: 1.33;
+    transition: background-color 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-btn:hover,
+  .modal-btn:focus {
+    background-color: rgb(79, 46, 232);
+  }
+  .modal-congrats-text {
+    width: 318px;
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
 /* Slider */
 .slick-slider {
   position: relative;
@@ -741,6 +931,194 @@ img {
   content: url(/src/images/fonds/arrow_down.svg);
 }
 
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  width: 335px;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  border: solid 2px rgb(17, 17, 17);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) and (min-height: 495px) {
+  .modal-container {
+    overflow: hidden;
+  }
+}
+.close-modal-btn {
+  position: fixed;
+  top: 5;
+  right: 5;
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+}
+
+.close-modal-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.modal-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 14px;
+  padding-bottom: 17px;
+}
+
+.modal-book-cover {
+  width: 287px;
+  height: 408px;
+  border-radius: 10px;
+  border: solid 1px rgb(79, 46, 232);
+}
+
+.modal-book-name {
+  font-size: 16px;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.modal-book-author {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.16;
+  color: #B4AFAF;
+}
+
+.modal-book-descr {
+  font-size: 14px;
+  line-height: 1.28;
+  padding-bottom: 20px;
+}
+
+.modal-list-partners {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.modal-item-partners {
+  filter: grayscale(100%);
+}
+
+.modal-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modal-btn {
+  width: 289px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.28;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 50px;
+  border: solid 2px rgb(79, 46, 232);
+}
+
+.modal-congrats-text {
+  width: 238px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #B4AFAF;
+}
+
+.modal-congrats-text.is-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .modal-container {
+    width: 579px;
+    height: 465px;
+  }
+  .close-modal-btn {
+    width: 40px;
+    height: 40px;
+    transition: fill 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .close-modal-btn:hover,
+  .close-modal-btn:focus {
+    fill: rgb(79, 46, 232);
+  }
+  .modal-wrapper {
+    display: flex;
+    gap: 24px;
+    padding: 40px;
+  }
+  .modal-book-cover {
+    width: 192px;
+    height: 281px;
+  }
+  .modal-titles {
+    padding-top: 0;
+  }
+  .modal-book-name {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+  .modal-book-author {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+  .modal-list-partners {
+    transition: filter 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-list-partners:hover,
+  .modal-list-partners:focus {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  }
+  .modal-btn {
+    width: 449px;
+    height: 64px;
+    font-size: 18;
+    line-height: 1.33;
+    transition: background-color 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-btn:hover,
+  .modal-btn:focus {
+    background-color: rgb(79, 46, 232);
+  }
+  .modal-congrats-text {
+    width: 318px;
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -1064,157 +1442,4 @@ ul {
     margin: 0;
     padding: 0;
   }
-}
-.modal-backdrop {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  visibility: visible;
-  opacity: 1;
-  pointer-events: initial;
-  transition: opacity 300ms linear, visibility 300ms linear;
-  background-color: rgba(46, 47, 66, 0.4);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-}
-
-.modal-backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition-delay: 300ms;
-}
-
-.modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 335px;
-  max-height: 90vh;
-  overflow: auto;
-  background-color: rgb(255, 255, 255);
-  border: solid 2px rgb(17, 17, 17);
-  border-radius: 20px;
-}
-
-@media screen and (min-width: 768px) and (min-height: 495px) {
-  .modal-container {
-    overflow: hidden;
-  }
-}
-.close-modal-btn {
-  position: fixed;
-  top: 5;
-  right: 5;
-  display: flex;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  border: none;
-  background-color: transparent;
-}
-
-.close-modal-icon {
-  width: 100%;
-  height: 100%;
-}
-
-.modal-wrapper {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 24px;
-  padding-right: 24px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-}
-
-.modal-titles {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding-top: 14px;
-  padding-bottom: 17px;
-}
-
-.modal-book-cover {
-  width: 287px;
-  height: 408px;
-  border-radius: 10px;
-  border: solid 1px rgb(79, 46, 232);
-}
-
-.modal-book-name {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.12;
-  text-transform: uppercase;
-}
-
-.modal-book-author {
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.16;
-  color: #B4AFAF;
-}
-
-.modal-book-descr {
-  font-size: 14px;
-  line-height: 1.28;
-  padding-bottom: 20px;
-}
-
-.modal-list-partners {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 40px;
-}
-
-.modal-item-partners {
-  filter: grayscale(100%);
-}
-
-.modal-btn-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding-bottom: 40px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.modal-btn {
-  width: 289px;
-  height: 46px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.28;
-  text-transform: uppercase;
-  background-color: transparent;
-  border-radius: 50px;
-  border: solid 2px rgb(79, 46, 232);
-}
-
-.modal-congrats-text {
-  width: 238px;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-  text-align: center;
-  color: #B4AFAF;
-}
-
-.modal-congrats-text.is-hidden {
-  display: none;
 }/*# sourceMappingURL=index.css.map */

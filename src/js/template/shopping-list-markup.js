@@ -57,19 +57,14 @@ const book = {
     "__v": 0
 }
 
+const shopListEl = document.querySelector('.shopping-list');
+const emptyBinEL = document.querySelector('.empty-bin-wrapper');
 
 
-const ulListEl = document.querySelector('.ul-list');
-
-const BOOK_KEY = 'book';
+const BOOK_KEY = 'book-el';
 const localStorageData = getDataFromLocalStorage();
-localStorageData.push(book);
-const newData = saveDataToLocalStorage(BOOK_KEY, localStorageData);
-
-function emptyShopMarkup() {
-    const markup = `<h1>empty books</h1>`;
-    return ulListEl.innerHTML = markup;
-}
+// localStorageData.push(book);
+// const newData = saveDataToLocalStorage(BOOK_KEY, localStorageData);
 
 function shopMarkup(arr) {
     const markup = arr.map(({ list_name, book_image, author}) => {
@@ -78,16 +73,16 @@ function shopMarkup(arr) {
         <h2>${list_name}</h2>
         <p>${author}</p>`;
     }).join('')
-    return ulListEl.innerHTML = markup;
+    return shopListEl.innerHTML = markup;
 }
 
 function doMarkup() {
-    console.log('2');
     const localStorageData = getDataFromLocalStorage(BOOK_KEY);
     if(localStorageData.length === 0) {
-        emptyShopMarkup()
+        emptyBinEL.classList.remove('visually-hidden');
     } else {
-        shopMarkup(localStorageData);
+        emptyBinEL.classList.add('visually-hidden');
+        shopMarkup();
     }
 }
 

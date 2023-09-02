@@ -1,3 +1,119 @@
-.ul-list {
-    width: 300px;
+// Common Setting For Shopping-List-HTML
+body {
+    font-family: DM Sans;
+    font-style: normal;
+    color: $color-black;
+}
+
+//Responsive & Mobile Shopping-List-Section
+.shopping-list-section {
+    padding-top: 104px;
+}
+
+// PC Shoping-List-Wrapper
+@media screen and (min-width: 1440px) {
+    .shopping-list-wrapper {
+        display: flex;
+    }
+}
+
+// Responsive & Mobile Shopping-List-Fonds
+.shopping-list-fonds {
+    display: none;
+}
+
+// PC Shopping-List-Fonds
+@media screen and (min-width: 1440px) {
+    .shopping-list-fonds {
+        display: block;
+    }
+}
+
+// Responsive & Mobile Shoping-List-Title
+.shopping-list-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -1.28px;
+    color: inherit;
+}
+
+// Tablet Shoping-List-Title
+@media screen and (min-width: 768px) {
+    .shopping-list-title {
+        font-size: 48px;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+    }
+}
+
+// PC Shoping-List-Title
+@media screen and (min-width: 1440px) {
+    .shopping-list-title {
+        margin-left: 40px;
+    }
+}
+
+// Shoping "List" Word Color
+.shopping-list-word {
+    color: $color-violet;
+}
+
+// Responsive & Mobile Empty-Bin-Wrapper
+.empty-bin-wrapper {
+    margin-top: 120px;
+}
+
+// Tablet Empty-Bin-Wrapper
+@media screen and (min-width: 768px) {
+    .empty-bin-wrapper {
+        margin-top: 140px;
+    }
+}
+
+// PC Empty-Bin-Wrapper
+@media screen and (min-width: 1440px) {
+    .empty-bin-wrapper {
+        margin-top: 140px;
+        margin-left: 23px;
+    }
+}
+
+// Responsive & Mobile Empty-Bin-Desc
+.empty-bin-desc {
+    display: block;
+    max-width: 244px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.28px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    color: $rgba-1;
+}
+
+// Tablet Empty-Bin-Desc
+@media screen and (min-width: 768px) {
+    .empty-bin-desc {
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
+        margin-bottom: 20px;
+    }
+}
+
+// Responsive & Mobile Empty-Img-Wrapper
+.empty-img-wrapper {
+    width: 265px;
+    height: 198px;
+    margin: 0 auto;
+}
+
+// Tablet Empty-Img-Wrapper
+@media screen and (min-width: 768px) {
+    .empty-img-wrapper {
+        width: 322px;
+        height: 241px;
+    }
 }
