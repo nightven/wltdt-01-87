@@ -1,6 +1,6 @@
 import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
-
+import * as bookModal from './js/modals/book-modal';
 import * as burger from './js/modals/menu-burger';
 
 import { onSignIn, onSignUp } from './js/auth/auth';
@@ -53,6 +53,7 @@ async function onShowAllBooks(event) {
   }
 }
 
+
 //---------------------------Top Books Of Category 2 ver---------------------------------------
 const categoriesRendered = {};
 const topBooks = async () => {
@@ -77,3 +78,4 @@ const topBooks = async () => {
 };
 
 topBooks();
+
