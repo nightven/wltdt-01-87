@@ -57,9 +57,9 @@ function markupBlock(data) {
 }
 
 // -------------------Create modal window---------------------------
-function markupModal(bookData) {
+function markupBookModal(bookData) {
   const { book_image, author, description, list_name } = bookData;
-  return `<div class="modal-container container">
+  return `<div class="modal-container">
     <button class="close-modal-btn" type="button">
       <svg class="close-modal-icon">
         <use href="${crossSvg}#icon-x-close"></use>
@@ -118,4 +118,4 @@ function markupModal(bookData) {
   </div>`;
 }
 
-export { markupCategoryList, markupAllBooks, markupBlock, markupModal };
+export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal };

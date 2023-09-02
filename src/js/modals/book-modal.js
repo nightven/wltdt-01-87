@@ -1,18 +1,17 @@
 import { fetchBookData } from '../api/api-books';
-import { markupModal } from '../template/markup';
+import { markupBookModal } from '../template/markup';
+import refs from '../refs/refs';
 
 import * as basicLightbox from 'basiclightbox';
 
-const refs = {
-  listEl: document.querySelector('.book-list'),
-};
+const { listBookModalEl } = refs;
 
 let currentInstance = null;
 
-refs.listEl.addEventListener('click', clickBookHandler);
+listBookModalEl.addEventListener('click', clickBookModalHandler);
 document.addEventListener('keydown', closeModalByEscape);
 
-async function clickBookHandler(event) {
+async function clickBookModalHandler(event) {
   const cardBookEl = event.target.closest('.card-set-item');
 
   if (!cardBookEl) {
@@ -26,18 +25,30 @@ async function clickBookHandler(event) {
 }
 
 function showBookModal(bookData) {
-  currentInstance = basicLightbox.create(markupModal(bookData));
+  currentInstance = basicLightbox.create(markupBookModal(bookData), {
+    onShow: instance => {
+      addOverflowHidden();
+      instance.element().querySelector('.close-modal-btn').onclick =
+        instance.close;
+    },
+    onClose: () => {
+      removeOverflowHidden();
+    },
+  });
   currentInstance.show();
-
-  const modalEl = currentInstance.element();
-
-  modalEl.querySelector('.close-modal-btn').onclick = currentInstance.close;
-
-  document.body.style.overflow = 'hidden';
 }
 
 function closeModalByEscape(event) {
   if (event.code === 'Escape') {
     currentInstance.close();
   }
+}
+function addOverflowHidden() {
+  document.body.classList.add('no-scroll');
+  document.querySelector('.container.section').classList.add('no-scroll');
+}
+
+function removeOverflowHidden() {
+  document.body.classList.remove('no-scroll');
+  document.querySelector('.container.section').classList.remove('no-scroll');
 }

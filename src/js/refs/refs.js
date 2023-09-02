@@ -12,4 +12,7 @@ export default {
   unauthorizedDiv: document.getElementById('unauthorized'),
   logoutButton: document.getElementById('logout'),
   loginButton: document.getElementById('login'),
+
+  //book modal
+  listBookModalEl: document.querySelector('.book-list'),
 };
