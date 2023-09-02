@@ -25,6 +25,7 @@
     "firebaseui": "^6.1.0",
     "jquery": "^3.7.1",
     "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
     "slick-carousel": "^1.8.1",
     "tui-pagination": "^3.4.1"
   },
@@ -33,7 +34,8 @@
     "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }

@@ -1,28 +1,43 @@
+@import './common';
+
 .backdrop {
-  background: #4f2ee8;
+  background: $color-violet;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 30;
 }
-.backdrop-sign-in {
-  background: #111;
-}
+// .backdrop-sign-in {
+//   background: #111;
+// }
 
 .modal {
+  position: relative;
   margin: 127px auto;
   padding: 80px 40px 40px;
-  width: 579px;
-  height: 516px;
+  max-width: 579px;
+  height: 572px;
 
   border-radius: 18px;
-  border: 2px solid #111;
-  color: rgba(17, 17, 17, 0.5);
-  background: #f6f6f6;
-
+  border: 2px solid $color-black;
+  color: $color-black-alfa;
+  background: $color-white-warm;
   @include font-auth;
-
+  .close-modal-btn {
+    position: absolute;
+    cursor: pointer;
+    right: 18px;
+    top: 18px;
+    background-color: transparent;
+    border: none;
+  }
+  .close-modal-svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
   .form-login {
     display: flex;
     flex-direction: column;
@@ -34,28 +49,79 @@
     width: 499px;
     padding: 20px 173px 20px 40px;
     align-items: center;
-    gap: 10px;
 
     border-radius: 40px;
-    border: 2px solid #111;
+    border: 2px solid $color-black;
 
     &:placeholder-shown {
       @include font-auth;
-      color: #111;
+      color: $color-black;
     }
   }
+  label {
+    position: relative;
+    // margin-top: 28px;
+  }
+  .modal-svg {
+    position: absolute;
+    right: 18px;
+    top: -42px;
+  }
   .btn {
+    cursor: pointer;
+    margin-top: 12px;
     display: flex;
     width: 499px;
     padding: 20px 173px;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
 
-    color: #f3f3f3;
+    color: $color-white;
     @include font-auth;
 
     border-radius: 40px;
-    background: #111;
+    background: $color-black;
+  }
+  .list-auth {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .modal-svg-login {
+    width: 50px;
+    height: 50px;
+  }
+}
+.modal-sign-in {
+  height: 478px;
+}
+
+.wrapper-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  button {
+    color: $color-black-alfa;
+    @include font-auth;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0.8;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $color-violet;
+      color: $color-violet;
+    }
+
+    .active {
+      color: $color-violet;
+    }
   }
 }

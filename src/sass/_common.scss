@@ -1,13 +1,5 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-@import './reset.scss';
-
-// colors
-$color-black: rgba(17, 17, 17, 1);
-$color-black-1: rgba(32, 32, 36, 1);
-$color-violet: rgba(79, 46, 232, 1);
-$color-yellow: rgba(234, 198, 69, 1);
-$color-white: rgba(255, 255, 255, 1);
-$color-gray: rgba(180, 175, 175, 1);
+@import './mixins';
 
 $breakpoint_desktop: 1440px;
 $breakpoint_laptop: 768px;
@@ -30,4 +22,25 @@ $breakpoint_mobile: 375px;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+// Response
+.container {
+  // width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  @include mobile {
+    min-width: 375px;
+  }
+  @include tablet {
+    min-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @include desktop {
+    min-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }

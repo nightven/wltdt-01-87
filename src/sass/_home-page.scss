@@ -1,102 +1,99 @@
-.container{
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;   
-    text-align: start;
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: start;
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-    
-        max-width: 768px;
-    }
+  .container {
+    max-width: 768px;
+  }
 }
 @media screen and (min-width: 1440px) {
-        .container {
-           display: flex;
-           max-width: 1440px;
-           margin-left: 40px;
-        }
-    }
-.category{
-    margin-bottom: 40px;
-    margin-left: 40px;
+  .container {
+    display: flex;
+    max-width: 1440px;
+  }
+}
+.section {
+  padding-top: 77px;
+}
+.category {
+  margin-bottom: 40px;
+  margin-left: 40px;
 
-    color: #111;
-    font-family: DM Sans;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.08;    
-    letter-spacing: -1.92px;
+  color: $color-black;
+  font-family: DM Sans;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.92px;
 }
 .card-set {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center; 
-    margin-left: auto; 
-    margin-right: auto;
-    gap: 40px;  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 40px;
 }
-.card-set-item{
-    width: 335px;
-    height: 485px;
+.card-set-item {
+  width: 335px;
+  height: 485px;
 }
 @media screen and (min-width: 768px) {
-    .card-set-item{
-        width: 218px;
-        height: 316px;
-    }
+  .card-set-item {
+    width: 218px;
+    height: 316px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .card-set-item {
-        width: 180px;
-        height: 256px;
-    }
+  .card-set-item {
+    width: 180px;
+    height: 256px;
+  }
 }
-.book-img{
-    
-    margin-bottom: 14px;
+.book-img {
+  margin-bottom: 14px;
 }
 @media screen and (min-width: 768px) {
-    .card-set {
-        row-gap: 40px;
-        column-gap: 25px;
-    }
+  .card-set {
+    row-gap: 40px;
+    column-gap: 25px;
+  }
 }
 @media screen and (min-width: 1440px) {
-    .card-set {
-        row-gap: 40px;
-        column-gap: 24px;
-    }
+  .card-set {
+    row-gap: 40px;
+    column-gap: 24px;
+  }
 }
 
-.book-title{
-    color: #111;
-    font-family: DM Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.13;
-    letter-spacing: -0.64px;
-    max-width: 180px;
-       
+.book-title {
+  color: $color-black;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.64px;
+  max-width: 180px;
 }
 
-.book-author{
-    color: #B4AFAF;
-    font-family: DM Sans;
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.17;        
-    letter-spacing: -0.48px;
+.book-author {
+  color: $color-grey;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.48px;
 }
-
-
 
 .container-home-page {
   max-width: 375px;
@@ -135,7 +132,7 @@
 }
 
 .js-category-name {
-  color: var(--color-gray);
+  color: $color-grey;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
@@ -145,7 +142,7 @@
 }
 
 .js-named-book {
-  color: var(--color-black);
+  color: $color-black;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.13;
@@ -158,7 +155,7 @@
 }
 
 .js-author-book {
-  color: var(--color-gray);
+  color: $color-grey;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -168,7 +165,7 @@
 }
 
 .marker {
-  color: var(--color-violet);
+  color: $color-violet;
 }
 
 .img-books {
@@ -180,13 +177,13 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: var(--color-black);
+  color: $color-black;
 
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 40px;
-  border: 2px solid var(--color-violet);
+  border: 2px solid $color-violet;
   margin-left: auto;
   margin-top: 8px;
   padding: 14px 28px;
@@ -202,8 +199,8 @@
 .js-btn-books:hover,
 .js-btn-books:focus {
   cursor: pointer;
-  background-color: var(--color-violet);
-  color: var(--color-white);
+  background-color: $color-violet;
+  color: $color-white;
 }
 
 .js-item-book {
@@ -231,4 +228,3 @@
     padding: 0;
   }
 }
-

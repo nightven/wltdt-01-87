@@ -1,10 +1,15 @@
+@import './reset';
 @import './common';
+@import './variables';
 @import './fonts';
 @import './mixins';
 @import './header';
+@import './shopping-list';
+@import './menu-burger';
 @import './auth-modals';
 @import './fonds.scss';
-@import './category-list.scss';
-@import './home-page.scss';
 @import './book-modal';
+@import './category-list';
+@import './home-page';
+@import './modal';
 

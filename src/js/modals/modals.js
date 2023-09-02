@@ -2,8 +2,8 @@ document.addEventListener(
   'DOMContentLoaded',
   function () {
     // виберіть ваше меню тут
-    const modals = ['data-sign-up', 'data-sign-in'];
-
+    const modals = ['data-sign-up', 'data-sign-in', 'data-menu-burger'];
+    
     modals.forEach(element => {
       // дл відкриття модалки на кнопку  додаємо атрибут "your-data-modal"-open
       const openModalSelector = element + '-open';
@@ -15,17 +15,7 @@ document.addEventListener(
         `[${closeModalSelector}]`
       );
       const modal = document.querySelector(`[${element}]`);
-      if (!modal) logModalError('Can`t find Modal with attribute ' + modal);
-      if (openModalBtns.length === 0)
-        logModalError(
-          'Can`t find Open modal button with attribute ' + openModalSelector
-        );
-      if (closeModalBtns.length === 0)
-        logModalError(
-          'Can`t find Close modal button with attribute ' + closeModalSelector
-        );
-      if (!modal || openModalBtns.length === 0 || closeModalBtns.length === 0)
-        return;
+
 
       openModalBtns.forEach(openBtn =>
         openBtn.addEventListener('click', toggleModal)

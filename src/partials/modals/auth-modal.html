@@ -1,18 +1,53 @@
 <!-- модалка для регистрации пользователя -->
 <div class="backdrop is-hidden" data-sign-up>
   <div class="modal">
-    <button data-sign-up-close>
-      <svg class="trident">
+    <button class="close-modal-btn" data-sign-up-close>
+      <svg class="close-modal-svg">
         <use href="/src/images/icons.svg#icon-x-close"></use>
       </svg>
     </button>
     <form class="js-form form-login">
-      <input type="text" placeholder="name" name="login" />
-      <input type="email" placeholder="email" name="email" />
-      <input type="password" placeholder="password" name="password" />
+      <label>
+        <input type="text" placeholder="name" name="login" />
+      </label>
+      <label>
+        <input type="email" placeholder="email" name="email" />
+        <svg class="modal-svg" width="28" heigth="28">
+          <use href="/src/images/icons.svg#icon-mail"></use>
+        </svg>
+      </label>
+      <label>
+        <input type="password" placeholder="password" name="password" />
+        <svg class="modal-svg" width="28" heigth="28">
+          <use href="/src/images/icons.svg#icon-lock"></use>
+        </svg>
+      </label>
       <button class="btn" type="submit">Sign up</button>
     </form>
-    <div>
+    <ul class="list-auth">
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-google"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-github"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-icloud"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div class="wrapper-button">
       <button data-sign-up-open data-sign-in-close class="js-button">
         sign up
       </button>
@@ -24,18 +59,51 @@
 </div>
 <!-- модалка для входа зарегестрированых пользователей -->
 <div class="backdrop backdrop-sign-in is-hidden" data-sign-in>
-  <div class="modal">
-    <button data-sign-in-close>
-      <svg class="trident">
+  <div class="modal modal-sign-in">
+    <button class="close-modal-btn" data-sign-in-close>
+      <svg class="close-modal-svg">
         <use href="/src/images/icons.svg#icon-x-close"></use>
       </svg>
     </button>
-    <form class="js-form form-login">
-      <input type="email" placeholder="email" name="email" />
-      <input type="password" placeholder="password" name="password" />
+    <form class="js-sign-in form-login">
+      <label>
+        <input type="email" placeholder="email" name="email" />
+        <svg class="modal-svg" width="28" heigth="28">
+          <use href="/src/images/icons.svg#icon-mail"></use>
+        </svg>
+      </label>
+      <label>
+        <input type="password" placeholder="password" name="password" />
+        <svg class="modal-svg" width="28" heigth="28">
+          <use href="/src/images/icons.svg#icon-lock"></use>
+        </svg>
+      </label>
       <button class="btn js-sign-in" type="submit">Sign in</button>
     </form>
-    <div>
+    <ul class="list-auth">
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-google"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-github"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <svg class="modal-svg-login">
+            <use href="/src/images/icons.svg#icon-icloud"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div class="wrapper-button">
       <button data-sign-up-open data-sign-in-close class="js-button">
         sign up
       </button>
