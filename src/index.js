@@ -9,7 +9,7 @@ import {
   fetchAllBooks,
   fetchTopBooks,
 } from './js/api/api-categories';
-import { addMarkupCategoryList, addMarkupTopBooks } from './js/helpers/helpers';
+import { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, splitTitle } from './js/helpers/helpers';
 import {
   markupCategoryList,
   markupAllBooks,
@@ -46,7 +46,8 @@ async function onShowAllBooks(event) {
 
   nameOfCategory = event.target.textContent;
 
-  refs.categoryNameEl.textContent = nameOfCategory;
+  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
+  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
 
   try {
     const resp = await fetchAllBooks(nameOfCategory);
@@ -74,4 +75,26 @@ const topBooks = async () => {
 };
 
 topBooks();
+
+//-----------------------------See More Books-------------------------------------------------------
+refs.listAllBooksEl.addEventListener("click", onShowMoreBooks);
+
+async function onShowMoreBooks(event) {
+  event.preventDefault();
+
+  if (!event.target.classList.contains('js-btn-books')) return;
+
+  nameOfCategory = event.target.dataset.js;
+
+  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
+  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+
+  try {
+    const resp = await fetchAllBooks(nameOfCategory);
+
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 

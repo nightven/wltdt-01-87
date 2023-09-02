@@ -6,6 +6,8 @@ export default {
   listCategoryEl: document.querySelector('.js-category'),
   listAllBooksEl: document.querySelector('.js-books'),
   categoryNameEl: document.querySelector('.category'),
+  spanColorEl : document.querySelector('.color-title'),
+  spanNormalEl : document.querySelector('.normal-title'),
 
   //authorizetion
   authorizedDiv: document.getElementById('authorized'),
