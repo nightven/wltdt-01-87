@@ -4,7 +4,12 @@
 .header-container {
   display: flex;
   align-items: center;
-  padding: 18px 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+
+  // .container
+  //   padding-left: 20px;
+  // padding-right: 20px;
 
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $color-black;
@@ -16,15 +21,17 @@
   left: 0;
   right: 0;
   @include tablet {
-    padding: 14px 24px 13px 24px;
+    padding-top: 14px;
+    padding-bottom: 13px;
     min-width: 768px;
     // padding-left: 32px;
     // padding-right: 32px;
   }
   @include desktop {
     max-width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
+  }
+  @include tablet-desktop {
+    height: 72px;
   }
 }
 
@@ -34,6 +41,10 @@
   gap: 8px;
   height: 28px;
   width: 109px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .header-nav-list {
@@ -67,6 +78,21 @@
     align-items: center;
     gap: 24px;
   }
+}
+
+.header-nav-list-item {
+  display: flex;
+  gap: 4px;
+}
+.current {
+  display: flex;
+  padding: 8px 16px;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-weight: 700;
+  border-radius: 36px;
+  background: #eac645;
 }
 
 .menu-toggle {
