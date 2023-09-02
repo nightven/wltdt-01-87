@@ -10,7 +10,11 @@ import {
   fetchTopBooks,
 } from './js/api/api-categories';
 import { addMarkupCategoryList, addMarkupTopBooks } from './js/helpers/helpers';
-import { markupCategoryList, markupAllBooks } from './js/template/markup';
+import {
+  markupCategoryList,
+  markupAllBooks,
+  markupBlock,
+} from './js/template/markup';
 import refs from './js/refs/refs';
 
 //!submit form register
@@ -54,24 +58,16 @@ async function onShowAllBooks(event) {
 }
 
 
-//---------------------------Top Books Of Category 2 ver---------------------------------------
-const categoriesRendered = {};
+//---------------------------Top Books Of Category 3 ver---------------------------------------
+
+
 const topBooks = async () => {
   try {
     const resp = await fetchTopBooks();
-    for (const item of resp.data) {
-      if (!categoriesRendered[item.list_name]) {
-        refs.listAllBooksEl.insertAdjacentHTML(
-          'beforeend',
-          `<h2>${item.list_name}</h2>`
-        );
 
-        categoriesRendered[item.list_name] = true;
-      }
+    refs.listAllBooksEl.innerHTML = '';
 
-      const rowMarkup = markupAllBooks(item.books);
-      refs.listAllBooksEl.insertAdjacentHTML('beforeend', rowMarkup);
-    }
+    refs.listAllBooksEl.insertAdjacentHTML('beforeend', markupBlock(resp.data));
   } catch (error) {
     console.log(error.message);
   }
