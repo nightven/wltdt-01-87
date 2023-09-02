@@ -1,3 +1,55 @@
-.ul-list {
-    width: 300px;
+// Common Setting For Shopping-List-HTML
+body {
+    font-family: DM Sans;
+    font-style: normal;
+    color: $color-black;
+}
+
+// Responsive & Mobile Shopping-List-Fonds
+.shopping-list-fonds {
+    display: none;
+}
+
+//Responsive & Mobile Shopping-List-Wrapper
+.shopping-list-section {
+    padding-top: 104px;
+}
+
+// Responsive & Mobile Shoping-List-Title
+.shopping-list-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -1.28px;
+    color: inherit;
+}
+
+// Shoping "List" Word Color
+.shopping-list-word {
+    color: $color-violet;
+}
+
+// Responsive & Mobile Empty-Bin-Wrapper
+.empty-bin-wrapper {
+    margin-top: 120px;
+}
+
+// Responsive & Mobile Empty-Bin-Desc
+.empty-bin-desc {
+    display: block;
+    max-width: 244px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.28px;
+    text-align: center;
+    margin: 0 auto;
+    color: $rgba-1;
+}
+
+// Responsive & Mobile Empty-Img-Wrapper
+.empty-img-wrapper {
+    width: 265px;
+    height: 198px;
+    margin: 0 auto;
 }
