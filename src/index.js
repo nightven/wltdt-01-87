@@ -1,13 +1,15 @@
 import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
-
+import * as bookModal from './js/modals/book-modal';
 import * as burger from './js/modals/menu-burger';
 
-
 import { onSignIn, onSignUp } from './js/auth/auth';
-
-import { fetchCategoryList, fetchAllBooks } from './js/api/api-categories';
-import { addMarkupCategoryList } from './js/helpers/helpers';
+import {
+  fetchCategoryList,
+  fetchAllBooks,
+  fetchTopBooks,
+} from './js/api/api-categories';
+import { addMarkupCategoryList, addMarkupTopBooks } from './js/helpers/helpers';
 import { markupCategoryList, markupAllBooks } from './js/template/markup';
 import refs from './js/refs/refs';
 
@@ -49,10 +51,31 @@ async function onShowAllBooks(event) {
   } catch (error) {
     console.log(error.message);
   }
-
 }
 
 
+//---------------------------Top Books Of Category 2 ver---------------------------------------
+const categoriesRendered = {};
+const topBooks = async () => {
+  try {
+    const resp = await fetchTopBooks();
+    for (const item of resp.data) {
+      if (!categoriesRendered[item.list_name]) {
+        refs.listAllBooksEl.insertAdjacentHTML(
+          'beforeend',
+          `<h2>${item.list_name}</h2>`
+        );
 
+        categoriesRendered[item.list_name] = true;
+      }
 
+      const rowMarkup = markupAllBooks(item.books);
+      refs.listAllBooksEl.insertAdjacentHTML('beforeend', rowMarkup);
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+topBooks();
 
