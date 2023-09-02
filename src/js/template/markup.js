@@ -22,11 +22,19 @@ function markupAllBooks(arr) {
       ({ _id, title, author, book_image }) =>
         `
       <li class="card-set-item" data-id="${_id}">      
-      <a href="#" >
-      <img src="${book_image}" width="180px" height="226px" class="book-img"/>
-      <h3 class="book-title">${title}</h3>
-      <p class="book-author">${author}</p>
-      </a></li>
+        <a href="#" >
+        <div class="book-overlay-container>
+          <img class="book-img" src="${book_image}" width="180px" height="226px" />
+          <div class="book-overlay">
+            <p class="book-overlay-text">QUICK VIEW</p>
+          </div>
+        </div>
+          <div>
+            <h3 class="book-title">${title}</h3>
+            <p class="book-author">${author}</p>
+          </div>
+        </a>
+      </li>
     `
     )
     .join('');
