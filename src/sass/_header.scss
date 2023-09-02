@@ -15,29 +15,25 @@
   top: 0;
   left: 0;
   right: 0;
-  @include tablet-desktop {
+  @include tablet {
     padding: 14px 24px 13px 24px;
-  }
-}
-/* Tablet styles $ >*/
-@media only screen and (min-width: 768px) {
-  .header-container {
     min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    // padding-left: 32px;
+    // padding-right: 32px;
   }
-}
-/* Desctop styles 1440px $ >*/
-@media only screen and (min-width: 1440px) {
-  .header-container {
+  @include desktop {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
   }
 }
+
 .logo {
   display: flex;
+  align-items: center;
   gap: 8px;
+  height: 28px;
+  width: 109px;
 }
 @media only screen and (min-width: 768px) {
   .header-nav-list {
@@ -52,8 +48,8 @@
 .header-theme-authorization {
   display: flex;
   align-items: center;
-  gap: 14px;
-
+  // gap: 14px;
+  height: 28px;
   margin-left: auto;
 }
 .header-nav {
@@ -65,13 +61,8 @@
 /* Mobile styles $ >*/
 .header-nav-list {
   display: none;
-  /* display: flex;
-    
-    gap: 40px;    */
-}
 
-@media only screen and (min-width: 768px) {
-  .header-nav-list {
+  @include tablet-desktop {
     display: flex;
     align-items: center;
     gap: 24px;
@@ -79,6 +70,11 @@
 }
 
 .menu-toggle {
+  padding: 0;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+
   @include tablet-desktop {
     display: none;
   }
@@ -100,6 +96,9 @@
   margin: 0;
   padding: 8px 12px;
   border-radius: 36px;
+  @include mobile {
+    display: none;
+  }
 }
 .icon-wrapper {
   display: flex;
@@ -118,6 +117,7 @@
   position: relative;
   width: 40px;
   height: 20px;
+  margin-right: 14px;
 }
 
 /* hide standart checkbox */

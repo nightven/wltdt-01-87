@@ -20,24 +20,23 @@
   overflow: hidden;
 }
 
-// Response 
+// Response
 .container {
-  width: 100%;
+  // width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  @include mobile{
+  @include mobile {
     min-width: 375px;
   }
-  @include tablet{
+  @include tablet {
     min-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
-  @include tablet{
+  @include desktop {
     min-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
   }
 }
-
