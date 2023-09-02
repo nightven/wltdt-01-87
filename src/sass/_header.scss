@@ -15,7 +15,7 @@
   top: 0;
   left: 0;
   right: 0;
-  @include tablet-desctop {
+  @include tablet-desktop {
     padding: 14px 24px 13px 24px;
   }
 }
@@ -79,7 +79,7 @@
 }
 
 .menu-toggle {
-  @include tablet-desctop {
+  @include tablet-desktop {
     display: none;
   }
 }
@@ -89,7 +89,7 @@
     display: none;
   }
 
-  @include tablet-desctop {
+  @include tablet-desktop {
     @include sign-up-btn;
     margin: 0;
   }

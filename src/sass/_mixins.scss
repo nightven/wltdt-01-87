@@ -32,12 +32,16 @@ border: 1.5px solid $color-black;
 background: $color-violet;
 }
 
-@mixin mobile-tablet{
-  @media only screen and (max-width: 767px) {
+@mixin mobile{
+  @media only screen and (min-width: 375px) {
     @content;    
   }
+}
 
-
+@mixin mobile-tablet{
+  @media only screen and (min-width: 375px) and (max-width: 767px) {
+    @content;    
+  }
 }
 
 
@@ -47,7 +51,7 @@ background: $color-violet;
   }
 }
 
-@mixin tablet-desctop {
+@mixin tablet-desktop {
   @media only screen and (min-width: 768px) {
     @content;    
   }
