@@ -7,3 +7,15 @@
   letter-spacing: -0.18px;
   text-transform: uppercase;
 }
+
+@mixin desktop() {
+  @media (min-width: $breakpoint_desktop) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media (min-width: $breakpoint_laptop) {
+    @content;
+  }
+}
