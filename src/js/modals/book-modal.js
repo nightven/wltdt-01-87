@@ -95,10 +95,8 @@ function closeModalByEscape(event) {
 
 function addOverflowHidden() {
   document.body.classList.add('no-scroll');
-  document.querySelector('.container.section').classList.add('no-scroll');
 }
 
 function removeOverflowHidden() {
   document.body.classList.remove('no-scroll');
-  document.querySelector('.container.section').classList.remove('no-scroll');
 }
