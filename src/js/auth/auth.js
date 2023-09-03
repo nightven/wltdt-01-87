@@ -14,6 +14,7 @@ const {
   modal,
   logoutButton,
   nameUserEl,
+  authButton,
 } = refs;
 let signUpUser = {};
 const AUTH_KEY = 'loginUser';
@@ -78,6 +79,7 @@ function signIn(email, password) {
 
       modal.classList.toggle('is-hidden');
       Notify.success('Success');
+      // logoutButton.style.transform = "translateX(-500px)";
     })
     .catch(error => {
       const errorCode = error.code;
@@ -117,4 +119,9 @@ function userIf(auth) {
 }
 userIf(authUserLocal);
 
+// Поява кнопки для виходу
+authButton.addEventListener('click', onClickAuthButton);
+function onClickAuthButton() {
+  logoutButton.style.transform = 'translateX(0px)';
+}
 export { onSignIn, onSignUp };
