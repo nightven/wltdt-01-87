@@ -10,10 +10,21 @@
 <body>
     <include src="./partials/header/header.html"></include>
     <main>
-        <aside class="aside-wrapper">
-            <include src="./partials/fonds/fonds.html"></include>
-          </aside>
-          <div class="ul-list"></div>
+        <section class="shopping-list-section">
+            <div class="container shopping-list-wrapper">
+                <aside class="aside-wrapper shopping-list-fonds">
+                    <include src="./partials/fonds/fonds.html"></include>
+                </aside>
+                <h1 class="shopping-list-title">Shopping <span class="shopping-list-word">List</span></h1>
+                <ul class="shopping-list"></ul>
+                <div class="empty-bin-wrapper visually-hidden">
+                        <p class="empty-bin-desc">This page is empty, add some books and proceed to order.</p>
+                        <div class="empty-img-wrapper">
+                            <img src="./images/shopping-list/empty-bin-265x198-px.webp" alt="Empty Book's Bin">
+                        </div>  
+                </div> 
+            </div>
+        </section>
     </main>
     <script type="module" src="./js/template/shopping-list-markup.js"></script>
 </body>

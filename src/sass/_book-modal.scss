@@ -1,38 +1,9 @@
-$cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
-$grey-text-color: #B4AFAF;
-$letter-spacing: -0.04em;
-
-.modal-backdrop {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-
-    visibility: visible;
-    opacity: 1;
-    pointer-events: initial;
-
-    transition: opacity 300ms linear, visibility 300ms linear;
-
-    background-color: rgba(46, 47, 66, 0.4);
-    backdrop-filter: blur(6px);
-}
-
-.modal-backdrop.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    transition-delay: 300ms;
-}
-
 .modal-container {
     position: fixed;
     top: 50%;
     left: 50%;
+
+    display: block;
 
     transform: translate(-50%, -50%);
 
@@ -73,6 +44,7 @@ $letter-spacing: -0.04em;
 }
 
 .modal-wrapper {
+    
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 24px;
@@ -102,7 +74,6 @@ $letter-spacing: -0.04em;
 
 .modal-book-name {
     font-size: 16px;
-    font-weight: 700;
     line-height: 1.12;
     text-transform: uppercase;
 }
@@ -176,4 +147,78 @@ $letter-spacing: -0.04em;
 
 .modal-congrats-text.is-hidden {
     display: none;
+}
+
+@include tablet-desktop {
+    .modal-container {
+        width: 579px;
+        height: 465px;
+    }
+
+    .close-modal-btn {
+        width: 40px;
+        height: 40px;
+        transition: fill 450ms $cubic-bezier;
+    }
+
+    .close-modal-btn:hover,
+    .close-modal-btn:focus {
+        fill: $color-violet;
+    }
+
+    .modal-wrapper {
+        display: flex;
+        gap: 24px;
+
+        padding: 40px;
+    }
+
+    .modal-book-cover {
+        width: 192px;
+        height: 281px;
+    }
+
+    .modal-titles {
+        padding-top: 0;
+    }
+
+    .modal-book-name {
+        font-size: 24px;
+        line-height: 1.16;
+    }
+
+    .modal-book-author {
+        font-size: 14px;
+        line-height: 1.28;
+    }
+
+    .modal-list-partners {
+        transition: filter 450ms $cubic-bezier;
+    }
+
+    .modal-partners-link:hover,
+    .modal-partners-link:focus {
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+    }
+
+    .modal-btn {
+        width: 449px;
+        height: 64px;
+
+        font-size: 18;
+        line-height: 1.33;
+        transition: background-color 550ms $cubic-bezier;
+    }
+
+    .modal-btn:hover,
+    .modal-btn:focus {
+        background-color: $color-violet;
+    }
+
+    .modal-congrats-text {
+        width: 318px;
+
+        font-size: 12px;
+        line-height: 1.16;
+    }
 }

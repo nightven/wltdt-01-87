@@ -25,9 +25,20 @@ const fondsList = document.querySelector('.fonds__list');
 
 fondsList.insertAdjacentHTML('beforeend', liElements);
 
-$('.fonds__list').slick({
-  slidesToShow: 6,
+if (window.matchMedia("(max-width: 768px)").matches) {
+  // Viewport is less or equal to 768 pixels wide
+  amountFondsItems(4);
+} else {
+  // Viewport is greater than 768 pixels wide
+  amountFondsItems(6);
+}
+  
+function amountFondsItems(number) {
+  $('.fonds__list').slick({
+  slidesToShow: number,
   vertical: true,
   swipeToSlide: true,
   verticalSwiping: true,
 });
+}
+
