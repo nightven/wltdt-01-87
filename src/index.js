@@ -9,7 +9,12 @@ import {
   fetchAllBooks,
   fetchTopBooks,
 } from './js/api/api-categories';
-import { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, splitTitle } from './js/helpers/helpers';
+import {
+  addMarkupCategoryList,
+  addMarkupTopBooks,
+  changeColorOfTitleOfCategory,
+  splitTitle,
+} from './js/helpers/helpers';
 import {
   markupCategoryList,
   markupAllBooks,
@@ -28,7 +33,6 @@ const allCategories = async () => {
     const resp = await fetchCategoryList();
 
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
-
   } catch (error) {
     console.log(error.message);
   }
@@ -60,9 +64,7 @@ async function onShowAllBooks(event) {
   }
 }
 
-
 //---------------------------Top Books Of Category 3 ver---------------------------------------
-
 
 const topBooks = async () => {
   try {
@@ -79,7 +81,7 @@ const topBooks = async () => {
 topBooks();
 
 //-----------------------------See More Books-------------------------------------------------------
-refs.listAllBooksEl.addEventListener("click", onShowMoreBooks);
+refs.listAllBooksEl.addEventListener('click', onShowMoreBooks);
 
 async function onShowMoreBooks(event) {
   event.preventDefault();
@@ -99,4 +101,3 @@ async function onShowMoreBooks(event) {
     console.log(error.message);
   }
 }
-
