@@ -101,10 +101,18 @@ function authorizetion(login = '', userBool = false) {
   });
 }
 
-// Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton);
-function onClickAuthButton() {
-  logoutButton.classList.toggle('hidden-button');
+
+authButton.addEventListener('click', onClickAuthButton)
+function onClickAuthButton(){
+  logoutButton.classList.toggle("logout-hidden");
+
+//logout
+logoutButton.addEventListener('click', onClickLogout);
+
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
 
   //logout
   logoutButton.addEventListener('click', onClickLogout);
@@ -126,6 +134,7 @@ function onClickAuthButton() {
 // userIf(authUserLocal);
 
 import { getDatabase, ref, set } from 'firebase/database';
+
 
 function writeUserData(userId, name, email, imageUrl) {
   const db = getDatabase();

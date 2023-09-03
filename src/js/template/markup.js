@@ -5,7 +5,6 @@ import crossSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr } from '../helpers/helpers';
 
-
 //--------------------Create markup of category-list------------------------------
 
 function markupCategoryList(arr) {
@@ -70,7 +69,21 @@ function markupBlock(data) {
 
 // -------------------Create modal window---------------------------
 function markupBookModal(bookData) {
-  const { book_image, author, description, list_name } = bookData;
+  const { book_image, author, description, list_name, buy_links } = bookData;
+
+  const buyLinks = buy_links.filter(
+    el =>
+      el.name === 'Amazon' ||
+      el.name === 'Apple Books' ||
+      el.name === 'Bookshop'
+  );
+
+  const shopIcons = {
+    Amazon: amazonImage,
+    'Apple Books': appleShopImage,
+    Bookshop: bookShopImage,
+  };
+
   return `<div class="modal-container">
     <button class="close-modal-btn" type="button">
       <svg class="close-modal-icon">
@@ -87,36 +100,25 @@ function markupBookModal(bookData) {
               <h2 class="modal-book-name">${list_name}</h2>
                <h3 class="modal-book-author">${author}</h3>
              </div>
-           <p class="modal-book-descr">${description}</p>
+          ${
+            description === ''
+              ? ''
+              : ` <p class="modal-book-descr">${description}</p>`
+          }
         <ul class="modal-list-partners">
-          <li class="modal-item-partners">
-            <a
-              href="https://www.amazon.com/"
-              class="modal-partners-link"
-              target="_blank"
-              rel="noopener no-referrer"
-              ><img src="${amazonImage}" alt="Amazon"
-            /></a>
-          </li>
-          <li class="modal-item-partners">
-            <a
-              href="https://www.apple.com/ua/apple-books/"
-              class="modal-partners-link"
-              target="_blank"
-              rel="noopener no-referrer"
-              ><img src="${appleShopImage}" alt="Apple-shop"
-            /></a>
-          </li>
-          <li class="modal-item-partners">
-            <a
-              href=""
-              class="modal-partners-link"
-              target="_blank"
-              rel="noopener no-referrer"
-            >
-              <img src="${bookShopImage}" alt="Book-shop"
-            /></a>
-          </li>
+          ${buyLinks
+            .map(
+              buyLink => `<li class="modal-item-partners">
+                  <a
+                    href="${buyLink.url}"
+                    class="modal-partners-link"
+                    target="_blank"
+                    rel="noopener no-referrer"
+                    ><img src="${shopIcons[buyLink.name]}" alt="${buyLink.name}"
+                  /></a>
+                </li>`
+            )
+            .join('')}
         </ul>
       </div>
     </div>
