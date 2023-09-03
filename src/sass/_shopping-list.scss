@@ -1,13 +1,8 @@
-// Common Setting For Shopping-List-HTML
-body {
-    font-family: DM Sans;
-    font-style: normal;
-    color: $color-black;
-}
-
-//Responsive & Mobile Shopping-List-Section
 .shopping-list-section {
     padding-top: 104px;
+    @include tablet {
+        padding-top: 112px;
+    }
 }
 
 // PC Shoping-List-Wrapper
