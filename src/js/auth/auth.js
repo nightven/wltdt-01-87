@@ -14,6 +14,7 @@ const {
   modal,
   logoutButton,
   nameUserEl,
+  authButton,
 } = refs;
 
 //sign up the user
@@ -40,6 +41,9 @@ function signUp(login = '', email, password) {
       console.log('Пользователь успешно зарегестрировался в систему:', user);
       authorizetion();
       nameUserEl.textContent = login;
+      
+      
+      
     })
     .catch(error => {
       const errorCode = error.code;
@@ -81,6 +85,7 @@ function signIn(email, password) {
       authorizetion();
       modal.classList.toggle('is-hidden');
       Notify.success('Success');
+      // logoutButton.style.transform = "translateX(-500px)";
     })
     .catch(error => {
       const errorCode = error.code;
@@ -100,4 +105,11 @@ function authorizetion() {
     }
   });
 }
+
+// Поява кнопки для виходу
+authButton.addEventListener('click', onClickAuthButton)
+function onClickAuthButton(){
+  logoutButton.style.transform = "translateX(0px)";
+}
+
 export { onSignIn, onSignUp };
