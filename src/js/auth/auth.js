@@ -101,10 +101,11 @@ function authorizetion(login = '', userBool = false) {
   });
 }
 
-
-authButton.addEventListener('click', onClickAuthButton)
-function onClickAuthButton(){
-  logoutButton.classList.toggle("logout-hidden");
+// Поява кнопки для виходу
+authButton.addEventListener('click', onClickAuthButton);
+function onClickAuthButton() {
+  logoutButton.classList.toggle('logout-hidden');
+}
 
 //logout
 logoutButton.addEventListener('click', onClickLogout);
@@ -114,34 +115,14 @@ function onClickLogout(e) {
   auth.signOut().then(() => {
     console.log('success');
 
-  //logout
-  logoutButton.addEventListener('click', onClickLogout);
-
-  function onClickLogout(e) {
-    e.preventDefault();
-    auth.signOut().then(() => {
-      console.log('success');
-      authorizedDiv.style.display = 'none';
-      unauthorizedDiv.style.display = 'block';
-      // location.reload();
-    });
-  }
-}
-
-// function userIf(auth) {
-//   return auth ? authorizetion(auth.login, true) : false;
-// }
-// userIf(authUserLocal);
-
-import { getDatabase, ref, set } from 'firebase/database';
-
-
-function writeUserData(userId, name, email, imageUrl) {
-  const db = getDatabase();
-  set(ref(db, 'users/' + userId), {
-    username: name,
-    email: email,
-    profile_picture: imageUrl,
+    // localStorage.removeItem(AUTH_KEY);
+    location.reload();
   });
 }
+
+function userIf(auth) {
+  return auth ? authorizetion(auth.login, true) : false;
+}
+userIf(authUserLocal);
+
 export { onSignIn, onSignUp };
