@@ -152,7 +152,8 @@
 @include tablet-desktop {
     .modal-container {
         width: 579px;
-        height: 465px;
+        min-height: 465px;
+        max-height: 500px;
     }
 
     .close-modal-btn {
@@ -213,12 +214,14 @@
     .modal-btn:hover,
     .modal-btn:focus {
         background-color: $color-violet;
+        color: $color-white;
     }
 
     .modal-congrats-text {
-        width: 318px;
+        width: 320px;
 
         font-size: 12px;
         line-height: 1.16;
     }
 }
+
