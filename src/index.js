@@ -23,8 +23,7 @@ import {
 import refs from './js/refs/refs';
 import { data } from 'jquery';
 import axios from 'axios';
-import { db } from './js/auth/firebase';
-console.log(db);
+
 //!submit form register
 refs.signUpForm.addEventListener('submit', onSignUp);
 refs.signInEl.addEventListener('submit', onSignIn);
