@@ -1,98 +1,94 @@
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .category-section {
-    padding-top: 40px;        
-    margin-bottom: 40px;
-    height: 228px;
-    width: 100%;
-    
+  padding-top: 40px;
+  margin-bottom: 40px;
+  height: 228px;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    .category-section {
-        height: 472px;
-        width: 100%;
-        margin-bottom: 100px;
-    }
+  .category-section {
+    height: 472px;
+    width: 100%;
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .category-section {      
-        height: 472px;
-        margin-bottom: 86px;
-        width: 100%;
-    }
+  .category-section {
+    height: 472px;
+    margin-bottom: 86px;
+    width: 100%;
+  }
 }
-.title, .category-list {
-    margin-bottom: 24px;
-    color: rgba(17, 17, 17, 0.60);
-    font-family: DM Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.12;
-    letter-spacing: -0.32px;
-    
+.title,
+.category-list {
+  margin-bottom: 24px;
+  color: rgba(17, 17, 17, 0.6);
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.32px;
 }
 
 .category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;    
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .item-category:hover,
 .item-category:focus {
-    outline: none;
-    text-transform: uppercase;
-    font-size: 13px;
-    color: $color-violet;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: $color-violet;
 }
 //-----------scroll bar------------------------------
 
 .scrollbar {
-    padding-top: 5px;
-    float: left;
-    height: 228px;   
-    width: 100%;
-    background: #F6F6F6;
-    overflow-y: scroll; 
-    margin-bottom: 40px;   
-   
-   
+  padding-top: 5px;
+  float: left;
+  height: 228px;
+  width: 100%;
+
+  overflow-y: scroll;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
-    .scrollbar {
-        height: 472px;
-                
-    }
+  .scrollbar {
+    height: 472px;
+  }
 }
 
 .force-overflow {
-    min-height: 450px;
+  min-height: 450px;
 }
 
 #style-1::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #F6F6F6;;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f6f6f6;
 }
 
 #style-1::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F6F6F6;;
+  width: 12px;
+  background-color: #f6f6f6;
 }
 
 #style-1::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #F6F6F6;;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f6f6f6;
 }

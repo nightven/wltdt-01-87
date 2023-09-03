@@ -13,9 +13,6 @@ import { addMarkupCategoryList, addMarkupTopBooks } from './js/helpers/helpers';
 import { markupCategoryList, markupAllBooks } from './js/template/markup';
 import refs from './js/refs/refs';
 
-//!submit form register
-refs.fromEl.addEventListener('submit', onSignUp);
-refs.signInEl.addEventListener('submit', onSignIn);
 //----------------------Category List-----------------------------------------
 
 const allCategories = async () => {
@@ -77,3 +74,22 @@ const topBooks = async () => {
 };
 
 topBooks();
+
+refs.toggleEl.addEventListener('click', onClickCheckbox);
+
+function onClickCheckbox(e) {
+  document.body.classList.toggle('dark');
+  [...refs.listCategoryEl.children].map(el => el.classList.toggle('light'));
+  refs.textEl.classList.toggle('light');
+  refs.hederEl.classList.toggle('black-header');
+  switchThem(e.target.checked);
+}
+
+function switchThem(result) {
+  if (result) {
+  }
+}
+
+//!submit form register
+refs.signUpForm.addEventListener('submit', onSignUp);
+refs.signInEl.addEventListener('submit', onSignIn);

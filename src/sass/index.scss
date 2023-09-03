@@ -1,6 +1,7 @@
 @import './reset';
-@import './common';
 @import './variables';
+@import './base';
+@import './common';
 @import './fonts';
 @import './mixins';
 @import './header';
@@ -10,4 +11,3 @@
 @import './fonds.scss';
 @import './category-list';
 @import './home-page';
-@import './modal';

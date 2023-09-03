@@ -1,13 +1,15 @@
 // colors
 $color-black: rgba(17, 17, 17, 1);
-$color-black-1: rgba(32, 32, 36, 1);
+$color-black-1: #202024;
 $color-violet: rgba(79, 46, 232, 1);
 $color-yellow: rgba(234, 198, 69, 1);
 $color-white: rgba(255, 255, 255, 1);
 $color-grey: rgba(180, 175, 175, 1);
-$color-black-alfa: rgba(17, 17, 17, 0.5);
+$color-black-alfa: #11111180;
 $color-white-warm: #f6f6f6;
 
+// rgba
+$rgba-1: rgba(0, 0, 0, 0.6);
 
 // gradients
 $gradient-1: linear-gradient(rgb(79, 46, 232), rgb(220, 220, 220));

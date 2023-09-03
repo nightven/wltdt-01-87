@@ -46,7 +46,7 @@
 
   input {
     display: flex;
-    width: 499px;
+    width: 100%;
     padding: 20px 173px 20px 40px;
     align-items: center;
 
@@ -71,8 +71,8 @@
     cursor: pointer;
     margin-top: 12px;
     display: flex;
-    width: 499px;
-    padding: 20px 173px;
+
+    padding: 20px 0px;
     justify-content: center;
     align-items: flex-start;
 

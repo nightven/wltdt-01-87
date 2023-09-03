@@ -7,34 +7,25 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import refs from '../refs/refs';
 
 const {
-  fromEl,
+  signUpForm,
   signInEl,
-  btnSignIn,
-  loginButton,
+  btnLog,
   authorizedDiv,
   unauthorizedDiv,
   modal,
+  logoutButton,
 } = refs;
-
+//signUp the user
 function onSignUp(e) {
   e.preventDefault();
-  const login = e.currentTarget.elements.login.value;
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
+  const login = signUpForm['signup-login'].value;
+  const email = signUpForm['signup-email'].value;
+  const password = signUpForm['signup-password'].value;
 
-  signUp(email, password);
-  fromEl.reset();
+  signUp(email, password, login);
+  signUpForm.reset();
 }
-function onSignIn(e) {
-  e.preventDefault();
-  console.log(e);
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
-
-  signIn(email, password);
-  signInEl.reset();
-}
-function signUp(email, password) {
+function signUp(email, password, login) {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
@@ -43,6 +34,9 @@ function signUp(email, password) {
       modal.classList.toggle('is-hidden');
       Notify.success('Success registretion');
       console.log('Пользователь успешно зарегестрировался в систему:', user);
+      btnLog.innerText = login;
+      // M.Modal.getInstance(refs.fromEl).close();
+
       authorizetion();
     })
     .catch(error => {
@@ -52,6 +46,26 @@ function signUp(email, password) {
       Notify.failure('Error');
       // ..
     });
+}
+
+//logout
+logoutButton.addEventListener('click', onClickLogout);
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
+  });
+}
+
+//sign in the user
+function onSignIn(e) {
+  e.preventDefault();
+  console.log(e);
+  const email = e.currentTarget.elements.email.value;
+  const password = e.currentTarget.elements.password.value;
+
+  signIn(email, password);
+  signInEl.reset();
 }
 // Обробка входу
 // loginButton.addEventListener('click', () => {});

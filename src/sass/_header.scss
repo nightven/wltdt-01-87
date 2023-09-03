@@ -167,3 +167,9 @@
 .switch__input:checked + .switch__slider::before {
   transform: translateX(20px);
 }
+
+.black-header {
+  border: 1.5px solid #fff;
+  background: #111;
+  color: #fff;
+}
