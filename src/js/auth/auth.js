@@ -120,6 +120,7 @@ function onClickLogout(e) {
   });
 
 }
+}
 
 function userIf(auth) {
   return auth ? authorizetion(auth.login, true) : false;
@@ -129,6 +130,7 @@ userIf(authUserLocal);
 // Поява кнопки для виходу
 authButton.addEventListener('click', onClickAuthButton);
 function onClickAuthButton() {
-  logoutButton.style.transform = 'translateX(0px)';
+  logoutButton.classList.toggle('hidden-button');
 }
-export { onSignIn, onSignUp };
+
+export { onSignIn, onSignUp }
