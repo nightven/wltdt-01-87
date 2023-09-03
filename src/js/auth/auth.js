@@ -1,10 +1,13 @@
-import { auth } from './firebase';
+import { auth, app } from './firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { getDatabase, ref, child, get, set } from 'firebase/database';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import refs from '../refs/refs';
+const db = getDatabase(app);
 
 const {
   signUpForm,
@@ -19,6 +22,8 @@ const {
 let signUpUser = {};
 const AUTH_KEY = 'loginUser';
 const LOCAL_USER = 'localUser';
+
+// let userId = {};
 //sign up the user
 function onSignUp(e) {
   e.preventDefault();
@@ -43,7 +48,10 @@ function signUp(login = '', email, password) {
       const user = userCredential.user;
       modal.classList.toggle('is-hidden');
       Notify.success('Success registretion');
+      const userId = auth.currentUser.uid;
 
+      setUserToDb(userId, login, email, password);
+      getUserFromDb(userId);
       authorizetion(login);
     })
     .catch(error => {
@@ -74,7 +82,9 @@ function signIn(email, password) {
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
+      const userId = auth.currentUser.uid;
 
+      getUserFromDb(userId);
       authorizetion(login);
 
       modal.classList.toggle('is-hidden');
@@ -120,9 +130,32 @@ function onClickLogout(e) {
   });
 }
 
-function userIf(auth) {
-  return auth ? authorizetion(auth.login, true) : false;
+// function userIf(auth) {
+//   return auth ? authorizetion(auth.login, true) : false;
+// }
+// userIf(authUserLocal);
+
+function setUserToDb(id, login, email, password) {
+  set(ref(db, 'users/' + id), {
+    login,
+    email,
+    password,
+  });
 }
-userIf(authUserLocal);
+
+function getUserFromDb(userId) {
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, `users/${userId}`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+      } else {
+        console.log('No data available');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
 
 export { onSignIn, onSignUp };
