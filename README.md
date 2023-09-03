@@ -7,3 +7,4 @@
 5. firebaseui https://firebase.google.com/docs/auth/web/firebaseui?hl=ru
 6. slick https://www.npmjs.com/package/slick-slider
 7. jquery https://www.npmjs.com/package/jquery
+8. Notiflix https://notiflix.github.io/
