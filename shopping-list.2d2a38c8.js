@@ -1,2 +1,0 @@
-const e=e=>{try{const o=localStorage.getItem(e);return JSON.parse(o)||[]}catch(e){console.log("Error: ",e.message)}},o=document.querySelector(".shopping-list"),t=document.querySelector(".empty-bin-wrapper");e();0===e("book-el").length?t.classList.remove("visually-hidden"):(t.classList.add("visually-hidden"),function(e){const t=e.map((({list_name:e,book_image:o,author:t})=>`\n        <img class="shop-book-img" src="${o}" alt="" width="300" />\n        <h2>${e}</h2>\n        <p>${t}</p>`)).join("");o.innerHTML=t}());
-//# sourceMappingURL=shopping-list.2d2a38c8.js.map
