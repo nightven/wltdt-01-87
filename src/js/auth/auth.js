@@ -109,7 +109,7 @@ function authorizetion() {
 // Поява кнопки для виходу
 authButton.addEventListener('click', onClickAuthButton)
 function onClickAuthButton(){
-  logoutButton.style.transform = "translateX(0px)";
+  logoutButton.classList.toggle("hidden-button");
 }
 
 export { onSignIn, onSignUp };
