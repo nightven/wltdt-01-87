@@ -15,7 +15,7 @@ body {
   pointer-events: none;
 }
 
-.no-scroll{
+.no-scroll {
   overflow: hidden;
 }
 
@@ -35,19 +35,30 @@ body {
 // Main Container
 .container {
   // width: 100%;
+  min-height: calc(100vh - 144px - 40px);
+  margin-bottom: 40px;
+  padding-top: 72px;
+
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
+
   @include mobile {
     min-width: 375px;
   }
   @include tablet {
+    min-height: calc(100vh - 64px + 72px);
     min-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
   @include desktop {
     max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto;
+    gap: 40px;
     padding-left: 24px;
     padding-right: 24px;
   }
