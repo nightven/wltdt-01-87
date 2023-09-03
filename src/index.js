@@ -22,6 +22,7 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 import { data } from 'jquery';
+import axios from 'axios';
 
 //!submit form register
 refs.signUpForm.addEventListener('submit', onSignUp);
@@ -33,10 +34,9 @@ const allCategories = async () => {
   try {
     const resp = await fetchCategoryList();
 
-    resp.data.sort((x ,y)=>x.list_name.localeCompare(y.list_name));
-    
-    addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
+    resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
 
+    addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
   } catch (error) {
     console.log(error.message);
   }

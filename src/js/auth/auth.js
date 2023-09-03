@@ -101,36 +101,38 @@ function authorizetion(login = '', userBool = false) {
   });
 }
 
-
-// Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton)
-function onClickAuthButton(){
-  logoutButton.classList.toggle("hidden-button");
-
-//logout
-logoutButton.addEventListener('click', onClickLogout);
-
-function onClickLogout(e) {
-  e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('success');
-
-    // localStorage.removeItem(AUTH_KEY);
-    location.reload();
-  });
-
-}
-}
-
-function userIf(auth) {
-  return auth ? authorizetion(auth.login, true) : false;
-}
-userIf(authUserLocal);
-
 // Поява кнопки для виходу
 authButton.addEventListener('click', onClickAuthButton);
 function onClickAuthButton() {
   logoutButton.classList.toggle('hidden-button');
+
+  //logout
+  logoutButton.addEventListener('click', onClickLogout);
+
+  function onClickLogout(e) {
+    e.preventDefault();
+    auth.signOut().then(() => {
+      console.log('success');
+      authorizedDiv.style.display = 'none';
+      unauthorizedDiv.style.display = 'block';
+      // location.reload();
+    });
+  }
 }
 
-export { onSignIn, onSignUp }
+// function userIf(auth) {
+//   return auth ? authorizetion(auth.login, true) : false;
+// }
+// userIf(authUserLocal);
+
+import { getDatabase, ref, set } from 'firebase/database';
+
+function writeUserData(userId, name, email, imageUrl) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    username: name,
+    email: email,
+    profile_picture: imageUrl,
+  });
+}
+export { onSignIn, onSignUp };
