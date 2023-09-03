@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="container header-container">
+  <div class="header-container">
     <!-- Logo,  -->
     <nav class="header-nav">
       <a class="logo link" href="./index.html"
@@ -28,27 +28,26 @@
         <input type="checkbox" class="switch__input" />
         <span class="switch__slider"></span>
       </label>
-      
-      <button  id="burger-btn"
-      class="menu-toggle"
+
+      <button
+        id="burger-btn"
+        class="menu-toggle"
         aria-expanded="true"
         aria-controls="mobile-menu"
-        data-menu-burger-open>
+        data-menu-burger-open
+      >
         <span></span>
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-
-
     </div>
     <!-- checkbox, Sign up, Menu-burger -->
 
     <div id="app">
       <div id="authorized" class="nav-button" style="display: none">
         <!-- Вміст для авторизованих користувачів -->
-        <button type="button" class="js-button button-user" >
+        <button type="button" class="js-button button-user">
           <span class="icon-wrapper"
             ><svg class="user-icon" width="19" height="19">
               <use href="/src/images/icons.svg#icon-user"></use></svg
@@ -58,12 +57,11 @@
             <use href="/src/images/icons.svg#icon-caret-down"></use>
           </svg>
         </button>
-          <button id="logout" type="button" class="button-log-out">
-            Log out<svg class="svg-button-log-out" width="20" height="20">
-              <use href="/src/images/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        
+        <button id="logout" type="button" class="button-log-out">
+          Log out<svg class="svg-button-log-out" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
       </div>
       <div id="unauthorized">
         <!-- Вміст для неавторизованих користувачів -->
