@@ -12,14 +12,13 @@
       <!-- HOME, SHOPPING LIST -->
       <ul class="header-nav-list list">
         <li>
-          <a class="nav-list-item current link" href=".">HOME</a>
+          <a class="header-nav-list-item current link" href=".">HOME</a>
         </li>
         <li>
-          <a class="nav-list-item link" href="/src/shopping-list.html"
-            >SHOPPING LIST</a
-          ><svg class="" width="20" height="20">
-            <use href="/src/images/icons.svg#icon-cart"></use>
-          </svg>
+          <a class="header-nav-list-item link" href="/src/shopping-list.html"
+            >SHOPPING LIST<svg class="" width="20" height="20">
+              <use href="/src/images/icons.svg#icon-cart"></use></svg
+          ></a>
         </li>
       </ul>
     </nav>
@@ -43,15 +42,17 @@
           </svg>
         </button>
       </li>
-      <!-- <li>
+      <li>
         <button
           type="button"
           class="js-button button-sign-up"
           data-sign-up-open
         >
-          Sign up
+          Sign up<svg class="" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
         </button>
-      </li> -->
+      </li>
       <li>
         <button type="button" class="js-button button-user" data-sign-up-open>
           <span class="icon-wrapper"
@@ -64,10 +65,12 @@
         </button>
       </li>
       <!-- <li>
-        <button type="button" class="js-button button-log-up visually-hidden">
-          Log out
+        <button type="button" class="js-button button-log-out">
+          Log out<svg class="svg-button-log-out" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
         </button>
-      </li>     -->
+      </li> -->
     </ul>
   </div>
 </header>
