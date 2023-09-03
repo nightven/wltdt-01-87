@@ -398,6 +398,61 @@ body {
   transform: translateX(0px);
 }
 
+#burger-btn {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 0px auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#burger-btn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #111111;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#burger-btn span:nth-child(1) {
+  top: 0px;
+}
+
+#burger-btn span:nth-child(2), #burger-btn span:nth-child(3) {
+  top: 9px;
+}
+
+#burger-btn span:nth-child(4) {
+  top: 18px;
+}
+
+#burger-btn.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+#burger-btn.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#burger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#burger-btn.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
 .shopping-list-section {
   padding-top: 104px;
 }
@@ -497,6 +552,11 @@ body {
   width: 100%;
   height: 100%;
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .mobile-menu {
+    display: none;
+  }
 }
 
 .burger {
