@@ -105,19 +105,19 @@ function authorizetion(login = '', userBool = false) {
 authButton.addEventListener('click', onClickAuthButton);
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
+}
 
-  //logout
-  logoutButton.addEventListener('click', onClickLogout);
+//logout
+logoutButton.addEventListener('click', onClickLogout);
 
-  function onClickLogout(e) {
-    e.preventDefault();
-    auth.signOut().then(() => {
-      console.log('success');
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
 
-      // localStorage.removeItem(AUTH_KEY);
-      location.reload();
-    });
-  }
+    // localStorage.removeItem(AUTH_KEY);
+    location.reload();
+  });
 }
 
 function userIf(auth) {
