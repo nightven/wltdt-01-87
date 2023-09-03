@@ -105,7 +105,7 @@ function authorizetion(login = '', userBool = false) {
 // Поява кнопки для виходу
 authButton.addEventListener('click', onClickAuthButton)
 function onClickAuthButton(){
-  logoutButton.classList.toggle("hidden-button");
+  logoutButton.classList.toggle("logout-hidden");
 
 //logout
 logoutButton.addEventListener('click', onClickLogout);
@@ -127,10 +127,6 @@ function userIf(auth) {
 }
 userIf(authUserLocal);
 
-// Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton);
-function onClickAuthButton() {
-  logoutButton.classList.toggle('hidden-button');
-}
+
 
 export { onSignIn, onSignUp }

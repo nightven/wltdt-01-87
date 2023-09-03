@@ -394,7 +394,7 @@ body {
   margin-left: auto;
 }
 
-.hidden-button {
+.logout-hidden {
   transform: translateX(0px);
 }
 
