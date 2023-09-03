@@ -20,6 +20,7 @@ import refs from './js/refs/refs';
 //!submit form register
 refs.fromEl.addEventListener('submit', onSignUp);
 refs.signInEl.addEventListener('submit', onSignIn);
+
 //----------------------Category List-----------------------------------------
 
 const allCategories = async () => {
@@ -27,6 +28,7 @@ const allCategories = async () => {
     const resp = await fetchCategoryList();
 
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
+
   } catch (error) {
     console.log(error.message);
   }
