@@ -1,13 +1,16 @@
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 // @import "../../node_modules/slick-carousel/slick/slick-theme.scss";
 
+/* Mobile styles $ >*/
 .fonds__common{
+    display: flex;
+    flex-direction: column;
     padding-top: 24px;
     padding-right: 40px;
     padding-bottom: 24px;
     padding-left: 40px;
-    width: 356px;
-    height: 474px;
+    max-width: 335px;
+    height: 352px;
     border-radius: 16px;
     background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
@@ -21,7 +24,7 @@
 .support__Ukraine{
     color: #FFF;
     font-family: DM Sans;
-    font-size: 24px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.16;
@@ -78,10 +81,7 @@
 
 // arrows
 .slick-arrow{
-    // position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
-    
+        
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 0px;
@@ -93,10 +93,7 @@
     padding: 0;
     cursor: pointer;
     font-size: 0px;
-    // &::before{
-    //     display: table;
-    //     font-size: 20px;
-    // }
+ 
 }
 
 .slick-prev {
@@ -116,8 +113,19 @@
     bottom: -30px;
     &::before {
             content: url(/src/images/fonds/arrow_down.svg);
-                // width: 200px;
-                // height: 200px;
-            
+                    
         }
 }
+
+
+
+@media only screen and (min-width: 768px) {
+    .fonds__common {
+        width: 356px;
+        height: 474px;
+    }
+    .support__Ukraine {
+        font-size: 24px;
+    }
+}
+

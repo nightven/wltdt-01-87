@@ -8,19 +8,6 @@
   text-transform: uppercase;
 }
 
-
-@mixin desktop() {
-  @media (min-width: $breakpoint_desktop) {
-    @content;
-  }
-}
-
-@mixin laptop() {
-  @media (min-width: $breakpoint_laptop) {
-    @content;
-  }
-}
-
 @mixin sign-up-btn {
   margin-top: 40px;
   margin-left: 20px;

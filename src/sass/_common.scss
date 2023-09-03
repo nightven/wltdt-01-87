@@ -1,14 +1,14 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './mixins';
 
-$breakpoint_desktop: 1440px;
-$breakpoint_laptop: 768px;
-$breakpoint_mobile: 375px;
-
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.no-scroll{
+  overflow: hidden;
 }
 
 .visually-hidden {
