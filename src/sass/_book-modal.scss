@@ -9,7 +9,10 @@
 
     width: 335px;
     max-height: 90vh;
-
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
 
     overflow: auto;
     background-color: $color-white;
@@ -44,12 +47,6 @@
 }
 
 .modal-wrapper {
-    
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
-
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     letter-spacing: $letter-spacing;
@@ -60,16 +57,15 @@
     flex-direction: column;
     gap: 7px;
 
-    padding-top: 14px;
-    padding-bottom: 17px;
+    margin-bottom: 17px;
 }
 
 .modal-book-cover {
     width: 287px;
     height: 408px;
+    margin-bottom: 14px;
 
     border-radius: 10px;
-    border: solid 1px $color-violet;
 }
 
 .modal-book-name {
@@ -84,13 +80,13 @@
     font-weight: 400;
     line-height: 1.16;
 
-    color: $grey-text-color;
+    color: $color-grey;
 }
 
 .modal-book-descr {
     font-size: 14px;
     line-height: 1.28;
-    padding-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .modal-list-partners {
@@ -98,7 +94,7 @@
     align-items: center;
     gap: 20px;
 
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .modal-item-partners {
@@ -111,10 +107,6 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-
-    padding-bottom: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
 }
 
 .modal-btn {
@@ -142,7 +134,7 @@
     letter-spacing: $letter-spacing;
     text-align: center;
 
-    color: $grey-text-color;
+    color: $color-grey;
 }
 
 .modal-congrats-text.is-hidden {
@@ -154,6 +146,7 @@
         width: 579px;
         min-height: 465px;
         max-height: 500px;
+        padding: 40px;
     }
 
     .close-modal-btn {
@@ -170,17 +163,18 @@
     .modal-wrapper {
         display: flex;
         gap: 24px;
-
-        padding: 40px;
+        margin-bottom: 40px;
     }
 
     .modal-book-cover {
         width: 192px;
         height: 281px;
+        margin-bottom: 0;
     }
 
     .modal-titles {
-        padding-top: 0;
+        gap: 14px;
+        margin-bottom: 24px;
     }
 
     .modal-book-name {

@@ -8,7 +8,6 @@ async function fetchBookByID(bookID) {
 
 async function fetchBookData(cardBookID) {
   const book = await fetchBookByID(cardBookID);
-  console.log(book.data);
   return book.data;
 }
 
