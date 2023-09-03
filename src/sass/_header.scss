@@ -7,10 +7,6 @@
   padding-top: 18px;
   padding-bottom: 18px;
 
-  // .container
-  //   padding-left: 20px;
-  // padding-right: 20px;
-
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $color-black;
   background: $color-white;
@@ -24,8 +20,6 @@
     padding-top: 14px;
     padding-bottom: 13px;
     min-width: 768px;
-    // padding-left: 32px;
-    // padding-right: 32px;
   }
   @include desktop {
     max-width: 1440px;
@@ -107,24 +101,50 @@
 }
 
 .button-sign-up {
-  @include mobile-tablet {
-    display: none;
-  }
+  display: none;
+  // @include mobile-tablet {
+  //   display: none;
+  // }
 
   @include tablet-desktop {
     @include sign-up-btn;
     margin: 0;
   }
 }
+.button-log-out {
+  display: flex;
+  align-items: center;
+  width: 118px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+  padding: 15px 24px;
 
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  @include tablet-desktop {
+    width: 184px;
+  }
+}
+.svg-button-log-out {
+  margin-left: auto;
+}
 .button-user {
   @include sign-up-btn;
   margin: 0;
   padding: 8px 12px;
   border-radius: 36px;
-  @include mobile {
-    display: none;
+  @include tablet-desktop {
+    display: flex;
   }
+  display: none;
 }
 .icon-wrapper {
   display: flex;
