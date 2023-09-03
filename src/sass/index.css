@@ -394,6 +394,10 @@ body {
   margin-left: auto;
 }
 
+.hidden-button {
+  transform: translateX(0px);
+}
+
 .shopping-list-section {
   padding-top: 104px;
 }

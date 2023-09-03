@@ -101,6 +101,12 @@ function authorizetion(login = '', userBool = false) {
   });
 }
 
+
+// Поява кнопки для виходу
+authButton.addEventListener('click', onClickAuthButton)
+function onClickAuthButton(){
+  logoutButton.classList.toggle("hidden-button");
+
 //logout
 logoutButton.addEventListener('click', onClickLogout);
 
@@ -112,6 +118,7 @@ function onClickLogout(e) {
     // localStorage.removeItem(AUTH_KEY);
     location.reload();
   });
+
 }
 
 function userIf(auth) {
