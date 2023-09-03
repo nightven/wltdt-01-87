@@ -15,6 +15,9 @@ export default {
   logoutButton: document.getElementById('logout'),
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
+  authButton: document.querySelector('.js-button '),
+
+  
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
