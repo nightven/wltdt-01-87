@@ -18,7 +18,7 @@
   width: 184px;
   height: 48px;
   flex-shrink: 0;
-
+  cursor: pointer;
   color: $color-white;
   font-family: DM Sans;
   font-size: 14px;
@@ -61,4 +61,3 @@
     @content;
   }
 }
-

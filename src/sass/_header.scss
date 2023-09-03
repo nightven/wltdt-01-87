@@ -102,9 +102,6 @@
 
 .button-sign-up {
   display: none;
-  // @include mobile-tablet {
-  //   display: none;
-  // }
 
   @include tablet-desktop {
     @include sign-up-btn;
@@ -212,4 +209,8 @@
 
 .switch__input:checked + .switch__slider::before {
   transform: translateX(20px);
+}
+
+.switcher-wrrap {
+  margin-left: auto;
 }

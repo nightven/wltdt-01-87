@@ -7,34 +7,29 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import refs from '../refs/refs';
 
 const {
-  fromEl,
+  signUpForm,
   signInEl,
-  btnSignIn,
-  loginButton,
   authorizedDiv,
   unauthorizedDiv,
   modal,
+  logoutButton,
+  nameUserEl,
 } = refs;
+
+//sign up the user
 
 function onSignUp(e) {
   e.preventDefault();
-  const login = e.currentTarget.elements.login.value;
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
+  const login = signUpForm['signup-login'].value;
+  const email = signUpForm['signup-email'].value;
+  const password = signUpForm['signup-password'].value;
 
-  signUp(email, password);
-  fromEl.reset();
-}
-function onSignIn(e) {
-  e.preventDefault();
-  console.log(e);
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
+  signUp(login, email, password);
 
-  signIn(email, password);
-  signInEl.reset();
+  signUpForm.reset();
 }
-function signUp(email, password) {
+
+function signUp(login = '', email, password) {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
@@ -44,6 +39,7 @@ function signUp(email, password) {
       Notify.success('Success registretion');
       console.log('Пользователь успешно зарегестрировался в систему:', user);
       authorizetion();
+      nameUserEl.textContent = login;
     })
     .catch(error => {
       const errorCode = error.code;
@@ -52,6 +48,27 @@ function signUp(email, password) {
       Notify.failure('Error');
       // ..
     });
+}
+
+//logout
+logoutButton.addEventListener('click', onClickLogout);
+
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
+  });
+}
+
+//sign in the user
+function onSignIn(e) {
+  e.preventDefault();
+
+  const email = e.currentTarget.elements.email.value;
+  const password = e.currentTarget.elements.password.value;
+
+  signIn(email, password);
+  signInEl.reset();
 }
 // Обробка входу
 // loginButton.addEventListener('click', () => {});

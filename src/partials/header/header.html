@@ -22,28 +22,50 @@
         </li>
       </ul>
     </nav>
+    <!-- switcher -->
+    <div class="switcher-wrrap">
+      <label class="switch">
+        <input type="checkbox" class="switch__input" />
+        <span class="switch__slider"></span>
+      </label>
+      <button
+        class="menu-toggle"
+        aria-expanded="true"
+        aria-controls="mobile-menu"
+        data-menu-burger-open
+      >
+        <svg class="" width="28" height="28">
+          <use href="/src/images/icons.svg#icon-align-left"></use>
+        </svg>
+      </button>
+    </div>
     <!-- checkbox, Sign up, Menu-burger -->
-    <ul class="header-theme-authorization">
-      <li>
-        <label class="switch">
-          <input type="checkbox" class="switch__input" />
-          <span class="switch__slider"></span>
-        </label>
-      </li>
-      <li>
-        <button
-          class="menu-toggle"
-          aria-expanded="true"
-          aria-controls="mobile-menu"
-          data-menu-burger-open
-        >
-          <svg class="" width="28" height="28">
-            <use href="/src/images/icons.svg#icon-align-left"></use>
+
+    <div id="app">
+      <div id="authorized" style="display: none">
+        <!-- Вміст для авторизованих користувачів -->
+        <button type="button" class="js-button button-user" data-sign-up-open>
+          <span class="icon-wrapper"
+            ><svg class="user-icon" width="19" height="19">
+              <use href="/src/images/icons.svg#icon-user"></use></svg
+          ></span>
+          <span class="js-login-user">Stephan</span
+          ><svg class="" width="28" height="28">
+            <use href="/src/images/icons.svg#icon-caret-down"></use>
           </svg>
         </button>
-      </li>
-      <li>
+        <li>
+          <button id="logout" type="button" class="js-button button-log-out">
+            Log out<svg class="svg-button-log-out" width="20" height="20">
+              <use href="/src/images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </li>
+      </div>
+      <div id="unauthorized">
+        <!-- Вміст для неавторизованих користувачів -->
         <button
+          id="login"
           type="button"
           class="js-button button-sign-up"
           data-sign-up-open
@@ -52,25 +74,8 @@
             <use href="/src/images/icons.svg#icon-arrow-right"></use>
           </svg>
         </button>
-      </li>
-      <li>
-        <button type="button" class="js-button button-user" data-sign-up-open>
-          <span class="icon-wrapper"
-            ><svg class="user-icon" width="19" height="19">
-              <use href="/src/images/icons.svg#icon-user"></use></svg
-          ></span>
-          Stephan<svg class="" width="28" height="28">
-            <use href="/src/images/icons.svg#icon-caret-down"></use>
-          </svg>
-        </button>
-      </li>
-      <!-- <li>
-        <button type="button" class="js-button button-log-out">
-          Log out<svg class="svg-button-log-out" width="20" height="20">
-            <use href="/src/images/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </button>
-      </li> -->
-    </ul>
+        <!-- <button id="login">Увійти</button> -->
+      </div>
+    </div>
   </div>
 </header>
