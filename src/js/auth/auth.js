@@ -15,16 +15,21 @@ const {
   logoutButton,
   nameUserEl,
 } = refs;
-
+let signUpUser = {};
+const AUTH_KEY = 'loginUser';
+const LOCAL_USER = 'localUser';
 //sign up the user
-
 function onSignUp(e) {
   e.preventDefault();
-  const login = signUpForm['signup-login'].value;
-  const email = signUpForm['signup-email'].value;
+
+  signUpUser = {
+    login: signUpForm['signup-login'].value,
+    email: signUpForm['signup-email'].value,
+  };
   const password = signUpForm['signup-password'].value;
 
-  signUp(login, email, password);
+  localStorage.setItem(AUTH_KEY, JSON.stringify(signUpUser));
+  signUp(signUpUser.login, signUpUser.email, password);
 
   signUpForm.reset();
 }
@@ -37,9 +42,8 @@ function signUp(login = '', email, password) {
       const user = userCredential.user;
       modal.classList.toggle('is-hidden');
       Notify.success('Success registretion');
-      console.log('Пользователь успешно зарегестрировался в систему:', user);
-      authorizetion();
-      nameUserEl.textContent = login;
+
+      authorizetion(login);
     })
     .catch(error => {
       const errorCode = error.code;
@@ -50,15 +54,8 @@ function signUp(login = '', email, password) {
     });
 }
 
-//logout
-logoutButton.addEventListener('click', onClickLogout);
-
-function onClickLogout(e) {
-  e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('success');
-  });
-}
+const user = localStorage.getItem(AUTH_KEY);
+const authUserLocal = JSON.parse(user);
 
 //sign in the user
 function onSignIn(e) {
@@ -70,15 +67,15 @@ function onSignIn(e) {
   signIn(email, password);
   signInEl.reset();
 }
-// Обробка входу
-// loginButton.addEventListener('click', () => {});
 
 function signIn(email, password) {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
-      authorizetion();
+
+      authorizetion(login);
+
       modal.classList.toggle('is-hidden');
       Notify.success('Success');
     })
@@ -89,15 +86,35 @@ function signIn(email, password) {
     });
 }
 // Перевіряємо стан авторизації
-function authorizetion() {
+function authorizetion(login = '', userBool = false) {
   auth.onAuthStateChanged(user => {
-    if (user) {
+    if (userBool || user) {
       authorizedDiv.style.display = 'block';
       unauthorizedDiv.style.display = 'none';
+      nameUserEl.textContent = login;
     } else {
       authorizedDiv.style.display = 'none';
       unauthorizedDiv.style.display = 'block';
     }
   });
 }
+
+//logout
+logoutButton.addEventListener('click', onClickLogout);
+
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
+
+    // localStorage.removeItem(AUTH_KEY);
+    location.reload();
+  });
+}
+
+function userIf(auth) {
+  return auth ? authorizetion(auth.login, true) : false;
+}
+userIf(authUserLocal);
+
 export { onSignIn, onSignUp };
