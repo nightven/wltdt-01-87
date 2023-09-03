@@ -2,6 +2,7 @@ import amazonImage from '../../images/shops/amazon.png';
 import appleShopImage from '../../images/shops/apple-shop.png';
 import bookShopImage from '../../images/shops/book-shop.png';
 import crossSvg from '../../images/icons.svg';
+import defaultImg from '../../images/empty-img_lap@_1x.png';
 
 //--------------------Create markup of category-list------------------------------
 function markupCategoryList(arr) {
@@ -75,7 +76,7 @@ function markupBookModal(bookData) {
     </button>
     <div class="modal-wrapper">
       <img class="modal-book-cover"
-              src="${book_image}"
+              src="${book_image || defaultImg}"
               alt="Book cover"
             />
             <div class="right-side-wrap">
@@ -117,7 +118,7 @@ function markupBookModal(bookData) {
       </div>
     </div>
     <div class="modal-btn-wrap">
-      <button class="modal-btn" type="button">add to shopping list</button>
+      <button class="modal-btn" type="button"></button>
       <p class="modal-congrats-text is-hidden">
         Congratulations! You have added the book to the shopping list. To
         delete, press the button &#8220;Remove from the shopping list&#8221;.
