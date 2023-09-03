@@ -3,8 +3,11 @@ import appleShopImage from '../../images/shops/apple-shop.png';
 import bookShopImage from '../../images/shops/book-shop.png';
 import crossSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
+import { limitStr } from '../helpers/helpers';
+
 
 //--------------------Create markup of category-list------------------------------
+
 function markupCategoryList(arr) {
   return arr
     .map(
@@ -15,8 +18,8 @@ function markupCategoryList(arr) {
     )
     .join('');
 }
-
 //------------------Create markup of All Books---------------------------------------
+
 function markupAllBooks(arr) {
   return arr
     .map(
@@ -31,7 +34,7 @@ function markupAllBooks(arr) {
           </div>
         </div>
           <div>
-            <h3 class="book-title">${title}</h3>
+            <h3 class="book-title">${limitStr(title, 20)}</h3>
             <p class="book-author">${author}</p>
           </div>
         </a>
@@ -48,7 +51,7 @@ function markupList(books) {
     .map(({ book_image, title, author, _id }) => {
       return `<li class="js-item-book card-set-item" data-id="${_id}">
             <img src="${book_image}" alt="${title}" data-img-id="${_id}" loading="lazy" class="img-books"/>
-            <h3 class="js-named-book">${title}</h3>
+            <h3 class="js-named-book">${limitStr(title, 20)}</h3>
             <p class="js-author-book">${author}</p>
         </li>`;
     })
