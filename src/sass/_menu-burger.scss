@@ -6,6 +6,9 @@
     #4f2ee8 18.03%,
     #fff 100%
   );
+  @include tablet{
+    display: none;
+  }
 }
 .burger {
   top: 0;
