@@ -3,9 +3,13 @@
 /* Mobile styles $ >*/
 .header-container {
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   padding-top: 18px;
   padding-bottom: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $color-black;
@@ -19,10 +23,14 @@
   @include tablet {
     padding-top: 14px;
     padding-bottom: 13px;
+    padding-left: 32px;
+    padding-right: 32px;
     min-width: 768px;
   }
   @include desktop {
     max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
   @include tablet-desktop {
     height: 72px;
@@ -295,6 +303,7 @@
   width: 0%;
   left: 50%;
 }
+
 
 .display-none {
   display: none;
