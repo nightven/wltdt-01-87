@@ -40,7 +40,6 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
-
   } catch (error) {
     console.log(error.message);
   }
@@ -103,24 +102,28 @@ async function onShowMoreBooks(event) {
   refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
   refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
 
-  
-
   try {
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
     for (const item of refs.listCategoryEl.children) {
-
-      if (item.textContent === nameOfCategory) { 
-      
-      item.classList.add('active-category');  
-      refs.categoryItemEl.classList.remove('active-category');
-        
+      if (item.textContent === nameOfCategory) {
+        item.classList.add('active-category');
+        refs.categoryItemEl.classList.remove('active-category');
       }
-  }
-
+    }
   } catch (error) {
     console.log(error.message);
   }
 }
+
+const navLinks = document.querySelectorAll('.header-nav-list-item');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (!link.classList.contains('current')) {
+      navLinks.forEach(item => item.classList.remove('current'));
+      link.classList.add('current');
+    }
+  });
+});
