@@ -101,4 +101,3 @@ function removeOverflowHidden() {
   document.body.classList.remove('no-scroll');
 }
 
-export { getBookFromLocalStorage };
