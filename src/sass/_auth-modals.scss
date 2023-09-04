@@ -57,6 +57,10 @@
       @include font-auth;
       color: $color-black;
     }
+    // &:valid {
+    //   /* outline: rgba(0,0,0,0); */
+    //   box-shadow: 0 0 3px 2px #82eb9b, 0 0 #82eb9b, 0 0 12px 1px #82eb9b;
+    // }
   }
   label {
     position: relative;
@@ -99,10 +103,39 @@
     height: 50px;
   }
 }
+
 .modal-sign-in {
   height: 478px;
 }
+@media only screen and (max-width: 768px) {
+  .modal {
+    margin: 127px auto;
+    padding: 80px 40px 40px;
+    max-width: 500px;
+    height: auto;
+    input {
+      padding: 15px 15px 15px 35px;
+      align-items: center;
 
+      border-radius: 40px;
+      border: 2px solid $color-black;
+
+      &:placeholder-shown {
+        @include font-auth;
+        color: $color-black;
+      }
+    }
+    .modal-svg {
+      position: absolute;
+      right: 18px;
+      top: -47px;
+    }
+    .modal-svg-login {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
 .wrapper-button {
   display: flex;
   justify-content: center;

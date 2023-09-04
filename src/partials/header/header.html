@@ -47,28 +47,28 @@
     <div id="app">
       <div class="authorized display-none">
         <!-- Вміст для авторизованих користувачів -->
-        <button type="button" class="js-button button-user">
+        <button type="button" class="js-button button-user hidden-mob">
           <span class="icon-wrapper"
             ><svg class="user-icon" width="19" height="19">
               <use href="/src/images/icons.svg#icon-user"></use></svg
           ></span>
-          <span class="js-login-user">Stephan</span
+          <span class="js-login-user"></span
           ><svg class="" width="28" height="28">
             <use href="/src/images/icons.svg#icon-caret-down"></use>
           </svg>
         </button>
-        <button id="logout" type="button" class="button-log-out">
+        <button id="logout" type="button" class="button-log-out hidden-mob">
           Log out<svg class="svg-button-log-out" width="20" height="20">
             <use href="/src/images/icons.svg#icon-arrow-right"></use>
           </svg>
         </button>
       </div>
-      <div id="unauthorized">
+      <div>
         <!-- Вміст для неавторизованих користувачів -->
         <button
           id="login"
           type="button"
-          class="js-button button-sign-up"
+          class="js-button button-sign-up hidden-mob unauthorized"
           data-sign-up-open
         >
           Sign up<svg class="" width="20" height="20">

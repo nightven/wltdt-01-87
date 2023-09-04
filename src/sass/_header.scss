@@ -62,7 +62,7 @@
 .header-theme-authorization {
   display: flex;
   align-items: center;
- 
+
   height: 28px;
   margin-left: auto;
 }
@@ -99,7 +99,7 @@
 .menu-toggle {
   padding: 0;
   height: 28px;
-  
+
   border: none;
   background-color: transparent;
 
@@ -109,17 +109,29 @@
 }
 
 .button-sign-up {
-  display: none;
-
-  @include tablet-desktop {
-    @include sign-up-btn;
-    margin: 0;
+  @include sign-up-btn;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .button-user.hidden-mob,
+  .hidden-mob {
+    display: none;
+  }
+  .sign-up-mobile,
+  .user-mob {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+  }
+  .logout-mob {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    align-items: center;
+    display: flex;
   }
 }
 .button-log-out {
-  display: none;
-  align-items: center;
-
   width: 118px;
   height: 48px;
 
@@ -136,7 +148,7 @@
   font-weight: 500;
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
-  
+
   @include tablet-desktop {
     display: flex;
     position: absolute;
@@ -161,7 +173,6 @@
 
     height: 45px;
   }
-  display: none;
 }
 .icon-wrapper {
   display: flex;
@@ -316,6 +327,15 @@
   left: 50%;
 }
 
-.display-none {
+.burger-nav-list {
+  margin-top: 247px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 17px;
+}
+.authorized.display-none,
+.unauthorized.display-none {
   display: none;
 }
