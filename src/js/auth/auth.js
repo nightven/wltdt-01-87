@@ -108,7 +108,7 @@ function authorizedUser(login = '', reg = false) {
       if (login.length > 7) {
         const userName = login.slice(0, 7) + '...';
         nameUserEl.textContent = userName;
-        nameUserMob.textContent = userName;
+        // nameUserMob.textContent = userName;
       }
       authorized.forEach(el => el.classList.remove('display-none'));
       unauthorized.forEach(el => el.classList.add('display-none'));
@@ -151,7 +151,7 @@ function onClickAuthButton() {
 
 // Listening to the exit button
 logoutButton.addEventListener('click', onClickLogout);
-logoutMob.addEventListener('click', onClickLogout);
+logoutMob?.addEventListener('click', onClickLogout);
 // function to the exit user
 function onClickLogout(e) {
   e.preventDefault();

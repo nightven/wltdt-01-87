@@ -1,0 +1,32 @@
+html {
+  scroll-behavior: smooth;
+}
+.scroll-up {
+  cursor: pointer;
+
+  position: sticky;
+  bottom: 30px;
+  left: 93%;
+  width: 50px;
+  height: 52px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: none;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+
+  background-color: $color-violet;
+  color: $color-white;
+  &:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(
+      1px 1px 2px rgba(0, 0, 0, 0.1),
+      0px 2px 2px rgba(0, 0, 0, 0.1),
+      1px 2px 4px rgba(0, 0, 0, 0.1)
+    );
+  }
+}
