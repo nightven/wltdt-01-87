@@ -11,14 +11,11 @@ const BOOK_KEY = 'chosen-books';
 
 doMarkup();
 
-const trashBtn = document.querySelector('.book-btn');
-console.log(trashBtn);
-
 document.addEventListener('click', removeBookFromLocalStorage);
 
 function removeBookFromLocalStorage(event) {
-  console.log();
-  const deleteBtn = event.target.closest('[data-delete]');
+
+   const deleteBtn = event.target.closest('[data-delete]');
   if (deleteBtn) {
     const idBook = event.target.closest('.book-item').dataset.id;
     const localStorageBooks = getDataFromLocalStorage(BOOK_KEY);
@@ -29,15 +26,15 @@ function removeBookFromLocalStorage(event) {
     saveDataToLocalStorage(BOOK_KEY, localStorageBooks);
     shopListEl.insertAdjacentHTML('beforeend', shopMarkup(localStorageBooks));
     doMarkup();
-  }
+}
+  
+function doMarkup() {
+    const localStorageData = getDataFromLocalStorage(BOOK_KEY);
+    if(localStorageData.length === 0) {
+        emptyBinEL.classList.remove('visually-hidden');
+    } else {
+        emptyBinEL.classList.add('visually-hidden');
+        shopListEl.insertAdjacentHTML("beforeend", shopListMarkup(localStorageData));
+    }
 }
 
-function doMarkup() {
-  const localStorageData = getDataFromLocalStorage(BOOK_KEY);
-  if (localStorageData.length === 0) {
-    emptyBinEL.classList.remove('visually-hidden');
-  } else {
-    emptyBinEL.classList.add('visually-hidden');
-    shopListEl.insertAdjacentHTML('beforeend', shopMarkup(localStorageData));
-  }
-}

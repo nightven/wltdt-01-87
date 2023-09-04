@@ -11,17 +11,19 @@
 @mixin sign-up-btn {
   margin-top: 40px;
   margin-left: 20px;
+
   display: flex;
   align-items: center;
   padding: 14px;
   justify-content: space-between;
-  width: 184px;
+  gap: 9px;
+  min-width: 184px;
   height: 48px;
   flex-shrink: 0;
   cursor: pointer;
   color: $color-white;
   font-family: DM Sans;
-  font-size: 14px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px; /* 128.571% */
