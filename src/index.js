@@ -25,6 +25,17 @@ import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
 
+// showLoader
+function showLoader() {
+  refs.loader.innerHTML = '';
+  refs.loader.style.display = 'block';
+}
+
+// hideLoader
+function hideLoader() {
+  refs.loader.style.display = 'none';
+}
+
 //!submit form register
 // refs.seeButtonEl.addEventListener('click', e => {
 //   const el = e.target;
@@ -50,6 +61,8 @@ refs.signInEl?.addEventListener('submit', onSignIn);
 
 const allCategories = async () => {
   try {
+    showLoader();
+
     const resp = await fetchCategoryList();
 
     resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
@@ -57,8 +70,11 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
+
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 };
 
@@ -82,11 +98,16 @@ async function onShowAllBooks(event) {
   refs.categoryItemEl.classList.remove('active-category');
 
   try {
+    showLoader();
+
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 }
 
@@ -94,13 +115,19 @@ async function onShowAllBooks(event) {
 
 const topBooks = async () => {
   try {
+    showLoader();
+
     const resp = await fetchTopBooks();
 
     refs.listAllBooksEl.innerHTML = '';
 
     refs.listAllBooksEl.insertAdjacentHTML('beforeend', markupBlock(resp.data));
+
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+
+    hideLoader();
   }
 };
 
@@ -120,6 +147,8 @@ async function onShowMoreBooks(event) {
   refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
 
   try {
+    showLoader();
+
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
@@ -130,8 +159,11 @@ async function onShowMoreBooks(event) {
         refs.categoryItemEl.classList.remove('active-category');
       }
     }
+
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 }
 //-----------------------------Change current page style-------------------------------------------------------
@@ -144,6 +176,4 @@ navLinks.forEach(link => {
     }
   });
 });
-
-
 
