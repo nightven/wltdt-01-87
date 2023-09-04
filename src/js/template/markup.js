@@ -85,7 +85,7 @@ function markupBlock(data) {
 
 // -------------------Create modal window---------------------------
 function markupBookModal(bookData) {
-  const { book_image, author, description, list_name, buy_links } = bookData;
+  const { book_image, author, description, title, buy_links } = bookData;
 
   const buyLinks = buy_links.filter(
     el =>
@@ -113,7 +113,7 @@ function markupBookModal(bookData) {
             />
             <div class="right-side-wrap">
             <div class="modal-titles">
-              <h2 class="modal-book-name">${list_name}</h2>
+              <h2 class="modal-book-name">${title}</h2>
                <h3 class="modal-book-author">${author}</h3>
              </div>
           ${
