@@ -4,6 +4,7 @@ import bookShopImage from '../../images/shops/book-shop.png';
 import crossSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr } from '../helpers/helpers';
+import spriteSvg from '../../images/icons.svg';
 
 //--------------------Create markup of category-list------------------------------
 
@@ -137,4 +138,27 @@ function markupBookModal(bookData) {
   </div>`;
 }
 
-export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal };
+
+// -----------------------Create markUp in ShopingList---------------------------
+function shopListMarkup(array) {
+    return array.map(({ _id, list_name, book_image, author, title, description }) => {
+    return `
+    <li class="book-item" data-id="${_id}">
+    <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
+    <div class="book-item-descr">
+    <h2>${title}</h2>
+    <p>${list_name}</p>
+    <p>${description}</p>
+    <p>${author}</p>
+    <button class="book-btn" id="delete-btn" type="button">
+    <svg class="del-modal-icon" width="28" height="28">
+    <use href="${spriteSvg}#icon-trash-bin"></use>
+    </svg>
+    </button>
+    </div>
+    </li>`
+  }).join('')
+}
+
+
+export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal, shopListMarkup };

@@ -37,8 +37,25 @@ function hideLoader() {
 }
 
 //!submit form register
-refs.signUpForm.addEventListener('submit', onSignUp);
-refs.signInEl.addEventListener('submit', onSignIn);
+// refs.seeButtonEl.addEventListener('click', e => {
+//   const el = e.target;
+//   if (el.nodeName === 'svg') {
+//     const status = refs.signUpForm['signup-password'];
+
+//     if (status.type === 'password') {
+//       status.type = 'text';
+//       console.dir(
+//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
+//       );
+//     } else {
+//       status.type = 'password';
+//     }
+//   } else {
+//     return;
+//   }
+// });
+refs.signUpForm?.addEventListener('submit', onSignUp);
+refs.signInEl?.addEventListener('submit', onSignIn);
 
 //----------------------Category List-----------------------------------------
 
@@ -65,7 +82,7 @@ allCategories();
 
 //-------------------All Books Of Category---------------------------------------
 
-refs.listCategoryEl.addEventListener('click', onShowAllBooks);
+refs.listCategoryEl?.addEventListener('click', onShowAllBooks);
 let nameOfCategory = 0;
 
 async function onShowAllBooks(event) {
@@ -117,7 +134,7 @@ const topBooks = async () => {
 topBooks();
 
 //-----------------------------See More Books-------------------------------------------------------
-refs.listAllBooksEl.addEventListener('click', onShowMoreBooks);
+refs.listAllBooksEl?.addEventListener('click', onShowMoreBooks);
 
 async function onShowMoreBooks(event) {
   event.preventDefault();
@@ -159,3 +176,4 @@ navLinks.forEach(link => {
     }
   });
 });
+

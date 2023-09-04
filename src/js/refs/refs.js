@@ -21,6 +21,7 @@ export default {
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
   authButton: document.querySelector('.js-button '),
+  seeButtonEl: document.querySelector('#password'),
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
