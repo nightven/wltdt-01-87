@@ -2,7 +2,7 @@ import * as fonds from './js/fonds/fonds';
 import * as modals from './js/modals/modals';
 import * as bookModal from './js/modals/book-modal';
 import * as burger from './js/modals/menu-burger';
-
+import './js/helpers/scroll-up';
 import { onSignIn, onSignUp } from './js/auth/auth';
 import {
   fetchCategoryList,
@@ -13,9 +13,8 @@ import {
   addMarkupCategoryList,
   addMarkupTopBooks,
   changeColorOfTitleOfCategory,
-  splitTitle,
   makeActiveCategory,
-  changeActiveCategory
+  changeActiveCategory,
 } from './js/helpers/helpers';
 import {
   markupCategoryList,
@@ -72,7 +71,7 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
-    
+
     hideLoader();
   } catch (error) {
     console.log(error.message);
@@ -96,7 +95,11 @@ async function onShowAllBooks(event) {
 
   changeActiveCategory(refs.listCategoryEl.children);
 
-  changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
+  changeColorOfTitleOfCategory(
+    nameOfCategory,
+    refs.spanNormalEl,
+    refs.spanColorEl
+  );
 
   refs.categoryItemEl.classList.remove('active-category');
 
@@ -107,10 +110,7 @@ async function onShowAllBooks(event) {
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
-
-
     hideLoader();
-    
   } catch (error) {
     console.log(error.message);
     hideLoader();
@@ -150,21 +150,22 @@ async function onShowMoreBooks(event) {
   refs.categoryItemEl.classList.remove('active-category');
   nameOfCategory = event.target.dataset.js;
 
-  changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
+  changeColorOfTitleOfCategory(
+    nameOfCategory,
+    refs.spanNormalEl,
+    refs.spanColorEl
+  );
 
   try {
     showLoader();
 
     const resp = await fetchAllBooks(nameOfCategory);
 
-    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));  
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
-
-    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);   
-
+    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);
 
     hideLoader();
-
   } catch (error) {
     console.log(error.message);
     hideLoader();
@@ -180,4 +181,3 @@ navLinks.forEach(link => {
     }
   });
 });
-

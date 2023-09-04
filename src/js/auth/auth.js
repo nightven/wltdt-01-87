@@ -14,11 +14,13 @@ const {
   signUpForm,
   signInEl,
   authorized,
-  unauthorizedDiv,
+  unauthorized,
   modal,
   logoutButton,
   nameUserEl,
   authButton,
+  logoutMob,
+  nameUserMob,
 } = refs;
 
 const db = getDatabase(app);
@@ -40,7 +42,6 @@ function onSignUp(e) {
 }
 async function signUpCreateUser(login = '', email, password) {
   await createUserWithEmailAndPassword(auth, email, password)
-
     .then(userCredential => {
       // Signed in
 
@@ -74,7 +75,7 @@ function onSignIn(e) {
 }
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth, email, password)
-//check user in firebase and db
+    //check user in firebase and db
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
@@ -107,12 +108,13 @@ function authorizedUser(login = '', reg = false) {
       if (login.length > 7) {
         const userName = login.slice(0, 7) + '...';
         nameUserEl.textContent = userName;
+        // nameUserMob.textContent = userName;
       }
       authorized.forEach(el => el.classList.remove('display-none'));
-      unauthorizedDiv.style.display = 'none';
+      unauthorized.forEach(el => el.classList.add('display-none'));
     } else {
-      authorized.forEach(el => el.classList.remove('display-none'));
-      unauthorizedDiv.style.display = 'block';
+      authorized.forEach(el => el.classList.add('display-none'));
+      unauthorized.forEach(el => el.classList.remove('display-none'));
     }
   });
 }
@@ -149,8 +151,8 @@ function onClickAuthButton() {
 
 // Listening to the exit button
 logoutButton.addEventListener('click', onClickLogout);
-
-// function to the exit user 
+logoutMob?.addEventListener('click', onClickLogout);
+// function to the exit user
 function onClickLogout(e) {
   e.preventDefault();
   auth.signOut().then(() => {

@@ -14,6 +14,13 @@ function changeColorOfTitleOfCategory(str, element1, element2){
 }
 
 
+//---------------Change Color Of Title Of Category----------------
+function changeColorOfTitleOfCategory(str, element1, element2){
+  element1.textContent = splitStartOfTitle(str);
+  element2.textContent = splitEndOfTitle(str);
+}
+
+
 //------------------Split title-------------------------------------
 
 function splitStartOfTitle(str) {
@@ -52,4 +59,4 @@ function changeActiveCategory(element){
   }
 }
 
-export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, splitTitle, limitStr, makeActiveCategory, changeActiveCategory };
+export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory };

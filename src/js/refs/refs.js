@@ -16,10 +16,12 @@ export default {
   //authorization
   authorized: document.querySelectorAll('.authorized'),
 
-  unauthorizedDiv: document.getElementById('unauthorized'),
+  unauthorized: document.querySelectorAll('.unauthorized'),
   logoutButton: document.getElementById('logout'),
+  logoutMob: document.querySelector('.logout-mob'),
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
+  nameUserMob: document.querySelector('.js-user-mob '),
   authButton: document.querySelector('.js-button '),
   seeButtonEl: document.querySelector('#password'),
 
