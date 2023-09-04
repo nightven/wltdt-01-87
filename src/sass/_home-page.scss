@@ -210,6 +210,14 @@
 */
 
 @media screen and (min-width: 768px) {
+  .aside-wrapper {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .container-home-page {
     max-width: 768px;
     padding-left: 32px;
@@ -272,6 +280,11 @@
 */
 
 @media screen and (min-width: 1440px) {
+  .aside-wrapper {
+    flex-direction: column;
+    gap: 86px;
+  }
+
   .all-top {
     margin: 0 auto;
     display: flex;
