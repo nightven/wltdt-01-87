@@ -13,7 +13,6 @@ import {
   addMarkupCategoryList,
   addMarkupTopBooks,
   changeColorOfTitleOfCategory,
-  splitTitle,
   makeActiveCategory,
   changeActiveCategory
 } from './js/helpers/helpers';
@@ -97,7 +96,7 @@ async function onShowAllBooks(event) {
   changeActiveCategory(refs.listCategoryEl.children);
 
   changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
-
+  
   refs.categoryItemEl.classList.remove('active-category');
 
   try {
@@ -106,8 +105,6 @@ async function onShowAllBooks(event) {
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
-
-
 
     hideLoader();
     
@@ -150,8 +147,8 @@ async function onShowMoreBooks(event) {
   refs.categoryItemEl.classList.remove('active-category');
   nameOfCategory = event.target.dataset.js;
 
-  changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
-
+   changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
+ 
   try {
     showLoader();
 
@@ -159,9 +156,7 @@ async function onShowMoreBooks(event) {
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));  
 
-
-    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);   
-
+    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);  
 
     hideLoader();
 
