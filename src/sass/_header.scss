@@ -117,7 +117,7 @@
   }
 }
 .button-log-out {
-  display: flex;
+  display: none;
   align-items: center;
   width: 118px;
   height: 48px;
@@ -135,6 +135,7 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
   @include tablet-desktop {
+    display: flex;
     width: 184px;
     opacity: 0;
     position: absolute;
@@ -227,7 +228,7 @@
   margin-left: auto;
 }
 .logout-hidden {
-  opacity: 1;;
+  opacity: 1;
 }
 
 //styles for burger button
@@ -304,7 +305,6 @@
   width: 0%;
   left: 50%;
 }
-
 
 .display-none {
   display: none;
