@@ -38,7 +38,7 @@ function onSignUp(e) {
 
   signUpForm.reset();
 }
-
+// create user and write to db and authorization user
 function signUpCreateUser(login = '', email, password) {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
@@ -48,7 +48,7 @@ function signUpCreateUser(login = '', email, password) {
       modal.classList.toggle('is-hidden');
       Notify.success('Success registretion');
       const userId = auth.currentUser.uid;
-
+      //write to db
       setUserToDb(userId, login, email, password);
       getUserFromDb(userId);
       authorizedUser(login);
@@ -72,14 +72,14 @@ function onSignIn(e) {
   signIn(email, password);
   signInEl.reset();
 }
-
+//check user in firebase and db
 function signIn(email, password) {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
       const userId = auth.currentUser.uid;
-
+      //get user from db
       getUserFromDb(userId);
       authorizedUser(login);
 
@@ -93,13 +93,14 @@ function signIn(email, password) {
       Notify.failure('Error');
     });
 }
-//====================
+
+// check user
 function userAuth(auth) {
   return auth ? authorizedUser(auth, true) : false;
 }
 userAuth(userParsLocal);
 
-// Перевіряємо стан авторизації
+// Перевіряємо стан авторизації та надаємо дступ до контенту
 function authorizedUser(login = '', reg = false) {
   auth.onAuthStateChanged(user => {
     if (reg || user) {
@@ -112,7 +113,7 @@ function authorizedUser(login = '', reg = false) {
     }
   });
 }
-
+// function write user to db
 function setUserToDb(id, login, email, password) {
   set(ref(db, 'users/' + id), {
     login,
@@ -120,7 +121,7 @@ function setUserToDb(id, login, email, password) {
     password,
   });
 }
-
+// function read user  from db
 function getUserFromDb(userId) {
   const dbRef = ref(getDatabase());
   get(child(dbRef, `users/${userId}`))
@@ -143,9 +144,10 @@ function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
 }
 
-//logout
+// Listening to the exit button
 logoutButton.addEventListener('click', onClickLogout);
 
+// function to the exit user 
 function onClickLogout(e) {
   e.preventDefault();
   auth.signOut().then(() => {
