@@ -28,5 +28,5 @@ export default {
 
   //shop list
   shopListEl: document.querySelector('.shopping-list'),
-  emptyBinEL: document.querySelector('.empty-bin-wrapper'),
+  emptyBinEl: document.querySelector('.empty-bin-wrapper'),
 };

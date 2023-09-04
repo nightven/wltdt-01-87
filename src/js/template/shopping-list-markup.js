@@ -5,8 +5,9 @@ import {
 import spriteSvg from '../../images/icons.svg';
 import { set } from 'firebase/database';
 import { shopListMarkup } from './markup';
-import { shopListEl, emptyBinEL } from '../refs/refs';
+import refs from '../refs/refs';
 
+const { shopListEl, emptyBinEl } = refs; 
 const BOOK_KEY = 'chosen-books';
 
 doMarkup();
@@ -31,9 +32,9 @@ function removeBookFromLocalStorage(event) {
 function doMarkup() {
     const localStorageData = getDataFromLocalStorage(BOOK_KEY);
     if(localStorageData.length === 0) {
-        emptyBinEL.classList.remove('visually-hidden');
+        emptyBinEl.classList.remove('visually-hidden');
     } else {
-        emptyBinEL.classList.add('visually-hidden');
+        emptyBinEl.classList.add('visually-hidden');
         shopListEl.insertAdjacentHTML("beforeend", shopListMarkup(localStorageData));
     }
 }

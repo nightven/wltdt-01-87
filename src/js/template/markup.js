@@ -5,7 +5,7 @@ import crossSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
-import { shopListEl } from '../refs/refs';
+import refs from '../refs/refs';
 
 
 //--------------------Create markup of category-list------------------------------
@@ -142,6 +142,9 @@ function markupBookModal(bookData) {
 
 
 // -----------------------Create markUp in ShopingList---------------------------
+
+const { shopListEl } = refs; 
+
 function shopListMarkup(array) {
     shopListEl.innerHTML = '';
     return array.map(({ _id, list_name, book_image, author, title, description }) => {
