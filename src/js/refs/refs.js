@@ -8,6 +8,7 @@ export default {
   categoryNameEl: document.querySelector('.category'),
   spanColorEl: document.querySelector('.color-title'),
   spanNormalEl: document.querySelector('.normal-title'),
+  categoryItemEl : document.querySelector('.js-item-category'),
 
   //authorizetion
   authorizedDiv: document.getElementById('authorized'),
