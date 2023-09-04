@@ -27,14 +27,44 @@ import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
 
+// showLoader
+function showLoader() {
+  refs.loader.innerHTML = '';
+  refs.loader.style.display = 'block';
+}
+
+// hideLoader
+function hideLoader() {
+  refs.loader.style.display = 'none';
+}
+
 //!submit form register
-refs.signUpForm.addEventListener('submit', onSignUp);
-refs.signInEl.addEventListener('submit', onSignIn);
+// refs.seeButtonEl.addEventListener('click', e => {
+//   const el = e.target;
+//   if (el.nodeName === 'svg') {
+//     const status = refs.signUpForm['signup-password'];
+
+//     if (status.type === 'password') {
+//       status.type = 'text';
+//       console.dir(
+//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
+//       );
+//     } else {
+//       status.type = 'password';
+//     }
+//   } else {
+//     return;
+//   }
+// });
+refs.signUpForm?.addEventListener('submit', onSignUp);
+refs.signInEl?.addEventListener('submit', onSignIn);
 
 //----------------------Category List-----------------------------------------
 
 const allCategories = async () => {
   try {
+    showLoader();
+
     const resp = await fetchCategoryList();
 
     resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
@@ -42,9 +72,11 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
-
+    
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 };
 
@@ -52,7 +84,7 @@ allCategories();
 
 //-------------------All Books Of Category---------------------------------------
 
-refs.listCategoryEl.addEventListener('click', onShowAllBooks);
+refs.listCategoryEl?.addEventListener('click', onShowAllBooks);
 let nameOfCategory = 0;
 
 async function onShowAllBooks(event) {
@@ -69,12 +101,19 @@ async function onShowAllBooks(event) {
   refs.categoryItemEl.classList.remove('active-category');
 
   try {
+    showLoader();
+
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
+
+
+    hideLoader();
+    
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 }
 
@@ -82,20 +121,26 @@ async function onShowAllBooks(event) {
 
 const topBooks = async () => {
   try {
+    showLoader();
+
     const resp = await fetchTopBooks();
 
     refs.listAllBooksEl.innerHTML = '';
 
     refs.listAllBooksEl.insertAdjacentHTML('beforeend', markupBlock(resp.data));
+
+    hideLoader();
   } catch (error) {
     console.log(error.message);
+
+    hideLoader();
   }
 };
 
 topBooks();
 
 //-----------------------------See More Books-------------------------------------------------------
-refs.listAllBooksEl.addEventListener('click', onShowMoreBooks);
+refs.listAllBooksEl?.addEventListener('click', onShowMoreBooks);
 
 async function onShowMoreBooks(event) {
   event.preventDefault();
@@ -108,14 +153,21 @@ async function onShowMoreBooks(event) {
   changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
 
   try {
+    showLoader();
+
     const resp = await fetchAllBooks(nameOfCategory);
 
-    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));   
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));  
 
-    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);
-     
+
+    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);   
+
+
+    hideLoader();
+
   } catch (error) {
     console.log(error.message);
+    hideLoader();
   }
 }
 //-----------------------------Change current page style-------------------------------------------------------
@@ -129,19 +181,3 @@ navLinks.forEach(link => {
   });
 });
 
-//-----------------------------Theme Switcher-------------------------------------------------------
-
-const switcherEl = document.querySelector('.switch__input');
-
-switcherEl.addEventListener('change', onColorSwitch);
-
-function onColorSwitch() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  if (currentTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-}
-
-//---------------------------------------------------------------------------------------------------

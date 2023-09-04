@@ -80,6 +80,10 @@
 
     border-radius: 40px;
     background: $color-black;
+    &:hover,
+    &:focus {
+      background-color: #4f2ee8;
+    }
   }
   .list-auth {
     margin-top: 20px;
