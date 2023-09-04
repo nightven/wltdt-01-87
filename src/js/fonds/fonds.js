@@ -25,7 +25,7 @@ const fondsList = document.querySelector('.fonds__list');
 
 fondsList.insertAdjacentHTML('beforeend', liElements);
 
-if (window.matchMedia("(max-width: 768px)").matches) {
+if (window.matchMedia("(max-width: 767px)").matches) {
   // Viewport is less or equal to 768 pixels wide
   amountFondsItems(4,4);
 } else {
