@@ -1,12 +1,17 @@
 .all-top {
   padding-top: 72px;
   margin-bottom: 40px;
+
+  position: relative;
+}
+
+.aside-wrapper {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-home-page {
   max-width: 375px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -29,11 +34,15 @@
   |============================
 */
 .loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 140px;
   background: #979794;
   box-sizing: border-box;
-  position: relative;
+  // position: relative;
   border-radius: 8px;
   perspective: 1000px;
 }
@@ -98,24 +107,31 @@
 // -----------------------------
 .title-book {
   width: 335px;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -1.92px;
-  margin-bottom: 40px;
 }
 
-.category {
-  margin-bottom: 40px;
+.category,
+.title-book {
+  // margin-bottom: 40px;
 
   color: $color-black;
-  font-family: DM Sans;
-  font-size: 48px;
-  font-style: normal;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -1.92px;
+  line-height: 1.19px;
+  letter-spacing: -1.28px;
+  @include tablet {
+    font-size: 48px;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: -1.92px;
+  }
+  @include desktop {
+    font-size: 48px;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: -1.92px;
+  }
 }
+
 // -----------------------------
 
 // .book-title {
@@ -318,14 +334,12 @@
     display: flex;
     gap: 32px;
     margin-top: 40px;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
   }
 
   .container-home-page {
     max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
   }
 
   .container-books {
