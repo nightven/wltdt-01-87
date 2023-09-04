@@ -117,7 +117,7 @@ async function onShowMoreBooks(event) {
     console.log(error.message);
   }
 }
-
+//-----------------------------Change current page style-------------------------------------------------------
 const navLinks = document.querySelectorAll('.header-nav-list-item');
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
