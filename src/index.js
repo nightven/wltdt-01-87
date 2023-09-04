@@ -23,6 +23,7 @@ import {
 import refs from './js/refs/refs';
 import { data } from 'jquery';
 import axios from 'axios';
+import { ref } from 'firebase/database';
 
 //!submit form register
 refs.signUpForm.addEventListener('submit', onSignUp);
@@ -37,6 +38,9 @@ const allCategories = async () => {
     resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
 
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
+
+    refs.categoryItemEl.classList.add('active-category');
+
   } catch (error) {
     console.log(error.message);
   }
@@ -58,6 +62,8 @@ async function onShowAllBooks(event) {
 
   refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
   refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+
+  refs.categoryItemEl.classList.remove('active-category');
 
   try {
     const resp = await fetchAllBooks(nameOfCategory);
@@ -97,10 +103,23 @@ async function onShowMoreBooks(event) {
   refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
   refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
 
+  
+
   try {
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+
+    for (const item of refs.listCategoryEl.children) {
+
+      if (item.textContent === nameOfCategory) { 
+      
+      item.classList.add('active-category');  
+      refs.categoryItemEl.classList.remove('active-category');
+        
+      }
+  }
+
   } catch (error) {
     console.log(error.message);
   }
