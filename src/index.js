@@ -14,6 +14,8 @@ import {
   addMarkupTopBooks,
   changeColorOfTitleOfCategory,
   splitTitle,
+  makeActiveCategory,
+  changeActiveCategory
 } from './js/helpers/helpers';
 import {
   markupCategoryList,
@@ -40,6 +42,7 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
+
   } catch (error) {
     console.log(error.message);
   }
@@ -59,8 +62,9 @@ async function onShowAllBooks(event) {
 
   nameOfCategory = event.target.textContent;
 
-  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
-  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+  changeActiveCategory(refs.listCategoryEl.children);
+
+  changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
 
   refs.categoryItemEl.classList.remove('active-category');
 
@@ -68,6 +72,7 @@ async function onShowAllBooks(event) {
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+
   } catch (error) {
     console.log(error.message);
   }
@@ -97,22 +102,18 @@ async function onShowMoreBooks(event) {
 
   if (!event.target.classList.contains('js-btn-books')) return;
 
+  refs.categoryItemEl.classList.remove('active-category');
   nameOfCategory = event.target.dataset.js;
 
-  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
-  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+  changeColorOfTitleOfCategory(nameOfCategory, refs.spanNormalEl, refs.spanColorEl);
 
   try {
     const resp = await fetchAllBooks(nameOfCategory);
 
-    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));   
 
-    for (const item of refs.listCategoryEl.children) {
-      if (item.textContent === nameOfCategory) {
-        item.classList.add('active-category');
-        refs.categoryItemEl.classList.remove('active-category');
-      }
-    }
+    makeActiveCategory(refs.listCategoryEl.children, nameOfCategory);
+     
   } catch (error) {
     console.log(error.message);
   }

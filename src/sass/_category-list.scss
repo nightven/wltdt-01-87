@@ -1,37 +1,26 @@
 
 // Category Title
-.category-title {
+.category-title, .category-list {
     font-size: 16px;
-    font-weight: 400;
     line-height: 1.12;
     letter-spacing: -0.32px;
     color: $rgba-2;
+
     @include tablet {
+        font-size: 17px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
+    }
+    @include desktop {
         font-size: 18px;
         line-height: 1.33;
         letter-spacing: -0.36px;
     }
 }
 
-.category-title:hover,
-.category-title:focus {
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: $color-violet;
-}
-
-
-.category-title, .category-list {
+.category-title {
     margin-bottom: 24px;
-    color: rgba(17, 17, 17, 0.60);
-    font-family: DM Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.12;
-    letter-spacing: -0.32px;
-    
+      
 }
 
 .category-list {
@@ -40,12 +29,19 @@
     gap: 24px;    
 }
 
-.item-category:hover,
-.item-category:focus {
+.category-title:hover, .item-category:hover,
+.category-title:focus, .item-category:focus {
     font-weight: 700;
+    font-size: 14px;
     text-transform: uppercase;
-    font-size: 15px;
     color: $color-violet;
+
+    @include tablet{
+        font-size: 14px;
+    }
+    @include desktop{
+        font-size: 15px;
+    }
 }
 
 .active-category{
@@ -60,16 +56,23 @@
     padding-top: 5px;
     float: left;
     height: 228px;   
-    width: 100%;
+    width: 307px;
     overflow-y: scroll; 
-    margin-bottom: 40px;   
-}
-@media screen and (min-width: 768px) {
-    .scrollbar {
+    // margin-bottom: 40px; 
+    
+    @include tablet{
+        width: 309px;
         height: 472px;
-                
+        // margin-bottom: 100px;
     }
+    @include desktop{
+        width: 328px;
+        height: 472px;
+        // margin-bottom: 86px;
+    }
+    
 }
+
 
 .force-overflow {
     min-height: 450px;
