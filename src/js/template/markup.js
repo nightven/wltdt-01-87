@@ -25,7 +25,7 @@ function markupAllBooks(arr) {
     .map(
       ({ _id, title, author, book_image }) =>
         `
-      <li class="card-set-item, js-item-books, js-item-book" data-id="${_id}">
+      <li class="card-set-item js-item-books js-item-book" data-id="${_id}">
         <a href="#" >
    
           <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
@@ -138,11 +138,11 @@ function markupBookModal(bookData) {
   </div>`;
 }
 
-
 // -----------------------Create markUp in ShopingList---------------------------
 function shopListMarkup(array) {
-    return array.map(({ _id, list_name, book_image, author, title, description }) => {
-    return `
+  return array
+    .map(({ _id, list_name, book_image, author, title, description }) => {
+      return `
     <li class="book-item" data-id="${_id}">
     <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
     <div class="book-item-descr">
@@ -156,9 +156,15 @@ function shopListMarkup(array) {
     </svg>
     </button>
     </div>
-    </li>`
-  }).join('')
+    </li>`;
+    })
+    .join('');
 }
 
-
-export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal, shopListMarkup };
+export {
+  markupCategoryList,
+  markupAllBooks,
+  markupBlock,
+  markupBookModal,
+  shopListMarkup,
+};
