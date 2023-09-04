@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header-container">
+  <div class="container header-container">
     <!-- Logo,  -->
     <nav class="header-nav">
       <a class="logo link" href="./index.html"
@@ -10,13 +10,15 @@
       ></a>
       <!-- icon-Bookshelf -->
       <!-- HOME, SHOPPING LIST -->
-      <ul class="header-nav-list list">
+      <ul class="header-nav-list list authorized display-none">
         <li>
           <a class="header-nav-list-item current link" href=".">HOME</a>
         </li>
         <li>
-          <a class="header-nav-list-item link" href="/src/shopping-list.html"
-            >SHOPPING LIST<svg class="" width="20" height="20">
+          <a
+            class="header-nav-list-item link current"
+            href="/src/shopping-list.html"
+            >SHOPPING LIST<svg width="20" height="20">
               <use href="/src/images/icons.svg#icon-cart"></use></svg
           ></a>
         </li>
@@ -45,7 +47,7 @@
     <!-- checkbox, Sign up, Menu-burger -->
 
     <div id="app">
-      <div id="authorized" class="nav-button" style="display: none">
+      <div class="authorized display-none">
         <!-- Вміст для авторизованих користувачів -->
         <button type="button" class="js-button button-user">
           <span class="icon-wrapper"

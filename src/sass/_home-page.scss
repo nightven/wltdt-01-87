@@ -1,3 +1,8 @@
+.all-top {
+  padding-top: 72px;
+  margin-bottom: 40px;
+}
+
 .container-home-page {
   max-width: 375px;
   padding-left: 20px;
@@ -40,7 +45,7 @@
 
 .category {
   margin-bottom: 40px;
-  margin-left: 40px;
+  
 
   color: $color-black;
   font-family: DM Sans;
@@ -182,8 +187,51 @@
   position: relative;
 }
 
+.js-item-book {
+  margin-bottom: 40px;
+}
+
 .js-item-book:last-child {
   margin-bottom: 0px;
+}
+
+/**
+  |============================
+  |    QUICK VIEW
+  |============================
+*/
+.book-overlay {
+  width: 100%;
+  height: 70px;
+  background-color: $color-yellow;
+  border-radius: 0px 0px 8px 8px;
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+
+  color: $color-black;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  transition: opacity 900ms ease;
+}
+
+.js-item-books:hover .book-overlay,
+.js-item-book:hover .book-overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.js-item-books,
+.js-item-book {
+  overflow: hidden;
+}
+
+.book-overlay-text {
+  text-align: center;
+  padding-top: 26px;
 }
 
 /**
@@ -205,6 +253,14 @@
 */
 
 @media screen and (min-width: 768px) {
+  .aside-wrapper {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .container-home-page {
     max-width: 768px;
     padding-left: 32px;
@@ -267,6 +323,20 @@
 */
 
 @media screen and (min-width: 1440px) {
+  .aside-wrapper {
+    flex-direction: column;
+    gap: 86px;
+  }
+
+  .all-top {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-width: 1440px;
+    gap: 40px;
+  }
+
   .container-home-page {
     max-width: 1440px;
     margin: 0;
