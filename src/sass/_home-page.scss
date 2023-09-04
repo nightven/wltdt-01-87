@@ -1,3 +1,8 @@
+.all-top {
+  padding-top: 72px;
+  margin-bottom: 40px;
+}
+
 .container-home-page {
   max-width: 375px;
   padding-left: 20px;
@@ -267,6 +272,15 @@
 */
 
 @media screen and (min-width: 1440px) {
+  .all-top {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-width: 1440px;
+    gap: 40px;
+  }
+
   .container-home-page {
     max-width: 1440px;
     margin: 0;
