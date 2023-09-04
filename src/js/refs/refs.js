@@ -25,4 +25,8 @@ export default {
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
+
+  //shop list
+  shopListEl: document.querySelector('.shopping-list'),
+  emptyBinEl: document.querySelector('.empty-bin-wrapper'),
 };

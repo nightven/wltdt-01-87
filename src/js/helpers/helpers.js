@@ -8,16 +8,22 @@ function addMarkupTopBooks(element, markup) {
 }
 
 //---------------Change Color Of Title Of Category----------------
-
-function changeColorOfTitleOfCategory(str) {
-  const arr = str.split(" ");  
-  return arr[arr.length-1];
+function changeColorOfTitleOfCategory(str, element1, element2){
+  element1.textContent = splitStartOfTitle(str);
+  element2.textContent = splitEndOfTitle(str);
 }
 
+
 //------------------Split title-------------------------------------
-function splitTitle(str) {
+
+function splitStartOfTitle(str) {
   const arr = str.split(" ");
   return arr.splice(0, arr.length-1).join(" ");
+}
+
+function splitEndOfTitle(str) {
+  const arr = str.split(" ");  
+  return arr[arr.length-1];
 }
 
 //-------------------Limit Title Of Books------------------------------
@@ -27,5 +33,23 @@ function limitStr(str, n, symb) {
   return str.substr(0, n-symb.length) + symb;
 }
 
+//-------------------Make Active Category------------------------------
+function makeActiveCategory(element, nameOfCategory){
+  for (const item of element) {
+    if (item.textContent === nameOfCategory) {
+      item.classList.add('active-category');
+  
+    }
+  }
+}
 
-export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, splitTitle, limitStr };
+//-------------------Chane Active Category------------------------------
+function changeActiveCategory(element){
+  for(const item of element){
+    if(item.classList.contains('active-category')){
+      item.classList.remove('active-category');
+    }
+  }
+}
+
+export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, splitTitle, limitStr, makeActiveCategory, changeActiveCategory };
