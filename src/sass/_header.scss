@@ -3,9 +3,9 @@
 /* Mobile styles $ >*/
 .header-container {
   display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 20px;
@@ -41,6 +41,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
   height: 28px;
   width: 109px;
 }
@@ -61,17 +62,14 @@
 .header-theme-authorization {
   display: flex;
   align-items: center;
-  // gap: 14px;
+ 
   height: 28px;
   margin-left: auto;
 }
 .header-nav {
   display: flex;
 }
-// .logo-text {
 
-// }
-/* Mobile styles $ >*/
 .header-nav-list {
   display: none;
 
@@ -93,6 +91,7 @@
   gap: 10px;
 
   font-weight: 700;
+
   border-radius: 36px;
   background: #eac645;
 }
@@ -100,6 +99,7 @@
 .menu-toggle {
   padding: 0;
   height: 28px;
+  
   border: none;
   background-color: transparent;
 
@@ -117,10 +117,12 @@
   }
 }
 .button-log-out {
-  display: flex;
+  display: none;
   align-items: center;
+
   width: 118px;
   height: 48px;
+
   flex-shrink: 0;
   border-radius: 18px;
   border: 1.5px solid #111;
@@ -134,12 +136,14 @@
   font-weight: 500;
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
-  display: none;
+  
   @include tablet-desktop {
     display: flex;
-    opacity: 0;
-    width: 184px;
     position: absolute;
+
+    width: 184px;
+
+    opacity: 0;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
@@ -150,9 +154,11 @@
   @include sign-up-btn;
   margin: 0;
   padding: 8px 12px;
+
   border-radius: 36px;
   @include tablet-desktop {
     display: flex;
+
     height: 45px;
   }
   display: none;
@@ -161,10 +167,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  background-color: $color-white;
+
   width: 37px;
   height: 37px;
+
+  border-radius: 50%;
+  background-color: $color-white;
 }
 // .user-icon {
 // }
@@ -172,6 +180,7 @@
 .switch {
   display: inline-block;
   position: relative;
+
   width: 40px;
   height: 20px;
   margin-right: 24px;
@@ -229,7 +238,7 @@
   margin-left: auto;
 }
 .logout-hidden {
-  opacity: 1;;
+  opacity: 1;
 }
 
 //styles for burger button
@@ -306,7 +315,6 @@
   width: 0%;
   left: 50%;
 }
-
 
 .display-none {
   display: none;
