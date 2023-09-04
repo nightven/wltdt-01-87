@@ -26,6 +26,23 @@ import axios from 'axios';
 import { ref } from 'firebase/database';
 
 //!submit form register
+// refs.seeButtonEl.addEventListener('click', e => {
+//   const el = e.target;
+//   if (el.nodeName === 'svg') {
+//     const status = refs.signUpForm['signup-password'];
+
+//     if (status.type === 'password') {
+//       status.type = 'text';
+//       console.dir(
+//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
+//       );
+//     } else {
+//       status.type = 'password';
+//     }
+//   } else {
+//     return;
+//   }
+// });
 refs.signUpForm?.addEventListener('submit', onSignUp);
 refs.signInEl?.addEventListener('submit', onSignIn);
 

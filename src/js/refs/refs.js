@@ -9,7 +9,6 @@ export default {
   spanColorEl: document.querySelector('.color-title'),
   spanNormalEl: document.querySelector('.normal-title'),
   categoryItemEl: document.querySelector('.js-item-category'),
-  
 
   //authorizetion
   authorized: document.querySelectorAll('.authorized'),
@@ -19,6 +18,7 @@ export default {
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
   authButton: document.querySelector('.js-button '),
+  seeButtonEl: document.querySelector('#password'),
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),

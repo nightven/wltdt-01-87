@@ -14,7 +14,7 @@ doMarkup();
 document.addEventListener('click', removeBookFromLocalStorage);
 
 function removeBookFromLocalStorage(event) {
-   const deleteBtn = event.target.closest('[data-delete]');
+  const deleteBtn = event.target.closest('[data-delete]');
   if (deleteBtn) {
     const idBook = event.target.closest('.book-item').dataset.id;
     const localStorageBooks = getDataFromLocalStorage(BOOK_KEY);
@@ -27,13 +27,13 @@ function removeBookFromLocalStorage(event) {
     doMarkup();
   }
 }
-
+  
 function doMarkup() {
-  const localStorageData = getDataFromLocalStorage(BOOK_KEY);
-  if (localStorageData.length === 0) {
-    emptyBinEL.classList.remove('visually-hidden');
-  } else {
-    emptyBinEL.classList.add('visually-hidden');
-    shopListEl.insertAdjacentHTML('beforeend', shopListMarkup(localStorageData));
-  }
+    const localStorageData = getDataFromLocalStorage(BOOK_KEY);
+    if(localStorageData.length === 0) {
+        emptyBinEL.classList.remove('visually-hidden');
+    } else {
+        emptyBinEL.classList.add('visually-hidden');
+        shopListEl.insertAdjacentHTML("beforeend", shopListMarkup(localStorageData));
+    }
 }
