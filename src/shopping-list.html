@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./sass/index.scss" />
     <title>Shopping List</title>
-</head>
-<body>
+  </head>
+  <body>
     <include src="./partials/header/header.html"></include>
     <main>
-        <section class="shopping-list-section">
-            <div class="container shopping-list-wrapper">
-                <aside class="aside-wrapper shopping-list-fonds">
-                    <include src="./partials/fonds/fonds.html"></include>
-                </aside>
-                <h1 class="shopping-list-title">Shopping <span class="shopping-list-word">List</span></h1>
-                <ul class="shopping-list"></ul>
-                <div class="empty-bin-wrapper visually-hidden">
-                    <p class="empty-bin-desc">This page is empty, add some books and proceed to order.</p>
-                    <div class="empty-img-wrapper">
-                        <img src="./images/shopping-list/empty-bin-265x198-px.webp" alt="Empty Book's Bin">
-                    </div>  
-                </div> 
+      <section class="shopping-list-section">
+        <div class="container shopping-list-wrapper">
+          <aside class="aside-wrapper shopping-list-fonds">
+            <include src="./partials/fonds/fonds.html"></include>
+          </aside>
+          <h1 class="shopping-list-title">
+            Shopping <span class="shopping-list-word">List</span>
+          </h1>
+          <ul class="shopping-list"></ul>
+          <div class="empty-bin-wrapper visually-hidden">
+            <p class="empty-bin-desc">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <div class="empty-img-wrapper">
+              <img
+                src="./images/shopping-list/empty-bin-265x198-px.webp"
+                alt="Empty Book's Bin"
+              />
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
+    <include src="./partials/home-page/scroll-up.html"></include>
+
     <script type="module" src="index.js"></script>
     <script type="module" src="./js/template/shopping-list-markup.js"></script>
-</body>
+  </body>
 </html>
