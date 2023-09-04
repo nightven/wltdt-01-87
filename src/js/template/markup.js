@@ -150,15 +150,21 @@ function shopListMarkup(array) {
     return array.map(({ _id, list_name, book_image, author, title, description }) => {
     return `
     <li class="book-item" data-id="${_id}">
+    <div class="book-image-wrapper">
     <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
+    </div>
     <div class="book-item-descr">
-    <h2>${title}</h2>
-    <p>${list_name}</p>
-    <p>${description}</p>
-    <p>${author}</p>
+    <h2 class="book-shop-title">${limitStr(title, 16)}</h2>
+    <p class="book-genre">${list_name}</p>
+    <p class="book-descr">${limitStr(description, 87)}</p>
+    <div class="author-shop-wrp">
+    <p class="shop-book-author">${author}</p>
+    </div>
+    
+    
     <button class="book-btn" data-delete  type="button">
     <svg class="del-modal-icon" width="28" height="28">
-    <use href="${spriteSvg}#icon-trash-bin"></use>
+    <use class="trash-icon" href="${spriteSvg}#icon-trash-bin"></use>
     </svg>
     </button>
     </div>

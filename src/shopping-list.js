@@ -1,11 +1,11 @@
 import {
   getDataFromLocalStorage,
   saveDataToLocalStorage,
-} from '../localstorage/local';
-import spriteSvg from '../../images/icons.svg';
+} from './js/localstorage/local';
+import spriteSvg from './images/icons.svg#icon-trash-bin';
 import { set } from 'firebase/database';
-import { shopListMarkup } from './markup';
-import refs from '../refs/refs';
+import { shopListMarkup } from './js/template/markup';
+import refs from './js/refs/refs';
 
 const { shopListEl, emptyBinEl } = refs; 
 const BOOK_KEY = 'chosen-books';
@@ -15,6 +15,7 @@ doMarkup();
 document.addEventListener('click', removeBookFromLocalStorage);
 
 function removeBookFromLocalStorage(event) {
+
   const deleteBtn = event.target.closest('[data-delete]');
   if (deleteBtn) {
     const idBook = event.target.closest('.book-item').dataset.id;
@@ -27,8 +28,9 @@ function removeBookFromLocalStorage(event) {
     shopListEl.innerHTML = shopListMarkup(localStorageBooks);
     doMarkup();
   }
+
 }
-  
+
 function doMarkup() {
     const localStorageData = getDataFromLocalStorage(BOOK_KEY);
     if(localStorageData.length === 0) {
