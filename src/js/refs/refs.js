@@ -1,4 +1,7 @@
 export default {
+  //loader
+  loader: document.querySelector('.loader'),
+  //main
   modal: document.querySelector('.backdrop'),
   signUpForm: document.querySelector('.js-form'),
   signInEl: document.querySelector('.js-sign-in'),
@@ -10,7 +13,7 @@ export default {
   spanNormalEl: document.querySelector('.normal-title'),
   categoryItemEl: document.querySelector('.js-item-category'),
 
-  //authorizetion
+  //authorization
   authorized: document.querySelectorAll('.authorized'),
 
   unauthorizedDiv: document.getElementById('unauthorized'),
