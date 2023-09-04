@@ -21,8 +21,6 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
-import { data } from 'jquery';
-import axios from 'axios';
 
 //!submit form register
 refs.signUpForm.addEventListener('submit', onSignUp);

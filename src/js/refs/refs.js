@@ -10,14 +10,13 @@ export default {
   spanNormalEl: document.querySelector('.normal-title'),
 
   //authorizetion
-  authorizedDiv: document.getElementById('authorized'),
+  authorized: document.querySelectorAll('.authorized'),
+
   unauthorizedDiv: document.getElementById('unauthorized'),
   logoutButton: document.getElementById('logout'),
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
   authButton: document.querySelector('.js-button '),
-
-  
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
