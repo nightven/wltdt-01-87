@@ -28,6 +28,23 @@ import { ref } from 'firebase/database';
 //!submit form register
 refs.signUpForm.addEventListener('submit', onSignUp);
 refs.signInEl.addEventListener('submit', onSignIn);
+// refs.seeButtonEl.addEventListener('click', e => {
+//   const el = e.target;
+//   if (el.nodeName === 'svg') {
+//     const status = refs.signUpForm['signup-password'];
+
+//     if (status.type === 'password') {
+//       status.type = 'text';
+//       console.dir(
+//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
+//       );
+//     } else {
+//       status.type = 'password';
+//     }
+//   } else {
+//     return;
+//   }
+// });
 
 //----------------------Category List-----------------------------------------
 
@@ -40,7 +57,6 @@ const allCategories = async () => {
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
 
     refs.categoryItemEl.classList.add('active-category');
-
   } catch (error) {
     console.log(error.message);
   }
@@ -103,23 +119,17 @@ async function onShowMoreBooks(event) {
   refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
   refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
 
-  
-
   try {
     const resp = await fetchAllBooks(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
     for (const item of refs.listCategoryEl.children) {
-
-      if (item.textContent === nameOfCategory) { 
-      
-      item.classList.add('active-category');  
-      refs.categoryItemEl.classList.remove('active-category');
-        
+      if (item.textContent === nameOfCategory) {
+        item.classList.add('active-category');
+        refs.categoryItemEl.classList.remove('active-category');
       }
-  }
-
+    }
   } catch (error) {
     console.log(error.message);
   }

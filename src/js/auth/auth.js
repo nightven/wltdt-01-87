@@ -30,17 +30,17 @@ const userParsLocal = JSON.parse(getLocalUser);
 //sign up the user
 function onSignUp(e) {
   e.preventDefault();
-  const login = signUpForm['signup-login'].value;
-  const email = signUpForm['signup-email'].value;
-  const password = signUpForm['signup-password'].value;
+  const login = signUpForm['signup-login'].value.trim();
+  const email = signUpForm['signup-email'].value.trim();
+  const password = signUpForm['signup-password'].value.trim();
 
   signUpCreateUser(login, email, password);
 
   signUpForm.reset();
 }
 
-function signUpCreateUser(login = '', email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
+async function signUpCreateUser(login = '', email, password) {
+  await createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
 
@@ -73,15 +73,15 @@ function onSignIn(e) {
   signInEl.reset();
 }
 
-function signIn(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
+async function signIn(email, password) {
+  await signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
       const userId = auth.currentUser.uid;
 
       getUserFromDb(userId);
-      authorizedUser(login);
+      authorizedUser();
 
       modal.classList.toggle('is-hidden');
       Notify.success('Success');
@@ -103,9 +103,12 @@ userAuth(userParsLocal);
 function authorizedUser(login = '', reg = false) {
   auth.onAuthStateChanged(user => {
     if (reg || user) {
+      if (login.length > 7) {
+        const userName = login.slice(0, 7) + '...';
+        nameUserEl.textContent = userName;
+      }
       authorized.forEach(el => el.classList.remove('display-none'));
       unauthorizedDiv.style.display = 'none';
-      nameUserEl.textContent = login;
     } else {
       authorized.forEach(el => el.classList.remove('display-none'));
       unauthorizedDiv.style.display = 'block';
@@ -121,9 +124,9 @@ function setUserToDb(id, login, email, password) {
   });
 }
 
-function getUserFromDb(userId) {
+async function getUserFromDb(userId) {
   const dbRef = ref(getDatabase());
-  get(child(dbRef, `users/${userId}`))
+  await get(child(dbRef, `users/${userId}`))
     .then(snapshot => {
       if (snapshot.exists()) {
         const userValue = snapshot.val();
