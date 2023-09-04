@@ -330,6 +330,7 @@ body {
 @media only screen and (min-width: 768px) {
   .button-user {
     display: flex;
+    height: 45px;
   }
 }
 
@@ -349,7 +350,7 @@ body {
   position: relative;
   width: 40px;
   height: 20px;
-  margin-right: 14px;
+  margin-right: 24px;
 }
 
 /* hide standart checkbox */

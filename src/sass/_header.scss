@@ -151,6 +151,7 @@
   border-radius: 36px;
   @include tablet-desktop {
     display: flex;
+    height: 45px;
   }
   display: none;
 }
@@ -171,7 +172,7 @@
   position: relative;
   width: 40px;
   height: 20px;
-  margin-right: 14px;
+  margin-right: 24px;
 }
 
 /* hide standart checkbox */
