@@ -48,9 +48,7 @@ function updateLocalStorageBooks(id) {
   if (!existingBook) {
     localStorageBooks.push(bookData);
     } else {
-    const index = localStorageBooks.findIndex(
-      book => book._id === bookData._id
-    );
+    const index = localStorageBooks.findIndex(book => book._id === bookData._id);
     localStorageBooks.splice(index, 1);
     
   }
