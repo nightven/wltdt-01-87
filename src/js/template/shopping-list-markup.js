@@ -4,21 +4,17 @@ import {
 } from '../localstorage/local';
 import spriteSvg from '../../images/icons.svg';
 import { set } from 'firebase/database';
+import { shopListMarkup } from './markup';
+import { shopListEl, emptyBinEL } from '../refs/refs';
 
-const shopListEl = document.querySelector('.shopping-list');
-const emptyBinEL = document.querySelector('.empty-bin-wrapper');
 const BOOK_KEY = 'chosen-books';
 
 doMarkup();
 
-const trashBtn = document.querySelector('.book-btn');
-console.log(trashBtn);
-
 document.addEventListener('click', removeBookFromLocalStorage);
 
 function removeBookFromLocalStorage(event) {
-  console.log();
-  const deleteBtn = event.target.closest('[data-delete]');
+   const deleteBtn = event.target.closest('[data-delete]');
   if (deleteBtn) {
     const idBook = event.target.closest('.book-item').dataset.id;
     const localStorageBooks = getDataFromLocalStorage(BOOK_KEY);
@@ -27,7 +23,7 @@ function removeBookFromLocalStorage(event) {
     );
     localStorageBooks.splice(bookToDelete, 1);
     saveDataToLocalStorage(BOOK_KEY, localStorageBooks);
-    shopListEl.insertAdjacentHTML('beforeend', shopMarkup(localStorageBooks));
+    shopListEl.innerHTML = shopListMarkup(localStorageBooks);
     doMarkup();
   }
 }
@@ -38,6 +34,6 @@ function doMarkup() {
     emptyBinEL.classList.remove('visually-hidden');
   } else {
     emptyBinEL.classList.add('visually-hidden');
-    shopListEl.insertAdjacentHTML('beforeend', shopMarkup(localStorageData));
+    shopListEl.insertAdjacentHTML('beforeend', shopListMarkup(localStorageData));
   }
 }

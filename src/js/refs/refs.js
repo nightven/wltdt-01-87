@@ -8,7 +8,8 @@ export default {
   categoryNameEl: document.querySelector('.category'),
   spanColorEl: document.querySelector('.color-title'),
   spanNormalEl: document.querySelector('.normal-title'),
-  categoryItemEl : document.querySelector('.js-item-category'),
+  categoryItemEl: document.querySelector('.js-item-category'),
+  
 
   //authorizetion
   authorized: document.querySelectorAll('.authorized'),
@@ -21,4 +22,8 @@ export default {
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
+
+  //shop list
+  shopListEl: document.querySelector('.shopping-list'),
+  emptyBinEL: document.querySelector('.empty-bin-wrapper'),
 };
