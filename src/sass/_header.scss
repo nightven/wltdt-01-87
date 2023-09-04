@@ -136,9 +136,9 @@
   letter-spacing: -0.56px;
   @include tablet-desktop {
     width: 184px;
-    transform: translateX(500px);
+    opacity: 0;
     position: absolute;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 .svg-button-log-out {
@@ -151,6 +151,7 @@
   border-radius: 36px;
   @include tablet-desktop {
     display: flex;
+    height: 45px;
   }
   display: none;
 }
@@ -171,7 +172,7 @@
   position: relative;
   width: 40px;
   height: 20px;
-  margin-right: 14px;
+  margin-right: 24px;
 }
 
 /* hide standart checkbox */
@@ -226,7 +227,7 @@
   margin-left: auto;
 }
 .logout-hidden {
-  transform: translateX(0px);
+  opacity: 1;;
 }
 
 //styles for burger button

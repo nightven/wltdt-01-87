@@ -2,8 +2,8 @@ import { fetchBookData } from '../api/api-books';
 import { markupBookModal } from '../template/markup';
 import refs from '../refs/refs';
 import {
-  getDataFromLocalStorage,
-  saveDataToLocalStorage,
+  getBookFromLocalStorage,
+  updateLocalStorageBooks,
 } from '../localstorage/local';
 
 import * as basicLightbox from 'basiclightbox';
@@ -12,8 +12,6 @@ const { listBookModalEl } = refs;
 
 let currentInstance = null;
 let bookData = null;
-
-const BOOKS_KEY = 'chosen-books';
 
 listBookModalEl.addEventListener('click', clickBookModalHandler);
 document.addEventListener('keydown', closeModalByEscape);
@@ -37,8 +35,9 @@ function showBookModal(bookData) {
       addOverflowHidden();
       instance.element().querySelector('.close-modal-btn').onclick =
         instance.close;
-      instance.element().querySelector('.modal-btn').onclick =
-        updateLocalStorageBooks;
+      instance.element().querySelector('.modal-btn').onclick = () => {
+        updateLocalStorageBooks(bookData);
+      };
     },
     onClose: () => {
       removeOverflowHidden();
@@ -48,29 +47,6 @@ function showBookModal(bookData) {
   updateModalButtonSection(Boolean(existingBook));
 
   currentInstance.show();
-}
-
-function getBookFromLocalStorage(id) {
-  const localStorageBooks = getDataFromLocalStorage(BOOKS_KEY);
-  return localStorageBooks.find(book => book._id === id);
-}
-
-function updateLocalStorageBooks() {
-  const localStorageBooks = getDataFromLocalStorage(BOOKS_KEY);
-  const existingBook = getBookFromLocalStorage(bookData._id);
-
-  if (!existingBook) {
-    localStorageBooks.push(bookData);
-    updateModalButtonSection(true);
-  } else {
-    const index = localStorageBooks.findIndex(
-      book => book._id === bookData._id
-    );
-    localStorageBooks.splice(index, 1);
-    updateModalButtonSection(false);
-  }
-
-  saveDataToLocalStorage(BOOKS_KEY, localStorageBooks);
 }
 
 function updateModalButtonSection(isBookExists) {
@@ -101,4 +77,4 @@ function removeOverflowHidden() {
   document.body.classList.remove('no-scroll');
 }
 
-export { getBookFromLocalStorage };
+export { updateModalButtonSection };
