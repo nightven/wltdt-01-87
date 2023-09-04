@@ -3,8 +3,13 @@
 /* Mobile styles $ >*/
 .header-container {
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
-  padding: 18px 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $color-black;
@@ -16,15 +21,19 @@
   left: 0;
   right: 0;
   @include tablet {
-    padding: 14px 24px 13px 24px;
+    padding-top: 14px;
+    padding-bottom: 13px;
+    padding-left: 32px;
+    padding-right: 32px;
     min-width: 768px;
-    // padding-left: 32px;
-    // padding-right: 32px;
   }
   @include desktop {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+  @include tablet-desktop {
+    height: 72px;
   }
 }
 
@@ -34,6 +43,10 @@
   gap: 8px;
   height: 28px;
   width: 109px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .header-nav-list {
@@ -69,6 +82,21 @@
   }
 }
 
+.header-nav-list-item {
+  display: flex;
+  gap: 4px;
+}
+.current {
+  display: flex;
+  padding: 8px 16px;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-weight: 700;
+  border-radius: 36px;
+  background: #eac645;
+}
+
 .menu-toggle {
   padding: 0;
   height: 28px;
@@ -81,24 +109,50 @@
 }
 
 .button-sign-up {
-  @include mobile-tablet {
-    display: none;
-  }
+  display: none;
 
   @include tablet-desktop {
     @include sign-up-btn;
     margin: 0;
   }
 }
+.button-log-out {
+  display: flex;
+  align-items: center;
+  width: 118px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+  padding: 15px 24px;
 
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  @include tablet-desktop {
+    width: 184px;
+    transform: translateX(500px);
+    position: absolute;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.svg-button-log-out {
+  margin-left: auto;
+}
 .button-user {
   @include sign-up-btn;
   margin: 0;
   padding: 8px 12px;
   border-radius: 36px;
-  @include mobile {
-    display: none;
+  @include tablet-desktop {
+    display: flex;
   }
+  display: none;
 }
 .icon-wrapper {
   display: flex;
@@ -166,4 +220,91 @@
 
 .switch__input:checked + .switch__slider::before {
   transform: translateX(20px);
+}
+
+.switcher-wrrap {
+  margin-left: auto;
+}
+.logout-hidden {
+  transform: translateX(0px);
+}
+
+//styles for burger button
+#burger-btn {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 0px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#burger-btn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: $color-black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#burger-btn span:nth-child(1) {
+  top: 0px;
+}
+
+#burger-btn span:nth-child(2),
+#burger-btn span:nth-child(3) {
+  top: 9px;
+}
+
+#burger-btn span:nth-child(4) {
+  top: 18px;
+}
+
+#burger-btn.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+#burger-btn.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#burger-btn.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#burger-btn.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
+
+.display-none {
+  display: none;
 }

@@ -10,64 +10,75 @@
       ></a>
       <!-- icon-Bookshelf -->
       <!-- HOME, SHOPPING LIST -->
-      <ul class="header-nav-list list">
+      <ul class="header-nav-list list authorized display-none">
         <li>
-          <a class="nav-list-item current link" href=".">HOME</a>
+          <a class="header-nav-list-item current link" href=".">HOME</a>
         </li>
         <li>
-          <a class="nav-list-item link" href="/src/shopping-list.html"
-            >SHOPPING LIST</a
-          ><svg class="" width="20" height="20">
-            <use href="/src/images/icons.svg#icon-cart"></use>
-          </svg>
+          <a
+            class="header-nav-list-item link current"
+            href="/src/shopping-list.html"
+            >SHOPPING LIST<svg width="20" height="20">
+              <use href="/src/images/icons.svg#icon-cart"></use></svg
+          ></a>
         </li>
       </ul>
     </nav>
+    <!-- switcher -->
+    <div class="switcher-wrrap">
+      <label class="switch">
+        <input type="checkbox" class="switch__input" />
+        <span class="switch__slider"></span>
+      </label>
+
+      <button
+        id="burger-btn"
+        class="menu-toggle"
+        aria-expanded="true"
+        aria-controls="mobile-menu"
+        data-menu-burger-open
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <!-- checkbox, Sign up, Menu-burger -->
-    <ul class="header-theme-authorization">
-      <li>
-        <label class="switch">
-          <input type="checkbox" class="switch__input" />
-          <span class="switch__slider"></span>
-        </label>
-      </li>
-      <li>
-        <button
-          class="menu-toggle"
-          aria-expanded="true"
-          aria-controls="mobile-menu"
-          data-menu-burger-open
-        >
-          <svg class="" width="28" height="28">
-            <use href="/src/images/icons.svg#icon-align-left"></use>
-          </svg>
-        </button>
-      </li>
-      <!-- <li>
-        <button
-          type="button"
-          class="js-button button-sign-up"
-          data-sign-up-open
-        >
-          Sign up
-        </button>
-      </li> -->
-      <li>
-        <button type="button" class="js-button button-user" data-sign-up-open>
+
+    <div id="app">
+      <div class="authorized display-none">
+        <!-- Вміст для авторизованих користувачів -->
+        <button type="button" class="js-button button-user">
           <span class="icon-wrapper"
             ><svg class="user-icon" width="19" height="19">
               <use href="/src/images/icons.svg#icon-user"></use></svg
           ></span>
-          Stephan<svg class="" width="28" height="28">
+          <span class="js-login-user">Stephan</span
+          ><svg class="" width="28" height="28">
             <use href="/src/images/icons.svg#icon-caret-down"></use>
           </svg>
         </button>
-      </li>
-      <!-- <li>
-        <button type="button" class="js-button button-log-up visually-hidden">
-          Log out
+        <button id="logout" type="button" class="button-log-out">
+          Log out<svg class="svg-button-log-out" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
         </button>
-      </li>     -->
-    </ul>
+      </div>
+      <div id="unauthorized">
+        <!-- Вміст для неавторизованих користувачів -->
+        <button
+          id="login"
+          type="button"
+          class="js-button button-sign-up"
+          data-sign-up-open
+        >
+          Sign up<svg class="" width="20" height="20">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+        <!-- <button id="login">Увійти</button> -->
+      </div>
+    </div>
   </div>
 </header>

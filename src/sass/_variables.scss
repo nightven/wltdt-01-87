@@ -1,17 +1,21 @@
 // colors
-$color-black: rgba(17, 17, 17, 1);
-$color-black-1: rgba(32, 32, 36, 1);
-$color-violet: rgba(79, 46, 232, 1);
-$color-yellow: rgba(234, 198, 69, 1);
-$color-white: rgba(255, 255, 255, 1);
-$color-grey: rgba(180, 175, 175, 1);
+$color-black: #111111;
+$color-black-1: #202024;
+$color-violet: #4f2ee8;
+$color-yellow: #eac645;
+$color-white: #ffffff;
+$color-grey: #b4afaf;
 $color-black-alfa: rgba(17, 17, 17, 0.5);
 $color-white-warm: #f6f6f6;
 
 // rgba
 $rgba-1: rgba(0, 0, 0, 0.60);
-
+$rgba-2: rgba(17, 17, 17, 0.60);
 
 // gradients
 $gradient-1: linear-gradient(rgb(79, 46, 232), rgb(220, 220, 220));
 $gradient-2: linear-gradient(rgba(79, 46, 232, 1), rgba(104, 104, 104, 1));
+
+// book modal
+$cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+$letter-spacing: -0.04em;

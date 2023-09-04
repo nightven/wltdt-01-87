@@ -1,14 +1,22 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './mixins';
 
-$breakpoint_desktop: 1440px;
-$breakpoint_laptop: 768px;
-$breakpoint_mobile: 375px;
+// Common Setting For Shopping-List-HTML
+body {
+  font-family: DM Sans;
+  font-style: normal;
+  color: $color-black;
+  background-color: $color-white-warm;
+}
 
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .visually-hidden {
@@ -24,12 +32,13 @@ $breakpoint_mobile: 375px;
   overflow: hidden;
 }
 
-// Response
+// Main Container
 .container {
   // width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
+
   @include mobile {
     min-width: 375px;
   }
@@ -39,8 +48,16 @@ $breakpoint_mobile: 375px;
     padding-right: 32px;
   }
   @include desktop {
-    min-width: 1440px;
+    max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+}
+
+// Aside Section
+.aside-section {
+  padding-top: 104px;
+  @include tablet {
+    padding-top: 112px;
   }
 }

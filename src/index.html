@@ -16,14 +16,17 @@
 
   <body>
     <include src="./partials/header/header.html"></include>
+
     <main>
-      <div class="container section">
+      <div class="container all-top">
         <aside class="aside-wrapper">
           <include src="./partials/category/category-list.html"></include>
           <include src="./partials/fonds/fonds.html"></include>
         </aside>
         <section class="container-home-page">
-          <include src="./partials/home-page/home-page.html"></include>
+          <div class="container-books">
+            <include src="./partials/home-page/home-page.html"></include>
+          </div>
         </section>
       </div>
     </main>
@@ -35,6 +38,7 @@
       </div>
       <div id="unauthorized">
         <!-- Вміст для неавторизованих користувачів -->
+
         <!-- <button id="login">Увійти</button> -->
       </div>
     </div>
@@ -43,7 +47,7 @@
     <include src="./partials/modals/auth-modal.html"></include>
     <!-- menu-burger -->
     <include src="./partials/modals/menu-burger.html"></include>
-   
+
     <script type="module" src="index.js"></script>
   </body>
 </html>

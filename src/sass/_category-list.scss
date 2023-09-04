@@ -1,27 +1,28 @@
-.category-section {
-    padding-top: 40px;        
-    margin-bottom: 40px;
-    height: 228px;
-    width: 100%;
-    
-}
 
-@media screen and (min-width: 768px) {
-    .category-section {
-        height: 472px;
-        width: 100%;
-        margin-bottom: 100px;
+// Category Title
+.category-title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.32px;
+    color: $rgba-2;
+    @include tablet {
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
     }
 }
 
-@media screen and (min-width: 1440px) {
-    .category-section {      
-        height: 472px;
-        margin-bottom: 86px;
-        width: 100%;
-    }
+.category-title:hover,
+.category-title:focus {
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: $color-violet;
 }
-.title, .category-list {
+
+
+.category-title, .category-list {
     margin-bottom: 24px;
     color: rgba(17, 17, 17, 0.60);
     font-family: DM Sans;
@@ -41,9 +42,16 @@
 
 .item-category:hover,
 .item-category:focus {
-    outline: none;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 15px;
+    color: $color-violet;
+}
+
+.active-category{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
     color: $color-violet;
 }
 //-----------scroll bar------------------------------
@@ -53,11 +61,8 @@
     float: left;
     height: 228px;   
     width: 100%;
-    background: #F6F6F6;
     overflow-y: scroll; 
     margin-bottom: 40px;   
-   
-   
 }
 @media screen and (min-width: 768px) {
     .scrollbar {
@@ -68,21 +73,21 @@
 
 .force-overflow {
     min-height: 450px;
+
 }
 
 #style-1::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: #F6F6F6;;
+    background-color: transparent;
 }
 
 #style-1::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F6F6F6;;
+    width: 8px;
+    height: 114px;
+    background-color: transparent;
 }
 
 #style-1::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #F6F6F6;;
+    border-radius: 12px;
+    background-color: #E0E0E0;
 }

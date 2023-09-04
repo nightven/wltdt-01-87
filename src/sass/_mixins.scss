@@ -8,19 +8,6 @@
   text-transform: uppercase;
 }
 
-
-@mixin desktop() {
-  @media (min-width: $breakpoint_desktop) {
-    @content;
-  }
-}
-
-@mixin laptop() {
-  @media (min-width: $breakpoint_laptop) {
-    @content;
-  }
-}
-
 @mixin sign-up-btn {
   margin-top: 40px;
   margin-left: 20px;
@@ -31,7 +18,7 @@
   width: 184px;
   height: 48px;
   flex-shrink: 0;
-
+  cursor: pointer;
   color: $color-white;
   font-family: DM Sans;
   font-size: 14px;
@@ -40,33 +27,32 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
 
-border-radius: 18px;
-border: 1.5px solid $color-black;
-background: $color-violet;
+  border-radius: 18px;
+  border: 1.5px solid $color-black;
+  background: $color-violet;
 }
 
-@mixin mobile{
+@mixin mobile {
   @media only screen and (min-width: 375px) {
-    @content;    
+    @content;
   }
 }
 
-@mixin mobile-tablet{
+@mixin mobile-tablet {
   @media only screen and (min-width: 375px) and (max-width: 767px) {
-    @content;    
+    @content;
   }
 }
-
 
 @mixin tablet {
   @media only screen and (min-width: 768px) and (max-width: 1439px) {
-    @content;    
+    @content;
   }
 }
 
 @mixin tablet-desktop {
   @media only screen and (min-width: 768px) {
-    @content;    
+    @content;
   }
 }
 
@@ -75,6 +61,3 @@ background: $color-violet;
     @content;
   }
 }
-
-
-

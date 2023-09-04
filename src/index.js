@@ -9,24 +9,38 @@ import {
   fetchAllBooks,
   fetchTopBooks,
 } from './js/api/api-categories';
-import { addMarkupCategoryList, addMarkupTopBooks } from './js/helpers/helpers';
+import {
+  addMarkupCategoryList,
+  addMarkupTopBooks,
+  changeColorOfTitleOfCategory,
+  splitTitle,
+} from './js/helpers/helpers';
 import {
   markupCategoryList,
   markupAllBooks,
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
+import { data } from 'jquery';
+import axios from 'axios';
+import { ref } from 'firebase/database';
 
 //!submit form register
-refs.fromEl.addEventListener('submit', onSignUp);
+refs.signUpForm.addEventListener('submit', onSignUp);
 refs.signInEl.addEventListener('submit', onSignIn);
+
 //----------------------Category List-----------------------------------------
 
 const allCategories = async () => {
   try {
     const resp = await fetchCategoryList();
 
+    resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
+
     addMarkupCategoryList(refs.listCategoryEl, markupCategoryList(resp.data));
+
+    refs.categoryItemEl.classList.add('active-category');
+
   } catch (error) {
     console.log(error.message);
   }
@@ -46,7 +60,10 @@ async function onShowAllBooks(event) {
 
   nameOfCategory = event.target.textContent;
 
-  refs.categoryNameEl.textContent = nameOfCategory;
+  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
+  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+
+  refs.categoryItemEl.classList.remove('active-category');
 
   try {
     const resp = await fetchAllBooks(nameOfCategory);
@@ -57,9 +74,7 @@ async function onShowAllBooks(event) {
   }
 }
 
-
 //---------------------------Top Books Of Category 3 ver---------------------------------------
-
 
 const topBooks = async () => {
   try {
@@ -75,3 +90,37 @@ const topBooks = async () => {
 
 topBooks();
 
+//-----------------------------See More Books-------------------------------------------------------
+refs.listAllBooksEl.addEventListener('click', onShowMoreBooks);
+
+async function onShowMoreBooks(event) {
+  event.preventDefault();
+
+  if (!event.target.classList.contains('js-btn-books')) return;
+
+  nameOfCategory = event.target.dataset.js;
+
+  refs.spanColorEl.textContent = changeColorOfTitleOfCategory(nameOfCategory);
+  refs.spanNormalEl.textContent = splitTitle(nameOfCategory);
+
+  
+
+  try {
+    const resp = await fetchAllBooks(nameOfCategory);
+
+    addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
+
+    for (const item of refs.listCategoryEl.children) {
+
+      if (item.textContent === nameOfCategory) { 
+      
+      item.classList.add('active-category');  
+      refs.categoryItemEl.classList.remove('active-category');
+        
+      }
+  }
+
+  } catch (error) {
+    console.log(error.message);
+  }
+}
