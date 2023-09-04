@@ -13,7 +13,7 @@ const { listBookModalEl } = refs;
 let currentInstance = null;
 let bookData = null;
 
-listBookModalEl.addEventListener('click', clickBookModalHandler);
+listBookModalEl?.addEventListener('click', clickBookModalHandler);
 document.addEventListener('keydown', closeModalByEscape);
 
 async function clickBookModalHandler(event) {
