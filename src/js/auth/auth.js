@@ -1,46 +1,45 @@
+//fireBase
 import { auth, app } from './firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { getDatabase, ref, child, get, set } from 'firebase/database';
-
+//notiflix
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+//refs
 import refs from '../refs/refs';
-const db = getDatabase(app);
 
 const {
   signUpForm,
   signInEl,
-  authorizedDiv,
+  authorized,
   unauthorizedDiv,
   modal,
   logoutButton,
   nameUserEl,
   authButton,
 } = refs;
-let signUpUser = {};
-const AUTH_KEY = 'loginUser';
-const LOCAL_USER = 'localUser';
 
-// let userId = {};
+const db = getDatabase(app);
+const USER_KEY = 'auth';
+
+const getLocalUser = localStorage.getItem(USER_KEY);
+const userParsLocal = JSON.parse(getLocalUser);
+
 //sign up the user
 function onSignUp(e) {
   e.preventDefault();
-
-  signUpUser = {
-    login: signUpForm['signup-login'].value,
-    email: signUpForm['signup-email'].value,
-  };
+  const login = signUpForm['signup-login'].value;
+  const email = signUpForm['signup-email'].value;
   const password = signUpForm['signup-password'].value;
 
-  localStorage.setItem(AUTH_KEY, JSON.stringify(signUpUser));
-  signUp(signUpUser.login, signUpUser.email, password);
+  signUpCreateUser(login, email, password);
 
   signUpForm.reset();
 }
 
-function signUp(login = '', email, password) {
+function signUpCreateUser(login = '', email, password) {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       // Signed in
@@ -52,7 +51,7 @@ function signUp(login = '', email, password) {
 
       setUserToDb(userId, login, email, password);
       getUserFromDb(userId);
-      authorizetion(login);
+      authorizedUser(login);
     })
     .catch(error => {
       const errorCode = error.code;
@@ -62,9 +61,6 @@ function signUp(login = '', email, password) {
       // ..
     });
 }
-
-const user = localStorage.getItem(AUTH_KEY);
-const authUserLocal = JSON.parse(user);
 
 //sign in the user
 function onSignIn(e) {
@@ -85,7 +81,7 @@ function signIn(email, password) {
       const userId = auth.currentUser.uid;
 
       getUserFromDb(userId);
-      authorizetion(login);
+      authorizedUser(login);
 
       modal.classList.toggle('is-hidden');
       Notify.success('Success');
@@ -97,43 +93,25 @@ function signIn(email, password) {
       Notify.failure('Error');
     });
 }
+//====================
+function userAuth(auth) {
+  return auth ? authorizedUser(auth, true) : false;
+}
+userAuth(userParsLocal);
+
 // Перевіряємо стан авторизації
-function authorizetion(login = '', userBool = false) {
+function authorizedUser(login = '', reg = false) {
   auth.onAuthStateChanged(user => {
-    if (userBool || user) {
-      authorizedDiv.style.display = 'block';
+    if (reg || user) {
+      authorized.forEach(el => el.classList.remove('display-none'));
       unauthorizedDiv.style.display = 'none';
       nameUserEl.textContent = login;
     } else {
-      authorizedDiv.style.display = 'none';
+      authorized.forEach(el => el.classList.remove('display-none'));
       unauthorizedDiv.style.display = 'block';
     }
   });
 }
-
-// Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton);
-function onClickAuthButton() {
-  logoutButton.classList.toggle('logout-hidden');
-}
-
-//logout
-logoutButton.addEventListener('click', onClickLogout);
-
-function onClickLogout(e) {
-  e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('success');
-
-    // localStorage.removeItem(AUTH_KEY);
-    location.reload();
-  });
-}
-
-// function userIf(auth) {
-//   return auth ? authorizetion(auth.login, true) : false;
-// }
-// userIf(authUserLocal);
 
 function setUserToDb(id, login, email, password) {
   set(ref(db, 'users/' + id), {
@@ -148,7 +126,9 @@ function getUserFromDb(userId) {
   get(child(dbRef, `users/${userId}`))
     .then(snapshot => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
+        const userValue = snapshot.val();
+        authorizedUser(userValue.login);
+        localStorage.setItem(USER_KEY, JSON.stringify(userValue.login));
       } else {
         console.log('No data available');
       }
@@ -157,5 +137,21 @@ function getUserFromDb(userId) {
       console.error(error);
     });
 }
+// Поява кнопки для виходу
+authButton.addEventListener('click', onClickAuthButton);
+function onClickAuthButton() {
+  logoutButton.classList.toggle('logout-hidden');
+}
 
+//logout
+logoutButton.addEventListener('click', onClickLogout);
+
+function onClickLogout(e) {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log('success');
+    localStorage.clear(USER_KEY);
+    location.reload();
+  });
+}
 export { onSignIn, onSignUp };
