@@ -38,9 +38,9 @@ function onSignUp(e) {
 
   signUpForm.reset();
 }
-
 async function signUpCreateUser(login = '', email, password) {
   await createUserWithEmailAndPassword(auth, email, password)
+
     .then(userCredential => {
       // Signed in
 
@@ -48,7 +48,7 @@ async function signUpCreateUser(login = '', email, password) {
       modal.classList.toggle('is-hidden');
       Notify.success('Success registretion');
       const userId = auth.currentUser.uid;
-
+      //write to db
       setUserToDb(userId, login, email, password);
       getUserFromDb(userId);
       authorizedUser(login);
@@ -72,14 +72,14 @@ function onSignIn(e) {
   signIn(email, password);
   signInEl.reset();
 }
-
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth, email, password)
+//check user in firebase and db
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
       const userId = auth.currentUser.uid;
-
+      //get user from db
       getUserFromDb(userId);
       authorizedUser();
 
@@ -93,13 +93,14 @@ async function signIn(email, password) {
       Notify.failure('Error');
     });
 }
-//====================
+
+// check user
 function userAuth(auth) {
   return auth ? authorizedUser(auth, true) : false;
 }
 userAuth(userParsLocal);
 
-// Перевіряємо стан авторизації
+// Перевіряємо стан авторизації та надаємо дступ до контенту
 function authorizedUser(login = '', reg = false) {
   auth.onAuthStateChanged(user => {
     if (reg || user) {
@@ -115,7 +116,7 @@ function authorizedUser(login = '', reg = false) {
     }
   });
 }
-
+// function write user to db
 function setUserToDb(id, login, email, password) {
   set(ref(db, 'users/' + id), {
     login,
@@ -146,9 +147,10 @@ function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
 }
 
-//logout
+// Listening to the exit button
 logoutButton.addEventListener('click', onClickLogout);
 
+// function to the exit user 
 function onClickLogout(e) {
   e.preventDefault();
   auth.signOut().then(() => {

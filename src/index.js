@@ -26,8 +26,6 @@ import axios from 'axios';
 import { ref } from 'firebase/database';
 
 //!submit form register
-refs.signUpForm.addEventListener('submit', onSignUp);
-refs.signInEl.addEventListener('submit', onSignIn);
 // refs.seeButtonEl.addEventListener('click', e => {
 //   const el = e.target;
 //   if (el.nodeName === 'svg') {
@@ -45,6 +43,8 @@ refs.signInEl.addEventListener('submit', onSignIn);
 //     return;
 //   }
 // });
+refs.signUpForm?.addEventListener('submit', onSignUp);
+refs.signInEl?.addEventListener('submit', onSignIn);
 
 //----------------------Category List-----------------------------------------
 
@@ -66,7 +66,7 @@ allCategories();
 
 //-------------------All Books Of Category---------------------------------------
 
-refs.listCategoryEl.addEventListener('click', onShowAllBooks);
+refs.listCategoryEl?.addEventListener('click', onShowAllBooks);
 let nameOfCategory = 0;
 
 async function onShowAllBooks(event) {
@@ -107,7 +107,7 @@ const topBooks = async () => {
 topBooks();
 
 //-----------------------------See More Books-------------------------------------------------------
-refs.listAllBooksEl.addEventListener('click', onShowMoreBooks);
+refs.listAllBooksEl?.addEventListener('click', onShowMoreBooks);
 
 async function onShowMoreBooks(event) {
   event.preventDefault();
@@ -134,3 +134,16 @@ async function onShowMoreBooks(event) {
     console.log(error.message);
   }
 }
+//-----------------------------Change current page style-------------------------------------------------------
+const navLinks = document.querySelectorAll('.header-nav-list-item');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (!link.classList.contains('current')) {
+      navLinks.forEach(item => item.classList.remove('current'));
+      link.classList.add('current');
+    }
+  });
+});
+
+
+

@@ -4,6 +4,7 @@ import bookShopImage from '../../images/shops/book-shop.png';
 import crossSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr } from '../helpers/helpers';
+import spriteSvg from '../../images/icons.svg';
 
 //--------------------Create markup of category-list------------------------------
 
@@ -19,41 +20,25 @@ function markupCategoryList(arr) {
 }
 //------------------Create markup of All Books---------------------------------------
 
-// function markupAllBooks(arr) {
-//   return arr
-//     .map(
-//       ({ _id, title, author, book_image }) =>
-//         `
-//       <li class="card-set-item" data-id="${_id}">
-//         <a href="#" >
-//         <div class="book-overlay-container>
-//           <img class="book-img" src="${book_image}" width="180px" height="226px" />
-//           <div class="book-overlay">
-//             <p class="book-overlay-text">QUICK VIEW</p>
-//           </div>
-//         </div>
-//           <div>
-//             <h3 class="book-title">${limitStr(title, 20)}</h3>
-//             <p class="book-author">${author}</p>
-//           </div>
-//         </a>
-//       </li>
-//     `
-//     )
-//     .join('');
-// }
-
 function markupAllBooks(arr) {
   return arr
     .map(
       ({ _id, title, author, book_image }) =>
         `
-      <li class="js-item-book card-set-item" data-id="${_id}">      
-      <a href="#" >
-      <img src="${book_image}" alt="${title}" loading="lazy" class="book-img"/>
-      <h3 class="book-title">${title}</h3>
-      <p class="book-author">${author}</p>
-      </a></li>
+      <li class="card-set-item, js-item-books, js-item-book" data-id="${_id}">
+        <a href="#" >
+   
+          <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+          <div class="book-overlay">
+            <p class="book-overlay-text">QUICK VIEW</p>
+          </div>
+
+          <div>
+            <h3 class="book-title">${limitStr(title, 20)}</h3>
+            <p class="book-author">${author}</p>
+          </div>
+        </a>
+      </li>
     `
     )
     .join('');
@@ -66,6 +51,11 @@ function markupList(books) {
     .map(({ book_image, title, author, _id }) => {
       return `<li class="js-item-books card-set-item" data-id="${_id}">
             <img src="${book_image}" alt="${title}" data-img-id="${_id}" loading="lazy" class="img-books"/>
+            
+            <div class="book-overlay">
+              <p class="book-overlay-text">QUICK VIEW</p>
+            </div>
+            
             <h3 class="js-named-book">${limitStr(title, 20)}</h3>
             <p class="js-author-book">${author}</p>
         </li>`;
@@ -85,7 +75,7 @@ function markupBlock(data) {
 
 // -------------------Create modal window---------------------------
 function markupBookModal(bookData) {
-  const { book_image, author, description, list_name, buy_links } = bookData;
+  const { book_image, author, description, title, buy_links } = bookData;
 
   const buyLinks = buy_links.filter(
     el =>
@@ -113,7 +103,7 @@ function markupBookModal(bookData) {
             />
             <div class="right-side-wrap">
             <div class="modal-titles">
-              <h2 class="modal-book-name">${list_name}</h2>
+              <h2 class="modal-book-name">${title}</h2>
                <h3 class="modal-book-author">${author}</h3>
              </div>
           ${
@@ -148,4 +138,27 @@ function markupBookModal(bookData) {
   </div>`;
 }
 
-export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal };
+
+// -----------------------Create markUp in ShopingList---------------------------
+function shopListMarkup(array) {
+    return array.map(({ _id, list_name, book_image, author, title, description }) => {
+    return `
+    <li class="book-item" data-id="${_id}">
+    <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
+    <div class="book-item-descr">
+    <h2>${title}</h2>
+    <p>${list_name}</p>
+    <p>${description}</p>
+    <p>${author}</p>
+    <button class="book-btn" id="delete-btn" type="button">
+    <svg class="del-modal-icon" width="28" height="28">
+    <use href="${spriteSvg}#icon-trash-bin"></use>
+    </svg>
+    </button>
+    </div>
+    </li>`
+  }).join('')
+}
+
+
+export { markupCategoryList, markupAllBooks, markupBlock, markupBookModal, shopListMarkup };
