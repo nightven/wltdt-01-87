@@ -36,8 +36,8 @@ function shopMarkup(array) {
     <p>${description}</p>
     <p>${author}</p>
     <button class="book-btn" id="delete-btn" type="button">
-    <svg class="del-modal-icon" width="28" height="28">
-    <use href="${spriteSvg}#icon-trash-bin"></use>
+    <svg class="del-modal-icon" width="18" height="18">
+    <use href="${spriteSvg}#icon-trash-03"></use>
     </svg>
     </button>
     </div>
