@@ -108,7 +108,7 @@
 .title-book {
   // margin-bottom: 40px;
 
-  color: $color-black;
+  color: var(--main-text-clr);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.19px;
@@ -184,7 +184,7 @@
 .book-title,
 .js-named-book {
   margin-top: 14px;
-  color: $color-black;
+  color: var(--main-text-clr);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.13;
@@ -205,7 +205,7 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: $color-black;
+  color: var(--main-text-clr);
 
   display: flex;
   align-items: center;

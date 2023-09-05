@@ -25,6 +25,7 @@ import refs from './js/refs/refs';
 import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
+import { onColorSwitch } from './js/themes/theme-switcher';
 
 // showLoader
 function showLoader() {

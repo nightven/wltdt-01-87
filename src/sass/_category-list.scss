@@ -4,7 +4,7 @@
     font-size: 16px;
     line-height: 1.12;
     letter-spacing: -0.32px;
-    color: $rgba-2;
+    color: var(--category-text-clr);
 
     @include tablet {
         font-size: 17px;
@@ -34,7 +34,7 @@
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    color: $color-violet;
+    color: var(--active-category-clr);
 
     @include tablet{
         font-size: 14px;
@@ -48,7 +48,7 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 15px;
-    color: $color-violet;
+    color: var(--active-category-clr);
 }
 //-----------scroll bar------------------------------
 
@@ -92,5 +92,5 @@
 
 #style-1::-webkit-scrollbar-thumb {
     border-radius: 12px;
-    background-color: #E0E0E0;
+    background-color: var(--scroll-bar-clr);
 }
