@@ -161,4 +161,4 @@ function onClickLogout(e) {
     location.reload();
   });
 }
-export { onSignIn, onSignUp };
+export { onSignIn, onSignUp, USER_KEY };

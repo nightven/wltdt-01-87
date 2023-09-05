@@ -5,6 +5,7 @@ import {
   getBookFromLocalStorage,
   updateLocalStorageBooks,
 } from '../localstorage/local';
+import { USER_KEY } from '../auth/auth';
 
 import * as basicLightbox from 'basiclightbox';
 
@@ -14,9 +15,9 @@ let currentInstance = null;
 let bookData = null;
 
 listBookModalEl?.addEventListener('click', clickBookModalHandler);
-document.addEventListener('keydown', closeModalByEscape);
 
 async function clickBookModalHandler(event) {
+  document.addEventListener('keydown', closeModalByEscape);
   const cardBookEl = event.target.closest('.card-set-item');
 
   if (!cardBookEl) {
@@ -35,23 +36,47 @@ function showBookModal(bookData) {
       addOverflowHidden();
       instance.element().querySelector('.close-modal-btn').onclick =
         instance.close;
-      instance.element().querySelector('.modal-btn').onclick = () => {
+      instance.element().querySelector('.modal-book-btn').onclick = () => {
         updateLocalStorageBooks(bookData);
+      };
+      instance.element().querySelector('.modal-btn-for-login').onclick = () => {
+        instance.close();
+        removeOverflowHidden();
       };
     },
     onClose: () => {
       removeOverflowHidden();
+      document.removeEventListener('keydown', closeModalByEscape);
     },
   });
   const existingBook = getBookFromLocalStorage(bookData._id);
   updateModalButtonSection(Boolean(existingBook));
 
+  const getLocalUser = localStorage.getItem(USER_KEY);
+  isUserAuthorized(getLocalUser, currentInstance);
+
   currentInstance.show();
+}
+
+function isUserAuthorized(isAuthorized, instance) {
+  const authorizedBtn = instance
+    .element()
+    .querySelector('.modal-btn.authorized');
+  const unauthorizedBtn = instance
+    .element()
+    .querySelector('.modal-btn.unauthorized');
+  if (isAuthorized) {
+    authorizedBtn.style.display = 'block';
+    unauthorizedBtn.style.display = 'none';
+  } else {
+    authorizedBtn.style.display = 'none';
+    unauthorizedBtn.style.display = 'block';
+  }
 }
 
 function updateModalButtonSection(isBookExists) {
   const modalEl = currentInstance.element();
-  const btnEl = modalEl.querySelector('.modal-btn');
+  const btnEl = modalEl.querySelector('.modal-book-btn');
   const textEl = modalEl.querySelector('.modal-congrats-text');
 
   if (isBookExists) {
@@ -78,4 +103,3 @@ function removeOverflowHidden() {
 }
 
 export { updateModalButtonSection };
-
