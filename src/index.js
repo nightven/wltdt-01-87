@@ -4,6 +4,7 @@ import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
 import './js/auth/auth';
+import './js/themes/theme-switcher';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -22,7 +23,6 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
-
 
 // showLoader
 function showLoader() {
