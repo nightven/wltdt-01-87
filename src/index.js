@@ -24,6 +24,17 @@ import { switcherCheck } from './js/themes/theme-switcher';
 import { onSignIn, onSignUp } from './js/auth/auth';
 
 
+
+
+
+
+function onClickSignUp(evt){
+  console.log(evt.currentTarget);
+  console.log('open');
+  modalSignUp.classList.toggle('is-hidden');
+}
+
+
 function showLoader() {
   if (refs.loader) {
     refs.loader.innerHTML = '';

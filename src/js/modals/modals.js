@@ -1,33 +1,38 @@
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
-    // виберіть ваше меню тут
-    const modals = ['data-sign-up', 'data-sign-in', 'data-menu-burger'];
+const modalSignUp = document.getElementById('sign-up-modal');
+const openModalSignUpBtn = document.getElementById('login');
+const closeModalSignUp = document.querySelector('.close-modal-btn');
 
-    modals.forEach(element => {
-      // дл відкриття модалки на кнопку  додаємо атрибут "your-data-modal"-open
-      const openModalSelector = element + '-open';
-      // для закриття модалки на ваку кнопку додаємо атрибут "your-data-modal"-close
-      const closeModalSelector = element + '-close';
+openModalSignUpBtn.addEventListener('click', onClickSignUp);
+// modalSignUp.addEventListener('click', onCloseSignUp);
 
-      const openModalBtns = document.querySelectorAll(`[${openModalSelector}]`);
-      const closeModalBtns = document.querySelectorAll(
-        `[${closeModalSelector}]`
-      );
-      const modal = document.querySelector(`[${element}]`);
+function onClickSignUp(evt) {
+  // document.body.classList.toggle('modal-open');
+  modalSignUp.classList.toggle('is-hidden');
+  modalSignUp.addEventListener('click', onCloseSignUp);
+}
+function onCloseSignUp(evt) {
+  if (
+    evt.target.parentNode.hasAttribute('data-modal-close') ||
+    evt.target.hasAttribute('data-modal-close')
+  ) {
+    modalSignUp.classList.toggle('is-hidden');
+    modalSignUp.removeEventListener('click', onCloseSignUp);
+  }
 
-      closeModalBtns.forEach(closeBtn =>
-        closeBtn.addEventListener('click', toggleModal)
-      );
-      openModalBtns.forEach(openBtn =>
-        openBtn.addEventListener('click', toggleModal)
-      );
+  if (evt.target.hasAttribute('data-signin')) {
+    console.log('modal sign in');
+    document.querySelector('.js-form').children[0].style.display = 'none';
+    document.querySelector('.signup-btn').textContent = 'Sign in';
+  }
 
-      function toggleModal() {
-        document.body.classList.toggle('modal-open');
-        modal.classList.toggle('is-hidden');
-      }
-    });
-  },
-  false
-);
+  if (evt.target.hasAttribute('data-signup')) {
+    console.log('modal sign up');
+    document.querySelector('.js-form').children[0].style.display = 'block';
+    document.querySelector('.signup-btn').textContent = 'Sign up';
+  }
+}
+
+// function toggleModal() {
+//         document.body.classList.toggle('modal-open');
+
+//       }
