@@ -30,11 +30,32 @@ img {
   height: auto;
 }
 
+html[data-theme=light] {
+  --background-clr: #F6F6F6;
+  --main-text-clr: #111111;
+  --header-clr: #FFFFFF;
+  --scroll-bar-clr: #E0E0E0;
+  --active-category-clr: #4f2ee8;
+  --category-text-clr: rgba(17, 17, 17, 0.60);
+  --shopping-list-clr: rgba(0, 0, 0, 0.60);
+}
+
+html[data-theme=dark] {
+  --background-clr: #202024;
+  --main-text-clr: #FFFFFF;
+  --header-clr: #111111;
+  --scroll-bar-clr: rgba(17, 17, 17, 0.60);
+  --active-category-clr: #eac645;
+  --category-text-clr: rgba(255, 255, 255, 0.60);
+  --shopping-list-clr: rgba(255, 255, 255, 0.60);
+}
+
 body {
   font-family: DM Sans;
   font-style: normal;
-  color: #111111;
-  background-color: #f6f6f6;
+  color: var(--main-text-clr);
+  background-color: var(--background-clr);
+  transition: background-color 100ms linear;
 }
 
 .is-hidden {
@@ -59,31 +80,6 @@ body {
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-@media only screen and (min-width: 375px) {
-  .container {
-    min-width: 375px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .container {
-    min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .container {
-    min-width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 .aside-section {
@@ -138,8 +134,8 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid #111111;
-  background: #ffffff;
+  border: 1.5px solid var(--main-text-clr);
+  background: var(--header-clr);
   z-index: 20;
   position: fixed;
   top: 0;
@@ -357,6 +353,10 @@ body {
   background-color: #ffffff;
 }
 
+.bookshelf-logo {
+  fill: var(--main-text-clr);
+}
+
 /* styles for toggle container */
 .switch {
   display: inline-block;
@@ -517,7 +517,6 @@ body {
   }
 }
 .shopping-list-title {
-  margin-bottom: 40px;
   font-weight: 700;
   font-size: 32px;
   line-height: 1.18;
@@ -530,11 +529,6 @@ body {
     font-size: 48px;
     line-height: 1.08;
     letter-spacing: -1.92px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .shopping-list-title {
-    margin-bottom: 40px;
   }
 }
 .shopping-list-word {
@@ -566,7 +560,7 @@ body {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--shopping-list-clr);
 }
 
 @media screen and (min-width: 768px) {
@@ -812,11 +806,32 @@ body {
   justify-content: space-between;
 }
 
+html[data-theme=light] {
+  --background-clr: #F6F6F6;
+  --main-text-clr: #111111;
+  --header-clr: #FFFFFF;
+  --scroll-bar-clr: #E0E0E0;
+  --active-category-clr: #4f2ee8;
+  --category-text-clr: rgba(17, 17, 17, 0.60);
+  --shopping-list-clr: rgba(0, 0, 0, 0.60);
+}
+
+html[data-theme=dark] {
+  --background-clr: #202024;
+  --main-text-clr: #FFFFFF;
+  --header-clr: #111111;
+  --scroll-bar-clr: rgba(17, 17, 17, 0.60);
+  --active-category-clr: #eac645;
+  --category-text-clr: rgba(255, 255, 255, 0.60);
+  --shopping-list-clr: rgba(255, 255, 255, 0.60);
+}
+
 body {
   font-family: DM Sans;
   font-style: normal;
-  color: #111111;
-  background-color: #f6f6f6;
+  color: var(--main-text-clr);
+  background-color: var(--background-clr);
+  transition: background-color 100ms linear;
 }
 
 .is-hidden {
@@ -841,31 +856,6 @@ body {
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-@media only screen and (min-width: 375px) {
-  .container {
-    min-width: 375px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .container {
-    min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .container {
-    min-width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 .aside-section {
@@ -1642,7 +1632,7 @@ body {
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.32px;
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--category-text-clr);
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .category-title, .category-list {
@@ -1674,7 +1664,7 @@ body {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  color: rgb(79, 46, 232);
+  color: var(--active-category-clr);
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .category-title:hover, .item-category:hover,
@@ -1693,7 +1683,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 15px;
-  color: rgb(79, 46, 232);
+  color: var(--active-category-clr);
 }
 
 .scrollbar {
@@ -1733,7 +1723,7 @@ body {
 
 #style-1::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background-color: #E0E0E0;
+  background-color: var(--scroll-bar-clr);
 }
 
 .all-top {
@@ -1830,7 +1820,7 @@ body {
 
 .category,
 .title-book {
-  color: #111111;
+  color: var(--main-text-clr);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.19px;
@@ -1877,7 +1867,7 @@ body {
 .book-title,
 .js-named-book {
   margin-top: 14px;
-  color: #111111;
+  color: var(--main-text-clr);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.13;
@@ -1896,7 +1886,7 @@ body {
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: #111111;
+  color: var(--main-text-clr);
   display: flex;
   align-items: center;
   justify-content: center;

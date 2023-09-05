@@ -29,7 +29,6 @@
 
 // Responsive & Mobile Shoping-List-Title
 .shopping-list-title {
-    margin-bottom: 40px;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.18;
@@ -43,13 +42,6 @@
         font-size: 48px;
         line-height: 1.08;
         letter-spacing: -1.92px;
-    }
-}
-
-// PC Shoping-List-Title
-@media screen and (min-width: 1440px) {
-    .shopping-list-title {
-        margin-bottom: 40px;
     }
 }
 
@@ -89,7 +81,7 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: 14px;
-    color: $rgba-1;
+    color: var(--shopping-list-clr);
 }
 
 // Tablet Empty-Bin-Desc

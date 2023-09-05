@@ -12,8 +12,8 @@
   padding-right: 20px;
 
   border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid $color-black;
-  background: $color-white;
+  border: 1.5px solid var(--main-text-clr);
+  background: var(--header-clr);
 
   z-index: 20;
   position: fixed;
@@ -184,6 +184,10 @@
 
   border-radius: 50%;
   background-color: $color-white;
+}
+
+.bookshelf-logo {
+  fill: var(--main-text-clr);
 }
 // .user-icon {
 // }

@@ -1,12 +1,33 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './mixins';
 
+html[data-theme="light"] {
+  --background-clr: #F6F6F6;
+  --main-text-clr: #111111;
+  --header-clr: #FFFFFF;
+  --scroll-bar-clr: #E0E0E0;
+  --active-category-clr: #4f2ee8;
+  --category-text-clr: rgba(17, 17, 17, 0.60);
+  --shopping-list-clr: rgba(0, 0, 0, 0.60);
+}
+
+html[data-theme="dark"] {
+  --background-clr: #202024;
+  --main-text-clr: #FFFFFF;
+  --header-clr: #111111;
+  --scroll-bar-clr: rgba(17, 17, 17, 0.60);
+  --active-category-clr: #eac645;
+  --category-text-clr: rgba(255, 255, 255, 0.60);
+  --shopping-list-clr: rgba(255, 255, 255, 0.60);
+}
+
 // Common Setting For Shopping-List-HTML
 body {
   font-family: DM Sans;
   font-style: normal;
-  color: $color-black;
-  background-color: $color-white-warm;
+  color: var(--main-text-clr);
+  background-color: var(--background-clr);
+  transition: background-color 100ms linear;
 }
 
 .is-hidden {
@@ -32,27 +53,6 @@ body {
   overflow: hidden;
 }
 
-// Main Container
-.container {
-  // width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-
-  @include mobile {
-    min-width: 375px;
-  }
-  @include tablet {
-    min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-  @include desktop {
-    min-width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
 
 // Aside Section
 .aside-section {
