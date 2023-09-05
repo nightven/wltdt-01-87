@@ -91,17 +91,17 @@
 }
 
 
-  @include tablet {
-    width: 309px;
-    height: 472px;
-    // margin-bottom: 100px;
-  }
-  @include desktop {
-    width: 328px;
-    height: 472px;
-    // margin-bottom: 86px;
-  }
-}
+  // @include tablet {
+  //   width: 309px;
+  //   height: 472px;
+  //   // margin-bottom: 100px;
+  // }
+  // @include desktop {
+  //   width: 328px;
+  //   height: 472px;
+  //   // margin-bottom: 86px;
+  // }
+
 
 .force-overflow {
   min-height: 450px;
