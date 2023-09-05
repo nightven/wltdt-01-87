@@ -30,7 +30,7 @@ function markupAllBooks(arr) {
       <li class="card-set-item js-item-books js-item-book" data-id="${_id}">
         <a href="#" >
    
-          <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+          <img class="book-img" src="${book_image || defaultImg}" alt="${title}" loading="lazy"/>
           <div class="book-overlay">
             <p class="book-overlay-text">QUICK VIEW</p>
           </div>
@@ -52,7 +52,7 @@ function markupList(books) {
   return books
     .map(({ book_image, title, author, _id }) => {
       return `<li class="js-item-books card-set-item" data-id="${_id}">
-            <img src="${book_image}" alt="${title}" data-img-id="${_id}" loading="lazy" class="img-books"/>
+            <img src="${book_image || defaultImg}" alt="${title}" data-img-id="${_id}" loading="lazy" class="img-books"/>
             
             <div class="book-overlay">
               <p class="book-overlay-text">QUICK VIEW</p>
