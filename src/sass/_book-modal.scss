@@ -132,13 +132,13 @@
 .modal-btn-for-login{
     font-style: italic;
     box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
-    border: solid 2px #f01d40;
+    border: solid 2px $color-violet;
 
 }
 
 .selected-words{
    
-    color:#f01d40;
+    color:$color-violet;
 }
 
 .modal-congrats-text {
