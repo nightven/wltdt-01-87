@@ -23,7 +23,7 @@ export default {
   nameUserEl: document.querySelector('.js-login-user'),
   nameUserMob: document.querySelector('.js-user-mob '),
   authButton: document.querySelector('.js-button '),
-  seeButtonEl: document.querySelector('#password'),
+  seeButtonEl: document.querySelectorAll('#password'),
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
