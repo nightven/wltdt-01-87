@@ -201,13 +201,11 @@
     width: 193px;
     height: 68px;
 
-    overflow: hidden;
     color: $color-black;
     text-overflow: ellipsis;
-    // whitespace: nowrap;
     font-size: 14px;
     font-weight: 400;
-    line-height: 12.8;
+    line-height: 1.28;
     letter-spacing: -0.56px;
 
     @include tablet{
