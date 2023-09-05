@@ -4,6 +4,7 @@ import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
 import './js/auth/auth';
+import './js/themes/theme-switcher';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -23,10 +24,12 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 
+
 import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
 import { onColorSwitch, switcherCheck } from './js/themes/theme-switcher';
+
 
 
 
