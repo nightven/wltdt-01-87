@@ -7,6 +7,8 @@ import {
 import { getDatabase, ref, child, get, set } from 'firebase/database';
 //notiflix
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+//svg
+import svg from '../../images/icons.svg';
 //refs
 import refs from '../refs/refs';
 
@@ -22,6 +24,11 @@ const {
   logoutMob,
   nameUserMob,
 } = refs;
+
+//!submit form register
+
+signUpForm?.addEventListener('submit', onSignUp);
+signInEl?.addEventListener('submit', onSignIn);
 
 const db = getDatabase(app);
 const USER_KEY = 'auth';
@@ -108,7 +115,10 @@ function authorizedUser(login = '', reg = false) {
       if (login.length > 7) {
         const userName = login.slice(0, 7) + '...';
         nameUserEl.textContent = userName;
-        // nameUserMob.textContent = userName;
+        nameUserMob.textContent = userName;
+      } else {
+        nameUserEl.textContent = login;
+        nameUserMob.textContent = login;
       }
       authorized.forEach(el => el.classList.remove('display-none'));
       unauthorized.forEach(el => el.classList.add('display-none'));
@@ -157,8 +167,29 @@ function onClickLogout(e) {
   e.preventDefault();
   auth.signOut().then(() => {
     console.log('success');
-    localStorage.clear(USER_KEY);
+    localStorage.removeItem(USER_KEY);
     location.reload();
   });
 }
+
+refs.seeButtonEl.forEach(see => {
+  see.addEventListener('click', e => {
+    const el = e.target;
+    if (el.nodeName === 'svg') {
+      const signUp = refs.signUpForm['signup-password'];
+      const signIn = refs.signInEl['signin-password'];
+      if (signIn.type === 'password' || signUp.type === 'password') {
+        signIn.type = 'text';
+        signUp.type = 'text';
+        el.firstElementChild.setAttribute('href', `${svg}#icon-eye-blocked`);
+      } else {
+        el.firstElementChild.setAttribute('href', `${svg}#icon-eye`);
+        signIn.type = 'password';
+        signUp.type = 'password';
+      }
+    } else {
+      return;
+    }
+  });
+});
 export { onSignIn, onSignUp };
