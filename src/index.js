@@ -23,7 +23,6 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 
-
 // showLoader
 function showLoader() {
   refs.loader.innerHTML = '';
@@ -33,6 +32,7 @@ function showLoader() {
 // hideLoader
 function hideLoader() {
   refs.loader.style.display = 'none';
+  refs.loaderBackdrop.style.display = 'none';
 }
 
 //----------------------Category List-----------------------------------------

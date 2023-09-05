@@ -1,6 +1,7 @@
 export default {
   //loader
   loader: document.querySelector('.loader'),
+  loaderBackdrop: document.querySelector('.loader-backdrop'),
   //main
   modal: document.querySelector('.backdrop'),
   signUpForm: document.querySelector('.js-form'),
