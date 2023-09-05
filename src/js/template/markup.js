@@ -163,8 +163,6 @@ function shopListMarkup(array) {
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
     </div>
-    
-    
     <button class="book-btn" data-delete  type="button">
     <svg class="del-modal-icon" width="18" height="18">
     <use href="${spriteSvg}#icon-trash-03"></use>
