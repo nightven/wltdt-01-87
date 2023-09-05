@@ -1,4 +1,4 @@
-import { fetchBookData } from '../api/api-books';
+import { fetchBookByID } from '../api/api';
 import { markupBookModal } from '../template/markup';
 import refs from '../refs/refs';
 import {
@@ -17,7 +17,6 @@ let bookData = null;
 listBookModalEl?.addEventListener('click', clickBookModalHandler);
 
 async function clickBookModalHandler(event) {
-  document.addEventListener('keydown', closeModalByEscape);
   const cardBookEl = event.target.closest('.card-set-item');
 
   if (!cardBookEl) {
@@ -25,8 +24,8 @@ async function clickBookModalHandler(event) {
   }
 
   const cardBookID = cardBookEl.getAttribute('data-id');
-  bookData = await fetchBookData(cardBookID);
-
+  const response = await fetchBookByID(cardBookID);
+  bookData = response.data;
   showBookModal(bookData);
 }
 
@@ -34,18 +33,12 @@ function showBookModal(bookData) {
   currentInstance = basicLightbox.create(markupBookModal(bookData), {
     onShow: instance => {
       addOverflowHidden();
-      instance.element().querySelector('.close-modal-btn').onclick =
-        instance.close;
-      instance.element().querySelector('.modal-book-btn').onclick = () => {
-        updateLocalStorageBooks(bookData);
-      };
-      instance.element().querySelector('.modal-btn-for-login').onclick = () => {
-        instance.close();
-        removeOverflowHidden();
-      };
+      instance.element().addEventListener('click', handleBookModalClick);
+      document.addEventListener('keydown', closeModalByEscape);
     },
-    onClose: () => {
+    onClose: instance => {
       removeOverflowHidden();
+      instance.element().removeEventListener('click', handleBookModalClick);
       document.removeEventListener('keydown', closeModalByEscape);
     },
   });
@@ -56,6 +49,17 @@ function showBookModal(bookData) {
   isUserAuthorized(getLocalUser, currentInstance);
 
   currentInstance.show();
+}
+
+function handleBookModalClick(event) {
+  if (event.target.closest('.close-modal-btn')) {
+    currentInstance.close();
+  } else if (event.target.closest('.modal-btn-for-login')) {
+    currentInstance.close();
+    removeOverflowHidden();
+  } else if (event.target.closest('.modal-book-btn')) {
+    updateLocalStorageBooks(bookData);
+  }
 }
 
 function isUserAuthorized(isAuthorized, instance) {

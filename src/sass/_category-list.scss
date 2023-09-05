@@ -1,96 +1,124 @@
-
 // Category Title
-.category-title, .category-list {
-    font-size: 16px;
-    line-height: 1.12;
-    letter-spacing: -0.32px;
-    color: var(--category-text-clr);
+.category-title,
+.category-list {
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.32px;
+  color: var(--category-text-clr);
 
-    @include tablet {
-        font-size: 17px;
-        line-height: 1.33;
-        letter-spacing: -0.36px;
-    }
-    @include desktop {
-        font-size: 18px;
-        line-height: 1.33;
-        letter-spacing: -0.36px;
-    }
+  @include tablet {
+    font-size: 17px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
 }
 
 .category-title {
+
+    display: inline-block;
     margin-bottom: 24px;
-      
+    min-height: 18px;
+    @include tablet {
+        min-height: 24px;
+    }  
+    @include desktop{
+        min-height: 24px;
+    }       
 }
 
 .category-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;    
-}
-
-.category-title:hover, .item-category:hover,
-.category-title:focus, .item-category:focus {
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: var(--active-category-clr);
-
+    gap: 24px;  
     @include tablet{
-        font-size: 14px;
+        gap: 32px;
     }
     @include desktop{
-        font-size: 15px;
+        gap: 32px;
     }
 }
 
-.active-category{
-    font-weight: 700;
-    text-transform: uppercase;
+.category-title:hover,
+.item-category:hover,
+.category-title:focus,
+.item-category:focus {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--active-category-clr);
+
+  @include tablet {
+    font-size: 14px;
+  }
+  @include desktop {
     font-size: 15px;
-    color: var(--active-category-clr);
+  }
+}
+
+.active-category {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: var(--active-category-clr);
 }
 //-----------scroll bar------------------------------
 
 .scrollbar {
-    padding-top: 5px;
+
+    padding-top: 10px;
     float: left;
     height: 228px;   
-    width: 307px;
+    width: 335px;
     overflow-y: scroll; 
-    // margin-bottom: 40px; 
+    //margin-bottom: 40px; 
     
     @include tablet{
-        width: 309px;
+        width: 337px;
         height: 472px;
-        // margin-bottom: 100px;
+        //margin-bottom: 100px;
     }
     @include desktop{
         width: 328px;
         height: 472px;
-        // margin-bottom: 86px;
+        //margin-bottom: 86px;
     }
     
 }
 
 
-.force-overflow {
-    min-height: 450px;
+  // @include tablet {
+  //   width: 309px;
+  //   height: 472px;
+  //   // margin-bottom: 100px;
+  // }
+  // @include desktop {
+  //   width: 328px;
+  //   height: 472px;
+  //   // margin-bottom: 86px;
+  // }
 
+
+.force-overflow {
+  min-height: 450px;
 }
 
 #style-1::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: transparent;
+  border-radius: 10px;
+  background-color: transparent;
 }
 
 #style-1::-webkit-scrollbar {
-    width: 8px;
-    height: 114px;
-    background-color: transparent;
+  width: 8px;
+  height: 114px;
+  background-color: transparent;
 }
 
 #style-1::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background-color: var(--scroll-bar-clr);
+  border-radius: 12px;
+  background-color: var(--scroll-bar-clr);
 }

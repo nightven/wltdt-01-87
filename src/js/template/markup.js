@@ -150,9 +150,23 @@ const { shopListEl } = refs;
 function shopListMarkup(array) {
 
     shopListEl.innerHTML = '';
-    return array.map(({ _id, list_name, book_image, author, title, description }) => {
-      return `
-    <li class="book-item" data-id="${_id}">
+
+    return array.map(({ _id, list_name, book_image, author, title, description, buy_links }) => {
+      
+    const buyLinks = buy_links.filter(
+    el =>
+      el.name === 'Amazon' ||
+      el.name === 'Apple Books' ||
+      el.name === 'Bookshop'
+  );
+
+  const shopIcons = {
+    Amazon: amazonImage,
+    'Apple Books': appleShopImage,
+    Bookshop: bookShopImage,
+  };
+      
+      return `<li class="book-item" data-id="${_id}">
     <div class="book-image-wrapper">
     <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
     </div>
@@ -162,6 +176,22 @@ function shopListMarkup(array) {
     <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
+        <ul class="shop-list-partners">
+          ${buyLinks
+            .map(
+              buyLink => `<li class="shop-item-partners">
+                  <a
+                    href="${buyLink.url}"
+                    class="shop-partners-link"
+                    target="_blank"
+                    rel="noopener no-referrer"
+                    ><img src="${shopIcons[buyLink.name]}" alt="${buyLink.name}"
+                  /></a>
+                </li>`
+            )
+            .join('')}
+        </ul>
+    
     </div>
     <button class="book-btn" data-delete  type="button">
     <svg class="del-modal-icon" width="18" height="18">

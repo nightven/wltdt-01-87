@@ -240,11 +240,7 @@
 
 }
 
-.shop-list-partners {}
 
-.shop-item-partners {}
-
-.shop-partners-link {}
 
 .book-btn{
     display: flex;
@@ -292,5 +288,18 @@
     }
 }
 
+.shop-list-partners {
+    display: flex;
+    
+    gap: 8px;
+    
+}
 
+.shop-item-partners {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.shop-partners-link {}
 

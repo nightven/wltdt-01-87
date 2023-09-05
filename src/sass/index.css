@@ -1260,11 +1260,11 @@ body {
 .modal-btn-for-login {
   font-style: italic;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
-  border: solid 2px #f01d40;
+  border: solid 2px rgb(79, 46, 232);
 }
 
 .selected-words {
-  color: #f01d40;
+  color: rgb(79, 46, 232);
 }
 
 .modal-congrats-text {
@@ -1661,11 +1661,11 @@ body {
 .modal-btn-for-login {
   font-style: italic;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
-  border: solid 2px #f01d40;
+  border: solid 2px rgb(79, 46, 232);
 }
 
 .selected-words {
-  color: #f01d40;
+  color: rgb(79, 46, 232);
 }
 
 .modal-congrats-text {
@@ -1745,21 +1745,24 @@ body {
     line-height: 1.16;
   }
 }
-.category-title, .category-list {
+.category-title,
+.category-list {
   font-size: 16px;
   line-height: 1.12;
   letter-spacing: -0.32px;
   color: var(--category-text-clr);
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .category-title, .category-list {
+  .category-title,
+  .category-list {
     font-size: 17px;
     line-height: 1.33;
     letter-spacing: -0.36px;
   }
 }
 @media only screen and (min-width: 1440px) {
-  .category-title, .category-list {
+  .category-title,
+  .category-list {
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.36px;
@@ -1767,7 +1770,19 @@ body {
 }
 
 .category-title {
+  display: inline-block;
   margin-bottom: 24px;
+  min-height: 18px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .category-title {
+    min-height: 24px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .category-title {
+    min-height: 24px;
+  }
 }
 
 .category-list {
@@ -1775,23 +1790,39 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .category-list {
+    gap: 32px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .category-list {
+    gap: 32px;
+  }
+}
 
-.category-title:hover, .item-category:hover,
-.category-title:focus, .item-category:focus {
+.category-title:hover,
+.item-category:hover,
+.category-title:focus,
+.item-category:focus {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
   color: var(--active-category-clr);
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
-  .category-title:hover, .item-category:hover,
-  .category-title:focus, .item-category:focus {
+  .category-title:hover,
+  .item-category:hover,
+  .category-title:focus,
+  .item-category:focus {
     font-size: 14px;
   }
 }
 @media only screen and (min-width: 1440px) {
-  .category-title:hover, .item-category:hover,
-  .category-title:focus, .item-category:focus {
+  .category-title:hover,
+  .item-category:hover,
+  .category-title:focus,
+  .item-category:focus {
     font-size: 15px;
   }
 }
@@ -1804,15 +1835,15 @@ body {
 }
 
 .scrollbar {
-  padding-top: 5px;
+  padding-top: 10px;
   float: left;
   height: 228px;
-  width: 307px;
+  width: 335px;
   overflow-y: scroll;
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .scrollbar {
-    width: 309px;
+    width: 337px;
     height: 472px;
   }
 }
@@ -1958,10 +1989,12 @@ body {
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
+
 }
 
 .category .normal-title {
   color: var(--home-title-first);
+
 }
 
 .book-author,
@@ -2009,7 +2042,9 @@ body {
 .js-btn-books {
   width: 124px;
   height: 46px;
+
   color: var(--see-more-text);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2127,12 +2162,18 @@ body {
   |        768
   |============================
 */
+.aside-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .aside-wrapper {
-    display: flex;
     gap: 32px;
     margin-top: 40px;
-    justify-content: center;
+    flex-direction: row;
   }
   .container-home-page {
     max-width: 768px;
