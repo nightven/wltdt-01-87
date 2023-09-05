@@ -23,13 +23,9 @@ const {
   authButton,
   logoutMob,
   nameUserMob,
+  nameUserMobShop,
 } = refs;
-
-//!submit form register
-
-signUpForm?.addEventListener('submit', onSignUp);
-signInEl?.addEventListener('submit', onSignIn);
-
+console.log(nameUserMobShop);
 const db = getDatabase(app);
 const USER_KEY = 'auth';
 
@@ -48,26 +44,29 @@ function onSignUp(e) {
   signUpForm.reset();
 }
 async function signUpCreateUser(login = '', email, password) {
-  await createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // Signed in
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
 
-      const user = userCredential.user;
-      modal.classList.toggle('is-hidden');
-      Notify.success('Success registretion');
-      const userId = auth.currentUser.uid;
-      //write to db
-      setUserToDb(userId, login, email, password);
-      getUserFromDb(userId);
-      authorizedUser(login);
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Ошибка регистрации:', errorMessage);
-      Notify.failure('Error');
-      // ..
-    });
+  // Signed in
+  try {
+    const user = userCredential.user;
+    modal.classList.toggle('is-hidden');
+    Notify.success('Success registretion');
+    const userId = auth.currentUser.uid;
+    //write to db
+    setUserToDb(userId, login, email, password);
+    getUserFromDb(userId);
+    authorizedUser(login);
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error('Ошибка регистрации:', errorMessage);
+    Notify.failure('Error');
+    // ..
+  }
 }
 
 //sign in the user
@@ -81,25 +80,28 @@ function onSignIn(e) {
   signInEl.reset();
 }
 async function signIn(email, password) {
-  await signInWithEmailAndPassword(auth, email, password)
-    //check user in firebase and db
-    .then(userCredential => {
-      // Signed in
-      const user = userCredential.user;
-      const userId = auth.currentUser.uid;
-      //get user from db
-      getUserFromDb(userId);
-      authorizedUser();
+  const userCredential = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  //check user in firebase and db
+  try {
+    // Signed in
+    const user = userCredential.user;
+    const userId = auth.currentUser.uid;
+    //get user from db
+    getUserFromDb(userId);
+    authorizedUser();
 
-      modal.classList.toggle('is-hidden');
-      Notify.success('Success');
-      // logoutButton.style.transform = "translateX(-500px)";
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      Notify.failure('Error');
-    });
+    modal.classList.toggle('is-hidden');
+    Notify.success('Success');
+    // logoutButton.style.transform = "translateX(-500px)";
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    Notify.failure('Error');
+  }
 }
 
 // check user
@@ -139,19 +141,18 @@ function setUserToDb(id, login, email, password) {
 
 async function getUserFromDb(userId) {
   const dbRef = ref(getDatabase());
-  await get(child(dbRef, `users/${userId}`))
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        const userValue = snapshot.val();
-        authorizedUser(userValue.login);
-        localStorage.setItem(USER_KEY, JSON.stringify(userValue.login));
-      } else {
-        console.log('No data available');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  const snapshot = await get(child(dbRef, `users/${userId}`));
+  try {
+    if (snapshot.exists()) {
+      const userValue = snapshot.val();
+      authorizedUser(userValue.login);
+      localStorage.setItem(USER_KEY, JSON.stringify(userValue.login));
+    } else {
+      console.log('No data available');
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 // Поява кнопки для виходу
 authButton.addEventListener('click', onClickAuthButton);
@@ -168,7 +169,7 @@ function onClickLogout(e) {
   auth.signOut().then(() => {
     console.log('success');
     localStorage.removeItem(USER_KEY);
-    location.reload();
+    window.location.href = '../../index.html';
   });
 }
 
@@ -193,4 +194,3 @@ refs.seeButtonEl.forEach(see => {
   });
 });
 export { onSignIn, onSignUp, USER_KEY };
-
