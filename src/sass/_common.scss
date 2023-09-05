@@ -55,27 +55,6 @@ body {
   overflow: hidden;
 }
 
-// Main Container
-.container {
-  // width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-
-  @include mobile {
-    min-width: 375px;
-  }
-  @include tablet {
-    min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-  @include desktop {
-    min-width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
 
 // Aside Section
 .aside-section {

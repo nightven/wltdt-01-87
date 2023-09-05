@@ -1,9 +1,9 @@
-import * as fonds from './js/fonds/fonds';
-import * as modals from './js/modals/modals';
-import * as bookModal from './js/modals/book-modal';
-import * as burger from './js/modals/menu-burger';
+import './js/fonds/fonds';
+import './js/modals/modals';
+import './js/modals/book-modal';
+import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
-import { onSignIn, onSignUp } from './js/auth/auth';
+import './js/auth/auth';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -22,10 +22,12 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
+
 import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
 import { onColorSwitch, switcherCheck } from './js/themes/theme-switcher';
+
 
 
 
@@ -39,6 +41,7 @@ function showLoader() {
 function hideLoader() {
   refs.loader.style.display = 'none';
 }
+
 
 // switcherStatus
 switcherCheck();
@@ -63,6 +66,7 @@ switcherCheck();
 // });
 refs.signUpForm?.addEventListener('submit', onSignUp);
 refs.signInEl?.addEventListener('submit', onSignIn);
+
 
 //----------------------Category List-----------------------------------------
 

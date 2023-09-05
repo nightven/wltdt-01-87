@@ -66,6 +66,13 @@
     position: relative;
     // margin-top: 28px;
   }
+  svg.eye {
+    width: 36px;
+    height: 30px;
+    top: 18px;
+    cursor: pointer;
+  }
+
   .modal-svg {
     position: absolute;
     right: 18px;

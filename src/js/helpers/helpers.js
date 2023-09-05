@@ -1,3 +1,6 @@
+
+import { amountFondsItems } from "../fonds/fonds";
+
 //---------------Render category-list-------------------------
 function addMarkupCategoryList(element, markup) {
   element.innerHTML = markup;
@@ -59,4 +62,18 @@ function changeActiveCategory(element){
   }
 }
 
-export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory };
+
+//------------------Media query for JS--------------------------------
+
+function mediaQuery(screenBreackPoint) { 
+  if (window.matchMedia(`(max-width: ${screenBreackPoint})px`).matches) {
+  // Viewport is less or equal to 768 pixels wide
+  amountFondsItems(4,4);
+  } else {
+  // Viewport is greater than 768 pixels wide
+  amountFondsItems(6,6);
+  }
+
+} 
+
+export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory, mediaQuery };
