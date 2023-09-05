@@ -248,14 +248,18 @@
 .shop-partners-link {}
 
 .book-btn{
+    display: flex;
     position: absolute;
     top: 14px;
     right: 14px;
+    align-items: center;
+    justify-content: center;
 
     width: 28px;
     height: 28px;
 
     border-radius: 50%;
+    border: none;
     background-color: $color-violet;
 
     @include tablet{
