@@ -163,8 +163,8 @@ function shopListMarkup(array) {
     
     
     <button class="book-btn" data-delete  type="button">
-    <svg class="del-modal-icon" width="28" height="28">
-    <use class="trash-icon" href="${spriteSvg}#icon-trash-bin"></use>
+    <svg class="del-modal-icon" width="18" height="18">
+    <use href="${spriteSvg}#icon-trash-03"></use>
     </svg>
     </button>
     </div>
