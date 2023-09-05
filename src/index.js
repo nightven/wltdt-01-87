@@ -4,6 +4,7 @@ import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
 import './js/auth/auth';
+import { switcherCheck } from './js/themes/theme-switcher';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -11,7 +12,6 @@ import {
 } from './js/api/api-categories';
 import {
   addMarkupCategoryList,
-  addMarkupTopBooks,
   changeColorOfTitleOfCategory,
   makeActiveCategory,
   changeActiveCategory,
@@ -22,18 +22,57 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
+import { switcherCheck } from './js/themes/theme-switcher';
+import { onSignIn, onSignUp } from './js/auth/auth';
+
+
+
 
 
 // showLoader
 function showLoader() {
-  refs.loader.innerHTML = '';
-  refs.loader.style.display = 'block';
+  if(refs.loader ){
+    refs.loader.innerHTML = '';
+    refs.loader.style.display = 'block';
+  }
 }
 
 // hideLoader
 function hideLoader() {
-  refs.loader.style.display = 'none';
+  if(refs.loader){
+    refs.loader.style.display = 'none';
+  }
+  if( refs.loaderBackdrop){
+    refs.loaderBackdrop.style.display = 'none';
+  }
 }
+
+
+// switcherStatus
+switcherCheck();
+
+//!submit form register
+// refs.seeButtonEl.addEventListener('click', e => {
+//   const el = e.target;
+//   if (el.nodeName === 'svg') {
+//     const status = refs.signUpForm['signup-password'];
+
+//     if (status.type === 'password') {
+//       status.type = 'text';
+//       console.dir(
+//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
+//       );
+//     } else {
+//       status.type = 'password';
+//     }
+//   } else {
+//     return;
+//   }
+// });
+
+refs.signUpForm?.addEventListener('submit', onSignUp);
+refs.signInEl?.addEventListener('submit', onSignIn);
+
 
 //----------------------Category List-----------------------------------------
 
@@ -163,3 +202,4 @@ navLinks.forEach(link => {
     link.classList.add('current');
   });
 });
+

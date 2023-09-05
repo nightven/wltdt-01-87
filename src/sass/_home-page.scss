@@ -41,7 +41,15 @@
   border-radius: 8px;
   perspective: 1000px;
 }
-
+.loader-backdrop {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(4px);
+}
 .loader:before {
   content: '';
   position: absolute;
