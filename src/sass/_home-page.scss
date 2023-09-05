@@ -36,8 +36,8 @@
   width: 200px;
   height: 140px;
   background: #979794;
+
   box-sizing: border-box;
-  // position: relative;
   border-radius: 8px;
   perspective: 1000px;
 }
@@ -91,7 +91,7 @@
 
 /**
   |============================
-  |   H1 - H3 
+  |   H1 - H3 , P
   |============================
 */
 
@@ -101,54 +101,24 @@
 
 // -----------------------------
 .title-book {
-  width: 335px;
+  // width: 335px;
 }
 
 .category,
 .title-book {
-  // margin-bottom: 40px;
+  margin-bottom: 40px;
 
-  color: var(--main-text-clr);
+  color: $color-black;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.19px;
   letter-spacing: -1.28px;
   @include tablet {
     font-size: 48px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -1.92px;
-  }
-  @include desktop {
-    font-size: 48px;
-    font-style: normal;
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
 }
-
-// -----------------------------
-
-// .book-title {
-//   color: $color-black;
-//   font-family: DM Sans;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 1.13;
-//   letter-spacing: -0.64px;
-//   max-width: 180px;
-// }
-
-// ------------------------------
-// .book-author {
-//   color: $color-grey;
-//   font-family: DM Sans;
-//   font-size: 12px;
-//   font-style: italic;
-//   line-height: 1.17;
-//   letter-spacing: -0.48px;
-// }
 
 .book-author,
 .js-author-book {
@@ -157,6 +127,7 @@
   font-style: italic;
   line-height: 1.17;
   letter-spacing: -0.48px;
+
   margin-top: 4px;
 }
 // ------------------------------
@@ -164,27 +135,22 @@
 .js-category-name {
   color: $color-grey;
   font-size: 14px;
-  line-height: 1.71;
+  line-height: 1.29;
   letter-spacing: 0.42px;
   text-transform: uppercase;
-  margin-bottom: 18px;
-}
 
-// .book-title {
-//   color: $color-black;
-//   font-family: DM Sans;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 1.13;
-//   letter-spacing: -0.64px;
-//   max-width: 180px;
-// }
+  margin-bottom: 18px;
+
+  @include tablet {
+    line-height: 1.71;
+  }
+}
 
 .book-title,
 .js-named-book {
+  // max-width: 180px;
   margin-top: 14px;
-  color: var(--main-text-clr);
+
   font-size: 16px;
   font-weight: 700;
   line-height: 1.13;
@@ -205,7 +171,7 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: var(--main-text-clr);
+  color: $color-black;
 
   display: flex;
   align-items: center;
@@ -292,7 +258,7 @@
   line-height: 1.29;
   letter-spacing: -0.56px;
   text-transform: uppercase;
-  transition: opacity 900ms ease;
+  transition: opacity 600ms ease;
 }
 
 .js-item-books:hover .book-overlay,
@@ -424,7 +390,8 @@
     margin-bottom: 72px;
   }
 
-  .container-bestBooks {
+  .container-bestBooks,
+  .card-set {
     width: 996px;
     gap: 40px 24px;
   }
@@ -433,8 +400,7 @@
     width: 996px;
   }
 
-  .js-list-books,
-  .card-set {
+  .js-list-books {
     gap: 24px;
     flex-direction: row;
   }
