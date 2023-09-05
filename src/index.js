@@ -1,9 +1,9 @@
-import * as fonds from './js/fonds/fonds';
-import * as modals from './js/modals/modals';
-import * as bookModal from './js/modals/book-modal';
-import * as burger from './js/modals/menu-burger';
+import './js/fonds/fonds';
+import './js/modals/modals';
+import './js/modals/book-modal';
+import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
-import { onSignIn, onSignUp } from './js/auth/auth';
+import './js/auth/auth';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -22,9 +22,6 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
-import { data } from 'jquery';
-import axios from 'axios';
-import { ref } from 'firebase/database';
 
 // showLoader
 function showLoader() {
@@ -36,27 +33,6 @@ function showLoader() {
 function hideLoader() {
   refs.loader.style.display = 'none';
 }
-
-//!submit form register
-// refs.seeButtonEl.addEventListener('click', e => {
-//   const el = e.target;
-//   if (el.nodeName === 'svg') {
-//     const status = refs.signUpForm['signup-password'];
-
-//     if (status.type === 'password') {
-//       status.type = 'text';
-//       console.dir(
-//         el.children[0].setAttribute('href', '/src/images/icons.svg#icon-mail')
-//       );
-//     } else {
-//       status.type = 'password';
-//     }
-//   } else {
-//     return;
-//   }
-// });
-refs.signUpForm?.addEventListener('submit', onSignUp);
-refs.signInEl?.addEventListener('submit', onSignIn);
 
 //----------------------Category List-----------------------------------------
 
