@@ -9,6 +9,7 @@ html[data-theme="light"] {
   --active-category-clr: #4f2ee8;
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
+  --modal-bg: #FFFFFF;
 }
 
 html[data-theme="dark"] {
@@ -19,6 +20,7 @@ html[data-theme="dark"] {
   --active-category-clr: #eac645;
   --category-text-clr: rgba(255, 255, 255, 0.60);
   --shopping-list-clr: rgba(255, 255, 255, 0.60);
+  --modal-bg: #202024;
 }
 
 // Common Setting For Shopping-List-HTML
