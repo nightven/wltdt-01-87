@@ -6,10 +6,9 @@ import './js/helpers/scroll-up';
 import './js/auth/auth';
 import { switcherCheck } from './js/themes/theme-switcher';
 import {
-  fetchCategoryList,
-  fetchAllBooks,
-  fetchTopBooks,
-} from './js/api/api-categories';
+  fetchBooks,
+  fetchAllBooksofCategory
+  } from './js/api/api';
 import {
   addMarkupCategoryList,
   changeColorOfTitleOfCategory,
@@ -24,9 +23,6 @@ import {
 import refs from './js/refs/refs';
 import { switcherCheck } from './js/themes/theme-switcher';
 import { onSignIn, onSignUp } from './js/auth/auth';
-
-
-
 
 
 // showLoader
@@ -80,7 +76,7 @@ const allCategories = async () => {
   try {
     showLoader();
 
-    const resp = await fetchCategoryList();
+    const resp = await fetchBooks('category-list');
 
     resp.data.sort((x, y) => x.list_name.localeCompare(y.list_name));
 
@@ -122,7 +118,7 @@ async function onShowAllBooks(event) {
   try {
     showLoader();
 
-    const resp = await fetchAllBooks(nameOfCategory);
+    const resp = await fetchAllBooksofCategory(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
@@ -139,7 +135,7 @@ const topBooks = async () => {
   try {
     showLoader();
 
-    const resp = await fetchTopBooks();
+    const resp = await fetchBooks('top-books');
 
     refs.listAllBooksEl.innerHTML = '';
 
@@ -175,7 +171,7 @@ async function onShowMoreBooks(event) {
   try {
     showLoader();
 
-    const resp = await fetchAllBooks(nameOfCategory);
+    const resp = await fetchAllBooksofCategory(nameOfCategory);
 
     addMarkupCategoryList(refs.listAllBooksEl, markupAllBooks(resp.data));
 
