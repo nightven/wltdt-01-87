@@ -32,13 +32,7 @@ mediaQuery(
   () => amountFondsItems(6, 6),
 );
 
-// if (window.matchMedia("(max-width: 767px)").matches) {
-//   // Viewport is less or equal to 768 pixels wide
-//   amountFondsItems(4,4);
-// } else {
-//   // Viewport is greater than 768 pixels wide
-//   amountFondsItems(6,6);
-// }
+
 
 function amountFondsItems(number, amount) {
   $('.fonds__list').slick({
@@ -50,4 +44,4 @@ function amountFondsItems(number, amount) {
 });
 }
 
-//export { amountFondsItems }
+

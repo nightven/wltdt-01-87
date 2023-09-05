@@ -4,7 +4,7 @@ import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
 import './js/auth/auth';
-import './js/themes/theme-switcher';
+import { switcherCheck } from './js/themes/theme-switcher';
 import {
   fetchCategoryList,
   fetchAllBooks,
@@ -12,7 +12,6 @@ import {
 } from './js/api/api-categories';
 import {
   addMarkupCategoryList,
-  addMarkupTopBooks,
   changeColorOfTitleOfCategory,
   makeActiveCategory,
   changeActiveCategory,
@@ -23,14 +22,8 @@ import {
   markupBlock,
 } from './js/template/markup';
 import refs from './js/refs/refs';
-
-
-
-import { data } from 'jquery';
-import axios from 'axios';
-import { ref } from 'firebase/database';
-import { onColorSwitch, switcherCheck } from './js/themes/theme-switcher';
-
+import { switcherCheck } from './js/themes/theme-switcher';
+import { onSignIn, onSignUp } from './js/auth/auth';
 
 
 
@@ -38,14 +31,20 @@ import { onColorSwitch, switcherCheck } from './js/themes/theme-switcher';
 
 // showLoader
 function showLoader() {
-  refs.loader.innerHTML = '';
-  refs.loader.style.display = 'block';
+  if(refs.loader ){
+    refs.loader.innerHTML = '';
+    refs.loader.style.display = 'block';
+  }
 }
 
 // hideLoader
 function hideLoader() {
-  refs.loader.style.display = 'none';
-  refs.loaderBackdrop.style.display = 'none';
+  if(refs.loader){
+    refs.loader.style.display = 'none';
+  }
+  if( refs.loaderBackdrop){
+    refs.loaderBackdrop.style.display = 'none';
+  }
 }
 
 
@@ -70,6 +69,7 @@ switcherCheck();
 //     return;
 //   }
 // });
+
 refs.signUpForm?.addEventListener('submit', onSignUp);
 refs.signInEl?.addEventListener('submit', onSignIn);
 
