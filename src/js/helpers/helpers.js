@@ -1,6 +1,4 @@
 
-import { amountFondsItems } from "../fonds/fonds";
-
 //---------------Render category-list-------------------------
 function addMarkupCategoryList(element, markup) {
   element.innerHTML = markup;
@@ -65,15 +63,26 @@ function changeActiveCategory(element){
 
 //------------------Media query for JS--------------------------------
 
-function mediaQuery(screenBreackPoint) { 
-  if (window.matchMedia(`(max-width: ${screenBreackPoint})px`).matches) {
-  // Viewport is less or equal to 768 pixels wide
-  amountFondsItems(4,4);
-  } else {
-  // Viewport is greater than 768 pixels wide
-  amountFondsItems(6,6);
+function mediaQuery(mobileCallback, tabletCallback, desktopCallback) { 
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    // Viewport is less or equal to 768 pixels wide
+    if (mobileCallback !== null) {
+      mobileCallback();
+    }
+    return;
+  }
+  
+  if (window.matchMedia("(max-width: 1440px)").matches) {
+    // Viewport is greater than 768 pixels wide
+    if (tabletCallback !== null) {
+      tabletCallback();
+    }
+    return;
   }
 
+  if (desktopCallback !== null) {
+    desktopCallback();
+  }
 } 
 
 export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory, mediaQuery };

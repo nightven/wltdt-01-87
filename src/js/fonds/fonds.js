@@ -25,7 +25,12 @@ const liElements = fonds
 const fondsList = document.querySelector('.fonds__list');
 
 fondsList.insertAdjacentHTML('beforeend', liElements);
-mediaQuery(767);
+
+mediaQuery(
+  () => amountFondsItems(4, 4),
+  () => amountFondsItems(6, 6),
+  () => amountFondsItems(6, 6),
+);
 
 // if (window.matchMedia("(max-width: 767px)").matches) {
 //   // Viewport is less or equal to 768 pixels wide
@@ -45,4 +50,4 @@ function amountFondsItems(number, amount) {
 });
 }
 
-export { amountFondsItems }
+//export { amountFondsItems }
