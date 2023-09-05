@@ -174,10 +174,15 @@ async function onShowMoreBooks(event) {
 //-----------------------------Change current page style-------------------------------------------------------
 const navLinks = document.querySelectorAll('.header-nav-list-item');
 navLinks.forEach(link => {
+  // Перевіряємо, чи URL посилання співпадає з URL поточної сторінки
+  if (link.href === window.location.href) {
+    link.classList.add('current');
+  } else {
+    link.classList.remove('current');
+  }
+
   link.addEventListener('click', () => {
-    if (!link.classList.contains('current')) {
-      navLinks.forEach(item => item.classList.remove('current'));
-      link.classList.add('current');
-    }
+    navLinks.forEach(item => item.classList.remove('current'));
+    link.classList.add('current');
   });
 });
