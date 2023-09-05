@@ -25,10 +25,12 @@ import {
 import refs from './js/refs/refs';
 
 
+
 import { data } from 'jquery';
 import axios from 'axios';
 import { ref } from 'firebase/database';
 import { onColorSwitch, switcherCheck } from './js/themes/theme-switcher';
+
 
 
 
@@ -43,6 +45,7 @@ function showLoader() {
 // hideLoader
 function hideLoader() {
   refs.loader.style.display = 'none';
+  refs.loaderBackdrop.style.display = 'none';
 }
 
 
