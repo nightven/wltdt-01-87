@@ -39,6 +39,18 @@ html[data-theme=light] {
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
   --modal-bg: #FFFFFF;
+  --background-modal: #fff;
+  --close-modal-btn: #111111;
+  --background-btn-sign: #111111;
+  --text-btn-sign:#ffffffff;
+  --background-input: #FFFFFF;
+  ---text-input: #111111;
+  --border-input: #111111;
+  --see-more-background: #FFFFFF;
+  --see-more-text: #111111;
+  --home-title-first:#111111;
+  --shop-list-item-text:#111111;
+  --shop-list-item-back: #FFFFFF;
 }
 
 html[data-theme=dark] {
@@ -50,6 +62,18 @@ html[data-theme=dark] {
   --category-text-clr: rgba(255, 255, 255, 0.60);
   --shopping-list-clr: rgba(255, 255, 255, 0.60);
   --modal-bg: #202024;
+  --background-modal: #111;
+  --close-modal-btn: #FFFFFF;
+  --background-btn-sign: #FFFFFF;
+  --text-btn-sign: #111111;
+  --background-input: #111111;
+  ---text-input: #FFFFFF;
+  --border-input: #FFFFFF;
+  --see-more-background: #111111;
+  --see-more-text: #FFFFFF;
+  --home-title-first:#FFFFFF;
+  --shop-list-item-text:#FFFFFF;
+  --shop-list-item-back: #111111;
 }
 
 body {
@@ -263,6 +287,9 @@ body {
   background: rgb(79, 46, 232);
   margin: 0;
 }
+.button-sign-up:hover, .button-sign-up :focus {
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
+}
 
 @media only screen and (max-width: 768px) {
   .button-user.hidden-mob,
@@ -390,6 +417,9 @@ body {
   border-radius: 34px;
   background: linear-gradient(rgb(79, 46, 232), rgb(220, 220, 220));
   transition: 0.4s;
+}
+.switch__slider:hover, .switch__slider :focus {
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
 }
 
 .switch__slider::before {
@@ -608,7 +638,8 @@ body {
   flex-shrink: 0;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
-  background: #ffffff;
+  background: var(--shop-list-item-back);
+  color: var(--shop-list-item-text);
 }
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .book-item {
@@ -733,6 +764,10 @@ body {
     height: 34px;
   }
 }
+.book-btn:hover, .book-btn :focus {
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
+  cursor: pointer;
+}
 
 .trash-icon {
   width: 100%;
@@ -825,6 +860,18 @@ html[data-theme=light] {
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
   --modal-bg: #FFFFFF;
+  --background-modal: #fff;
+  --close-modal-btn: #111111;
+  --background-btn-sign: #111111;
+  --text-btn-sign:#ffffffff;
+  --background-input: #FFFFFF;
+  ---text-input: #111111;
+  --border-input: #111111;
+  --see-more-background: #FFFFFF;
+  --see-more-text: #111111;
+  --home-title-first:#111111;
+  --shop-list-item-text:#111111;
+  --shop-list-item-back: #FFFFFF;
 }
 
 html[data-theme=dark] {
@@ -836,6 +883,18 @@ html[data-theme=dark] {
   --category-text-clr: rgba(255, 255, 255, 0.60);
   --shopping-list-clr: rgba(255, 255, 255, 0.60);
   --modal-bg: #202024;
+  --background-modal: #111;
+  --close-modal-btn: #FFFFFF;
+  --background-btn-sign: #FFFFFF;
+  --text-btn-sign: #111111;
+  --background-input: #111111;
+  ---text-input: #FFFFFF;
+  --border-input: #FFFFFF;
+  --see-more-background: #111111;
+  --see-more-text: #FFFFFF;
+  --home-title-first:#FFFFFF;
+  --shop-list-item-text:#FFFFFF;
+  --shop-list-item-back: #111111;
 }
 
 body {
@@ -891,13 +950,13 @@ body {
 
 .modal {
   position: relative;
-  margin: 127px auto;
+  margin: 300px auto;
   padding: 80px 40px 40px;
   max-width: 579px;
   border-radius: 18px;
-  border: 2px solid #111111;
+  border: 2px solid var(--close-modal-btn);
   color: rgba(17, 17, 17, 0.5);
-  background: #f6f6f6;
+  background: var(--background-modal);
   font-family: DM Sans;
   font-size: 18px;
   font-style: normal;
@@ -917,6 +976,9 @@ body {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+}
+.modal .close-modal-svg use {
+  fill: var(--close-modal-btn);
 }
 .modal .form-login {
   display: flex;
@@ -938,7 +1000,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.18px;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--cl-lg-md-inpt-txt);
 }
 .modal input:placeholder-shown {
   font-family: DM Sans;
@@ -947,10 +1009,15 @@ body {
   font-weight: 700;
   letter-spacing: -0.18px;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--cl-lg-md-inpt-txt);
 }
 .modal label {
   position: relative;
+}
+.modal label input {
+  color: var(---text-input);
+  background-color: var(--background-input);
+  border-color: var(--border-input);
 }
 .modal svg.eye {
   width: 36px;
@@ -970,7 +1037,7 @@ body {
   padding: 20px 0px;
   justify-content: center;
   align-items: flex-start;
-  color: #ffffff;
+  color: var(--text-btn-sign);
   font-family: DM Sans;
   font-size: 18px;
   font-style: normal;
@@ -978,9 +1045,10 @@ body {
   letter-spacing: -0.18px;
   text-transform: uppercase;
   border-radius: 40px;
-  background: #111111;
+  background: var(--background-btn-sign);
 }
 .modal .btn:hover, .modal .btn:focus {
+  color: var(--background-btn-sign);
   background-color: #4f2ee8;
 }
 .modal .list-auth {
@@ -995,6 +1063,9 @@ body {
 .modal .modal-svg-login {
   width: 50px;
   height: 50px;
+}
+.modal .js-button {
+  color: #b4afaf;
 }
 
 .modal-sign-in {
@@ -1918,6 +1989,12 @@ body {
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
+
+}
+
+.category .normal-title {
+  color: var(--home-title-first);
+
 }
 
 .book-author,
@@ -1965,7 +2042,9 @@ body {
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: #111111;
+
+  color: var(--see-more-text);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1987,6 +2066,7 @@ body {
   cursor: pointer;
   background-color: rgb(79, 46, 232);
   color: #ffffff;
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
 }
 
 /**

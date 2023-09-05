@@ -127,6 +127,12 @@
     letter-spacing: -1.92px;
   }
 }
+.category{
+  .normal-title{
+    color: var(--home-title-first);
+  }
+}
+
 
 .book-author,
 .js-author-book {
@@ -179,7 +185,7 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-  color: $color-black;
+  color: var(--see-more-text);
 
   display: flex;
   align-items: center;
@@ -203,6 +209,7 @@
   cursor: pointer;
   background-color: $color-violet;
   color: $color-white;
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
 }
 
 /**

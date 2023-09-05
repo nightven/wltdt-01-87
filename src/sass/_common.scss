@@ -10,6 +10,21 @@ html[data-theme="light"] {
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
   --modal-bg: #FFFFFF;
+  // login modal
+  --background-modal: #fff;
+  --close-modal-btn: #111111;
+  --background-btn-sign: #111111;
+  --text-btn-sign:#ffffffff;
+  --background-input: #FFFFFF;
+  ---text-input: #111111;
+  --border-input: #111111;
+//home
+--see-more-background: #FFFFFF;
+--see-more-text: #111111;
+--home-title-first:#111111;
+//shop list
+--shop-list-item-text:#111111;
+--shop-list-item-back: #FFFFFF;
 }
 
 html[data-theme="dark"] {
@@ -21,6 +36,21 @@ html[data-theme="dark"] {
   --category-text-clr: rgba(255, 255, 255, 0.60);
   --shopping-list-clr: rgba(255, 255, 255, 0.60);
   --modal-bg: #202024;
+  // login modal
+  --background-modal: #111;
+  --close-modal-btn: #FFFFFF;
+  --background-btn-sign: #FFFFFF;
+  --text-btn-sign: #111111;
+  --background-input: #111111;
+  ---text-input: #FFFFFF;
+  --border-input: #FFFFFF;
+//home
+--see-more-background: #111111;
+--see-more-text: #FFFFFF;
+--home-title-first:#FFFFFF;
+//shop list
+--shop-list-item-text:#FFFFFF;
+--shop-list-item-back: #111111;
 }
 
 // Common Setting For Shopping-List-HTML
