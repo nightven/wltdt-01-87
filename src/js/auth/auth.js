@@ -192,4 +192,5 @@ refs.seeButtonEl.forEach(see => {
     }
   });
 });
-export { onSignIn, onSignUp };
+export { onSignIn, onSignUp, USER_KEY };
+

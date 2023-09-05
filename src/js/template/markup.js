@@ -131,7 +131,9 @@ function markupBookModal(bookData) {
       </div>
     </div>
     <div class="modal-btn-wrap">
-      <button class="modal-btn" type="button"></button>
+          <button class="modal-book-btn modal-btn authorized" type="button"></button>
+      <button class="modal-btn modal-btn-for-login unauthorized" type="button"><span class='selected-words'>Login</span>
+       or <span class='selected-words'>Register</span> , please!</a></button>
       <p class="modal-congrats-text is-hidden">
         Congratulations! You have added the book to the shopping list. To
         delete, press the button &#8220;Remove from the shopping list&#8221;.

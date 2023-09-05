@@ -8,7 +8,7 @@
     transform: translate(-50%, -50%);
 
     width: 335px;
-    max-height: 90vh;
+    max-height: 90dvh;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 24px;
@@ -39,6 +39,7 @@
 
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .close-modal-icon {
@@ -124,7 +125,20 @@
     background-color: transparent;
     border-radius: 50px;
     border: solid 2px $color-violet;
+    cursor: pointer;
 
+}
+
+.modal-btn-for-login{
+    font-style: italic;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    border: solid 2px #f01d40;
+
+}
+
+.selected-words{
+   
+    color:#f01d40;
 }
 
 .modal-congrats-text {
@@ -207,8 +221,8 @@
         transition: background-color 550ms $cubic-bezier;
     }
 
-    .modal-btn:hover,
-    .modal-btn:focus {
+    .modal-book-btn:hover,
+    .modal-book-btn:focus {
         background-color: $color-violet;
         color: $color-white;
     }
@@ -220,4 +234,3 @@
         line-height: 1.16;
     }
 }
-
