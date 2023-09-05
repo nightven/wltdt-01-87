@@ -302,14 +302,26 @@
   |        768
   |============================
 */
-
+// .aside-wrapper {
+//   display: flex;
+//   gap: 40px;
+//   // margin-top: 40px;
+//   // align-items: center;
+//   justify-content: center;
+// }
+.aside-wrapper {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
 @media screen and (min-width: 768px) {
   .aside-wrapper {
-    display: flex;
     gap: 32px;
     margin-top: 40px;
     // align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
 
   .container-home-page {
