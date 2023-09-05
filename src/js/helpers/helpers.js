@@ -85,4 +85,26 @@ function mediaQuery(mobileCallback, tabletCallback, desktopCallback) {
   }
 } 
 
-export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory, mediaQuery };
+
+//------------- поіернення обрізаного тексиу в залежності від ширини екрану -------------
+function mediaQueriLimitStr(text, stringLength1, stringLength2, stringLength3) {
+  let truncatedStr = null;
+  mediaQuery(
+  function () {
+    // Виконується для мобільних пристроїв (малий розмір вікна)
+    truncatedStr = limitStr(text, stringLength1);
+  },
+  function () {
+    // Виконується для планшетів (середній розмір вікна)
+    truncatedStr = limitStr(text, stringLength2);
+  },
+  function () {
+    // Виконується для настільних пристроїв (великий розмір вікна)
+    truncatedStr = limitStr(text, stringLength3);
+  } 
+  );
+  return truncatedStr;
+}
+
+
+export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory, mediaQuery, mediaQueriLimitStr };

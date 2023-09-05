@@ -6,6 +6,7 @@ import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
 import refs from '../refs/refs';
+import { mediaQueriLimitStr } from '../helpers/helpers';
 
 
 //--------------------Create markup of category-list------------------------------
@@ -150,7 +151,7 @@ function shopListMarkup(array) {
 
     shopListEl.innerHTML = '';
     return array.map(({ _id, list_name, book_image, author, title, description }) => {
-    return `
+      return `
     <li class="book-item" data-id="${_id}">
     <div class="book-image-wrapper">
     <img class="shop-book-img" src="${book_image}" alt="${title}" width="300" />
@@ -158,7 +159,7 @@ function shopListMarkup(array) {
     <div class="book-item-descr">
     <h2 class="book-shop-title">${limitStr(title, 16)}</h2>
     <p class="book-genre">${list_name}</p>
-    <p class="book-descr">${limitStr(description, 87)}</p>
+    <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
     </div>
