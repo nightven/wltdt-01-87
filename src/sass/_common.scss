@@ -7,15 +7,17 @@ html[data-theme='light'] {
   --header-clr: #ffffff;
   --scroll-bar-clr: #e0e0e0;
   --active-category-clr: #4f2ee8;
-  --category-text-clr: rgba(17, 17, 17, 0.6);
-  --shopping-list-clr: rgba(0, 0, 0, 0.6);
-  --modal-bg: #ffffff;
+  --category-text-clr: rgba(17, 17, 17, 0.60);
+  --shopping-list-clr: rgba(0, 0, 0, 0.60);
+  --modal-bg: #FFFFFF;
+  --text-btn-sign:#FFFFFF;
   // login modal
   --background-modal: #fff;
   --close-modal-btn: #111111;
   --background-btn-sign: #111111;
-  --text-btn-sign: #ffffffff;
-  --background-input: #ffffff;
+  --text-btn-sign:#ffffff;
+  --text-btn-sign-hover:#FFFFFF;
+  --background-input: #FFFFFF;
   ---text-input: #111111;
   --border-input: #111111;
   //home
@@ -44,6 +46,7 @@ html[data-theme='dark'] {
   --close-modal-btn: #ffffff;
   --background-btn-sign: #ffffff;
   --text-btn-sign: #111111;
+  --text-btn-sign-hover: #FFFFFF;
   --background-input: #111111;
   ---text-input: #ffffff;
   --border-input: #ffffff;
