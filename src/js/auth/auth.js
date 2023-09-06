@@ -205,4 +205,4 @@ if(seeButtonEl){
     }
   });
 }
-export { onSignUp, USER_KEY};
+export { onSignUp, USER_KEY, onClickLogout};

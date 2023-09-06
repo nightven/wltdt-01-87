@@ -36,4 +36,8 @@ export default {
   //shop list
   shopListEl: document.querySelector('.shopping-list'),
   emptyBinEl: document.querySelector('.empty-bin-wrapper'),
+
+  //menu burger
+   btnOpenClose: document.getElementById('burger-btn'),
+ modal: document.getElementById("burger-modal"),
 };

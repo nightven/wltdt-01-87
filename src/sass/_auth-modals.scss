@@ -15,7 +15,7 @@
 
 .modal {
   position: relative;
-  margin: 300px auto;
+  margin: 200px auto;
   padding: 80px 40px 40px;
   max-width: 579px;
 
@@ -23,6 +23,7 @@
   border: 2px solid var(--close-modal-btn);
   color: $color-black-alfa;
   background: var(--background-modal);
+  
   @include font-auth;
   .close-modal-btn {
     position: absolute;
