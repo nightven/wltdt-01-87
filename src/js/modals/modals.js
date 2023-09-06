@@ -1,6 +1,7 @@
-const modalSignUp = document.getElementById('sign-up-modal');
-const openModalSignUpBtn = document.getElementById('login');
-const closeModalSignUp = document.querySelector('.close-modal-btn');
+import refs from "../refs/refs";
+
+
+const{ modalSignUp,openModalSignUpBtn} = refs;
 
 openModalSignUpBtn.addEventListener('click', onClickSignUp);
 // modalSignUp.addEventListener('click', onCloseSignUp);
@@ -20,19 +21,16 @@ function onCloseSignUp(evt) {
   }
 
   if (evt.target.hasAttribute('data-signin')) {
-    console.log('modal sign in');
+    
     document.querySelector('.js-form').children[0].style.display = 'none';
     document.querySelector('.signup-btn').textContent = 'Sign in';
   }
 
   if (evt.target.hasAttribute('data-signup')) {
-    console.log('modal sign up');
+    
     document.querySelector('.js-form').children[0].style.display = 'block';
     document.querySelector('.signup-btn').textContent = 'Sign up';
   }
 }
 
-// function toggleModal() {
-//         document.body.classList.toggle('modal-open');
 
-//       }

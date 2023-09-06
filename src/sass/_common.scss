@@ -10,11 +10,13 @@ html[data-theme="light"] {
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
   --modal-bg: #FFFFFF;
+  --text-btn-sign:#FFFFFF;
   // login modal
   --background-modal: #fff;
   --close-modal-btn: #111111;
   --background-btn-sign: #111111;
-  --text-btn-sign:#ffffffff;
+  --text-btn-sign:#ffffff;
+  --text-btn-sign-hover:#FFFFFF;
   --background-input: #FFFFFF;
   ---text-input: #111111;
   --border-input: #111111;
@@ -41,6 +43,7 @@ html[data-theme="dark"] {
   --close-modal-btn: #FFFFFF;
   --background-btn-sign: #FFFFFF;
   --text-btn-sign: #111111;
+  --text-btn-sign-hover: #FFFFFF;
   --background-input: #111111;
   ---text-input: #FFFFFF;
   --border-input: #FFFFFF;
