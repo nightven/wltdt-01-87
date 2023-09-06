@@ -1,33 +1,36 @@
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
-    // виберіть ваше меню тут
-    const modals = ['data-sign-up', 'data-sign-in', 'data-menu-burger'];
+import refs from "../refs/refs";
 
-    modals.forEach(element => {
-      // дл відкриття модалки на кнопку  додаємо атрибут "your-data-modal"-open
-      const openModalSelector = element + '-open';
-      // для закриття модалки на ваку кнопку додаємо атрибут "your-data-modal"-close
-      const closeModalSelector = element + '-close';
 
-      const openModalBtns = document.querySelectorAll(`[${openModalSelector}]`);
-      const closeModalBtns = document.querySelectorAll(
-        `[${closeModalSelector}]`
-      );
-      const modal = document.querySelector(`[${element}]`);
+const{ modalSignUp,openModalSignUpBtn} = refs;
 
-      closeModalBtns.forEach(closeBtn =>
-        closeBtn.addEventListener('click', toggleModal)
-      );
-      openModalBtns.forEach(openBtn =>
-        openBtn.addEventListener('click', toggleModal)
-      );
+openModalSignUpBtn.addEventListener('click', onClickSignUp);
+// modalSignUp.addEventListener('click', onCloseSignUp);
 
-      function toggleModal() {
-        document.body.classList.toggle('modal-open');
-        modal.classList.toggle('is-hidden');
-      }
-    });
-  },
-  false
-);
+function onClickSignUp(evt) {
+  // document.body.classList.toggle('modal-open');
+  modalSignUp.classList.toggle('is-hidden');
+  modalSignUp.addEventListener('click', onCloseSignUp);
+}
+function onCloseSignUp(evt) {
+  if (
+    evt.target.parentNode.hasAttribute('data-modal-close') ||
+    evt.target.hasAttribute('data-modal-close')
+  ) {
+    modalSignUp.classList.toggle('is-hidden');
+    modalSignUp.removeEventListener('click', onCloseSignUp);
+  }
+
+  if (evt.target.hasAttribute('data-signin')) {
+    
+    document.querySelector('.js-form').children[0].style.display = 'none';
+    document.querySelector('.signup-btn').textContent = 'Sign in';
+  }
+
+  if (evt.target.hasAttribute('data-signup')) {
+    
+    document.querySelector('.js-form').children[0].style.display = 'block';
+    document.querySelector('.signup-btn').textContent = 'Sign up';
+  }
+}
+
+

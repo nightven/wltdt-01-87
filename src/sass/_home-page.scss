@@ -99,10 +99,12 @@
   color: $color-violet;
 }
 
+
 // -----------------------------
 .title-book {
   width: 335px;
 }
+
 
 .category,
 .title-book {
@@ -114,6 +116,7 @@
   line-height: 1.19px;
   letter-spacing: -1.28px;
   @include tablet {
+    margin-bottom: 0;
     font-size: 48px;
     font-style: normal;
     line-height: 1.08;
@@ -126,6 +129,12 @@
     letter-spacing: -1.92px;
   }
 }
+.category{
+  .normal-title{
+    color: var(--home-title-first);
+  }
+}
+
 
 // -----------------------------
 
@@ -205,7 +214,11 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
+
   color: var(--main-text-clr);
+=======
+  color: var(--see-more-text);
+
 
   display: flex;
   align-items: center;
@@ -229,6 +242,7 @@
   cursor: pointer;
   background-color: $color-violet;
   color: $color-white;
+  box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
 }
 
 /**
@@ -323,19 +337,19 @@
   }
 }
 
-/**
-  |============================
-  |        768
-  |============================
-*/
-
+.aside-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
 @media screen and (min-width: 768px) {
   .aside-wrapper {
-    display: flex;
+    justify-content: center;
     gap: 32px;
     margin-top: 40px;
     // align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
 
   .container-home-page {

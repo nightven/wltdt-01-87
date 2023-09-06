@@ -14,22 +14,19 @@ import refs from '../refs/refs';
 
 const {
   signUpForm,
-  signInEl,
   authorized,
   unauthorized,
-  modal,
   logoutButton,
   nameUserEl,
   authButton,
   logoutMob,
   nameUserMob,
+  seeButtonEl
 } = refs;
 
-//!submit form register
 
-signUpForm?.addEventListener('submit', onSignUp);
-signInEl?.addEventListener('submit', onSignIn);
 
+// crate data base
 const db = getDatabase(app);
 const USER_KEY = 'auth';
 
@@ -43,70 +40,72 @@ function onSignUp(e) {
   const email = signUpForm['signup-email'].value.trim();
   const password = signUpForm['signup-password'].value.trim();
 
-  signUpCreateUser(login, email, password);
+  if(document.querySelector('.js-label-login').style.display === 'block'){
+    signUpForm.reset();
+    signUpCreateUser(login, email, password);
+  }else{
+    signUpForm.reset();
+    signIn(email, password)
+  }
+// login? signUpCreateUser(login, email, password): signIn(email, password);
 
-  signUpForm.reset();
 }
+
 async function signUpCreateUser(login = '', email, password) {
-  await createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // Signed in
+  try {
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
 
-      const user = userCredential.user;
-      modal.classList.toggle('is-hidden');
-      Notify.success('Success registretion');
-      const userId = auth.currentUser.uid;
-      //write to db
-      setUserToDb(userId, login, email, password);
-      getUserFromDb(userId);
-      authorizedUser(login);
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Ошибка регистрации:', errorMessage);
-      Notify.failure('Error');
-      // ..
-    });
+  // Signed in
+    const user = userCredential.user;
+    
+    Notify.success('Success registretion');
+    const userId = auth.currentUser.uid;
+    //write to db
+    setUserToDb(userId, login, email, password);
+    getUserFromDb(userId);
+    authorizedUser(login);
+  } catch (error) {
+    const errorMessage = error.message;
+    Notify.failure('Registration error');
+    // ..
+  }
 }
 
-//sign in the user
-function onSignIn(e) {
-  e.preventDefault();
-
-  const email = e.currentTarget.elements.email.value;
-  const password = e.currentTarget.elements.password.value;
-
-  signIn(email, password);
-  signInEl.reset();
-}
 async function signIn(email, password) {
-  await signInWithEmailAndPassword(auth, email, password)
-    //check user in firebase and db
-    .then(userCredential => {
-      // Signed in
-      const user = userCredential.user;
-      const userId = auth.currentUser.uid;
-      //get user from db
-      getUserFromDb(userId);
-      authorizedUser();
+  try {
+  const userCredential = await signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  
+  // Signed in
+    const userId = userCredential.user.auth.currentUser.uid;
+    //get user from db
+    getUserFromDb(userId);
+    authorizedUser();
 
-      modal.classList.toggle('is-hidden');
-      Notify.success('Success');
-      // logoutButton.style.transform = "translateX(-500px)";
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      Notify.failure('Error');
-    });
+    // modal.classList.toggle('is-hidden');
+    Notify.success('Success');
+    // logoutButton.style.transform = "translateX(-500px)";
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    
+    Notify.failure("User is not defined");
+  }
 }
 
 // check user
+userAuth(userParsLocal);
+
 function userAuth(auth) {
   return auth ? authorizedUser(auth, true) : false;
 }
-userAuth(userParsLocal);
 
 // Перевіряємо стан авторизації та надаємо дступ до контенту
 function authorizedUser(login = '', reg = false) {
@@ -128,69 +127,74 @@ function authorizedUser(login = '', reg = false) {
     }
   });
 }
-// function write user to db
-function setUserToDb(id, login, email, password) {
+// function write user to data base
+function setUserToDb(id, login, email, password ) {
   set(ref(db, 'users/' + id), {
     login,
     email,
     password,
+  
   });
 }
-
+// getting user from data base
 async function getUserFromDb(userId) {
   const dbRef = ref(getDatabase());
-  await get(child(dbRef, `users/${userId}`))
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        const userValue = snapshot.val();
-        authorizedUser(userValue.login);
-        localStorage.setItem(USER_KEY, JSON.stringify(userValue.login));
-      } else {
-        console.log('No data available');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  try {
+  const snapshot = await get(child(dbRef, `users/${userId}`));
+    if (snapshot.exists()) {
+      const userValue = snapshot.val();
+      authorizedUser(userValue.login);
+      localStorage.setItem(USER_KEY, JSON.stringify(userValue.login));
+    } else {
+      console.log('No data available');
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 // Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton);
+if(authButton)
+  authButton.addEventListener('click', onClickAuthButton);
+
+
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
+  logoutButton.addEventListener('click', onClickLogout);
+  logoutMob?.addEventListener('click', onClickLogout);
 }
 
 // Listening to the exit button
-logoutButton.addEventListener('click', onClickLogout);
-logoutMob?.addEventListener('click', onClickLogout);
 // function to the exit user
 function onClickLogout(e) {
   e.preventDefault();
   auth.signOut().then(() => {
     console.log('success');
     localStorage.removeItem(USER_KEY);
-    location.reload();
+    window.location.href = '/index.html';
+    logoutButton.removeEventListener('click', onClickLogout);
+    logoutMob.removeEventListener('click', onClickLogout);
   });
 }
 
-refs.seeButtonEl.forEach(see => {
-  see.addEventListener('click', e => {
-    const el = e.target;
-    if (el.nodeName === 'svg') {
+if(seeButtonEl){
+
+ seeButtonEl.addEventListener('click', e => {
+    
+    if (e.target.nodeName === 'svg') {
       const signUp = refs.signUpForm['signup-password'];
-      const signIn = refs.signInEl['signin-password'];
-      if (signIn.type === 'password' || signUp.type === 'password') {
-        signIn.type = 'text';
+      
+      if ( signUp.type === 'password') {
+        
         signUp.type = 'text';
-        el.firstElementChild.setAttribute('href', `${svg}#icon-eye-blocked`);
+        e.target.firstElementChild.setAttribute('href', `${svg}#icon-eye-blocked`);
       } else {
-        el.firstElementChild.setAttribute('href', `${svg}#icon-eye`);
-        signIn.type = 'password';
+        e.target.firstElementChild.setAttribute('href', `${svg}#icon-eye`);
+        
         signUp.type = 'password';
       }
     } else {
       return;
     }
   });
-});
-export { onSignIn, onSignUp, USER_KEY };
-
+}
+export { onSignUp, USER_KEY};
