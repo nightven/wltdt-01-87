@@ -135,7 +135,9 @@ function markupBookModal(bookData) {
                     class="modal-partners-link"
                     target="_blank"
                     rel="noopener no-referrer"
-                    ><img src="${shopIcons[buyLink.name]}" alt="${buyLink.name}"
+                    ><img src="${shopIcons[buyLink.name]}" alt="${
+                buyLink.name
+              }" class="${buyLink.name.toLowerCase()}"
                   /></a>
                 </li>`
             )
