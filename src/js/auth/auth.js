@@ -170,9 +170,9 @@ function onClickLogout(e) {
   auth.signOut().then(() => {
     console.log('success');
     localStorage.removeItem(USER_KEY);
-    window.location.href = '../../index.html';
     logoutButton.removeEventListener('click', onClickLogout);
     logoutMob.removeEventListener('click', onClickLogout);
+    window.location.href = '../../index.html';
   });
 }
 
