@@ -153,7 +153,9 @@ async function getUserFromDb(userId) {
   }
 }
 // Поява кнопки для виходу
-authButton.addEventListener('click', onClickAuthButton);
+if(authButton)
+  authButton.addEventListener('click', onClickAuthButton);
+
 
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
@@ -168,12 +170,13 @@ function onClickLogout(e) {
   auth.signOut().then(() => {
     console.log('success');
     localStorage.removeItem(USER_KEY);
-    window.location.href = '/index.html';
+    // window.location.href = '/index.html';
     logoutButton.removeEventListener('click', onClickLogout);
     logoutMob.removeEventListener('click', onClickLogout);
   });
 }
 
+if(seeButtonEl){
 
  seeButtonEl.addEventListener('click', e => {
     
@@ -193,5 +196,5 @@ function onClickLogout(e) {
       return;
     }
   });
-
+}
 export { onSignUp, USER_KEY};
