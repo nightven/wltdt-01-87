@@ -102,3 +102,25 @@ body {
     padding-top: 112px;
   }
 }
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    max-width: 375px;
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+
+    min-width: 768px;
+
+  }
+
+  @include desktop {
+  padding-left: 24px;
+  padding-right: 24px;
+
+    min-width: 1440px;
+  }
+}

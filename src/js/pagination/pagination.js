@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import { getDataFromLocalStorage } from '../localstorage/local';
 import { shopListMarkup } from '../template/markup';
+import refs from '../refs/refs';
 
 const container = document.getElementById('pagination');
 
@@ -34,15 +34,18 @@ export function addPagination() {
     
     const chunkedSavedBooks = chunkArray(shoppingList, options.itemsPerPage);
     let booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
+    refs.shopListEl.innerHTML = shopListMarkup(booksForCurrentPage)
 
+    const pagination = new Pagination(container, options); 
 
-    // const pagination = new Pagination(container, options); 
+    pagination.reset(totalResults);
 
-    // pagination.reset(totalResults);
+    pagination.on('beforeMove', e => { 
+        options.currentPage = e.page;
+        booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
+        refs.shopListEl.innerHTML = shopListMarkup(booksForCurrentPage)
+    });
 
-    // pagination.on('beforeMove', e => { 
-    //     options.currentPage = e.page;
-    //     booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
-    //     shopListMarkup(booksForCurrentPage);
-    // });
+    pagination.reset(totalResults);
+    console.log('1');
 }

@@ -15,7 +15,6 @@ export default {
 
   //authorization
   authorized: document.querySelectorAll('.authorized'),
-  
   modal: document.querySelector('.backdrop'),
   signUpForm: document.querySelector('.js-form'),
   signInEl: document.querySelector('.js-sign-in'),
@@ -29,7 +28,6 @@ export default {
   authButton: document.querySelector('.js-button '),
   seeButtonEl: document.querySelector('#password'),
    modalSignUp: document.getElementById('sign-up-modal'),
- openModalSignUpBtn: document.getElementById('login'),
  closeModalSignUp: document.querySelector('.close-modal-btn'),
 
   //book modal
@@ -38,4 +36,8 @@ export default {
   //shop list
   shopListEl: document.querySelector('.shopping-list'),
   emptyBinEl: document.querySelector('.empty-bin-wrapper'),
+
+  //menu burger
+   btnOpenClose: document.getElementById('burger-btn'),
+ modal: document.getElementById("burger-modal"),
 };

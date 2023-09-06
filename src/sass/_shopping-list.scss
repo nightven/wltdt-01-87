@@ -33,6 +33,8 @@
 
 // Responsive & Mobile Shoping-List-Title
 .shopping-list-title {
+  margin-bottom: 40px;
+    
   font-weight: 700;
   font-size: 32px;
   line-height: 1.18;
@@ -177,7 +179,7 @@
 
   font-size: 16px;
   font-weight: 700;
-  line-height: 1, 13;
+  line-height: 1.13;
 
   letter-spacing: -0.64px;
   text-transform: uppercase;
@@ -198,7 +200,7 @@
 }
 
 .book-descr {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 
   width: 193px;
   height: 68px;
@@ -294,9 +296,18 @@
 }
 
 .shop-item-partners {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(100%);
+    filter: grayscale(100%);
+
+    width: 16px;
+    height: 16px;
+    &:first-child {
+        width: 32px;
+        height: 11px;
+        img{
+        height: 16px;
+        }
+    }
+
 }
 
 .shop-partners-link {

@@ -7,18 +7,18 @@
       </svg>
     </button>
     <form class="js-form form-login">
-      <label class="js-label-login" id="label" style="display: block;">
+      <label class="js-label-login"  style="display: block;">
         <input class="log-inpt" type="text" placeholder="name" id="signup-login" name="login"/>
       </label>
       <label>
         <input class="log-inpt"  type="email" placeholder="email" id="signup-email" name="email"/>
-        <svg class="modal-svg" width="28" heigth="28">
+        <svg class="modal-svg" width="28" ">
           <use href="/src/images/icons.svg#icon-mail"></use>
         </svg>
       </label>
       <label id="password">
         <input class="log-inpt" type="password" placeholder="password" id="signup-password" name="password"/>
-        <svg class="modal-svg eye" width="28" heigth="28">
+        <svg class="modal-svg eye" width="28" ">
           <use href="/src/images/icons.svg#icon-eye"></use>
         </svg>
       </label>
@@ -33,71 +33,3 @@
   </div>
 </div>
 
-<!-- модалка для входа зарегестрированых пользователей -->
-<div class="backdrop backdrop-sign-in is-hidden" data-sign-in>
-  <div class="modal modal-sign-in">
-    <button class="close-modal-btn" data-sign-in-close>
-      <svg class="close-modal-svg">
-        <use href="/src/images/icons.svg#icon-x-close"></use>
-      </svg>
-    </button>
-    <form class="js-sign-in form-login">
-      <label>
-        <input type="email" placeholder="email" name="email" />
-        <svg class="modal-svg" width="28" heigth="28">
-          <use href="/src/images/icons.svg#icon-mail"></use>
-        </svg>
-      </label>
-      <label id="password">
-        <input
-          id="signin-password"
-          type="password"
-          placeholder="password"
-          name="password"
-        />
-        <svg class="modal-svg eye" width="28" heigth="28">
-          <use href="/src/images/icons.svg#icon-eye"></use>
-        </svg>
-      </label>
-      <button
-        class="btn js-sign-in"
-        data-sign-in-close
-        data-sign-up-close
-        type="submit"
-      >
-        Sign in
-      </button>
-    </form>
-    <!-- <ul class="list-auth">
-      <li>
-        <a href="">
-          <svg class="modal-svg-login">
-            <use href="/src/images/icons.svg#icon-google"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <svg class="modal-svg-login">
-            <use href="/src/images/icons.svg#icon-github"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <svg class="modal-svg-login">
-            <use href="/src/images/icons.svg#icon-icloud"></use>
-          </svg>
-        </a>
-      </li>
-    </ul> -->
-    <div class="wrapper-button">
-      <button data-sign-in-close data-sign-up-open class="js-button">
-        sign up
-      </button>
-      <button data-sign-up-close data-sign-in-open class="js-button">
-        sign in
-      </button>
-    </div>
-  </div>
-</div>

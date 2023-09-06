@@ -138,7 +138,9 @@ function markupBookModal(bookData) {
                     class="modal-partners-link"
                     target="_blank"
                     rel="noopener no-referrer"
-                    ><img src="${shopIcons[buyLink.name]}" alt="${buyLink.name}"
+                    ><img src="${shopIcons[buyLink.name]}" alt="${
+                buyLink.name
+              }" class="${buyLink.name.toLowerCase()}"
                   /></a>
                 </li>`
             )
@@ -148,7 +150,7 @@ function markupBookModal(bookData) {
     </div>
     <div class="modal-btn-wrap">
           <button class="modal-book-btn modal-btn authorized" type="button"></button>
-      <button class="modal-btn modal-btn-for-login unauthorized" type="button"><span class='selected-words'>Login</span>
+      <button class="modal-btn modal-btn-for-login button-sign-up unauthorized" type="button"><span class='selected-words'>Login</span>
        or <span class='selected-words'>Register</span> , please!</a></button>
       <p class="modal-congrats-text is-hidden">
         Congratulations! You have added the book to the shopping list. To
@@ -195,15 +197,15 @@ function shopListMarkup(array) {
     </div>
     <div class="book-item-descr">
     <h2 class="book-shop-title">${limitStr(title, 16)}</h2>
-    <p class="book-genre">${list_name}</p>
+    <p class="book-genre">${mediaQueriLimitStr(list_name, 22, 200, 200)}</p>
     <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
-        <ul class="modal-list-partners">
+        <ul class="shop-list-partners">
           ${buyLinks
             .map(
               buyLink => `
-              <li class="modal-item-partners">
+              <li class="shop-item-partners">
                   <a
                     href="${buyLink.url}"
                     class="shop-partners-link"

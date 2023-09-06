@@ -156,11 +156,12 @@
   @include tablet-desktop {
     display: flex;
     position: absolute;
-
-    width: 184px;
+    top: 10px;
+    z-index: -10;
+    width: 199px;
 
     opacity: 0;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 .svg-button-log-out {
@@ -176,6 +177,9 @@
     display: flex;
 
     height: 45px;
+  }
+  .icon-wrapper{
+    margin-right: 9px;
   }
 }
 .icon-wrapper {
@@ -268,6 +272,9 @@
 }
 .logout-hidden {
   opacity: 1;
+  top: 58px;
+  z-index: 0;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 //styles for burger button
