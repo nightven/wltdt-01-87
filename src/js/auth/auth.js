@@ -172,7 +172,7 @@ function onClickLogout(e) {
     localStorage.removeItem(USER_KEY);
     logoutButton.removeEventListener('click', onClickLogout);
     logoutMob.removeEventListener('click', onClickLogout);
-    window.location.href = '../../index.html';
+    window.location.href = 'wltdt-01-87/index.html';
   });
 }
 
