@@ -9,7 +9,10 @@ export default {
   spanColorEl: document.querySelector('.color-title'),
   spanNormalEl: document.querySelector('.normal-title'),
   categoryItemEl: document.querySelector('.js-item-category'),
-  
+
+  //footer
+  footerEl : document.querySelector('.js-team-modal'),
+
   //authorization
   authorized: document.querySelectorAll('.authorized'),
   
