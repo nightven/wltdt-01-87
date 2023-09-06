@@ -8,10 +8,12 @@ import { shopListMarkup } from './js/template/markup';
 import refs from './js/refs/refs';
 
 
+
 const { shopListEl, emptyBinEl } = refs; 
 const BOOK_KEY = 'chosen-books';
 
 doMarkup();
+
 
 document.addEventListener('click', removeBookFromLocalStorage);
 

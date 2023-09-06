@@ -22,10 +22,8 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 import { switcherCheck } from './js/themes/theme-switcher';
+import { addPagination } from './js/pagination/pagination';
 import { onSignUp } from './js/auth/auth';
-
-
-
 
 
 
@@ -51,6 +49,10 @@ function hideLoader() {
 
 // switcherStatus
 switcherCheck();
+
+// pagination
+
+addPagination();
 
 //!submit form register
 refs.signUpForm?.addEventListener('submit', onSignUp);
@@ -184,3 +186,5 @@ navLinks.forEach(link => {
     link.classList.add('current');
   });
 });
+
+
