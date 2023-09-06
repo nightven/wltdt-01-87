@@ -194,4 +194,4 @@ function onClickLogout(e) {
     }
   });
 
-export { onSignUp};
+export { onSignUp, USER_KEY};
