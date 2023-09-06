@@ -194,15 +194,15 @@ function shopListMarkup(array) {
     </div>
     <div class="book-item-descr">
     <h2 class="book-shop-title">${limitStr(title, 16)}</h2>
-    <p class="book-genre">${list_name}</p>
+    <p class="book-genre">${mediaQueriLimitStr(list_name, 22, 200, 200)}</p>
     <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
-        <ul class="modal-list-partners">
+        <ul class="shop-list-partners">
           ${buyLinks
             .map(
               buyLink => `
-              <li class="modal-item-partners">
+              <li class="shop-item-partners">
                   <a
                     href="${buyLink.url}"
                     class="shop-partners-link"
