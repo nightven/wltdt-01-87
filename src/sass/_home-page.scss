@@ -136,28 +136,7 @@
 }
 
 
-// -----------------------------
 
-// .book-title {
-//   color: $color-black;
-//   font-family: DM Sans;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 1.13;
-//   letter-spacing: -0.64px;
-//   max-width: 180px;
-// }
-
-// ------------------------------
-// .book-author {
-//   color: $color-grey;
-//   font-family: DM Sans;
-//   font-size: 12px;
-//   font-style: italic;
-//   line-height: 1.17;
-//   letter-spacing: -0.48px;
-// }
 
 .book-author,
 .js-author-book {
@@ -179,16 +158,7 @@
   margin-bottom: 18px;
 }
 
-// .book-title {
-//   color: $color-black;
-//   font-family: DM Sans;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 1.13;
-//   letter-spacing: -0.64px;
-//   max-width: 180px;
-// }
+
 
 .book-title,
 .js-named-book {
@@ -214,12 +184,7 @@
 .js-btn-books {
   width: 124px;
   height: 46px;
-
-  color: var(--main-text-clr);
-=======
   color: var(--see-more-text);
-
-
   display: flex;
   align-items: center;
   justify-content: center;
