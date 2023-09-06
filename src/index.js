@@ -22,7 +22,14 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 import { switcherCheck } from './js/themes/theme-switcher';
-import { onSignIn, onSignUp } from './js/auth/auth';
+import { onSignUp } from './js/auth/auth';
+
+
+
+
+
+
+
 
 
 function showLoader() {
@@ -47,7 +54,7 @@ switcherCheck();
 
 //!submit form register
 refs.signUpForm?.addEventListener('submit', onSignUp);
-refs.signInEl?.addEventListener('submit', onSignIn);
+
 
 //----------------------Category List-----------------------------------------
 

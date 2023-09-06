@@ -112,6 +112,9 @@
 .button-sign-up {
   @include sign-up-btn;
   margin: 0;
+  &:hover,:focus{
+    box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
+  }
 }
 @media only screen and (max-width: 768px) {
   .button-user.hidden-mob,
@@ -189,6 +192,7 @@
 
 .bookshelf-logo {
   fill: var(--main-text-clr);
+  
 }
 
 .bin-icon {
@@ -223,6 +227,9 @@
   border-radius: 34px;
   background: $gradient-1;
   transition: 0.4s;
+  &:hover, :focus{
+    box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
+  }
 }
 
 .switch__slider::before {
@@ -238,6 +245,7 @@
 
   background-color: $color-white;
   transition: 0.4s;
+ 
 }
 
 /* styles for focus */
@@ -256,6 +264,7 @@
 
 .switcher-wrrap {
   margin-left: auto;
+  
 }
 .logout-hidden {
   opacity: 1;

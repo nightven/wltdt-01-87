@@ -15,14 +15,14 @@
 
 .modal {
   position: relative;
-  margin: 127px auto;
+  margin: 300px auto;
   padding: 80px 40px 40px;
   max-width: 579px;
 
   border-radius: 18px;
-  border: 2px solid $color-black;
+  border: 2px solid var(--close-modal-btn);
   color: $color-black-alfa;
-  background: $color-white-warm;
+  background: var(--background-modal);
   @include font-auth;
   .close-modal-btn {
     position: absolute;
@@ -36,6 +36,9 @@
     width: 28px;
     height: 28px;
     flex-shrink: 0;
+    use{
+      fill: var(--close-modal-btn);
+    }
   }
   .form-login {
     display: flex;
@@ -54,7 +57,7 @@
 
     &:placeholder-shown {
       @include font-auth;
-      color: $color-black;
+      color: var(--cl-lg-md-inpt-txt);
     }
     // &:valid {
     //   /* outline: rgba(0,0,0,0); */
@@ -64,6 +67,12 @@
   label {
     position: relative;
     // margin-top: 28px;
+   input{
+    color: var(---text-input);
+    background-color: var(--background-input);
+    border-color: var(--border-input);
+   }
+    
   }
   svg.eye {
     width: 36px;
@@ -85,13 +94,14 @@
     justify-content: center;
     align-items: flex-start;
 
-    color: $color-white;
+    color: var(--text-btn-sign);
     @include font-auth;
 
     border-radius: 40px;
-    background: $color-black;
+    background: var(--background-btn-sign);
     &:hover,
     &:focus {
+      color: var(--text-btn-sign-hover);
       background-color: #4f2ee8;
     }
   }
@@ -107,6 +117,10 @@
   .modal-svg-login {
     width: 50px;
     height: 50px;
+  }
+
+  .js-button{
+    color: $color-grey;
   }
 }
 

@@ -1,49 +1,38 @@
 <!-- модалка для регистрации пользователя -->
-<div class="backdrop is-hidden" data-sign-up>
+<div class="backdrop is-hidden" id="sign-up-modal">
   <div class="modal">
-    <button class="close-modal-btn" data-sign-up-close>
-      <svg class="close-modal-svg">
+    <button class="close-modal-btn">
+      <svg class="close-modal-svg" data-modal-close>
         <use href="/src/images/icons.svg#icon-x-close"></use>
       </svg>
     </button>
     <form class="js-form form-login">
-      <label>
-        <input type="text" placeholder="name" id="signup-login" name="login" />
+      <label class="js-label-login" id="label" style="display: block;">
+        <input class="log-inpt" type="text" placeholder="name" id="signup-login" name="login"/>
       </label>
       <label>
-        <input
-          type="email"
-          placeholder="email"
-          id="signup-email"
-          name="email"
-        />
+        <input class="log-inpt"  type="email" placeholder="email" id="signup-email" name="email"/>
         <svg class="modal-svg" width="28" heigth="28">
           <use href="/src/images/icons.svg#icon-mail"></use>
         </svg>
       </label>
       <label id="password">
-        <input
-          type="password"
-          placeholder="password"
-          id="signup-password"
-          name="password"
-        />
+        <input class="log-inpt" type="password" placeholder="password" id="signup-password" name="password"/>
         <svg class="modal-svg eye" width="28" heigth="28">
           <use href="/src/images/icons.svg#icon-eye"></use>
         </svg>
       </label>
-      <button class="btn" type="submit">Sign up</button>
+      <button class="btn signup-btn" data-modal-close type="submit">
+        Sign up
+      </button>
     </form>
     <div class="wrapper-button">
-      <button data-sign-up-open data-sign-in-close class="js-button">
-        sign up
-      </button>
-      <button data-sign-in-open data-sign-up-close class="js-button">
-        sign in
-      </button>
+      <button class="js-button" data-signup>sign up</button>
+      <button class="js-button" data-signin="">sign in</button>
     </div>
   </div>
 </div>
+
 <!-- модалка для входа зарегестрированых пользователей -->
 <div class="backdrop backdrop-sign-in is-hidden" data-sign-in>
   <div class="modal modal-sign-in">
