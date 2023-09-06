@@ -276,7 +276,6 @@ body {
   align-items: center;
   padding: 14px;
   justify-content: space-between;
-  gap: 9px;
   min-width: 184px;
   height: 48px;
   flex-shrink: 0;
@@ -336,9 +335,11 @@ body {
   .button-log-out {
     display: flex;
     position: absolute;
-    width: 184px;
+    top: 10px;
+    z-index: -10;
+    width: 199px;
     opacity: 0;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -353,7 +354,6 @@ body {
   align-items: center;
   padding: 14px;
   justify-content: space-between;
-  gap: 9px;
   min-width: 184px;
   height: 48px;
   flex-shrink: 0;
@@ -377,6 +377,9 @@ body {
     display: flex;
     height: 45px;
   }
+}
+.button-user .icon-wrapper {
+  margin-right: 9px;
 }
 
 .icon-wrapper {
@@ -461,6 +464,9 @@ body {
 
 .logout-hidden {
   opacity: 1;
+  top: 58px;
+  z-index: 0;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #burger-btn {
@@ -551,7 +557,6 @@ body {
 @media screen and (min-width: 1440px) {
   .shopping-list-wrapper {
     display: flex;
-    gap: 40px;
   }
 }
 .shopping-list-fonds {
@@ -835,7 +840,6 @@ body {
   align-items: center;
   padding: 14px;
   justify-content: space-between;
-  gap: 9px;
   min-width: 184px;
   height: 48px;
   flex-shrink: 0;
@@ -1187,6 +1191,7 @@ body {
   background-color: var(--modal-bg);
   border: solid 2px var(--main-text-clr);
   border-radius: 20px;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) and (min-height: 495px) {
@@ -1284,6 +1289,7 @@ body {
   background-color: transparent;
   border-radius: 50px;
   border: solid 2px rgb(79, 46, 232);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
   cursor: pointer;
 }
 
@@ -1291,6 +1297,7 @@ body {
   font-style: italic;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
   border: solid 2px rgb(79, 46, 232);
+  cursor: pointer;
 }
 
 .selected-words {
@@ -1592,6 +1599,7 @@ body {
   background-color: var(--modal-bg);
   border: solid 2px var(--main-text-clr);
   border-radius: 20px;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) and (min-height: 495px) {
@@ -1689,6 +1697,7 @@ body {
   background-color: transparent;
   border-radius: 50px;
   border: solid 2px rgb(79, 46, 232);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
   cursor: pointer;
 }
 
@@ -1696,6 +1705,7 @@ body {
   font-style: italic;
   box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
   border: solid 2px rgb(79, 46, 232);
+  cursor: pointer;
 }
 
 .selected-words {
@@ -2298,20 +2308,27 @@ html {
   scroll-behavior: smooth;
 }
 
-.scroll-up {
-  cursor: pointer;
-  position: sticky;
-  bottom: 30px;
+.scroll-up-container {
+  position: relative;
+}
+
+.scroll-up-wrap {
+  position: absolute;
+  bottom: 75px;
   left: 93%;
+}
+
+.scroll-up {
+  position: sticky;
+  display: none;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 52px;
   border: none;
   border-radius: 50%;
-  display: none;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
   font-size: 24px;
+  cursor: pointer;
   background-color: rgb(79, 46, 232);
   color: #ffffff;
 }
@@ -2329,7 +2346,45 @@ html {
     display: block;
     background-color: var(--background-clr);
     text-align: center;
-    min-height: 50px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-image: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
+    border: 1.5px solid var(--main-text-clr);
+  }
+  .footer-text {
+    font-size: 16px;
+    line-height: 1.12;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .dream-team-link {
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+  }
+  .dream-team-span {
+    color: #ffffff;
+  }
+  .footer-close-modal-btn {
+    position: fixed;
+    top: 5;
+    right: 5;
+    display: flex;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .footer-close-modal-icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--main-text-clr);
+  }
+  .footer-close-modal-btn:hover .footer-close-modal-icon,
+  .footer-close-modal-btn:focus .footer-close-modal-icon {
+    fill: rgb(79, 46, 232);
   }
   .footer-modal-container {
     position: fixed;
@@ -2347,6 +2402,8 @@ html {
     background-color: var(--modal-bg);
     border: solid 2px var(--main-text-clr);
     border-radius: 20px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
   }
   .team-list {
     display: flex;
@@ -2355,18 +2412,20 @@ html {
     gap: 20px;
   }
   .team-item {
+    width: calc(25% - 14px);
+  }
+  .team-item-second {
     width: calc((100% - 60px) / 4);
   }
   .team-img {
-    border-radius: 10px;
-    height: 200px;
+    height: 180px;
     margin-bottom: 8px;
+    border-radius: 10px;
   }
   .team-lead {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: calc((100% - 60px) / 4);
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -2379,10 +2438,13 @@ html {
     line-height: 1.12;
     text-transform: uppercase;
   }
-  .footer-text {
+  .footer-modal-text {
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
     line-height: 1.16;
+  }
+  .footer-modal-link {
+    cursor: pointer;
   }
 }/*# sourceMappingURL=index.css.map */

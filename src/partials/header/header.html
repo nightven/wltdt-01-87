@@ -47,6 +47,7 @@
     <div id="app">
       <div class="authorized display-none">
         <!-- Вміст для авторизованих користувачів -->
+        
         <button type="button" class="js-button button-user hidden-mob">
           <span class="icon-wrapper"
             ><svg class="user-icon" width="19" height="19">
@@ -57,11 +58,12 @@
             <use href="/src/images/icons.svg#icon-caret-down"></use>
           </svg>
         </button>
-        <button id="logout" type="button" class="button-log-out hidden-mob">
+        <a href="index.html" id="logout"  class="button-log-out hidden-mob">
           Log out<svg class="svg-button-log-out" width="20" height="20">
             <use href="/src/images/icons.svg#icon-arrow-right"></use>
           </svg>
-        </button>
+        </a>
+      
       </div>
       <div>
         <!-- Вміст для неавторизованих користувачів -->
