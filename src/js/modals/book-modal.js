@@ -69,12 +69,16 @@ function isUserAuthorized(isAuthorized, instance) {
   const unauthorizedBtn = instance
     .element()
     .querySelector('.modal-btn.unauthorized');
+
+  const text = instance.element().querySelector('.modal-congrats-text');
+
   if (isAuthorized) {
     authorizedBtn.style.display = 'block';
     unauthorizedBtn.style.display = 'none';
   } else {
     authorizedBtn.style.display = 'none';
     unauthorizedBtn.style.display = 'block';
+    text.style.display = 'none';
   }
 }
 
