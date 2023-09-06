@@ -159,19 +159,27 @@ if(authButton)
 
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
-  logoutButton.addEventListener('click', onClickLogout);
-  logoutMob?.addEventListener('click', onClickLogout);
+
+   window.addEventListener('click', onClickLogout)
 }
 
 // Listening to the exit button
 // function to the exit user
 function onClickLogout(e) {
   e.preventDefault();
+
+  if(!e.target.classList.contains('button-log-out')){
+    return
+  }
+
   auth.signOut().then(() => {
-    console.log('success');
+   
     localStorage.removeItem(USER_KEY);
-    logoutButton.removeEventListener('click', onClickLogout);
-    logoutMob.removeEventListener('click', onClickLogout);
+
+    logoutButton.classList.toggle('logout-hidden');
+
+    window.removeEventListener('click', onClickLogout);
+
     window.location.href = 'index.html';
   });
 }

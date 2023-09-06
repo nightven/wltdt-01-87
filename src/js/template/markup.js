@@ -145,7 +145,7 @@ function markupBookModal(bookData) {
     </div>
     <div class="modal-btn-wrap">
           <button class="modal-book-btn modal-btn authorized" type="button"></button>
-      <button class="modal-btn modal-btn-for-login unauthorized" type="button"><span class='selected-words'>Login</span>
+      <button class="modal-btn modal-btn-for-login button-sign-up unauthorized" type="button"><span class='selected-words'>Login</span>
        or <span class='selected-words'>Register</span> , please!</a></button>
       <p class="modal-congrats-text is-hidden">
         Congratulations! You have added the book to the shopping list. To

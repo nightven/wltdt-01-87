@@ -15,7 +15,6 @@ export default {
 
   //authorization
   authorized: document.querySelectorAll('.authorized'),
-  
   modal: document.querySelector('.backdrop'),
   signUpForm: document.querySelector('.js-form'),
   signInEl: document.querySelector('.js-sign-in'),
@@ -29,7 +28,6 @@ export default {
   authButton: document.querySelector('.js-button '),
   seeButtonEl: document.querySelector('#password'),
    modalSignUp: document.getElementById('sign-up-modal'),
- openModalSignUpBtn: document.getElementById('login'),
  closeModalSignUp: document.querySelector('.close-modal-btn'),
 
   //book modal

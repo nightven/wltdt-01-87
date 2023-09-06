@@ -1,13 +1,15 @@
 import refs from "../refs/refs";
+const{ modalSignUp} = refs;
 
+window.addEventListener('click',onClickSignUp)
 
-const{ modalSignUp,openModalSignUpBtn} = refs;
-
-openModalSignUpBtn.addEventListener('click', onClickSignUp);
-// modalSignUp.addEventListener('click', onCloseSignUp);
+modalSignUp.addEventListener('click', onCloseSignUp);
 
 function onClickSignUp(evt) {
-  // document.body.classList.toggle('modal-open');
+  if(!evt.target.closest('.button-sign-up')){
+    return
+  }
+  
   modalSignUp.classList.toggle('is-hidden');
   modalSignUp.addEventListener('click', onCloseSignUp);
 }
