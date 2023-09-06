@@ -7,15 +7,15 @@ import { limitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
 import refs from '../refs/refs';
 import { mediaQueriLimitStr } from '../helpers/helpers';
-import OksanaPhoto from '../../images/team/Oksana.jpg';
-import VikaPhoto from '../../images/team/Vika.jpg';
-import MarinaPhoto from '../../images/team/Marina.jpg';
-import AnastasiaPhoto from '../../images/team/Anastasia.jpg';
-import ServerPhoto from '../../images/team/Server.jpg';
-import DimaPhoto from '../../images/team/Dima.jpg';
-import RomanPhoto from '../../images/team/Roman.jpg';
-import VladPhoto from '../../images/team/Vlad.jpg';
-import VitaliyPhoto from '../../images/team/Vitaliy.jpg';
+import OksanaPhoto from '../../images/team/Oksana.png';
+import VikaPhoto from '../../images/team/Vika.png';
+import MarinaPhoto from '../../images/team/Marina.png';
+import AnastasiaPhoto from '../../images/team/Anastasia.png';
+import ServerPhoto from '../../images/team/Server.png';
+import DimaPhoto from '../../images/team/Dima.png';
+import RomanPhoto from '../../images/team/Roman.png';
+import VladPhoto from '../../images/team/Vlad.png';
+import VitaliyPhoto from '../../images/team/Vitaliy.png';
 
 //--------------------Create markup of category-list------------------------------
 
@@ -147,7 +147,7 @@ function markupBookModal(bookData) {
     </div>
     <div class="modal-btn-wrap">
           <button class="modal-book-btn modal-btn authorized" type="button"></button>
-      <button class="modal-btn modal-btn-for-login unauthorized" type="button"><span class='selected-words'>Login</span>
+      <button class="modal-btn modal-btn-for-login button-sign-up unauthorized" type="button"><span class='selected-words'>Login</span>
        or <span class='selected-words'>Register</span> , please!</a></button>
       <p class="modal-congrats-text is-hidden">
         Congratulations! You have added the book to the shopping list. To
@@ -243,70 +243,90 @@ function createMarkupTeam() {
   return `
 
   <div class="footer-modal-container">
+  <button class="footer-close-modal-btn" type="button">
+      <svg class="footer-close-modal-icon">
+        <use href="${crossSvg}#icon-x-close"></use>
+      </svg>
+    </button>
   <div class="team-lead">
-    <img src="${VitaliyPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Vitaliy</h2>
-  <p class="footer-text">Team Lead, Developer</p>
-</div>
-    </div>
   <ul class="team-list">
-    
-    <li class="team-item">
-    <img src="${VikaPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Viktoriia</h2>
-  <p class="footer-text">Scrum-master, Developer</p>
-</div>
-    </li>
-    <li class="team-item">
+  <li class="team-item">
+  <a class='footer-img-link' href='https://github.com/nightven' target="_blank" rel="noopener no-referrer">
+  <img src="${VitaliyPhoto}" class="team-img"/>
+  <div class="footer-title-wrap">
+  <h2 class="footer-title">Vitaliy</h2>
+  <p class="footer-modal-text">Team Lead, Developer</p>
+</div></a></li>
+<li class="team-item">
+<a class='footer-img-link' href='https://github.com/Viktoriia-Ch08' target="_blank" rel="noopener no-referrer">
+<img src="${VikaPhoto}" class="team-img"/>
+<div class="footer-title-wrap">
+<h2 class="footer-title">Viktoriia</h2>
+<p class="footer-modal-text">Scrum-master, Developer</p>
+</div></a></li>
+<ul class="team-list">
+    <li class="team-item"> 
+  <a class='footer-img-link' href='https://github.com/hotgorod' target="_blank" rel="noopener no-referrer">
     <img src="${MarinaPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Marina</h2>
-  <p class="footer-text">Developer</p>
+  <p class="footer-modal-text">Developer</p>
 </div>
+</a>
     </li>
-    <li class="team-item">
+    <li class="team-item"> 
+    <a class='footer-img-link' href='https://github.com/AnastasiiaDia' target="_blank" rel="noopener no-referrer">
     <img src="${AnastasiaPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Anastasia</h2>
-  <p class="footer-text">Developer</p>
-</div>
-    </li>
-    <li class="team-item">
+  <p class="footer-modal-text">Developer</p>
+</div> 
+</a>
+</li>
+<li class="team-item"> 
+<a class='footer-img-link' href='https://github.com/Oksana-Tnt' target="_blank" rel="noopener no-referrer">
+  <img src="${OksanaPhoto}" class="team-img" />
+  <div class="footer-title-wrap">
+    <h2 class="footer-title">Oksana</h2>
+    <p class="footer-modal-text">Developer</p>
+  </div>
+  </a>
+</li>
+    <li class="team-item-second"> 
+    <a class='footer-img-link' href='https://github.com/Dimzie' target="_blank" rel="noopener no-referrer">
     <img src="${DimaPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Dmitriy</h2>
-  <p class="footer-text">Developer</p>
+  <p class="footer-modal-text">Developer</p>
 </div>
+</a>
     </li>
-    <li class="team-item">
+    <li class="team-item-second"> 
+    <a class='footer-img-link' href='https://github.com/Roman80-IT' target="_blank" rel="noopener no-referrer">
     <img src="${RomanPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Roman</h2>
-  <p class="footer-text">Developer</p>
+  <p class="footer-modal-text">Developer</p>
 </div>
+</a>
     </li>
-    <li class="team-item">
+    <li class="team-item-second"> 
+    <a class='footer-img-link' href='https://github.com/ServerIbraimovUa' target="_blank" rel="noopener no-referrer">
     <img src="${ServerPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Server</h2>
-  <p class="footer-text">Developer</p>
+  <p class="footer-modal-text">Developer</p>
 </div>
+</a>
     </li>
-    <li class="team-item">
+    <li class="team-item-second"> 
+    <a class='footer-img-link' href='https://github.com/maodzhedun' target="_blank" rel="noopener no-referrer">
     <img src="${VladPhoto}" class="team-img"/>
     <div class="footer-title-wrap">
   <h2 class="footer-title">Vladislav</h2>
-  <p class="footer-text">Developer</p>
+  <p class="footer-modal-text">Developer</p>
 </div>
-    </li>
-    <li class="team-item">
-    <img src="${OksanaPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Oksana</h2>
-  <p class="footer-text">Developer</p>
-</div>
+</a>
     </li>
   </ul>
   </div>  
