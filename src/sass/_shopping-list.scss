@@ -156,6 +156,11 @@
   }
 }
 
+.shop-partners-link:hover,
+.shop-partners-link:focus {
+    filter: var(--shop-list-icon-filter);
+}
+
 .book-image-wrapper {
   min-width: 100px;
   height: 142px;
@@ -172,6 +177,13 @@
     max-width: 116px;
     height: 165px;
   }
+  &:first-child{
+    filter: var(--shop-icon-filter-invert);
+    }
+   
+    li {
+        filter: var(--shop-icon-filter-standart);
+    }
 }
 
 .book-shop-title {

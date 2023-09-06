@@ -11,8 +11,9 @@
 }
 
 .tui-pagination {
-    height: 28px;
-    margin: 14px 0 12px;
+    display: flex;
+    gap: 8px;
+    height: 38px;
     line-height: normal;
     text-align: center;
     font-size: 0;
@@ -21,12 +22,13 @@
 .tui-pagination .tui-page-btn {
     display: inline-block;
     position: relative;
-    width: 28px;
+    width: 38px;
+    height: 38px;
     padding: 8px 0 6px;
     margin-left: 0;
     color: #333;
-    font-size: 12px;
-    font-weight: normal;
+    font-size: 18px;
+    font-weight: bold;
     line-height: 1;
     text-decoration: none;
     vertical-align: middle;
@@ -77,7 +79,7 @@
 
 .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
     overflow: hidden;
-    height: 26px;
+    height: 38px;
     padding: 0;
     font-size: 0;
     line-height: 26px;
@@ -201,12 +203,13 @@
 }
 
 #pagination{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
     .tui-first,
     .tui-prev {
-        background-color: transparent;
-    content: "\\00BB";
+        background-color: $color-black;
+    content: url(/src/images/pagination/small-left.svg);
     color: $color-black;
     }
     
@@ -219,7 +222,9 @@
     .tui-next,
     .tui-last {
         background-color: $color-yellow;
+        content: url(/src/images/pagination/small-right.svg);
         color: $color-black;
     }
 }
+
 
