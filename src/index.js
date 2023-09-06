@@ -22,10 +22,7 @@ import {
 import refs from './js/refs/refs';
 import { switcherCheck } from './js/themes/theme-switcher';
 import { onSignIn, onSignUp } from './js/auth/auth';
-
-
-
-
+import { addPagination } from './js/pagination/pagination';
 
 
 function onClickSignUp(evt){
@@ -54,6 +51,10 @@ function hideLoader() {
 
 // switcherStatus
 switcherCheck();
+
+// pagination
+
+addPagination();
 
 //!submit form register
 refs.signUpForm?.addEventListener('submit', onSignUp);
@@ -187,3 +188,5 @@ navLinks.forEach(link => {
     link.classList.add('current');
   });
 });
+
+
