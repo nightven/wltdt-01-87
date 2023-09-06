@@ -6,6 +6,7 @@ import spriteSvg from './images/icons.svg#icon-trash-bin';
 import { set } from 'firebase/database';
 import { shopListMarkup } from './js/template/markup';
 import refs from './js/refs/refs';
+import { addPagination } from './js/pagination/pagination';
 
 
 
@@ -40,6 +41,10 @@ function doMarkup() {
         emptyBinEl.classList.remove('visually-hidden');
     } else {
         emptyBinEl.classList.add('visually-hidden');
-        shopListEl.insertAdjacentHTML("beforeend", shopListMarkup(localStorageData));
+        // shopListEl.insertAdjacentHTML("beforeend", shopListMarkup(localStorageData));
+        addPagination();
     }
 }
+
+// pagination
+
