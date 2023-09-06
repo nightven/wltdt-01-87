@@ -7,6 +7,15 @@ import { limitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
 import refs from '../refs/refs';
 import { mediaQueriLimitStr } from '../helpers/helpers';
+import OksanaPhoto from '../../images/team/Oksana.jpg'
+import VikaPhoto from '../../images/team/Vika.jpg'
+import MarinaPhoto from '../../images/team/Marina.jpg'
+import AnastasiaPhoto from '../../images/team/Anastasia.jpg'
+import ServerPhoto from '../../images/team/Server.jpg'
+import DimaPhoto from '../../images/team/Dima.jpg'
+import RomanPhoto from '../../images/team/Roman.jpg'
+import VladPhoto from '../../images/team/Vlad.jpg'
+import VitaliyPhoto from '../../images/team/Vitaliy.jpg'
 
 
 //--------------------Create markup of category-list------------------------------
@@ -174,10 +183,97 @@ function shopListMarkup(array) {
     .join('');
 }
 
+//--------------------------Create Markup of Team-------------------------------------------------------------
+function createMarkupTeam() {
+
+  // return `
+  // <card>
+  // <div class="photo-wrapper">
+  //       <img src="${defaultImg}" alt="books" width="300px" />
+  //       <p>Created by <a class="js-team-modal">Dream team</a></p>
+  //   </div>
+  // </card>
+  
+  // `
+  return `
+
+  <div class="footer-modal-container">
+  <div class="team-lead">
+    <img src="${VitaliyPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Vitaliy</h2>
+  <p class="footer-text">Team Lead, Developer</p>
+</div>
+    </div>
+  <ul class="team-list">
+    
+    <li class="team-item">
+    <img src="${VikaPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Viktoriia</h2>
+  <p class="footer-text">Scrum-master, Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${MarinaPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Marina</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${AnastasiaPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Anastasia</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${DimaPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Dmitriy</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${RomanPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Roman</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${ServerPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Server</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${VladPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Vladislav</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+    <li class="team-item">
+    <img src="${OksanaPhoto}" class="team-img"/>
+    <div class="footer-title-wrap">
+  <h2 class="footer-title">Oksana</h2>
+  <p class="footer-text">Developer</p>
+</div>
+    </li>
+  </ul>
+  </div>  
+  `
+    
+}
+
 export {
   markupCategoryList,
   markupAllBooks,
   markupBlock,
   markupBookModal,
   shopListMarkup,
+  createMarkupTeam
 };

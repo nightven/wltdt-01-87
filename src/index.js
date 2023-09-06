@@ -3,6 +3,7 @@ import './js/modals/modals';
 import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
+import './js/footer/footer';
 import { switcherCheck } from './js/themes/theme-switcher';
 import {
   fetchBooks,
