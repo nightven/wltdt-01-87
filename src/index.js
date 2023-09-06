@@ -3,6 +3,7 @@ import './js/modals/modals';
 import './js/modals/book-modal';
 import './js/modals/menu-burger';
 import './js/helpers/scroll-up';
+import './js/footer/footer';
 import { switcherCheck } from './js/themes/theme-switcher';
 import {
   fetchBooks,
@@ -21,15 +22,12 @@ import {
 } from './js/template/markup';
 import refs from './js/refs/refs';
 import { switcherCheck } from './js/themes/theme-switcher';
-import { onSignIn, onSignUp } from './js/auth/auth';
 import { addPagination } from './js/pagination/pagination';
+import { onSignUp } from './js/auth/auth';
 
 
-function onClickSignUp(evt){
-  console.log(evt.currentTarget);
-  console.log('open');
-  modalSignUp.classList.toggle('is-hidden');
-}
+
+
 
 
 function showLoader() {
@@ -58,7 +56,7 @@ addPagination();
 
 //!submit form register
 refs.signUpForm?.addEventListener('submit', onSignUp);
-refs.signInEl?.addEventListener('submit', onSignIn);
+
 
 //----------------------Category List-----------------------------------------
 

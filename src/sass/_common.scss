@@ -1,56 +1,62 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import './mixins';
 
-html[data-theme="light"] {
-  --background-clr: #F6F6F6;
+html[data-theme='light'] {
+  --background-clr: #f6f6f6;
   --main-text-clr: #111111;
-  --header-clr: #FFFFFF;
-  --scroll-bar-clr: #E0E0E0;
+  --header-clr: #ffffff;
+  --scroll-bar-clr: #e0e0e0;
   --active-category-clr: #4f2ee8;
   --category-text-clr: rgba(17, 17, 17, 0.60);
   --shopping-list-clr: rgba(0, 0, 0, 0.60);
   --modal-bg: #FFFFFF;
+  --text-btn-sign:#FFFFFF;
   // login modal
   --background-modal: #fff;
   --close-modal-btn: #111111;
   --background-btn-sign: #111111;
-  --text-btn-sign:#ffffffff;
+  --text-btn-sign:#ffffff;
+  --text-btn-sign-hover:#FFFFFF;
   --background-input: #FFFFFF;
   ---text-input: #111111;
   --border-input: #111111;
-//home
---see-more-background: #FFFFFF;
---see-more-text: #111111;
---home-title-first:#111111;
-//shop list
---shop-list-item-text:#111111;
---shop-list-item-back: #FFFFFF;
+  //home
+  --see-more-background: #ffffff;
+  --see-more-text: #111111;
+  --home-title-first: #111111;
+  //shop list
+  --shop-list-item-text: #111111;
+  --shop-list-item-back: #ffffff;
+  --category-text-clr: rgba(17, 17, 17, 0.6);
+  --shopping-list-clr: rgba(0, 0, 0, 0.6);
+  --modal-bg: #ffffff;
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --background-clr: #202024;
-  --main-text-clr: #FFFFFF;
+  --main-text-clr: #ffffff;
   --header-clr: #111111;
-  --scroll-bar-clr: rgba(17, 17, 17, 0.60);
+  --scroll-bar-clr: rgba(17, 17, 17, 0.6);
   --active-category-clr: #eac645;
-  --category-text-clr: rgba(255, 255, 255, 0.60);
-  --shopping-list-clr: rgba(255, 255, 255, 0.60);
+  --category-text-clr: rgba(255, 255, 255, 0.6);
+  --shopping-list-clr: rgba(255, 255, 255, 0.6);
   --modal-bg: #202024;
   // login modal
   --background-modal: #111;
-  --close-modal-btn: #FFFFFF;
-  --background-btn-sign: #FFFFFF;
+  --close-modal-btn: #ffffff;
+  --background-btn-sign: #ffffff;
   --text-btn-sign: #111111;
+  --text-btn-sign-hover: #FFFFFF;
   --background-input: #111111;
-  ---text-input: #FFFFFF;
-  --border-input: #FFFFFF;
-//home
---see-more-background: #111111;
---see-more-text: #FFFFFF;
---home-title-first:#FFFFFF;
-//shop list
---shop-list-item-text:#FFFFFF;
---shop-list-item-back: #111111;
+  ---text-input: #ffffff;
+  --border-input: #ffffff;
+  //home
+  --see-more-background: #111111;
+  --see-more-text: #ffffff;
+  --home-title-first: #ffffff;
+  //shop list
+  --shop-list-item-text: #ffffff;
+  --shop-list-item-back: #111111;
 }
 
 // Common Setting For Shopping-List-HTML
@@ -84,7 +90,6 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 
 // Aside Section
 .aside-section {
