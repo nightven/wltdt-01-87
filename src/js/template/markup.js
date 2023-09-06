@@ -7,15 +7,15 @@ import { limitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
 import refs from '../refs/refs';
 import { mediaQueriLimitStr } from '../helpers/helpers';
-import OksanaPhoto from '../../images/team/Oksana.jpg'
-import VikaPhoto from '../../images/team/Vika.jpg'
-import MarinaPhoto from '../../images/team/Marina.jpg'
-import AnastasiaPhoto from '../../images/team/Anastasia.jpg'
-import ServerPhoto from '../../images/team/Server.jpg'
-import DimaPhoto from '../../images/team/Dima.jpg'
-import RomanPhoto from '../../images/team/Roman.jpg'
-import VladPhoto from '../../images/team/Vlad.jpg'
-import VitaliyPhoto from '../../images/team/Vitaliy.jpg'
+import OksanaPhoto from '../../images/team/Oksana.jpg';
+import VikaPhoto from '../../images/team/Vika.jpg';
+import MarinaPhoto from '../../images/team/Marina.jpg';
+import AnastasiaPhoto from '../../images/team/Anastasia.jpg';
+import ServerPhoto from '../../images/team/Server.jpg';
+import DimaPhoto from '../../images/team/Dima.jpg';
+import RomanPhoto from '../../images/team/Roman.jpg';
+import VladPhoto from '../../images/team/Vlad.jpg';
+import VitaliyPhoto from '../../images/team/Vitaliy.jpg';
 
 //--------------------Create markup of category-list------------------------------
 
@@ -135,7 +135,9 @@ function markupBookModal(bookData) {
                     class="modal-partners-link"
                     target="_blank"
                     rel="noopener no-referrer"
-                    ><img src="${shopIcons[buyLink.name]}" alt="${buyLink.name}"
+                    ><img src="${shopIcons[buyLink.name]}" alt="${
+                buyLink.name
+              }" class="${buyLink.name.toLowerCase()}"
                   /></a>
                 </li>`
             )
@@ -229,7 +231,6 @@ function shopListMarkup(array) {
 
 //--------------------------Create Markup of Team-------------------------------------------------------------
 function createMarkupTeam() {
-
   // return `
   // <card>
   // <div class="photo-wrapper">
@@ -237,7 +238,7 @@ function createMarkupTeam() {
   //       <p>Created by <a class="js-team-modal">Dream team</a></p>
   //   </div>
   // </card>
-  
+
   // `
   return `
 
@@ -309,8 +310,7 @@ function createMarkupTeam() {
     </li>
   </ul>
   </div>  
-  `
-    
+  `;
 }
 
 export {
@@ -319,5 +319,5 @@ export {
   markupBlock,
   markupBookModal,
   shopListMarkup,
-  createMarkupTeam
+  createMarkupTeam,
 };

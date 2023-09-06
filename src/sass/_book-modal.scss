@@ -96,7 +96,20 @@
     align-items: center;
     gap: 20px;
 
+    width: 173px;
     margin-bottom: 40px;
+}
+
+.amazon{
+    width: 62px;
+}
+
+.apple.books{
+    width:33px;
+}
+
+.bookshop{
+    width: 38px;
 }
 
 .modal-item-partners {
@@ -137,7 +150,6 @@
 }
 
 .selected-words{
-   
     color:$color-violet;
 }
 
