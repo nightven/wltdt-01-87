@@ -36,13 +36,13 @@ export function addPagination() {
     let booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
 
 
-    const pagination = new Pagination(container, options); 
+    // const pagination = new Pagination(container, options); 
 
-    pagination.reset(totalResults);
+    // pagination.reset(totalResults);
 
-    pagination.on('beforeMove', e => { 
-        options.currentPage = e.page;
-        booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
-        shopListMarkup(booksForCurrentPage);
-    });
+    // pagination.on('beforeMove', e => { 
+    //     options.currentPage = e.page;
+    //     booksForCurrentPage = chunkedSavedBooks[options.currentPage - 1];
+    //     shopListMarkup(booksForCurrentPage);
+    // });
 }
