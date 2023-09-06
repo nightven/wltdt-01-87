@@ -1,24 +1,30 @@
 html {
   scroll-behavior: smooth;
 }
-.scroll-up {
-  cursor: pointer;
-
-  position: sticky;
-  bottom: 30px;
+.scroll-up-container{
+  position: relative;
+}
+.scroll-up-wrap{
+  position: absolute;
+  bottom: 75px;
   left: 93%;
+}
+.scroll-up {
+  position: sticky;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
   width: 50px;
   height: 52px;
 
   border: none;
   border-radius: 50%;
 
-  display: none;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
   font-size: 24px;
-
+  
+  cursor: pointer;
   background-color: $color-violet;
   color: $color-white;
   &:hover {
