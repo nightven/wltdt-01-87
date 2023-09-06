@@ -30,6 +30,8 @@ html[data-theme='light'] {
   --category-text-clr: rgba(17, 17, 17, 0.6);
   --shopping-list-clr: rgba(0, 0, 0, 0.6);
   --modal-bg: #ffffff;
+  //footer
+  --footer-modal-bg: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
 }
 
 html[data-theme='dark'] {
@@ -57,6 +59,8 @@ html[data-theme='dark'] {
   //shop list
   --shop-list-item-text: #ffffff;
   --shop-list-item-back: #111111;
+  //footer
+  --footer-modal-bg:#111111;
 }
 
 // Common Setting For Shopping-List-HTML
