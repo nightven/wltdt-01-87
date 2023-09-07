@@ -68,6 +68,7 @@ async function signUpCreateUser(login = '', email, password) {
     setUserToDb(userId, login, email, password);
     getUserFromDb(userId);
     authorizedUser(login);
+    document.querySelector('.home').classList.add('current')
     window.addEventListener('click', onClickLogout)
   } catch (error) {
     const errorMessage = error.message;
@@ -92,6 +93,7 @@ async function signIn(email, password) {
 
     
     Notify.success('Success');
+    document.querySelector('.home').classList.add('current')
     window.addEventListener('click', onClickLogout)
   } catch (error) {
     
@@ -168,7 +170,7 @@ function onClickAuthButton() {
 // function to the exit user
 function onClickLogout(e) {
   e.preventDefault();
-
+  
   if(!e.target.classList.contains('button-log-out')){
     return
   }
@@ -178,6 +180,8 @@ function onClickLogout(e) {
     localStorage.removeItem(USER_KEY);
 
     logoutButton.classList.toggle('logout-hidden');
+
+    
 
     window.removeEventListener('click', onClickLogout);
 
