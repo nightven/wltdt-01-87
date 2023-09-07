@@ -1,19 +1,14 @@
 .shopping-list-section {
   padding-top: 104px;
-  @include tablet {
+  @include tablet-desktop {
     padding-top: 112px;
-  }
-  margin: 0 auto;
-  //   padding: auto 20px;
-  @media screen and (min-width: 768px) {
-    width: 1392px;
-    // padding: 0 24px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .shopping-list-wrapper {
     display: flex;
+    gap: 40px;
   }
 }
 
@@ -27,14 +22,11 @@
   .shopping-list-fonds {
     display: flex;
     align-items: start;
-    margin-right: 40px;
   }
 }
 
 // Responsive & Mobile Shoping-List-Title
-.shopping-list-title {
-  margin-bottom: 40px;
-    
+.shopping-list-title {  
   font-weight: 700;
   font-size: 32px;
   line-height: 1.18;
@@ -72,7 +64,7 @@
 @media screen and (min-width: 1440px) {
   .empty-bin-wrapper {
     margin-top: 140px;
-    margin-left: 23px;
+    margin-left: 315px;
   }
 }
 
