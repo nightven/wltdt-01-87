@@ -167,19 +167,19 @@ async function onShowMoreBooks(event) {
   }
 }
 //-----------------------------Change current page style-------------------------------------------------------
-const navLinks = document.querySelectorAll('.header-nav-list-item');
-navLinks.forEach(link => {
-  // Перевіряємо, чи URL посилання співпадає з URL поточної сторінки
-  if (link.href === window.location.href) {
-    link.classList.add('current');
-  } else {
-    link.classList.remove('current');
-  }
 
-  link.addEventListener('click', () => {
-    navLinks.forEach(item => item.classList.remove('current'));
-    link.classList.add('current');
-  });
-});
+ChangeCurrentPage()
+function ChangeCurrentPage(){
+
+  const home = document.querySelector('.home')
+  const shop = document.querySelector('.shop')
+  const logo = document.querySelector('.logo')
+  
+  home.href === window.location.href ? home.classList.add('current'): home.classList.remove('current');
+  shop.href === window.location.href ? shop.classList.add('current'): shop.classList.remove('current');
+  logo.href === window.location.href ? home.classList.add('current'): home.classList.remove('current');
+
+}
+
 
 

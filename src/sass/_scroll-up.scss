@@ -1,15 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
-.scroll-up-container{
-  position: relative;
-}
-.scroll-up-wrap{
+.scroll-up {
   position: absolute;
   bottom: 80px;
   left: 93%;
-}
-.scroll-up {
   position: sticky;
 
   display: none;
@@ -23,7 +18,7 @@ html {
   border-radius: 50%;
 
   font-size: 24px;
-  
+
   cursor: pointer;
   background-color: $color-violet;
   color: $color-white;
