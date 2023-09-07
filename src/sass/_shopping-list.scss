@@ -177,10 +177,6 @@
     max-width: 116px;
     height: 165px;
   }
-  &:first-child{
-    filter: var(--shop-icon-filter-invert);
-    }
-   
     li {
         filter: var(--shop-icon-filter-standart);
     }
@@ -325,7 +321,9 @@
         height: 11px;
         img{
         height: 16px;
+        filter: var(--shop-icon-amazon);
         }
+        
     }
 
     @include tablet-desktop{
