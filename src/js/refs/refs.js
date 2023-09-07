@@ -11,7 +11,7 @@ export default {
   categoryItemEl: document.querySelector('.js-item-category'),
 
   //footer
-  footerEl : document.querySelector('.js-team-modal'),
+  footerEl: document.querySelector('.js-team-modal'),
 
   //authorization
   authorized: document.querySelectorAll('.authorized'),
@@ -20,15 +20,15 @@ export default {
   signInEl: document.querySelector('.js-sign-in'),
   btnSignIn: document.querySelector('.js-sign-in'),
   unauthorized: document.querySelectorAll('.unauthorized'),
-  logoutButton: document.getElementById('logout'),
+  logoutButton: document.querySelectorAll('#logout'),
   logoutMob: document.querySelector('.logout-mob'),
   loginButton: document.getElementById('login'),
   nameUserEl: document.querySelector('.js-login-user'),
   nameUserMob: document.querySelector('.js-user-mob '),
   authButton: document.querySelector('.js-button '),
   seeButtonEl: document.querySelector('#password'),
-   modalSignUp: document.getElementById('sign-up-modal'),
- closeModalSignUp: document.querySelector('.close-modal-btn'),
+  modalSignUp: document.getElementById('sign-up-modal'),
+  closeModalSignUp: document.querySelector('.close-modal-btn'),
 
   //book modal
   listBookModalEl: document.querySelector('.book-list'),
@@ -38,6 +38,6 @@ export default {
   emptyBinEl: document.querySelector('.empty-bin-wrapper'),
 
   //menu burger
-   btnOpenClose: document.getElementById('burger-btn'),
- modal: document.getElementById("burger-modal"),
+  btnOpenClose: document.getElementById('burger-btn'),
+  modal: document.getElementById('burger-modal'),
 };
