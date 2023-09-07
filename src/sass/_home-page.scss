@@ -126,8 +126,15 @@
 }
 
 .category {
+  display: block;
   .normal-title {
     color: var(--home-title-first);
+  }
+  @include mobile-tablet {
+    .normal-title {
+      margin-bottom: 30px;
+      display: block;
+    }
   }
 }
 

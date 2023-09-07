@@ -6,7 +6,6 @@ window.onscroll = () => {
 function scrollFunction() {
   scrollToTopBtnEl.style.display =
     document.documentElement.scrollTop > 350 ? 'flex' : 'none';
-  console.log(document.documentElement.scrollTop);
 }
 
 scrollToTopBtnEl.addEventListener('click', backToTop);
