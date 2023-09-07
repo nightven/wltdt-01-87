@@ -21,10 +21,8 @@ const {
   authButton,
   logoutMob,
   nameUserMob,
-  seeButtonEl
+  seeButtonEl,
 } = refs;
-
-
 
 // crate data base
 const db = getDatabase(app);
@@ -40,35 +38,35 @@ function onSignUp(e) {
   const email = signUpForm['signup-email'].value.trim();
   const password = signUpForm['signup-password'].value.trim();
 
-  if(document.querySelector('.js-label-login').style.display === 'block'){
+  if (document.querySelector('.js-label-login').style.display === 'block') {
     signUpForm.reset();
     signUpCreateUser(login, email, password);
-  }else{
+  } else {
     signUpForm.reset();
-    signIn(email, password)
+    signIn(email, password);
   }
-// login? signUpCreateUser(login, email, password): signIn(email, password);
-
+  // login? signUpCreateUser(login, email, password): signIn(email, password);
 }
 
 async function signUpCreateUser(login = '', email, password) {
   try {
-  const userCredential = await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-  // Signed in
+    // Signed in
     const user = userCredential.user;
-    
+
     Notify.success('Success registretion');
     const userId = auth.currentUser.uid;
     //write to db
     setUserToDb(userId, login, email, password);
     getUserFromDb(userId);
     authorizedUser(login);
-    window.addEventListener('click', onClickLogout)
+    document.querySelector('.home').classList.add('current');
+    // window.addEventListener('click', onClickLogout);
   } catch (error) {
     const errorMessage = error.message;
     Notify.failure('Registration error');
@@ -78,26 +76,25 @@ async function signUpCreateUser(login = '', email, password) {
 
 async function signIn(email, password) {
   try {
-  const userCredential = await signInWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
-  
-  // Signed in
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    // Signed in
     const userId = userCredential.user.auth.currentUser.uid;
     //get user from db
     getUserFromDb(userId);
     authorizedUser();
 
-    
     Notify.success('Success');
-    window.addEventListener('click', onClickLogout)
+    document.querySelector('.home').classList.add('current');
+    // window.addEventListener('click', onClickLogout);
   } catch (error) {
-    
     const errorMessage = error.message;
-    console.log(errorMessage)
-    Notify.failure("User is not defined");
+    console.log(errorMessage);
+    Notify.failure('User is not defined');
   }
 }
 
@@ -129,19 +126,19 @@ function authorizedUser(login = '', reg = false) {
   });
 }
 // function write user to data base
-function setUserToDb(id, login, email, password ) {
+function setUserToDb(id, login, email, password) {
   set(ref(db, 'users/' + id), {
     login,
     email,
     password,
-  
   });
 }
 // getting user from data base
 async function getUserFromDb(userId) {
   const dbRef = ref(getDatabase());
   try {
-  const snapshot = await get(child(dbRef, `users/${userId}`));
+    const snapshot = await get(child(dbRef, `users/${userId}`));
+
     if (snapshot.exists()) {
       const userValue = snapshot.val();
       authorizedUser(userValue.login);
@@ -154,14 +151,13 @@ async function getUserFromDb(userId) {
   }
 }
 // Поява кнопки для виходу
-if(authButton)
+if (authButton) {
   authButton.addEventListener('click', onClickAuthButton);
-
+}
 
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
-  window.addEventListener('click', onClickLogout)
-  
+  window.addEventListener('click', onClickLogout);
 }
 
 // Listening to the exit button
@@ -169,12 +165,11 @@ function onClickAuthButton() {
 function onClickLogout(e) {
   e.preventDefault();
 
-  if(!e.target.classList.contains('button-log-out')){
-    return
+  if (!e.target.classList.contains('button-log-out')) {
+    return;
   }
 
   auth.signOut().then(() => {
-   
     localStorage.removeItem(USER_KEY);
 
     logoutButton.classList.toggle('logout-hidden');
@@ -185,20 +180,20 @@ function onClickLogout(e) {
   });
 }
 
-if(seeButtonEl){
-
- seeButtonEl.addEventListener('click', e => {
-    
+if (seeButtonEl) {
+  seeButtonEl.addEventListener('click', e => {
     if (e.target.nodeName === 'svg') {
       const signUp = refs.signUpForm['signup-password'];
-      
-      if ( signUp.type === 'password') {
-        
+
+      if (signUp.type === 'password') {
         signUp.type = 'text';
-        e.target.firstElementChild.setAttribute('href', `${svg}#icon-eye-blocked`);
+        e.target.firstElementChild.setAttribute(
+          'href',
+          `${svg}#icon-eye-blocked`
+        );
       } else {
         e.target.firstElementChild.setAttribute('href', `${svg}#icon-eye`);
-        
+
         signUp.type = 'password';
       }
     } else {
@@ -206,4 +201,4 @@ if(seeButtonEl){
     }
   });
 }
-export { onSignUp, USER_KEY, onClickLogout};
+export { onSignUp, USER_KEY, onClickLogout };

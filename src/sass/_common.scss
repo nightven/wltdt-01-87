@@ -37,7 +37,7 @@ html[data-theme='light'] {
     rgba(79, 46, 232, 0.8),
     rgba(220, 220, 220, 0.8)
   );
-  // book modal
+  // shops
   --shop-icon-grayscale: grayscale(100%);
   --shop-icon-amazon: grayscale(100%);
   --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
@@ -72,7 +72,7 @@ html[data-theme='dark'] {
   --shop-icon-filter-standart: grayscale(100%);
   //footer
   --footer-modal-bg: #111111;
-  // book modal
+  // shops
   --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --shop-icon-amazon: brightness(0) invert(1);
   //----- (except Amazon)------
@@ -112,7 +112,7 @@ body {
 }
 
 // Aside Section
-sidebar {
+aside {
   padding-top: 40px;
 }
 

@@ -205,11 +205,11 @@ function shopListMarkup(array) {
     <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
-        <ul class="modal-list-partners">
+        <ul class="shop-list-partners">
           ${buyLinks
             .map(
               buyLink => `
-              <li class="modal-item-partners">
+              <li class="shop-item-partners">
                   <a
                     href="${buyLink.url}"
                     class="shop-partners-link"
@@ -252,7 +252,7 @@ function createMarkupTeam() {
   <li class="team-item">
 <ul class="hover-effect-scale">
   <li  class="scale-in-center">
-    <img src="${VitaliyPhoto}" class ="team-img" alt="Vitaliy">    
+    <img src="${VitaliyPhoto}" class ="team-img" alt="Vitalii">    
     <div>      
       <a href='https://github.com/nightven'>
       <svg class="icon-github">
@@ -261,7 +261,7 @@ function createMarkupTeam() {
       </a>
     </div>   
   </li>
-   <h3 class="footer-title tracking-in-expand">Vitaliy</h3>
+   <h3 class="footer-title tracking-in-expand">Vitalii</h3>
     <p class="footer-modal-text tracking-in-expand">Team Lead, Developer</p>
 </ul>
 </li>
@@ -269,7 +269,7 @@ function createMarkupTeam() {
 <li class="team-item">
 <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${VikaPhoto}" class="team-img " alt="Viktoria">
+    <img src="${VikaPhoto}" class="team-img " alt="Viktoriia">
     
     <div>      
       <a href='https://github.com/Viktoriia-Ch08'>
@@ -279,7 +279,7 @@ function createMarkupTeam() {
       </a>
     </div>   
   </li>
-   <h3 class="footer-title tracking-in-expand">Viktoria</h3>
+   <h3 class="footer-title tracking-in-expand">Viktoriia</h3>
     <p class="footer-modal-text tracking-in-expand"> Scrum master, Developer</p>
 </ul>
 </li>
@@ -307,7 +307,7 @@ function createMarkupTeam() {
     <li class="team-item"> 
   <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${AnastasiaPhoto}" class="team-img" alt="Anastasia">
+    <img src="${AnastasiaPhoto}" class="team-img" alt="Anastasiia">
   
     <div>      
       <a href='https://github.com/AnastasiiaDia'>
@@ -317,7 +317,7 @@ function createMarkupTeam() {
       </a>
     </div>   
   </li>
-   <h3 class="footer-title tracking-in-expand">Anastasia</h3>
+   <h3 class="footer-title tracking-in-expand">Anastasiia</h3>
     <p class="footer-modal-text tracking-in-expand">Developer</p>
 </ul>
 </li>
@@ -342,7 +342,7 @@ function createMarkupTeam() {
     <li class="team-item-second"> 
   <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${DimaPhoto}" class="team-img" alt="Dmitriy">  
+    <img src="${DimaPhoto}" class="team-img" alt="Dmytro">  
     <div>      
       <a href='https://github.com/Dimzie'>
       <svg class="icon-github">
@@ -351,7 +351,7 @@ function createMarkupTeam() {
       </a>
     </div>   
   </li>
-   <h3 class="footer-title tracking-in-expand">Dmitriy</h3>
+   <h3 class="footer-title tracking-in-expand">Dmytro</h3>
     <p class="footer-modal-text tracking-in-expand">Developer</p>
 </ul>   
     <li class="team-item-second"> 
@@ -389,7 +389,7 @@ function createMarkupTeam() {
     <li class="team-item-second">
     <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${VladPhoto}" class="team-img" alt="Vladislav">  
+    <img src="${VladPhoto}" class="team-img" alt="Vladyslav">  
     <div>      
       <a href='https://github.com/maodzhedun'>
       <svg class="icon-github">
@@ -398,7 +398,7 @@ function createMarkupTeam() {
       </a>
     </div>   
   </li>
-   <h3 class="footer-title tracking-in-expand">Vladislav</h3>
+   <h3 class="footer-title tracking-in-expand">Vladyslav</h3>
     <p class="footer-modal-text tracking-in-expand">Developer</p>
   </ul> 
     </li>
