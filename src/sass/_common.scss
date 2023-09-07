@@ -7,17 +7,17 @@ html[data-theme='light'] {
   --header-clr: #ffffff;
   --scroll-bar-clr: #e0e0e0;
   --active-category-clr: #4f2ee8;
-  --category-text-clr: rgba(17, 17, 17, 0.60);
-  --shopping-list-clr: rgba(0, 0, 0, 0.60);
-  --modal-bg: #FFFFFF;
-  --text-btn-sign:#FFFFFF;
+  --category-text-clr: rgba(17, 17, 17, 0.6);
+  --shopping-list-clr: rgba(0, 0, 0, 0.6);
+  --modal-bg: #ffffff;
+  --text-btn-sign: #ffffff;
   // login modal
   --background-modal: #fff;
   --close-modal-btn: #111111;
   --background-btn-sign: #111111;
-  --text-btn-sign:#ffffff;
-  --text-btn-sign-hover:#FFFFFF;
-  --background-input: #FFFFFF;
+  --text-btn-sign: #ffffff;
+  --text-btn-sign-hover: #ffffff;
+  --background-input: #ffffff;
   ---text-input: #111111;
   --border-input: #111111;
   //home
@@ -27,18 +27,20 @@ html[data-theme='light'] {
   //shop list
   --shop-list-item-text: #111111;
   --shop-list-item-back: #ffffff;
-  --shop-list-icon-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+  --shop-list-icon-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
   --category-text-clr: rgba(17, 17, 17, 0.6);
   --shopping-list-clr: rgba(0, 0, 0, 0.6);
   --modal-bg: #ffffff;
   //footer
-  --footer-modal-bg: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
+  --footer-modal-bg: linear-gradient(
+    360deg,
+    rgba(79, 46, 232, 0.8),
+    rgba(220, 220, 220, 0.8)
+  );
   // book modal
   --shop-icon-grayscale: grayscale(100%);
   --shop-icon-amazon: grayscale(100%);
-  --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
- 
-
+  --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 html[data-theme='dark'] {
@@ -55,7 +57,7 @@ html[data-theme='dark'] {
   --close-modal-btn: #ffffff;
   --background-btn-sign: #ffffff;
   --text-btn-sign: #111111;
-  --text-btn-sign-hover: #FFFFFF;
+  --text-btn-sign-hover: #ffffff;
   --background-input: #111111;
   ---text-input: #ffffff;
   --border-input: #ffffff;
@@ -69,12 +71,12 @@ html[data-theme='dark'] {
   --shop-list-icon-filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --shop-icon-filter-standart: grayscale(100%);
   //footer
-  --footer-modal-bg:#111111; 
+  --footer-modal-bg: #111111;
   // book modal
   --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --shop-icon-amazon: brightness(0) invert(1);
   //----- (except Amazon)------
-  --shop-icon-grayscale: grayscale(100%) ;
+  --shop-icon-grayscale: grayscale(100%);
 }
 
 // Common Setting For Shopping-List-HTML
@@ -110,20 +112,16 @@ body {
 }
 
 // Aside Section
-.aside-section {
-  padding-top: 104px;
-  @include tablet {
-    padding-top: 112px;
-  }
+sidebar {
+  padding-top: 40px;
 }
 
-
 .container {
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    max-width: 375px;
+  max-width: 375px;
 
   @include tablet {
     margin: 0 auto;
@@ -131,7 +129,6 @@ body {
     padding-right: 32px;
 
     min-width: 768px;
-
   }
 
   @include desktop {
@@ -142,4 +139,3 @@ body {
     min-width: 1440px;
   }
 }
-
