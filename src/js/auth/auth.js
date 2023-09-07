@@ -160,7 +160,7 @@ if(authButton)
 
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
-
+  window.addEventListener('click', onClickLogout)
   
 }
 

@@ -11,6 +11,7 @@ function onClickSignUp(evt) {
   }
   //open and listen to the form
   modalSignUp.classList.toggle('is-hidden');
+  document.body.classList.add('no-scroll');
   modalSignUp.addEventListener('click', onCloseSignUp);
   document.addEventListener('keydown', onCloseSignUp);
 }
@@ -24,6 +25,7 @@ function onCloseSignUp(evt) {
     modalSignUp.classList.toggle('is-hidden');
     modalSignUp.removeEventListener('click', onCloseSignUp);
     document.removeEventListener('keydown', onCloseSignUp);
+    document.body.classList.remove('no-scroll');
   }
  //Hide the login field
   if (evt.target.hasAttribute('data-signin')) {
