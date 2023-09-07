@@ -66,6 +66,8 @@ async function signUpCreateUser(login = '', email, password) {
     getUserFromDb(userId);
     authorizedUser(login);
     document.querySelector('.home').classList.add('current');
+    logoutButton.forEach(el => el.addEventListener('click', onClickLogout));
+
     // window.addEventListener('click', onClickLogout);
   } catch (error) {
     const errorMessage = error.message;
@@ -90,6 +92,8 @@ async function signIn(email, password) {
 
     Notify.success('Success');
     document.querySelector('.home').classList.add('current');
+    logoutButton.forEach(el => el.addEventListener('click', onClickLogout));
+
     // window.addEventListener('click', onClickLogout);
   } catch (error) {
     const errorMessage = error.message;
@@ -117,6 +121,7 @@ function authorizedUser(login = '', reg = false) {
         nameUserEl.textContent = login;
         nameUserMob.textContent = login;
       }
+
       authorized.forEach(el => el.classList.remove('display-none'));
       unauthorized.forEach(el => el.classList.add('display-none'));
     } else {
@@ -156,8 +161,10 @@ if (authButton) {
 }
 
 function onClickAuthButton() {
-  logoutButton.classList.toggle('logout-hidden');
-  window.addEventListener('click', onClickLogout);
+  logoutButton.forEach(el => {
+    el.addEventListener('click', onClickLogout);
+    el.classList.toggle('logout-hidden');
+  });
 }
 
 // Listening to the exit button
@@ -172,9 +179,10 @@ function onClickLogout(e) {
   auth.signOut().then(() => {
     localStorage.removeItem(USER_KEY);
 
-    logoutButton.classList.toggle('logout-hidden');
-
-    window.removeEventListener('click', onClickLogout);
+    logoutButton.forEach(el => {
+      el.classList.toggle('logout-hidden');
+      el.removeEventListener('click', onClickLogout);
+    });
 
     window.location.href = 'index.html';
   });
