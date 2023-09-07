@@ -21,7 +21,6 @@
     "animejs": "^3.2.1",
     "axios": "^1.5.0",
     "basiclightbox": "^5.0.4",
-    "body-scroll-lock": "^4.0.0-beta.0",
     "firebase": "^10.3.0",
     "firebaseui": "^6.1.0",
     "jquery": "^3.7.1",

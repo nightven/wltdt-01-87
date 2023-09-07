@@ -114,7 +114,7 @@ function authorizedUser(login = '', reg = false) {
   auth.onAuthStateChanged(user => {
     if (reg || user) {
       if (login.length > 7) {
-        const userName = login.slice(0, 7) + '...';
+        const userName = login.slice(0, 7);
         nameUserEl.textContent = userName;
         nameUserMob.textContent = userName;
       } else {
