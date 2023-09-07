@@ -33,6 +33,12 @@ html[data-theme='light'] {
   --modal-bg: #ffffff;
   //footer
   --footer-modal-bg: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
+  // book modal
+  --shop-icon-grayscale: grayscale(100%);
+  --shop-icon-amazon: grayscale(100%);
+  --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+ 
+
 }
 
 html[data-theme='dark'] {
@@ -64,7 +70,12 @@ html[data-theme='dark'] {
   --shop-icon-filter-invert: brightness(0) invert(1);
   --shop-icon-filter-standart: grayscale(100%);
   //footer
-  --footer-modal-bg:#111111;
+  --footer-modal-bg:#111111; 
+  // book modal
+  --shop-icon-drop-shadow: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --shop-icon-amazon: brightness(0) invert(1);
+  //----- (except Amazon)------
+  --shop-icon-grayscale: grayscale(100%) ;
 }
 
 // Common Setting For Shopping-List-HTML

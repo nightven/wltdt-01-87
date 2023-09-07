@@ -18,8 +18,6 @@ import RomanPhoto from '../../images/team/Roman.png';
 import VladPhoto from '../../images/team/Vlad.png';
 import VitaliyPhoto from '../../images/team/Vitaliy.png';
 
-
-
 //--------------------Create markup of category-list------------------------------
 
 function markupCategoryList(arr) {
@@ -234,7 +232,6 @@ function shopListMarkup(array) {
 
 //--------------------------Create Markup of Team-------------------------------------------------------------
 function createMarkupTeam() {
-
   return `
 
   <div class="footer-modal-container">
@@ -244,12 +241,12 @@ function createMarkupTeam() {
       </svg>
   </button>
   <div class="team-lead">
-
+<h1 footer-modal-headline>TeamForce</h1>
   <ul class="team-list"> 
   <li class="team-item">
 <ul class="hover-effect-scale">
   <li  class="scale-in-center">
-    <img src="${VitaliyPhoto} class ="team-img" alt="Vitaliy">    
+    <img src="${VitaliyPhoto}" class="team-img" alt="Vitaliy">    
     <div>      
       <a href='https://github.com/nightven'>
       <svg class="icon-github">
@@ -266,7 +263,7 @@ function createMarkupTeam() {
 <li class="team-item">
 <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${VikaPhoto} class ="team-img " alt="Viktoria">
+    <img src="${VikaPhoto}" class="team-img" alt="Viktoria">
     
     <div>      
       <a href='https://github.com/Viktoriia-Ch08'>
@@ -285,7 +282,7 @@ function createMarkupTeam() {
     <li class="team-item"> 
     <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${MarinaPhoto} class ="team-img" alt="Marina">
+    <img src="${MarinaPhoto}" class="team-img" alt="Marina">
   
     <div>      
       <a href='https://github.com/hotgorod'>
@@ -304,7 +301,7 @@ function createMarkupTeam() {
     <li class="team-item"> 
   <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${AnastasiaPhoto} class ="team-img" alt="Anastasia">
+    <img src="${AnastasiaPhoto}" class="team-img" alt="Anastasia">
   
     <div>      
       <a href='https://github.com/AnastasiiaDia'>
@@ -322,7 +319,7 @@ function createMarkupTeam() {
 <li class="team-item"> 
 <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${OksanaPhoto} class ="team-img" alt="Oksana">  
+    <img src="${OksanaPhoto}" class="team-img" alt="Oksana">  
     <div>      
       <a href='https://github.com/Oksana-Tnt'>
       <svg class="icon-github">
@@ -339,7 +336,7 @@ function createMarkupTeam() {
     <li class="team-item-second"> 
   <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${DimaPhoto} class ="team-img" alt="Dmitriy">  
+    <img src="${DimaPhoto}" class="team-img" alt="Dmitriy">  
     <div>      
       <a href='https://github.com/Dimzie'>
       <svg class="icon-github">
@@ -354,7 +351,7 @@ function createMarkupTeam() {
     <li class="team-item-second"> 
    <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${RomanPhoto} class ="team-img" alt="Roman">  
+    <img src="${RomanPhoto}" class="team-img" alt="Roman">  
     <div>      
       <a href='https://github.com/Roman80-IT'>
       <svg class="icon-github">
@@ -370,7 +367,7 @@ function createMarkupTeam() {
     <li class="team-item-second">
     <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${ServerPhoto} class ="team-img" alt="Server">  
+    <img src="${ServerPhoto}" class="team-img" alt="Server">  
     <div>      
       <a href='https://github.com/ServerIbraimovUa'>
       <svg class="icon-github">
@@ -386,7 +383,7 @@ function createMarkupTeam() {
     <li class="team-item-second">
     <ul class="hover-effect-scale">
   <li class="scale-in-center">
-    <img src="${VladPhoto} class ="team-img" alt="Vladislav">  
+    <img src="${VladPhoto}" class="team-img" alt="Vladislav">  
     <div>      
       <a href='https://github.com/maodzhedun'>
       <svg class="icon-github">

@@ -5,15 +5,18 @@
 @include tablet-desktop{
     .footer {
         display: block;
-        background-color: var(--background-clr);
-        text-align: center;
-        margin: 0 auto;
-        border-radius: 8px 8px 0px 0px;
-    
+        margin-top: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        
         padding-top: 24px;
         padding-bottom: 24px;
-        background-image: var(--footer-modal-bg);
+        
+        text-align: center;
+        background-color: var(--background-clr);
         border: 1.5px solid var(--main-text-clr);
+        border-radius: 8px 8px 0px 0px;
     
 }
 
@@ -26,12 +29,12 @@
 
     .dream-team-link {
         text-decoration: underline;
-        color: white;
+        color: $color-violet;
         cursor: pointer;
 }
 
     .dream-team-span{
-        color: $color-white;
+        color: $color-violet;
 }
 
     .footer-close-modal-btn {
@@ -81,8 +84,8 @@
         
         width: 760px;
         max-height: 95vh;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 35px;
+        padding-bottom: 35px;
         padding-left: 24px;
         padding-right: 24px;
         
@@ -92,6 +95,17 @@
         border-radius: 20px;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
         background-image: var(--footer-modal-bg);
+}
+
+    .team-lead {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
 }
 
     .team-list{
@@ -108,16 +122,6 @@
 
     .team-item-second{
         width: calc((100% - 60px) / 4);
-}
-
-    .team-lead{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
 }
 
     .footer-title{
@@ -137,13 +141,13 @@
         cursor: pointer;
 }
 
-.icon-heart{
-    width: 24px;
-    height: 24px;
+    .icon-heart{
+        width: 24px;
+        height: 24px;
 }
-.icon-github{
-    width: 24px;
-    height: 24px;
+    .icon-github{
+        width: 24px;
+        height: 24px;
 }
 }
 
@@ -152,42 +156,46 @@
 
 /* Настройки маркированного списка */
 .hover-effect-scale {
-    list-style: none;
-    margin: 0 auto;
     width: 100%;
-    text-align: center;
+    margin: 0 auto;
     padding: 0;
+
+    text-align: center;
+    list-style: none;
     border: none;
 }
 
 .hover-effect-scale li {
     position: relative;
     display: inline-block;
-    background-color: transparent;
+    
+    padding: 5px;
     margin: 0;
+
+    background-color: transparent;
     border-radius: 50%;
-    box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
 
 /* Заголовок, текст и ссылка */
 .hover-effect-scale li h3 {
-    color: #fff;
     margin: 5px;
+    color: #fff;
 }
 
 .hover-effect-scale li p {
-    color: #fff;
     margin: 5px;
+    color: #fff;
 }
 
 .hover-effect-scale li a {
     display: block;
-    text-decoration: none;
     padding: 15px;
+    margin: 0 auto;
+
     color: #fff;
     border-radius: 50%;
-    margin: 0 auto;
+    text-decoration: none;
     transition: all 0.4s ease-in-out;
 }
 
@@ -197,19 +205,20 @@
 
 /* Выезжающий блок с текстом */
 .hover-effect-scale li>div {
-    width: 100%;
-    height: 100%;
     position: absolute;
     display: flex;
     justify-content:end;
     flex-direction: column;
+
+    width: 100%;
+    height: 100%;
 }
 
 .hover-effect-scale li:hover>div {
     position: absolute;
-    overflow: hidden;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .hover-effect-scale li div {
