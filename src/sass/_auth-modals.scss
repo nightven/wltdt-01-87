@@ -23,7 +23,7 @@
   border: 2px solid var(--close-modal-btn);
   color: $color-black-alfa;
   background: var(--background-modal);
-  
+
   @include font-auth;
   .close-modal-btn {
     position: absolute;
@@ -37,7 +37,7 @@
     width: 28px;
     height: 28px;
     flex-shrink: 0;
-    use{
+    use {
       fill: var(--close-modal-btn);
     }
   }
@@ -68,12 +68,11 @@
   label {
     position: relative;
     // margin-top: 28px;
-   input{
-    color: var(---text-input);
-    background-color: var(--background-input);
-    border-color: var(--border-input);
-   }
-    
+    input {
+      color: var(---text-input);
+      background-color: var(--background-input);
+      border-color: var(--border-input);
+    }
   }
   svg.eye {
     width: 36px;
@@ -84,6 +83,7 @@
 
   .modal-svg {
     position: absolute;
+    fill: var(--background-btn-sign);
     right: 18px;
     top: -42px;
   }
@@ -120,7 +120,7 @@
     height: 50px;
   }
 
-  .js-button{
+  .js-button {
     color: $color-grey;
   }
 }
@@ -147,6 +147,7 @@
       }
     }
     .modal-svg {
+      fill: var(--background-btn-sign);
       position: absolute;
       right: 18px;
       top: -47px;
