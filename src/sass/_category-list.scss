@@ -19,28 +19,27 @@
 }
 
 .category-title {
-
-    display: inline-block;
-    margin-bottom: 24px;
-    min-height: 18px;
-    @include tablet {
-        min-height: 24px;
-    }  
-    @include desktop{
-        min-height: 24px;
-    }       
+  display: inline-block;
+  margin-bottom: 24px;
+  min-height: 18px;
+  @include tablet {
+    min-height: 24px;
+  }
+  @include desktop {
+    min-height: 24px;
+  }
 }
 
 .category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;  
-    @include tablet{
-        gap: 32px;
-    }
-    @include desktop{
-        gap: 32px;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include tablet {
+    gap: 32px;
+  }
+  @include desktop {
+    gap: 32px;
+  }
 }
 
 .category-title:hover,
@@ -69,39 +68,34 @@
 //-----------scroll bar------------------------------
 
 .scrollbar {
+  float: left;
+  height: 228px;
+  width: 335px;
+  overflow-y: scroll;
+  //margin-bottom: 40px;
 
-    padding-top: 10px;
-    float: left;
-    height: 228px;   
-    width: 335px;
-    overflow-y: scroll; 
-    //margin-bottom: 40px; 
-    
-    @include tablet{
-        width: 337px;
-        height: 472px;
-        //margin-bottom: 100px;
-    }
-    @include desktop{
-        width: 328px;
-        height: 472px;
-        //margin-bottom: 86px;
-    }
-    
+  @include tablet {
+    width: 337px;
+    height: 472px;
+    //margin-bottom: 100px;
+  }
+  @include desktop {
+    width: 328px;
+    height: 472px;
+    //margin-bottom: 86px;
+  }
 }
 
-
-  // @include tablet {
-  //   width: 309px;
-  //   height: 472px;
-  //   // margin-bottom: 100px;
-  // }
-  // @include desktop {
-  //   width: 328px;
-  //   height: 472px;
-  //   // margin-bottom: 86px;
-  // }
-
+// @include tablet {
+//   width: 309px;
+//   height: 472px;
+//   // margin-bottom: 100px;
+// }
+// @include desktop {
+//   width: 328px;
+//   height: 472px;
+//   // margin-bottom: 86px;
+// }
 
 .force-overflow {
   min-height: 450px;

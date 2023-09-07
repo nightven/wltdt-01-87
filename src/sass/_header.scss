@@ -112,7 +112,8 @@
 .button-sign-up {
   @include sign-up-btn;
   margin: 0;
-  &:hover,:focus{
+  &:hover,
+  :focus {
     box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
   }
 }
@@ -136,6 +137,7 @@
   }
 }
 .button-log-out {
+  cursor: pointer;
   width: 118px;
   height: 48px;
 
@@ -161,7 +163,8 @@
     width: 199px;
 
     opacity: 0;
-    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      top 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 .svg-button-log-out {
@@ -170,6 +173,7 @@
 .button-user {
   @include sign-up-btn;
   margin: 0;
+  margin-left: 24px;
   padding: 8px 12px;
 
   border-radius: 36px;
@@ -178,7 +182,7 @@
 
     height: 45px;
   }
-  .icon-wrapper{
+  .icon-wrapper {
     margin-right: 9px;
   }
 }
@@ -196,7 +200,6 @@
 
 .bookshelf-logo {
   fill: var(--main-text-clr);
-  
 }
 
 .bin-icon {
@@ -211,7 +214,6 @@
 
   width: 40px;
   height: 20px;
-  margin-right: 24px;
 }
 
 /* hide standart checkbox */
@@ -231,7 +233,8 @@
   border-radius: 34px;
   background: $gradient-1;
   transition: 0.4s;
-  &:hover, :focus{
+  &:hover,
+  :focus {
     box-shadow: 2px 5px 16px 0px rgb(79, 46, 232);
   }
 }
@@ -249,7 +252,6 @@
 
   background-color: $color-white;
   transition: 0.4s;
- 
 }
 
 /* styles for focus */
@@ -267,14 +269,16 @@
 }
 
 .switcher-wrrap {
+  display: flex;
   margin-left: auto;
-  
+  gap: 14px;
 }
 .logout-hidden {
   opacity: 1;
   top: 58px;
   z-index: 0;
-  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1), top 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    top 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 //styles for burger button
