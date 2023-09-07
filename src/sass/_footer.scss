@@ -1,14 +1,18 @@
 .footer{
     display: none;
+ 
 }
 @include tablet-desktop{
     .footer {
         display: block;
         background-color: var(--background-clr);
         text-align: center;
+        margin: 0 auto;
+        border-radius: 8px 8px 0px 0px;
     
         padding-top: 24px;
         padding-bottom: 24px;
+        background-image: var(--footer-modal-bg);
         border: 1.5px solid var(--main-text-clr);
     
 }
@@ -22,12 +26,12 @@
 
     .dream-team-link {
         text-decoration: underline;
-        color: $color-violet;
+        color: white;
         cursor: pointer;
 }
 
     .dream-team-span{
-        color: $color-violet;
+        color: $color-white;
 }
 
     .footer-close-modal-btn {
@@ -53,12 +57,19 @@
 }
 
     .footer-close-modal-btn:hover 
-    .footer-close-modal-icon,
-    .footer-close-modal-btn:focus 
-    .footer-close-modal-icon {
+    .footer-close-modal-icon:hover,
+    .footer-close-modal-icon:focus,
+    .footer-close-modal-btn:focus,
+   
+    .icon-github:hover
+     {
         fill: $color-violet;
     }
 
+    .footer-title:hover,
+    .footer-title:focus{
+        color: $color-violet;
+    }
     .footer-modal-container{
         position: fixed;
         top: 50%;
@@ -69,9 +80,9 @@
         transform: translate(-50%, -50%);
         
         width: 760px;
-        max-height: 90vh;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        max-height: 95vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
         padding-left: 24px;
         padding-right: 24px;
         
@@ -80,7 +91,7 @@
         border: solid 2px var(--main-text-clr);
         border-radius: 20px;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-        background-image: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
+        background-image: var(--footer-modal-bg);
 }
 
     .team-list{
@@ -99,12 +110,6 @@
         width: calc((100% - 60px) / 4);
 }
 
-    .team-img{
-        height: 180px;
-        margin-bottom: 8px;
-
-        border-radius: 10px;
-}
     .team-lead{
         display: flex;
         flex-direction: column;
@@ -113,10 +118,6 @@
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
-}
-
-    .footer-title-wrap{
-        text-align: center;
 }
 
     .footer-title{
@@ -135,4 +136,167 @@
     .footer-modal-link{
         cursor: pointer;
 }
+
+.icon-heart{
+    width: 24px;
+    height: 24px;
+}
+.icon-github{
+    width: 24px;
+    height: 24px;
+}
+}
+
+
+//--------------------------CSS Animation------------------------------------------------------------
+
+/* Настройки маркированного списка */
+.hover-effect-scale {
+    list-style: none;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    border: none;
+}
+
+.hover-effect-scale li {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    margin: 0;
+    border-radius: 50%;
+    box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Заголовок, текст и ссылка */
+.hover-effect-scale li h3 {
+    color: #fff;
+    margin: 5px;
+}
+
+.hover-effect-scale li p {
+    color: #fff;
+    margin: 5px;
+}
+
+.hover-effect-scale li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all 0.4s ease-in-out;
+}
+
+.hover-effect-scale li a:hover {
+   color: #fff;
+}
+
+/* Выезжающий блок с текстом */
+.hover-effect-scale li>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content:end;
+    flex-direction: column;
+}
+
+.hover-effect-scale li:hover>div {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.hover-effect-scale li div {
+    opacity: 0;
+    /* Фон блока при наведении */
+    transition: all 0.4s ease-in-out;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.hover-effect-scale li img {
+    transition: all 0.2s linear;
+}
+
+.hover-effect-scale li:hover img {
+    transform: scale(1.2);
+}
+
+.hover-effect-scale li:hover div {
+    opacity: 1;
+}
+
+//-------------------------------Entrances-------------------------
+.scale-in-center {
+    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+//-----------------------------------Text-----------------------------------------------
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

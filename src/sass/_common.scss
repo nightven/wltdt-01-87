@@ -27,9 +27,12 @@ html[data-theme='light'] {
   //shop list
   --shop-list-item-text: #111111;
   --shop-list-item-back: #ffffff;
+  --shop-list-icon-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
   --category-text-clr: rgba(17, 17, 17, 0.6);
   --shopping-list-clr: rgba(0, 0, 0, 0.6);
   --modal-bg: #ffffff;
+  //footer
+  --footer-modal-bg: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
 }
 
 html[data-theme='dark'] {
@@ -57,6 +60,11 @@ html[data-theme='dark'] {
   //shop list
   --shop-list-item-text: #ffffff;
   --shop-list-item-back: #111111;
+  --shop-list-icon-filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --shop-icon-filter-invert: brightness(0) invert(1);
+  --shop-icon-filter-standart: grayscale(100%);
+  //footer
+  --footer-modal-bg:#111111;
 }
 
 // Common Setting For Shopping-List-HTML
@@ -99,12 +107,29 @@ body {
   }
 }
 
-.container{
-   min-width: 375px;
-   @include tablet{
+
+.container {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    max-width: 375px;
+
+  @include tablet {
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+
     min-width: 768px;
-   }
-   @include desktop{
+
+  }
+
+  @include desktop {
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+
     min-width: 1440px;
-   }
+  }
 }
+

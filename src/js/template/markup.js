@@ -2,6 +2,7 @@ import amazonImage from '../../images/shops/amazon.png';
 import appleShopImage from '../../images/shops/apple-shop.png';
 import bookShopImage from '../../images/shops/book-shop.png';
 import crossSvg from '../../images/icons.svg';
+import githubSvg from '../../images/icons.svg';
 import defaultImg from '../../images/empty-img_lap@_1x.png';
 import { limitStr, mediaQueriLimitStr } from '../helpers/helpers';
 import spriteSvg from '../../images/icons.svg';
@@ -15,6 +16,8 @@ import DimaPhoto from '../../images/team/Dima.png';
 import RomanPhoto from '../../images/team/Roman.png';
 import VladPhoto from '../../images/team/Vlad.png';
 import VitaliyPhoto from '../../images/team/Vitaliy.png';
+
+
 
 //--------------------Create markup of category-list------------------------------
 
@@ -193,15 +196,15 @@ function shopListMarkup(array) {
     </div>
     <div class="book-item-descr">
     <h2 class="book-shop-title">${limitStr(title, 16)}</h2>
-    <p class="book-genre">${list_name}</p>
+    <p class="book-genre">${mediaQueriLimitStr(list_name, 22, 200, 200)}</p>
     <p class="book-descr">${mediaQueriLimitStr(description, 84, 249, 500)}</p>
     <div class="author-shop-wrp">
     <p class="shop-book-author">${author}</p>
-        <ul class="modal-list-partners">
+        <ul class="shop-list-partners">
           ${buyLinks
             .map(
               buyLink => `
-              <li class="modal-item-partners">
+              <li class="shop-item-partners">
                   <a
                     href="${buyLink.url}"
                     class="shop-partners-link"
@@ -230,15 +233,7 @@ function shopListMarkup(array) {
 
 //--------------------------Create Markup of Team-------------------------------------------------------------
 function createMarkupTeam() {
-  // return `
-  // <card>
-  // <div class="photo-wrapper">
-  //       <img src="${defaultImg}" alt="books" width="300px" />
-  //       <p>Created by <a class="js-team-modal">Dream team</a></p>
-  //   </div>
-  // </card>
 
-  // `
   return `
 
   <div class="footer-modal-container">
@@ -246,86 +241,162 @@ function createMarkupTeam() {
       <svg class="footer-close-modal-icon">
         <use href="${crossSvg}#icon-x-close"></use>
       </svg>
-    </button>
+  </button>
   <div class="team-lead">
-  <ul class="team-list">
+
+  <ul class="team-list"> 
   <li class="team-item">
-  <a class='footer-img-link' href='https://github.com/nightven' target="_blank" rel="noopener no-referrer">
-  <img src="${VitaliyPhoto}" class="team-img"/>
-  <div class="footer-title-wrap">
-  <h2 class="footer-title">Vitaliy</h2>
-  <p class="footer-modal-text">Team Lead, Developer</p>
-</div></a></li>
+<ul class="hover-effect-scale">
+  <li  class="scale-in-center">
+    <img src="${VitaliyPhoto} class ="team-img" alt="Vitaliy">    
+    <div>      
+      <a href='https://github.com/nightven'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Vitaliy</h3>
+    <p class="footer-modal-text tracking-in-expand">Team Lead, Developer</p>
+</ul>
+</li>
+
 <li class="team-item">
-<a class='footer-img-link' href='https://github.com/Viktoriia-Ch08' target="_blank" rel="noopener no-referrer">
-<img src="${VikaPhoto}" class="team-img"/>
-<div class="footer-title-wrap">
-<h2 class="footer-title">Viktoriia</h2>
-<p class="footer-modal-text">Scrum-master, Developer</p>
-</div></a></li>
+<ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${VikaPhoto} class ="team-img " alt="Viktoria">
+    
+    <div>      
+      <a href='https://github.com/Viktoriia-Ch08'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Viktoria</h3>
+    <p class="footer-modal-text tracking-in-expand"> Scrum master, Developer</p>
+</ul>
+</li>
+
 <ul class="team-list">
     <li class="team-item"> 
-  <a class='footer-img-link' href='https://github.com/hotgorod' target="_blank" rel="noopener no-referrer">
-    <img src="${MarinaPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Marina</h2>
-  <p class="footer-modal-text">Developer</p>
-</div>
-</a>
-    </li>
+    <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${MarinaPhoto} class ="team-img" alt="Marina">
+  
+    <div>      
+      <a href='https://github.com/hotgorod'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Marina</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+</ul>
+
+</li>
+
     <li class="team-item"> 
-    <a class='footer-img-link' href='https://github.com/AnastasiiaDia' target="_blank" rel="noopener no-referrer">
-    <img src="${AnastasiaPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Anastasia</h2>
-  <p class="footer-modal-text">Developer</p>
-</div> 
-</a>
+  <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${AnastasiaPhoto} class ="team-img" alt="Anastasia">
+  
+    <div>      
+      <a href='https://github.com/AnastasiiaDia'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Anastasia</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+</ul>
 </li>
+
 <li class="team-item"> 
-<a class='footer-img-link' href='https://github.com/Oksana-Tnt' target="_blank" rel="noopener no-referrer">
-  <img src="${OksanaPhoto}" class="team-img" />
-  <div class="footer-title-wrap">
-    <h2 class="footer-title">Oksana</h2>
-    <p class="footer-modal-text">Developer</p>
-  </div>
-  </a>
+<ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${OksanaPhoto} class ="team-img" alt="Oksana">  
+    <div>      
+      <a href='https://github.com/Oksana-Tnt'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Oksana</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+</ul>
+
 </li>
     <li class="team-item-second"> 
-    <a class='footer-img-link' href='https://github.com/Dimzie' target="_blank" rel="noopener no-referrer">
-    <img src="${DimaPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Dmitriy</h2>
-  <p class="footer-modal-text">Developer</p>
-</div>
-</a>
-    </li>
+  <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${DimaPhoto} class ="team-img" alt="Dmitriy">  
+    <div>      
+      <a href='https://github.com/Dimzie'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Dmitriy</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+</ul>   
     <li class="team-item-second"> 
-    <a class='footer-img-link' href='https://github.com/Roman80-IT' target="_blank" rel="noopener no-referrer">
-    <img src="${RomanPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Roman</h2>
-  <p class="footer-modal-text">Developer</p>
-</div>
-</a>
+   <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${RomanPhoto} class ="team-img" alt="Roman">  
+    <div>      
+      <a href='https://github.com/Roman80-IT'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Roman</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+  </ul>    
+  </li>
+    <li class="team-item-second">
+    <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${ServerPhoto} class ="team-img" alt="Server">  
+    <div>      
+      <a href='https://github.com/ServerIbraimovUa'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Server</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+  </ul>          
     </li>
-    <li class="team-item-second"> 
-    <a class='footer-img-link' href='https://github.com/ServerIbraimovUa' target="_blank" rel="noopener no-referrer">
-    <img src="${ServerPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Server</h2>
-  <p class="footer-modal-text">Developer</p>
-</div>
-</a>
-    </li>
-    <li class="team-item-second"> 
-    <a class='footer-img-link' href='https://github.com/maodzhedun' target="_blank" rel="noopener no-referrer">
-    <img src="${VladPhoto}" class="team-img"/>
-    <div class="footer-title-wrap">
-  <h2 class="footer-title">Vladislav</h2>
-  <p class="footer-modal-text">Developer</p>
-</div>
-</a>
+    <li class="team-item-second">
+    <ul class="hover-effect-scale">
+  <li class="scale-in-center">
+    <img src="${VladPhoto} class ="team-img" alt="Vladislav">  
+    <div>      
+      <a href='https://github.com/maodzhedun'>
+      <svg class="icon-github">
+        <use href="${githubSvg}#icon-github"></use>
+      </svg>
+      </a>
+    </div>   
+  </li>
+   <h3 class="footer-title tracking-in-expand">Vladislav</h3>
+    <p class="footer-modal-text tracking-in-expand">Developer</p>
+  </ul> 
     </li>
   </ul>
   </div>  
