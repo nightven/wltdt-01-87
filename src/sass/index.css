@@ -123,6 +123,20 @@ body {
   }
 }
 
+.container {
+  min-width: 375px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    min-width: 768px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    min-width: 1440px;
+  }
+}
+
 /* dm-sans-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -972,6 +986,20 @@ body {
   }
 }
 
+.container {
+  min-width: 375px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    min-width: 768px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    min-width: 1440px;
+  }
+}
+
 .backdrop {
   background: rgb(79, 46, 232);
   position: fixed;
@@ -1262,7 +1290,20 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 173px;
   margin-bottom: 40px;
+}
+
+.amazon {
+  width: 62px;
+}
+
+.apple.books {
+  width: 33px;
+}
+
+.bookshop {
+  width: 38px;
 }
 
 .modal-item-partners {
@@ -1670,7 +1711,20 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 173px;
   margin-bottom: 40px;
+}
+
+.amazon {
+  width: 62px;
+}
+
+.apple.books {
+  width: 33px;
+}
+
+.bookshop {
+  width: 38px;
 }
 
 .modal-item-partners {
@@ -2348,7 +2402,6 @@ html {
     text-align: center;
     padding-top: 24px;
     padding-bottom: 24px;
-    background-image: linear-gradient(360deg, rgba(79, 46, 232, 0.8), rgba(220, 220, 220, 0.8));
     border: 1.5px solid var(--main-text-clr);
   }
   .footer-text {
@@ -2359,11 +2412,11 @@ html {
   }
   .dream-team-link {
     text-decoration: underline;
-    color: white;
+    color: rgb(79, 46, 232);
     cursor: pointer;
   }
   .dream-team-span {
-    color: #ffffff;
+    color: rgb(79, 46, 232);
   }
   .footer-close-modal-btn {
     position: fixed;

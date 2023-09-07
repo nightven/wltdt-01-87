@@ -98,3 +98,13 @@ body {
     padding-top: 112px;
   }
 }
+
+.container{
+   min-width: 375px;
+   @include tablet{
+    min-width: 768px;
+   }
+   @include desktop{
+    min-width: 1440px;
+   }
+}

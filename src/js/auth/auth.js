@@ -68,6 +68,7 @@ async function signUpCreateUser(login = '', email, password) {
     setUserToDb(userId, login, email, password);
     getUserFromDb(userId);
     authorizedUser(login);
+    window.addEventListener('click', onClickLogout)
   } catch (error) {
     const errorMessage = error.message;
     Notify.failure('Registration error');
@@ -89,13 +90,13 @@ async function signIn(email, password) {
     getUserFromDb(userId);
     authorizedUser();
 
-    // modal.classList.toggle('is-hidden');
-    Notify.success('Success');
-    // logoutButton.style.transform = "translateX(-500px)";
-  } catch (error) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
     
+    Notify.success('Success');
+    window.addEventListener('click', onClickLogout)
+  } catch (error) {
+    
+    const errorMessage = error.message;
+    console.log(errorMessage)
     Notify.failure("User is not defined");
   }
 }
@@ -160,7 +161,7 @@ if(authButton)
 function onClickAuthButton() {
   logoutButton.classList.toggle('logout-hidden');
 
-   window.addEventListener('click', onClickLogout)
+  
 }
 
 // Listening to the exit button

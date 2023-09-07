@@ -106,5 +106,4 @@ function mediaQueriLimitStr(text, stringLength1, stringLength2, stringLength3) {
   return truncatedStr;
 }
 
-
 export { addMarkupCategoryList, addMarkupTopBooks, changeColorOfTitleOfCategory, limitStr, makeActiveCategory, changeActiveCategory, mediaQuery, mediaQueriLimitStr };
