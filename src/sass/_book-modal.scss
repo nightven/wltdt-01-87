@@ -103,18 +103,21 @@
 
 .amazon{
     width: 62px;
+    filter: var(--shop-icon-amazon);
 }
 
 .apple.books{
     width:33px;
+    filter: var(--shop-icon-grayscale);
 }
 
 .bookshop{
     width: 38px;
+    filter: var(--shop-icon-grayscale);
 }
 
 .modal-item-partners {
-    filter: grayscale(100%);
+    
 }
 
 .modal-btn-wrap {
@@ -223,8 +226,9 @@
     }
 
     .modal-partners-link:hover,
-    .modal-partners-link:focus {
-        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+    .modal-partners-link:focus 
+    {
+        filter: var(--shop-icon-drop-shadow);
     }
 
     .modal-btn {
